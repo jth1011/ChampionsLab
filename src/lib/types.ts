@@ -94,6 +94,7 @@ export interface CommonSet {
 export interface WinningTeamMember {
   pokemonId: number;
   name: string;
+  isMega?: boolean;
 }
 
 export interface WinningTeam {

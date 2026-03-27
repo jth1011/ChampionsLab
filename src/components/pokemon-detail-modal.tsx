@@ -3,9 +3,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { ChampionsPokemon, TYPE_COLORS, CommonSet, WinningTeam } from "@/lib/types";
+import { ChampionsPokemon, TYPE_COLORS, CommonSet, WinningTeam, WinningTeamMember } from "@/lib/types";
 import { USAGE_DATA } from "@/lib/usage-data";
 import { getTeamsForPokemon } from "@/lib/winning-teams";
+import { POKEMON_SEED } from "@/lib/pokemon-data";
 import { cn } from "@/lib/utils";
 import { X, Sparkles, Zap, Trophy, Coins, Star, Shield, Sword, Target, Gauge, Timer, TrendingUp, Users, Wrench } from "lucide-react";
 import { useState, useMemo, useCallback } from "react";
@@ -14,6 +15,24 @@ import { deflateRaw } from "pako";
 interface PokemonDetailModalProps {
   pokemon: ChampionsPokemon | null;
   onClose: () => void;
+}
+
+function getMemberSprite(member: WinningTeamMember): string {
+  if (member.isMega) {
+    const pkm = POKEMON_SEED.find(p => p.id === member.pokemonId);
+    const megaForm = pkm?.forms?.find(f => f.isMega);
+    if (megaForm) return megaForm.sprite;
+  }
+  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${member.pokemonId}.png`;
+}
+
+function getMemberDisplayName(member: WinningTeamMember): string {
+  if (member.isMega) {
+    const pkm = POKEMON_SEED.find(p => p.id === member.pokemonId);
+    const megaForm = pkm?.forms?.find(f => f.isMega);
+    if (megaForm) return megaForm.name;
+  }
+  return member.name;
 }
 
 function buildTeamBuilderUrl(team: WinningTeam): string {
@@ -691,29 +710,34 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
 
                           <div className="flex gap-2 pt-1">
                             {team.pokemon.map((member) => (
-                              <div key={member.pokemonId} className="flex flex-col items-center gap-1">
+                              <div key={`${member.pokemonId}-${member.isMega ? 'm' : 'b'}`} className="flex flex-col items-center gap-1">
                                 <div
                                   className={cn(
-                                    "w-12 h-12 rounded-xl flex items-center justify-center border",
-                                    member.pokemonId === pokemon.id
-                                      ? "bg-violet-50 border-violet-300 ring-2 ring-violet-200"
-                                      : "bg-gray-50 border-gray-200"
+                                    "relative w-12 h-12 rounded-xl flex items-center justify-center border",
+                                    member.isMega
+                                      ? "bg-amber-50 border-amber-300 ring-2 ring-amber-200"
+                                      : member.pokemonId === pokemon.id
+                                        ? "bg-violet-50 border-violet-300 ring-2 ring-violet-200"
+                                        : "bg-gray-50 border-gray-200"
                                   )}
                                 >
                                   <Image
-                                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${member.pokemonId}.png`}
-                                    alt={member.name}
+                                    src={getMemberSprite(member)}
+                                    alt={getMemberDisplayName(member)}
                                     width={36}
                                     height={36}
                                     className="drop-shadow-sm"
                                     unoptimized
                                   />
+                                  {member.isMega && (
+                                    <span className="absolute -top-1.5 -right-1.5 px-1 py-0.5 text-[7px] font-bold bg-amber-500 text-white rounded shadow-sm">M</span>
+                                  )}
                                 </div>
                                 <span className={cn(
-                                  "text-[9px] font-semibold tracking-tight",
-                                  member.pokemonId === pokemon.id ? "text-violet-600" : "text-gray-400"
+                                  "text-[9px] font-semibold tracking-tight text-center leading-tight max-w-[52px]",
+                                  member.isMega ? "text-amber-600" : member.pokemonId === pokemon.id ? "text-violet-600" : "text-gray-400"
                                 )}>
-                                  {member.name}
+                                  {getMemberDisplayName(member)}
                                 </span>
                               </div>
                             ))}
