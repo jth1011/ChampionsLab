@@ -135,6 +135,23 @@ export default function HomePage() {
         >
           Explore the full roster, base stats, abilities, and competitive sets for all 93 eligible Pokémon.
         </motion.p>
+
+        {/* Engine Promotion Banner */}
+        <motion.a
+          href="/battle-bot"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="inline-flex items-center gap-3 mt-4 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500/10 via-yellow-500/10 to-amber-500/10 border border-amber-400/30 hover:border-amber-400/60 hover:from-amber-500/20 hover:to-amber-500/20 transition-all group"
+        >
+          <span className="flex items-center justify-center w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-500 shadow-lg shadow-amber-500/25">
+            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </span>
+          <div className="text-left">
+            <p className="text-xs font-bold text-amber-700 uppercase tracking-wider">Advanced VGC Battle Engine</p>
+            <p className="text-[10px] text-muted-foreground">1,000,000+ battles simulated · Full AI · Live Replay · Try it now →</p>
+          </div>
+        </motion.a>
       </motion.div>
 
       {/* Season Rules */}

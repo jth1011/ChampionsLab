@@ -13,6 +13,7 @@ import {
   TrendingUp,
   GraduationCap,
   Heart,
+  Zap,
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -91,12 +92,21 @@ export function Navbar() {
                 );
               })}
 
+              {/* Engine Badge */}
+              <Link
+                href="/battle-bot"
+                className="ml-2 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-amber-400/20 to-yellow-500/20 border border-amber-400/40 text-amber-700 hover:border-amber-400/60 hover:from-amber-400/30 hover:to-yellow-500/30 flex items-center gap-1.5 transition-all"
+              >
+                <Zap className="w-3 h-3 text-amber-500" />
+                <span>1M+ Battles Engine</span>
+              </Link>
+
               {/* Buy Me a Coffee */}
               <a
                 href="https://buymeacoffee.com/championslab"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-2 px-4 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-yellow-400 to-orange-500 text-white hover:from-yellow-500 hover:to-orange-600 shadow-sm shadow-orange-500/20 flex items-center gap-2 transition-all hover:scale-105"
+                className="ml-1 px-4 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-yellow-400 to-orange-500 text-white hover:from-yellow-500 hover:to-orange-600 shadow-sm shadow-orange-500/20 flex items-center gap-2 transition-all hover:scale-105"
               >
                 <Heart className="w-4 h-4 fill-white" />
                 <span>Support Us</span>
@@ -146,6 +156,14 @@ export function Navbar() {
                 </Link>
               );
             })}
+            <Link
+              href="/battle-bot"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-3 px-4 py-3 rounded-lg text-[11px] font-bold uppercase tracking-wider bg-gradient-to-r from-amber-400/20 to-yellow-500/20 border border-amber-400/40 text-amber-700"
+            >
+              <Zap className="w-5 h-5 text-amber-500" />
+              ⚡ 1M+ Battles Engine — Try Battle Bot
+            </Link>
             <a
               href="https://buymeacoffee.com/championslab"
               target="_blank"

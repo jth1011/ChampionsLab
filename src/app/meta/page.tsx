@@ -144,14 +144,14 @@ export default function MetaPage() {
           </span>
         </h1>
         <p className="text-muted-foreground mt-2 text-sm max-w-2xl">
-          Deep competitive analysis powered by <span className="font-semibold text-foreground">1,000,000 ML simulated battles</span> across {TOURNAMENT_TEAMS.length} tournament teams,
-          {TOURNAMENT_USAGE.length} usage entries, and {CORE_PAIRS.length} core pair combinations. Click any team or Pokémon for advanced details.
+          Deep competitive analysis powered by the <span className="font-semibold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">Champions Lab Advanced VGC Battle Engine</span> — <span className="font-semibold text-foreground">1,000,000+ simulated battles</span> with full damage calc, ELO rankings,
+          win-rate matrices across {TOURNAMENT_TEAMS.length} tournament teams, {TOURNAMENT_USAGE.length} usage entries, and {CORE_PAIRS.length} core pair combinations.
         </p>
         <div className="flex items-center gap-4 mt-3">
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200">
-            <Brain className="w-3.5 h-3.5 text-emerald-600" />
-            <span className="text-xs font-medium text-emerald-700">1M Battles Simulated</span>
-          </div>
+          <a href="/battle-bot" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-300 hover:border-amber-400 transition-colors">
+            <Brain className="w-3.5 h-3.5 text-amber-600" />
+            <span className="text-xs font-bold text-amber-700">⚡ 1M+ Battle Engine</span>
+          </a>
           <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-violet-50 border border-violet-200">
             <Award className="w-3.5 h-3.5 text-violet-600" />
             <span className="text-xs font-medium text-violet-700">{TOURNAMENT_TEAMS.length} Tournament Results</span>

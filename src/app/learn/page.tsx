@@ -584,10 +584,22 @@ export default function LearnPage() {
       >
         <GraduationCap className="w-12 h-12 mx-auto text-violet-500 mb-4" />
         <h3 className="text-xl font-bold mb-2">Ready to Put It Into Practice?</h3>
-        <p className="text-sm text-muted-foreground mb-6 max-w-md mx-auto">
+        <p className="text-sm text-muted-foreground mb-4 max-w-md mx-auto">
           Use the Team Builder to create your squad, check the META page for what&apos;s winning,
-          and test it all in the Battle Bot simulator.
+          and put your theories to the test with our advanced battle engine.
         </p>
+
+        {/* Engine Highlight */}
+        <div className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-amber-500/10 via-yellow-500/10 to-amber-500/10 border border-amber-300/40 mb-6">
+          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-500 shadow-lg shadow-amber-500/25">
+            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div className="text-left">
+            <p className="text-xs font-bold text-amber-700">Champions Lab Advanced VGC Battle Engine</p>
+            <p className="text-[10px] text-muted-foreground">1,000,000+ battles simulated · Full AI · ELO Rankings · Live Replay</p>
+          </div>
+        </div>
+
         <div className="flex flex-wrap justify-center gap-3">
           <a
             href="/team-builder"
@@ -603,9 +615,9 @@ export default function LearnPage() {
           </a>
           <a
             href="/battle-bot"
-            className="px-6 py-2.5 rounded-xl glass glass-hover text-sm font-medium border border-gray-200"
+            className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 text-white text-sm font-bold shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 transition-all"
           >
-            Battle Bot
+            ⚡ Battle Engine
           </a>
         </div>
       </motion.div>

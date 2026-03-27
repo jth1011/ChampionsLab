@@ -453,33 +453,41 @@ export default function BattleBotPage() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-8 text-center"
       >
+        {/* Gold Crown Icon */}
+        <div className="flex items-center justify-center mb-3">
+          <div className="p-3 rounded-2xl bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 shadow-xl shadow-amber-500/30">
+            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+        </div>
         <h1 className="text-3xl sm:text-4xl font-bold">
-          <span className="bg-gradient-to-r from-red-500 via-orange-500 to-amber-500 bg-clip-text text-transparent">
-            Battle Simulator
+          <span className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 bg-clip-text text-transparent">
+            Advanced VGC Battle Engine
           </span>
         </h1>
-        <p className="text-sm text-muted-foreground mt-2 max-w-2xl mx-auto">
-          Monte Carlo battle engine — test your team against {PREBUILT_TEAMS.length}+ curated meta teams
-          and hundreds of random opponents. Full turn-by-turn simulation with damage calc, AI decision-making,
-          items, abilities, weather, Trick Room, and more.
+        <p className="text-xs font-bold uppercase tracking-widest text-amber-600/70 mt-1">
+          Champions Lab Powered · Gold Tier
         </p>
-        <div className="flex items-center justify-center gap-2 mt-4 flex-wrap">
+        <p className="text-sm text-muted-foreground mt-3 max-w-2xl mx-auto">
+          The most advanced VGC battle simulator available — fed with <span className="font-semibold text-amber-700">1,000,000+ simulated battles</span>, full
+          damage calculation engine, intelligent AI decision-making, abilities, items, weather, terrain, Trick Room,
+          Tailwind, status conditions, and real-time battle replay. Test your team against {PREBUILT_TEAMS.length}+ meta teams
+          and hundreds of randomized opponents.
+        </p>
+        <div className="flex items-center justify-center gap-2 mt-5 flex-wrap">
           {[
-            { label: "REAL ENGINE", color: "emerald" },
-            { label: "1M+ BATTLE DATA", color: "blue" },
-            { label: "VGC DOUBLES", color: "violet" },
-            { label: "FULL AI", color: "amber" },
-            { label: "LIVE REPLAY", color: "rose" },
+            { label: "⚡ 1M+ BATTLES", color: "gold" },
+            { label: "FULL DAMAGE CALC", color: "gold" },
+            { label: "VGC DOUBLES", color: "gold" },
+            { label: "INTELLIGENT AI", color: "gold" },
+            { label: "LIVE REPLAY", color: "gold" },
+            { label: "40+ META TEAMS", color: "gold" },
           ].map(badge => (
-            <span key={badge.label} className={cn(
-              "px-3 py-1 text-[10px] font-bold rounded-lg border",
-              badge.color === "emerald" && "bg-emerald-100 text-emerald-700 border-emerald-300",
-              badge.color === "blue" && "bg-blue-100 text-blue-700 border-blue-300",
-              badge.color === "violet" && "bg-violet-100 text-violet-700 border-violet-300",
-              badge.color === "amber" && "bg-amber-100 text-amber-700 border-amber-300",
-              badge.color === "rose" && "bg-rose-100 text-rose-700 border-rose-300",
-            )}>{badge.label}</span>
+            <span key={badge.label} className="px-3 py-1 text-[10px] font-bold rounded-lg border bg-gradient-to-r from-amber-50 to-yellow-50 text-amber-700 border-amber-300 shadow-sm shadow-amber-200/50">{badge.label}</span>
           ))}
+        </div>
+        <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border border-amber-300/40">
+          <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span></span>
+          <span className="text-[11px] font-medium text-amber-700">Engine continuously trained on 1M+ battle outcomes · ELO rankings · Win-rate matrices · Archetype matchups</span>
         </div>
       </motion.div>
 
