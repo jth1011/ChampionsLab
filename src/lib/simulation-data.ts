@@ -43,6 +43,8 @@ export interface SimMetaSnapshot {
   tier2: string[];
   tier3: string[];
   dominantArchetypes: string[];
+  underratedPokemon: string[];
+  overratedPokemon: string[];
   bestCores: string[];
 }
 
