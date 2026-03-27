@@ -16,6 +16,7 @@ import {
 import { PokemonDetailModal } from "@/components/pokemon-detail-modal";
 import { cn } from "@/lib/utils";
 import { USAGE_DATA } from "@/lib/usage-data";
+import { SearchSelect, type SearchSelectOption } from "@/components/search-select";
 import {
   analyzePartialTeam,
   suggestTeammates,
@@ -1138,17 +1139,26 @@ export default function TeamBuilderPage() {
                           const sortedMoves = [...editPkm.moves].sort((a, b) => a.name.localeCompare(b.name));
                           const moveData = editPkm.moves.find(m => m.name === currentMove);
                           const suggestedNames = slotSuggestion?.suggestedMoves.map(m => m.name) ?? [];
+                          const moveOptions: SearchSelectOption[] = [
+                            { value: "", label: "— Empty Slot —" },
+                            ...sortedMoves.map((m) => ({
+                              value: m.name,
+                              label: m.name,
+                              sub: `${m.type} · ${m.category}${m.power ? ` · ${m.power}bp` : ""}`,
+                              badge: m.type.slice(0, 3),
+                              badgeColor: `${TYPE_COLORS[m.type]}AA`,
+                              suggested: suggestedNames.includes(m.name),
+                            })),
+                          ];
                           return (
-                            <div key={moveIdx} className="relative">
-                              <select value={currentMove} onChange={(e) => updateMove(selectedSlotIndex, moveIdx, e.target.value)} className={cn("w-full px-3 py-2 rounded-lg text-[12px] font-medium appearance-none cursor-pointer border transition-colors", "bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-violet-300", currentMove ? "border-gray-200" : "border-dashed border-gray-300")}>
-                                <option value="">— Empty Slot —</option>
-                                {sortedMoves.map((m) => (
-                                  <option key={m.name} value={m.name}>{m.name} ({m.type} / {m.category}{m.power ? ` / ${m.power}bp` : ""}){suggestedNames.includes(m.name) ? " ★" : ""}</option>
-                                ))}
-                              </select>
-                              {moveData && <span className="absolute right-8 top-1/2 -translate-y-1/2 px-1.5 py-0.5 text-[8px] font-bold uppercase rounded text-white/90 pointer-events-none" style={{ backgroundColor: `${TYPE_COLORS[moveData.type]}AA` }}>{moveData.type.slice(0, 3)}</span>}
-                              <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground pointer-events-none" />
-                            </div>
+                            <SearchSelect
+                              key={moveIdx}
+                              value={currentMove}
+                              options={moveOptions}
+                              onChange={(v) => updateMove(selectedSlotIndex, moveIdx, v)}
+                              placeholder="— Empty Slot —"
+                              triggerBadge={moveData ? { text: moveData.type.slice(0, 3), color: `${TYPE_COLORS[moveData.type]}AA` } : null}
+                            />
                           );
                         })}
                       </div>
@@ -1183,23 +1193,38 @@ export default function TeamBuilderPage() {
                       </div>
                       <div>
                         <p className="text-[10px] text-muted-foreground uppercase font-medium mb-1">Nature</p>
-                        <div className="relative">
-                          <select value={editSlotData.nature || "Hardy"} onChange={(e) => updateSlot(selectedSlotIndex, { nature: e.target.value })} className="w-full px-3 py-2 rounded-lg text-[12px] font-medium appearance-none cursor-pointer bg-gray-50 border border-gray-200 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-violet-300">
-                            {allNatureNames.map((n) => { const nat = NATURES[n]; const label = nat.plus && nat.minus ? `${n} (+${STAT_LABELS[nat.plus]} / -${STAT_LABELS[nat.minus]})` : `${n} (Neutral)`; return <option key={n} value={n}>{label}</option>; })}
-                          </select>
-                          <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground pointer-events-none" />
-                        </div>
+                        <SearchSelect
+                          value={editSlotData.nature || "Hardy"}
+                          options={allNatureNames.map((n) => {
+                            const nat = NATURES[n];
+                            return {
+                              value: n,
+                              label: n,
+                              sub: nat.plus && nat.minus ? `+${STAT_LABELS[nat.plus]} / -${STAT_LABELS[nat.minus]}` : "Neutral",
+                              suggested: slotSuggestion?.suggestedNature.nature === n,
+                            };
+                          })}
+                          onChange={(v) => updateSlot(selectedSlotIndex, { nature: v })}
+                          placeholder="Select nature…"
+                        />
                         {slotSuggestion && <button onClick={() => updateSlot(selectedSlotIndex, { nature: slotSuggestion.suggestedNature.nature })} className="mt-1 text-[9px] text-violet-600 hover:text-violet-800 transition-colors">★ Suggested: {slotSuggestion.suggestedNature.nature} — {slotSuggestion.suggestedNature.reason}</button>}
                       </div>
                       <div>
                         <p className="text-[10px] text-muted-foreground uppercase font-medium mb-1">Held Item</p>
-                        <div className="relative">
-                          <select value={editSlotData.item || ""} onChange={(e) => updateSlot(selectedSlotIndex, { item: e.target.value || undefined })} disabled={editSlotData.isMega} className={cn("w-full px-3 py-2 rounded-lg text-[12px] font-medium appearance-none cursor-pointer border transition-colors", editSlotData.isMega ? "bg-amber-50 border-amber-200 text-amber-700 cursor-not-allowed opacity-75" : "bg-gray-50 border-gray-200 hover:bg-gray-100", "focus:outline-none focus:ring-1 focus:ring-violet-300")}>
-                            <option value="">— No Item —</option>
-                            {allItemNames.map((name) => <option key={name} value={name}>{name}</option>)}
-                          </select>
-                          <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground pointer-events-none" />
-                        </div>
+                        <SearchSelect
+                          value={editSlotData.item || ""}
+                          options={[
+                            { value: "", label: "— No Item —" },
+                            ...allItemNames.map((name) => ({
+                              value: name,
+                              label: name,
+                              sub: ITEMS[name]?.description,
+                            })),
+                          ]}
+                          onChange={(v) => updateSlot(selectedSlotIndex, { item: v || undefined })}
+                          placeholder="— No Item —"
+                          disabled={editSlotData.isMega}
+                        />
                         {editSlotData.isMega && <p className="text-[9px] text-amber-600 mt-1">Mega stone is required — item locked</p>}
                         {!editSlotData.isMega && editSlotData.item && ITEMS[editSlotData.item!] && <p className="text-[9px] text-muted-foreground mt-1">{ITEMS[editSlotData.item!].description}</p>}
                       </div>
