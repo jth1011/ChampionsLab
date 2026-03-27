@@ -113,8 +113,8 @@ export default function TeamBuilderPage() {
     setShuffledTeams(shuffled);
   }, []);
 
-  // Build shareable URL from current team (compressed)
-  const buildShareUrl = useCallback(() => {
+  // Build shareable URL — store team on server, return short link
+  const buildShareUrl = useCallback(async () => {
     const filled = slots.filter(s => s.pokemon);
     if (filled.length === 0) return "";
     const data = {
@@ -130,7 +130,18 @@ export default function TeamBuilderPage() {
         mg: s.isMega,
       })),
     };
-    // Compress JSON with deflate then URL-safe base64
+    try {
+      const res = await fetch("/api/share", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        const { id } = await res.json();
+        return `${window.location.origin}/team-builder?s=${id}`;
+      }
+    } catch { /* fall through to compressed fallback */ }
+    // Fallback: compressed URL
     const compressed = deflateRaw(JSON.stringify(data));
     const b64 = btoa(String.fromCharCode(...compressed))
       .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
@@ -143,7 +154,34 @@ export default function TeamBuilderPage() {
 
     // Check for shared team URL first
     const params = new URLSearchParams(window.location.search);
+    const shortId = params.get("s");
     const teamParam = params.get("t") || params.get("team"); // "t" = compressed, "team" = legacy
+
+    const restoreTeam = (data: { n?: string; s: Array<{ p: number; a?: string; t?: string; m: string[]; sp: number[]; te?: string; i?: string; mg?: boolean }> }) => {
+      const restored: SavedTeamSlot[] = data.s.map(s => ({
+        pokemonId: s.p,
+        ability: s.a,
+        nature: s.t,
+        moves: s.m || [],
+        statPoints: { hp: s.sp?.[0] || 0, attack: s.sp?.[1] || 0, defense: s.sp?.[2] || 0, spAtk: s.sp?.[3] || 0, spDef: s.sp?.[4] || 0, speed: s.sp?.[5] || 0 },
+        teraType: s.te as PokemonType | undefined,
+        item: s.i,
+        isMega: s.mg,
+      }));
+      setSlots(deserializeTeam(restored));
+      setTeamName(data.n || "Shared Team");
+      window.history.replaceState({}, "", "/team-builder");
+    };
+
+    // Short link: fetch from API
+    if (shortId) {
+      fetch(`/api/share/${encodeURIComponent(shortId)}`)
+        .then(r => r.ok ? r.json() : null)
+        .then(data => { if (data?.s) restoreTeam(data); })
+        .catch(() => {});
+      return;
+    }
+
     if (teamParam) {
       try {
         let data;
@@ -159,20 +197,7 @@ export default function TeamBuilderPage() {
           data = JSON.parse(atob(teamParam));
         }
         if (data.s && Array.isArray(data.s)) {
-          const restored: SavedTeamSlot[] = data.s.map((s: { p: number; a?: string; t?: string; m: string[]; sp: number[]; te?: string; i?: string; mg?: boolean }) => ({
-            pokemonId: s.p,
-            ability: s.a,
-            nature: s.t,
-            moves: s.m || [],
-            statPoints: { hp: s.sp?.[0] || 0, attack: s.sp?.[1] || 0, defense: s.sp?.[2] || 0, spAtk: s.sp?.[3] || 0, spDef: s.sp?.[4] || 0, speed: s.sp?.[5] || 0 },
-            teraType: s.te,
-            item: s.i,
-            isMega: s.mg,
-          }));
-          setSlots(deserializeTeam(restored));
-          setTeamName(data.n || "Shared Team");
-          // Clean URL without reload
-          window.history.replaceState({}, "", "/team-builder");
+          restoreTeam(data);
           return;
         }
       } catch { /* invalid param, fall through to normal load */ }
@@ -405,9 +430,9 @@ export default function TeamBuilderPage() {
 
     const dataUrl = canvas.toDataURL("image/png");
     setShareImageUrl(dataUrl);
-    setShareUrl(buildShareUrl());
     setUrlCopied(false);
     setShowShare(true);
+    buildShareUrl().then(url => setShareUrl(url));
   };
 
   const downloadShareImage = () => {
