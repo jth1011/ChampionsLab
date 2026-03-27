@@ -10,6 +10,8 @@ export const USAGE_DATA: Record<number, CommonSet[]> = {
     { name: "Bulky Support", nature: "Calm", ability: "Overgrow", item: "Sitrus Berry", moves: ["Giga Drain", "Sludge Bomb", "Sleep Powder", "Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 16, spDef: 16, speed: 0 } },
     { name: "Trick Room Attacker", nature: "Quiet", ability: "Overgrow", item: "Assault Vest", moves: ["Leaf Storm", "Sludge Bomb", "Earth Power", "Weather Ball"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 } },
     { name: "Sleep Lead", nature: "Timid", ability: "Chlorophyll", item: "Focus Sash", moves: ["Sleep Powder", "Leaf Storm", "Sludge Bomb", "Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 } },
+    { name: "Mega Thick Fat", nature: "Modest", ability: "Thick Fat", item: "Venusaurite", moves: ["Giga Drain", "Sludge Bomb", "Earth Power", "Protect"], sp: { hp: 20, attack: 0, defense: 2, spAtk: 32, spDef: 12, speed: 0 } },
+    { name: "Mega Sun Tank", nature: "Bold", ability: "Thick Fat", item: "Venusaurite", moves: ["Giga Drain", "Sludge Bomb", "Sleep Powder", "Protect"], sp: { hp: 32, attack: 0, defense: 20, spAtk: 12, spDef: 2, speed: 0 } },
   ],
 
   // Charizard (id: 6)
@@ -93,7 +95,7 @@ export const USAGE_DATA: Record<number, CommonSet[]> = {
     { name: "Offensive Pivot", nature: "Timid", ability: "Natural Cure", item: "Choice Specs", moves: ["Hydro Pump", "Psychic", "Ice Beam", "Thunderbolt"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 } },
     { name: "Speed Control", nature: "Timid", ability: "Natural Cure", item: "Focus Sash", moves: ["Scald", "Icy Wind", "Trick Room", "Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 30, spDef: 0, speed: 32 } },
     { name: "Bulky Attacker", nature: "Modest", ability: "Natural Cure", item: "Sitrus Berry", moves: ["Scald", "Psychic", "Ice Beam", "Protect"], sp: { hp: 20, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 12 } },
-    { name: "Mega Prism", nature: "Timid", ability: "Prism Armor", item: "Starmiete", moves: ["Hydro Pump", "Psychic", "Ice Beam", "Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 } },
+    { name: "Mega Prism", nature: "Timid", ability: "Prism Armor", item: "Starmieite", moves: ["Hydro Pump", "Psychic", "Ice Beam", "Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 } },
   ],
 
   // Pinsir (id: 127)
@@ -783,6 +785,8 @@ export const USAGE_DATA: Record<number, CommonSet[]> = {
   71: [
     { name: "Sun Sweeper", nature: "Modest", ability: "Chlorophyll", item: "Life Orb", moves: ["Leaf Storm","Sludge Bomb","Sleep Powder","Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 } },
     { name: "Physical Sun", nature: "Adamant", ability: "Chlorophyll", item: "Life Orb", moves: ["Power Whip","Sucker Punch","Knock Off","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 } },
+    { name: "Mega Corrosive", nature: "Modest", ability: "Corrosive Maw", item: "Victreebelite", moves: ["Leaf Storm","Sludge Bomb","Weather Ball","Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 } },
+    { name: "Mega Mixed", nature: "Rash", ability: "Corrosive Maw", item: "Victreebelite", moves: ["Power Whip","Sludge Bomb","Sucker Punch","Protect"], sp: { hp: 0, attack: 20, defense: 2, spAtk: 12, spDef: 0, speed: 32 } },
   ],
 
   // Ditto (id: 132)
@@ -807,6 +811,8 @@ export const USAGE_DATA: Record<number, CommonSet[]> = {
   208: [
     { name: "Trick Room Tank", nature: "Brave", ability: "Sturdy", item: "Leftovers", moves: ["Earthquake","Iron Head","Body Press","Protect"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 } },
     { name: "Hazard Setter", nature: "Relaxed", ability: "Sturdy", item: "Leftovers", moves: ["Stealth Rock","Gyro Ball","Earthquake","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 } },
+    { name: "Mega Sand Force", nature: "Brave", ability: "Sand Force", item: "Steelixite", moves: ["Earthquake","Iron Head","Rock Slide","Protect"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 } },
+    { name: "Mega Body Press", nature: "Relaxed", ability: "Sand Force", item: "Steelixite", moves: ["Body Press","Gyro Ball","Earthquake","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 } },
   ],
 
   // Aggron (id: 306)

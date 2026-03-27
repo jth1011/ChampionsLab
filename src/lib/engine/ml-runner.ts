@@ -131,16 +131,30 @@ export class SimulationDatabase {
     loser.lastUpdated = Date.now();
   }
 
-  recordPokemonResult(pokemonIds: number[], megaFlags: boolean[], won: boolean, setKeys: string[]): void {
+  recordPokemonResult(pokemonIds: number[], megaFormNames: (string | null)[], won: boolean, setKeys: string[], opponentIds: number[], opponentMegaFormNames: (string | null)[]): void {
+    // Calculate average ELO of opponent team's Pokémon for real ELO formula
+    let opponentAvgElo = DEFAULT_ELO;
+    if (opponentIds.length > 0) {
+      let totalOppElo = 0;
+      let count = 0;
+      for (let j = 0; j < opponentIds.length; j++) {
+        const oppFn = opponentMegaFormNames[j];
+        const oppKey = oppFn ? megaKey(opponentIds[j], oppFn) : `${opponentIds[j]}`;
+        const oppStats = this.pokemonStats.get(oppKey);
+        totalOppElo += oppStats?.elo ?? DEFAULT_ELO;
+        count++;
+      }
+      opponentAvgElo = totalOppElo / count;
+    }
+
     for (let i = 0; i < pokemonIds.length; i++) {
       const id = pokemonIds[i];
-      const isMega = megaFlags[i] ?? false;
-      const key = isMega ? `${id}-mega` : `${id}`;
+      const formName = megaFormNames[i];
+      const key = formName ? megaKey(id, formName) : `${id}`;
       if (!this.pokemonStats.has(key)) {
         const pokemon = POKEMON_SEED.find(p => p.id === id);
-        const megaForm = isMega ? pokemon?.forms?.find(f => f.isMega) : null;
         this.pokemonStats.set(key, {
-          id, name: megaForm ? megaForm.name : (pokemon?.name ?? `#${id}`),
+          id, name: formName ?? (pokemon?.name ?? `#${id}`),
           appearances: 0, wins: 0, losses: 0, winRate: 0,
           avgTeammateCount: 0, bestPartners: [], worstMatchups: [],
           bestSets: [], elo: DEFAULT_ELO,
@@ -152,13 +166,16 @@ export class SimulationDatabase {
       else stats.losses++;
       stats.winRate = Math.round((stats.wins / stats.appearances) * 1000) / 10;
 
-      // ELO for individual Pokemon
-      const expectedW = 0.5;
+      // Real ELO formula: expected win based on rating difference
+      const expectedW = 1 / (1 + Math.pow(10, (opponentAvgElo - stats.elo) / 400));
       stats.elo = Math.round(stats.elo + (K_FACTOR / 2) * ((won ? 1 : 0) - expectedW));
     }
 
     // Record pair win rates (using mega-aware keys)
-    const keys = pokemonIds.map((id, i) => (megaFlags[i] ? `${id}-mega` : `${id}`));
+    const keys = pokemonIds.map((id, i) => {
+      const fn = megaFormNames[i];
+      return fn ? megaKey(id, fn) : `${id}`;
+    });
     for (let i = 0; i < keys.length; i++) {
       for (let j = i + 1; j < keys.length; j++) {
         const pairKey = [keys[i], keys[j]].sort().join("|");
@@ -217,17 +234,33 @@ interface TeamEntry {
   pokemon: ChampionsPokemon[];
   sets: CommonSet[];
   pokemonIds: number[];
-  megaFlags: boolean[];
+  megaFormNames: (string | null)[];
 }
 
-/** Detect mega flags for a team based on mega stone items */
-function detectMegaFlags(pokemon: ChampionsPokemon[], sets: CommonSet[]): boolean[] {
+const isMegaItem = (item: string) =>
+  item.endsWith("ite") || item.endsWith("ite X") || item.endsWith("ite Y") || item.endsWith("ite Z");
+
+/** Detect which specific mega form each team member uses (null = not mega) */
+function detectMegaForms(pokemon: ChampionsPokemon[], sets: CommonSet[]): (string | null)[] {
   return sets.map((s, i) => {
     const p = pokemon[i];
-    if (!p || !p.hasMega || !p.forms) return false;
-    const item = s.item;
-    return item.endsWith("ite") || item.endsWith("ite X") || item.endsWith("ite Y") || item.endsWith("ite Z");
+    if (!p || !p.hasMega || !p.forms) return null;
+    if (!isMegaItem(s.item)) return null;
+    const megaForms = p.forms.filter(f => f.isMega);
+    if (megaForms.length <= 1) return megaForms[0]?.name ?? null;
+    // Multi-form: match by item suffix (X, Y, Z)
+    if (s.item.endsWith(" X")) return megaForms.find(f => f.name.endsWith(" X"))?.name ?? megaForms[0].name;
+    if (s.item.endsWith(" Y")) return megaForms.find(f => f.name.endsWith(" Y"))?.name ?? megaForms[0].name;
+    if (s.item.endsWith(" Z")) return megaForms.find(f => f.name.endsWith(" Z"))?.name ?? megaForms[0].name;
+    return megaForms[0].name; // Base "ite" → first form
   });
+}
+
+/** Create a stable key for a mega form to track in stats */
+function megaKey(id: number, formName: string): string {
+  // For multi-form megas, include the suffix to keep them separate
+  const suffix = formName.match(/ ([XYZ])$/)?.[1];
+  return suffix ? `${id}-mega-${suffix.toLowerCase()}` : `${id}-mega`;
 }
 
 /** Build a competitive set for a Pokémon using USAGE_DATA */
@@ -235,8 +268,8 @@ function autoSet(pokemon: ChampionsPokemon, existingSets: CommonSet[]): CommonSe
   const sets = USAGE_DATA[pokemon.id];
   if (!sets || sets.length === 0) return null;
   // Avoid duplicate mega stones
-  const hasMega = existingSets.some(s => s.item.endsWith("ite") || s.item.endsWith("ite X") || s.item.endsWith("ite Y"));
-  const available = hasMega ? sets.filter(s => !(s.item.endsWith("ite") || s.item.endsWith("ite X") || s.item.endsWith("ite Y"))) : sets;
+  const hasMega = existingSets.some(s => isMegaItem(s.item));
+  const available = hasMega ? sets.filter(s => !isMegaItem(s.item)) : sets;
   return available[0] ?? sets[0];
 }
 
@@ -244,11 +277,20 @@ function autoSet(pokemon: ChampionsPokemon, existingSets: CommonSet[]): CommonSe
 function getNonMegaSet(pokemonId: number, existingSets: CommonSet[]): CommonSet | null {
   const sets = USAGE_DATA[pokemonId];
   if (!sets || sets.length === 0) return null;
-  const isMegaItem = (item: string) => item.endsWith("ite") || item.endsWith("ite X") || item.endsWith("ite Y") || item.endsWith("ite Z");
   const nonMega = sets.filter(s => !isMegaItem(s.item));
   if (nonMega.length > 0) return nonMega[0];
   // Fallback: swap mega stone for Life Orb
   return { ...sets[0], item: "Life Orb" };
+}
+
+/** Shuffle the top N candidates for team diversity */
+function shuffleTop<T>(arr: T[], topN: number): T[] {
+  const top = arr.slice(0, topN);
+  for (let i = top.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [top[i], top[j]] = [top[j], top[i]];
+  }
+  return [...top, ...arr.slice(topN)];
 }
 
 function buildTeamPool(): TeamEntry[] {
@@ -270,7 +312,7 @@ function buildTeamPool(): TeamEntry[] {
         pokemon: sliced,
         sets: pre.sets,
         pokemonIds: sliced.map(p => p.id),
-        megaFlags: detectMegaFlags(sliced, pre.sets),
+        megaFormNames: detectMegaForms(sliced, pre.sets),
       });
     }
   }
@@ -296,13 +338,13 @@ function buildTeamPool(): TeamEntry[] {
         pokemon: sliced,
         sets,
         pokemonIds: sliced.map(p => p.id),
-        megaFlags: detectMegaFlags(sliced, sets),
+        megaFormNames: detectMegaForms(sliced, sets),
       });
     }
   }
 
-  // 3. Generate additional teams (200 for diversity)
-  const generated = generateTeams(200);
+  // 3. Generate additional teams (400 for diversity)
+  const generated = generateTeams(400);
   for (let i = 0; i < generated.length; i++) {
     const g = generated[i];
     if (g.pokemon.length >= 4 && g.sets.length >= 4) {
@@ -314,63 +356,76 @@ function buildTeamPool(): TeamEntry[] {
         pokemon: sliced,
         sets: g.sets,
         pokemonIds: sliced.map(p => p.id),
-        megaFlags: detectMegaFlags(sliced, g.sets),
+        megaFormNames: detectMegaForms(sliced, g.sets),
       });
     }
   }
 
   // 4. Generate MEGA VARIANT teams — for every mega-capable Pokémon, 
-  //    create teams that use the mega stone if not already covered
+  //    create teams per mega form (X, Y, Z variants get separate teams)
   const megaPokemon = POKEMON_SEED.filter(p => p.hasMega && p.forms?.some(f => f.isMega));
   for (const mp of megaPokemon) {
-    const megaSets = USAGE_DATA[mp.id]?.filter(s =>
-      s.item.endsWith("ite") || s.item.endsWith("ite X") || s.item.endsWith("ite Y") || s.item.endsWith("ite Z")
-    );
-    if (!megaSets || megaSets.length === 0) continue;
+    const allMegaSets = USAGE_DATA[mp.id]?.filter(s => isMegaItem(s.item));
+    if (!allMegaSets || allMegaSets.length === 0) continue;
 
-    // Also generate base-form only teams (non-mega sets)
-    const baseSets = USAGE_DATA[mp.id]?.filter(s =>
-      !(s.item.endsWith("ite") || s.item.endsWith("ite X") || s.item.endsWith("ite Y") || s.item.endsWith("ite Z"))
-    );
-
-    // Mega variant teams
-    for (let v = 0; v < 3; v++) {
-      const megaSet = megaSets[v % megaSets.length];
-      const team: ChampionsPokemon[] = [mp];
-      const teamSets: CommonSet[] = [megaSet];
-      const usedIds = new Set([mp.id]);
-
-      // Fill team with compatible Pokémon (no mega stones — team already has one)
-      const candidates = POKEMON_SEED
-        .filter(p => !usedIds.has(p.id) && USAGE_DATA[p.id]?.length)
-        .map(p => ({ pokemon: p, fit: scorePokemonFit(p, team) }))
-        .sort((a, b) => b.fit.score - a.fit.score);
-
-      for (const c of candidates) {
-        if (team.length >= 6) break;
-        const set = getNonMegaSet(c.pokemon.id, teamSets);
-        if (set) {
-          team.push(c.pokemon);
-          teamSets.push(set);
-          usedIds.add(c.pokemon.id);
+    // Group mega sets by form (X, Y, Z, or default)
+    const megaForms = mp.forms!.filter(f => f.isMega);
+    for (const form of megaForms) {
+      // Match sets to this form by item suffix
+      let formSets = allMegaSets;
+      if (megaForms.length > 1) {
+        const suffix = form.name.match(/ ([XYZ])$/)?.[1];
+        if (suffix) {
+          formSets = allMegaSets.filter(s => s.item.endsWith(` ${suffix}`));
+        } else {
+          // Default form = base "ite" items (no X/Y/Z suffix)
+          formSets = allMegaSets.filter(s => !s.item.match(/ [XYZ]$/));
         }
+        if (formSets.length === 0) formSets = allMegaSets; // fallback
       }
 
-      if (team.length >= 4) {
-        const megaForm = mp.forms?.find(f => f.isMega);
-        pool.push({
-          id: `mega-${mp.id}-v${v}`,
-          name: `${megaForm?.name ?? `Mega ${mp.name}`} Build v${v + 1}`,
-          archetype: `Mega ${mp.name}`,
-          pokemon: team,
-          sets: teamSets,
-          pokemonIds: team.map(p => p.id),
-          megaFlags: detectMegaFlags(team, teamSets),
-        });
+      // Create 3 teams per mega form for diversity
+      for (let v = 0; v < 3; v++) {
+        const megaSet = formSets[v % formSets.length];
+        const team: ChampionsPokemon[] = [mp];
+        const teamSets: CommonSet[] = [megaSet];
+        const usedIds = new Set([mp.id]);
+
+        const candidates = POKEMON_SEED
+          .filter(p => !usedIds.has(p.id) && USAGE_DATA[p.id]?.length)
+          .map(p => ({ pokemon: p, fit: scorePokemonFit(p, team) }))
+          .sort((a, b) => b.fit.score - a.fit.score);
+
+        // Add some randomization for diversity beyond top synergy picks
+        const shuffled = v > 0 ? shuffleTop(candidates, 15) : candidates;
+
+        for (const c of shuffled) {
+          if (team.length >= 6) break;
+          const set = getNonMegaSet(c.pokemon.id, teamSets);
+          if (set) {
+            team.push(c.pokemon);
+            teamSets.push(set);
+            usedIds.add(c.pokemon.id);
+          }
+        }
+
+        if (team.length >= 4) {
+          const formSlug = form.name.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase();
+          pool.push({
+            id: `mega-${mp.id}-${formSlug}-v${v}`,
+            name: `${form.name} Build v${v + 1}`,
+            archetype: `Mega ${mp.name}`,
+            pokemon: team,
+            sets: teamSets,
+            pokemonIds: team.map(p => p.id),
+            megaFormNames: detectMegaForms(team, teamSets),
+          });
+        }
       }
     }
 
-    // Base-form variant teams (for Pokémon that have megas but we want base data too)
+    // Also generate base-form only teams (non-mega sets)
+    const baseSets = USAGE_DATA[mp.id]?.filter(s => !isMegaItem(s.item));
     if (baseSets && baseSets.length > 0) {
       for (let v = 0; v < 2; v++) {
         const baseSet = baseSets[v % baseSets.length];
@@ -401,8 +456,65 @@ function buildTeamPool(): TeamEntry[] {
             pokemon: team,
             sets: teamSets,
             pokemonIds: team.map(p => p.id),
-            megaFlags: detectMegaFlags(team, teamSets),
+            megaFormNames: detectMegaForms(team, teamSets),
           });
+        }
+      }
+    }
+  }
+
+  // 5. Generate ROSTER COVERAGE teams — build a team around every Pokémon
+  //    with usage data that doesn't appear enough in the pool yet
+  const pokemonAppearances = new Map<number, number>();
+  for (const entry of pool) {
+    for (const pid of entry.pokemonIds) {
+      pokemonAppearances.set(pid, (pokemonAppearances.get(pid) ?? 0) + 1);
+    }
+  }
+  const MIN_TEAM_APPEARANCES = 3;
+  const underrepresented = POKEMON_SEED
+    .filter(p => USAGE_DATA[p.id]?.length && (pokemonAppearances.get(p.id) ?? 0) < MIN_TEAM_APPEARANCES)
+    .sort(() => Math.random() - 0.5);
+
+  for (const starter of underrepresented) {
+    const neededTeams = MIN_TEAM_APPEARANCES - (pokemonAppearances.get(starter.id) ?? 0);
+    for (let v = 0; v < neededTeams; v++) {
+      const starterSet = autoSet(starter, []);
+      if (!starterSet) break;
+      const team: ChampionsPokemon[] = [starter];
+      const teamSets: CommonSet[] = [starterSet];
+      const usedIds = new Set([starter.id]);
+
+      const candidates = POKEMON_SEED
+        .filter(p => !usedIds.has(p.id) && USAGE_DATA[p.id]?.length)
+        .map(p => ({ pokemon: p, fit: scorePokemonFit(p, team) }))
+        .sort((a, b) => b.fit.score - a.fit.score);
+
+      const shuffled = v > 0 ? shuffleTop(candidates, 20) : candidates;
+
+      for (const c of shuffled) {
+        if (team.length >= 6) break;
+        const set = getNonMegaSet(c.pokemon.id, teamSets);
+        if (set) {
+          team.push(c.pokemon);
+          teamSets.push(set);
+          usedIds.add(c.pokemon.id);
+        }
+      }
+
+      if (team.length >= 4) {
+        pool.push({
+          id: `roster-${starter.id}-v${v}`,
+          name: `${starter.name} Build v${v + 1}`,
+          archetype: `${starter.name} Build`,
+          pokemon: team,
+          sets: teamSets,
+          pokemonIds: team.map(p => p.id),
+          megaFormNames: detectMegaForms(team, teamSets),
+        });
+        // Update appearance counts
+        for (const p of team) {
+          pokemonAppearances.set(p.id, (pokemonAppearances.get(p.id) ?? 0) + 1);
         }
       }
     }
@@ -571,12 +683,13 @@ function analyzeAndGenerateInsights(db: SimulationDatabase): MLInsight[] {
 
 function generateMetaSnapshot(db: SimulationDatabase): MetaSnapshot {
   const ranked = [...db.pokemonStats.values()]
-    .filter(p => p.appearances >= 5)
+    .filter(p => p.appearances >= 100)
     .sort((a, b) => b.elo - a.elo);
 
-  const tier1 = ranked.filter(p => p.elo >= 1550).map(p => p.name);
-  const tier2 = ranked.filter(p => p.elo >= 1500 && p.elo < 1550).map(p => p.name);
-  const tier3 = ranked.filter(p => p.elo < 1500 && p.elo >= 1450).map(p => p.name);
+  const total = ranked.length;
+  const tier1 = ranked.slice(0, Math.ceil(total * 0.08)).map(p => p.name);   // Top 8% = S
+  const tier2 = ranked.slice(Math.ceil(total * 0.08), Math.ceil(total * 0.25)).map(p => p.name);  // 8-25% = A
+  const tier3 = ranked.slice(Math.ceil(total * 0.25), Math.ceil(total * 0.55)).map(p => p.name);  // 25-55% = B
 
   const archetypes = [...db.archetypeStats.values()]
     .sort((a, b) => b.elo - a.elo)
@@ -650,8 +763,8 @@ export async function runMLSimulation(config: Partial<SimulationConfig> = {}): P
       const avgRemaining = t1Wins > 0 ? totalRemaining / t1Wins : 0;
 
       db.updateELO(winner.id, loser.id, avgTurns, avgRemaining);
-      db.recordPokemonResult(winner.pokemonIds, winner.megaFlags, true, winner.sets.map(s => `${s.name}|${s.item}`));
-      db.recordPokemonResult(loser.pokemonIds, loser.megaFlags, false, loser.sets.map(s => `${s.name}|${s.item}`));
+      db.recordPokemonResult(winner.pokemonIds, winner.megaFormNames, true, winner.sets.map(s => `${s.name}|${s.item}`), loser.pokemonIds, loser.megaFormNames);
+      db.recordPokemonResult(loser.pokemonIds, loser.megaFormNames, false, loser.sets.map(s => `${s.name}|${s.item}`), winner.pokemonIds, winner.megaFormNames);
 
       const allWinnerMoves = winner.sets.flatMap(s => s.moves);
       const allLoserMoves = loser.sets.flatMap(s => s.moves);
@@ -782,7 +895,7 @@ export async function runMLSimulation(config: Partial<SimulationConfig> = {}): P
       };
     })
     .sort((a, b) => b.winRate - a.winRate)
-    .slice(0, 20);
+    .slice(0, 50);
 
   db.elapsedMs = Date.now() - db.startTime;
 

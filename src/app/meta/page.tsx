@@ -35,10 +35,20 @@ import {
   SIM_TOTAL_BATTLES, SIM_DATE, SIM_MOVES,
 } from "@/lib/simulation-data";
 
+// ── TIER CALCULATION ─────────────────────────────────────────────────────
+function getMLTier(wr: number, games: number): "S" | "A" | "B" | "C" | "D" {
+  if (games < 500) return "D";   // Insufficient data
+  if (wr >= 56) return "S";      // Dominant
+  if (wr >= 52) return "A";      // Above average
+  if (wr >= 49) return "B";      // Average / viable
+  if (wr >= 46) return "C";      // Below average
+  return "D";                    // Weak
+}
+
 // ── ML SIMULATION RESULTS — derived from simulation-data.ts ────────────
 const ML_POKEMON_RANKINGS = Object.values(SIM_POKEMON)
   .sort((a, b) => b.elo - a.elo)
-  .map(p => ({ name: p.name, elo: p.elo, wr: p.winRate, games: p.appearances }));
+  .map(p => ({ name: p.name, elo: p.elo, wr: p.winRate, games: p.appearances, tier: getMLTier(p.winRate, p.appearances) }));
 
 const ML_BEST_CORES = SIM_PAIRS
   .sort((a, b) => b.winRate - a.winRate)
@@ -296,13 +306,13 @@ export default function MetaPage() {
               <Shield className="w-5 h-5 text-red-500" /> Top 10 Meta Threats
             </h2>
             <p className="text-sm text-muted-foreground mb-4">
-              Pokémon you must prepare for. ELO is their simulated strength, Win Rate is raw performance, Games is frequency across 1M battles.
+              Pokémon you must prepare for. ELO is their simulated strength, Win Rate is raw performance, Games is frequency across 2M battles.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {ML_POKEMON_RANKINGS.slice(0, 10).map((p, i) => {
                 const pokemon = getPokemonByName(p.name);
                 const usageData = pokemon ? TOURNAMENT_USAGE.find(u => u.pokemonId === pokemon.id) : null;
-                const tier = i < 3 ? "S" : i < 7 ? "A" : "B";
+                const tier = p.tier;
                 return (
                   <div key={p.name} className={cn("p-4 rounded-xl border transition-all hover:shadow-md cursor-pointer", tier === "S" ? "bg-amber-50/50 border-amber-200" : tier === "A" ? "bg-blue-50/30 border-blue-200" : "bg-gray-50 border-gray-200")}
                     onClick={() => setModal({ kind: "pokemon", name: p.name })}>
@@ -713,7 +723,7 @@ export default function MetaPage() {
               <Brain className="w-5 h-5 text-emerald-500" /> ML Simulation Rankings
             </h2>
             <p className="text-sm text-muted-foreground mb-4">
-              ELO ratings from 1,000,000 simulated VGC doubles battles. Higher ELO = consistently wins more. Win rate shows raw performance. Games shows how often the Pokémon appeared across all teams.
+              ELO ratings from 2,000,000 simulated VGC doubles battles. Tiers based on win rate: S (56%+), A (52%+), B (49%+), C (46%+), D (below 46% or insufficient data).
             </p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -730,7 +740,7 @@ export default function MetaPage() {
                 <tbody>
                   {ML_POKEMON_RANKINGS.map((p, i) => {
                     const pokemon = getPokemonByName(p.name);
-                    const tier = i < 3 ? "S" : i < 7 ? "A" : i < 12 ? "B" : "C";
+                    const tier = p.tier;
                     return (
                       <tr key={p.name} className={cn("border-b border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer", selectedPokemon === p.name && "bg-violet-50")} onClick={() => setSelectedPokemon(selectedPokemon === p.name ? null : p.name)}>
                         <td className="py-2.5 px-3 text-xs font-bold text-muted-foreground">{i + 1}</td>
@@ -747,7 +757,7 @@ export default function MetaPage() {
                         <td className={cn("py-2.5 px-3 text-right font-bold text-sm", p.wr >= 60 ? "text-green-600" : p.wr >= 52 ? "text-emerald-600" : p.wr >= 50 ? "text-gray-700" : "text-red-600")}>{p.wr}%</td>
                         <td className="py-2.5 px-3 text-right text-xs text-muted-foreground">{p.games.toLocaleString()}</td>
                         <td className="py-2.5 px-3">
-                          <span className={cn("px-2 py-0.5 text-[10px] font-bold rounded", tier === "S" ? "bg-amber-100 text-amber-700" : tier === "A" ? "bg-blue-100 text-blue-700" : tier === "B" ? "bg-gray-100 text-gray-700" : "bg-gray-50 text-gray-500")}>{tier}</span>
+                          <span className={cn("px-2 py-0.5 text-[10px] font-bold rounded", tier === "S" ? "bg-amber-100 text-amber-700" : tier === "A" ? "bg-blue-100 text-blue-700" : tier === "B" ? "bg-gray-100 text-gray-700" : tier === "C" ? "bg-gray-50 text-gray-500" : "bg-red-50 text-red-400")}>{tier}</span>
                         </td>
                       </tr>
                     );
@@ -788,7 +798,7 @@ export default function MetaPage() {
                           <div className="flex justify-between p-2 bg-gray-50 rounded-lg"><span className="text-xs text-muted-foreground">ELO Rating</span><span className="text-xs font-bold">{mlData.elo.toLocaleString()}</span></div>
                           <div className="flex justify-between p-2 bg-gray-50 rounded-lg"><span className="text-xs text-muted-foreground">Win Rate</span><span className={cn("text-xs font-bold", mlData.wr >= 55 ? "text-green-600" : "text-foreground")}>{mlData.wr}%</span></div>
                           <div className="flex justify-between p-2 bg-gray-50 rounded-lg"><span className="text-xs text-muted-foreground">Games Played</span><span className="text-xs font-bold">{mlData.games.toLocaleString()}</span></div>
-                          <div className="flex justify-between p-2 bg-gray-50 rounded-lg"><span className="text-xs text-muted-foreground">ML Tier</span><span className="text-xs font-bold">{ML_POKEMON_RANKINGS.indexOf(mlData) < 3 ? "S" : ML_POKEMON_RANKINGS.indexOf(mlData) < 7 ? "A" : ML_POKEMON_RANKINGS.indexOf(mlData) < 12 ? "B" : "C"}</span></div>
+                          <div className="flex justify-between p-2 bg-gray-50 rounded-lg"><span className="text-xs text-muted-foreground">ML Tier</span><span className="text-xs font-bold">{mlData.tier}</span></div>
                         </div>
                       )}
                     </div>
@@ -1121,8 +1131,7 @@ export default function MetaPage() {
               const corePairs = getCorePairsForPokemon(pokemon.id);
               const teamAppearances = getTournamentTeamsWithPokemon(pokemon.id);
               const prebuiltTeams = getPrebuiltTeamsWithPokemon(pokemon.id);
-              const mlIdx = mlData ? ML_POKEMON_RANKINGS.indexOf(mlData) : -1;
-              const tier = mlIdx >= 0 ? (mlIdx < 3 ? "S" : mlIdx < 7 ? "A" : mlIdx < 12 ? "B" : "C") : usageData ? (usageData.usageRate >= 30 ? "S" : usageData.usageRate >= 15 ? "A" : "B") : "—";
+              const tier = mlData ? mlData.tier : usageData ? (usageData.usageRate >= 30 ? "S" : usageData.usageRate >= 15 ? "A" : "B") : "—";
               return (
                 <div className="p-6 space-y-6">
                   {/* Header */}
@@ -1132,8 +1141,8 @@ export default function MetaPage() {
                       <h2 className="text-2xl font-extrabold">{pokemon.name}</h2>
                       <div className="flex gap-1.5 mt-1">{pokemon.types.map(t => <span key={t} className="px-2.5 py-1 text-[10px] font-bold uppercase rounded-lg text-white" style={{ backgroundColor: TYPE_COLORS[t] }}>{t}</span>)}</div>
                       <div className="flex items-center gap-3 mt-2">
-                        {tier !== "—" && <span className={cn("px-2.5 py-1 text-xs font-bold rounded-lg", tier === "S" ? "bg-amber-100 text-amber-700" : tier === "A" ? "bg-blue-100 text-blue-700" : tier === "B" ? "bg-gray-100 text-gray-700" : "bg-gray-50 text-gray-500")}>{tier}-Tier</span>}
-                        {mlData && <span className="text-sm text-muted-foreground">ML #{mlIdx + 1} · ELO {mlData.elo.toLocaleString()}</span>}
+                        {tier !== "—" && <span className={cn("px-2.5 py-1 text-xs font-bold rounded-lg", tier === "S" ? "bg-amber-100 text-amber-700" : tier === "A" ? "bg-blue-100 text-blue-700" : tier === "B" ? "bg-gray-100 text-gray-700" : tier === "C" ? "bg-gray-50 text-gray-500" : "bg-red-50 text-red-400")}>{tier}-Tier</span>}
+                        {mlData && <span className="text-sm text-muted-foreground">ML #{ML_POKEMON_RANKINGS.indexOf(mlData) + 1} · ELO {mlData.elo.toLocaleString()}</span>}
                       </div>
                     </div>
                   </div>

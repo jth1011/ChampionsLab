@@ -8,11 +8,11 @@ import { runMLSimulation, formatReport, type FinalReport } from "../src/lib/engi
 import fs from "fs";
 import path from "path";
 
-const TARGET_BATTLES = 1_000_000;
+const TARGET_BATTLES = 2_000_000;
 
 async function main() {
   console.log("═══════════════════════════════════════════════════════════");
-  console.log("  CHAMPIONS LAB — MEGA-AWARE 1,000,000 BATTLE SIMULATION");
+  console.log("  CHAMPIONS LAB — MEGA-AWARE 2,000,000 BATTLE SIMULATION");
   console.log("  Tournament + Generated + Prebuilt + Mega/Base Variant Teams");
   console.log("  50 Mega Pokémon tracked separately from base forms");
   console.log("═══════════════════════════════════════════════════════════\n");
@@ -169,7 +169,14 @@ function buildSimulationData(report: FinalReport) {
 
   for (const p of report.pokemonRankings) {
     const isMega = p.name.includes("Mega ");
-    const key = isMega ? `${p.id}-mega` : `${p.id}`;
+    // Build key that distinguishes X/Y/Z mega forms
+    let key: string;
+    if (!isMega) {
+      key = `${p.id}`;
+    } else {
+      const suffix = p.name.match(/ ([XYZ])$/)?.[1];
+      key = suffix ? `${p.id}-mega-${suffix.toLowerCase()}` : `${p.id}-mega`;
+    }
     pokemon[key] = {
       id: p.id,
       name: p.name,
@@ -188,14 +195,14 @@ function buildSimulationData(report: FinalReport) {
     };
   }
 
-  const pairs = report.bestPairs.slice(0, 30).map(p => ({
+  const pairs = report.bestPairs.slice(0, 50).map(p => ({
     pokemon1: p.pokemon1,
     pokemon2: p.pokemon2,
     winRate: p.winRate,
     games: p.games,
   }));
 
-  const archetypes = report.archetypeRankings.slice(0, 30).map(a => ({
+  const archetypes = report.archetypeRankings.slice(0, 50).map(a => ({
     name: a.name,
     elo: a.elo,
     winRate: a.winRate,
@@ -203,7 +210,7 @@ function buildSimulationData(report: FinalReport) {
     losses: a.losses,
   }));
 
-  const moves = report.moveRankings.slice(0, 30).map(m => ({
+  const moves = report.moveRankings.slice(0, 50).map(m => ({
     name: m.name,
     winRate: m.winRate,
     appearances: m.appearances,

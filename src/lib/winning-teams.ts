@@ -592,7 +592,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
   },
   {
     id: "e2",
-    name: "Mega Pidgeot Tailwind",
+    name: "Toucannon Tailwind",
     player: "Engine Analysis",
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
@@ -892,7 +892,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
   },
   {
     id: "e22",
-    name: "Mega Medicham Power",
+    name: "Gallade Fighting Core",
     player: "Engine Analysis",
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
@@ -907,7 +907,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
   },
   {
     id: "e23",
-    name: "Mega Manectric Intimidate",
+    name: "Jolteon Volt Offense",
     player: "Engine Analysis",
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
@@ -922,7 +922,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
   },
   {
     id: "e24",
-    name: "Mega Sharpedo HO",
+    name: "Vaporeon Bulky Water",
     player: "Engine Analysis",
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
@@ -937,7 +937,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
   },
   {
     id: "e25",
-    name: "Mega Camerupt TR",
+    name: "Torkoal Sun TR",
     player: "Engine Analysis",
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
@@ -952,7 +952,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
   },
   {
     id: "e26",
-    name: "Mega Banette Prankster",
+    name: "Spiritomb Dark Support",
     player: "Engine Analysis",
     placement: "Top 8",
     event: "1M Battle Simulation — Niche Pick",
@@ -967,7 +967,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
   },
   {
     id: "e27",
-    name: "Mega Glalie Offense",
+    name: "Froslass Ice Offense",
     player: "Engine Analysis",
     placement: "Top 8",
     event: "1M Battle Simulation — Niche Pick",

@@ -643,7 +643,12 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
                     {/* Simulation Stats */}
                     {(() => {
                       const isMegaView = activeForm > 0 && currentForm?.isMega;
-                      const simKey = isMegaView ? `${pokemon.id}-mega` : `${pokemon.id}`;
+                      const simKey = (() => {
+                        if (!isMegaView) return `${pokemon.id}`;
+                        const suffix = currentForm?.name?.match(/ ([XYZ])$/)?.[1];
+                        if (suffix) return `${pokemon.id}-mega-${suffix.toLowerCase()}`;
+                        return `${pokemon.id}-mega`;
+                      })();
                       const simData = SIM_POKEMON[simKey];
                       if (simData && SIM_TOTAL_BATTLES > 0) {
                         return (
