@@ -201,7 +201,7 @@ export default function TeamBuilderPage() {
     const filled = slots.filter(s => s.pokemon);
     if (filled.length === 0) return;
 
-    const W = 1200, cardH = 200, headerH = 200, footerH = 60;
+    const W = 1200, cardH = 200, headerH = 140, footerH = 60;
     const H = headerH + Math.ceil(filled.length / 2) * cardH + footerH;
     const canvas = document.createElement("canvas");
     canvas.width = W;
@@ -222,7 +222,23 @@ export default function TeamBuilderPage() {
     for (let x = 0; x < W; x += 40) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
     for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
 
-    // Header — Load and draw logo
+    // Header LEFT — Team name + subtitle
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "bold 38px Inter, system-ui, sans-serif";
+    ctx.fillText(teamName, 40, 55);
+
+    ctx.font = "15px Inter, system-ui, sans-serif";
+    ctx.fillStyle = "rgba(255,255,255,0.55)";
+    ctx.fillText(`${filled.length} Pokémon · The Ultimate Competitive Pokémon Companion`, 40, 85);
+
+    // Accent line
+    const accentGrad = ctx.createLinearGradient(40, 100, 500, 100);
+    accentGrad.addColorStop(0, "#8b5cf6");
+    accentGrad.addColorStop(1, "#06b6d4");
+    ctx.fillStyle = accentGrad;
+    ctx.fillRect(40, 100, 460, 3);
+
+    // Header RIGHT — Logo + brand + URL
     const logo = await new Promise<HTMLImageElement | null>((resolve) => {
       const img = new window.Image();
       img.crossOrigin = "anonymous";
@@ -232,35 +248,17 @@ export default function TeamBuilderPage() {
     });
     if (logo) {
       const logoSize = 72;
-      ctx.drawImage(logo, 40, 20, logoSize, logoSize);
+      ctx.drawImage(logo, W - 310, 15, logoSize, logoSize);
     }
 
-    // Brand name next to logo
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "bold 42px Inter, system-ui, sans-serif";
-    ctx.fillText("Champions Lab", 126, 62);
-
-    // Website URL
-    ctx.font = "bold 18px Inter, system-ui, sans-serif";
-    ctx.fillStyle = "#a78bfa";
-    ctx.fillText("championslab.xyz", 126, 88);
-
-    // Team name
     ctx.fillStyle = "#ffffff";
     ctx.font = "bold 32px Inter, system-ui, sans-serif";
-    ctx.fillText(teamName, 40, 140);
+    ctx.textAlign = "left";
+    ctx.fillText("Champions Lab", W - 230, 52);
 
-    // Subtitle
-    ctx.font = "15px Inter, system-ui, sans-serif";
-    ctx.fillStyle = "rgba(255,255,255,0.55)";
-    ctx.fillText(`${filled.length} Pokémon · The Ultimate Competitive Pokémon Companion`, 40, 166);
-
-    // Accent line
-    const accentGrad = ctx.createLinearGradient(40, 180, 500, 180);
-    accentGrad.addColorStop(0, "#8b5cf6");
-    accentGrad.addColorStop(1, "#06b6d4");
-    ctx.fillStyle = accentGrad;
-    ctx.fillRect(40, 180, 460, 3);
+    ctx.font = "bold 16px Inter, system-ui, sans-serif";
+    ctx.fillStyle = "#a78bfa";
+    ctx.fillText("championslab.xyz", W - 230, 76);
 
     // Load sprites as images
     const spritePromises = filled.map(s => {
