@@ -148,7 +148,7 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 40 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed inset-4 sm:inset-auto sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-50 sm:w-full sm:max-w-2xl sm:h-[85vh] flex flex-col rounded-3xl bg-white border border-gray-200/60 shadow-2xl shadow-black/10"
+            className="fixed inset-2 sm:inset-auto sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-50 sm:w-full sm:max-w-2xl sm:h-[85vh] flex flex-col rounded-3xl bg-white border border-gray-200/60 shadow-2xl shadow-black/10 overflow-hidden"
           >
             {/* Close button */}
             <button
@@ -160,12 +160,12 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
 
             {/* Header with sprite */}
             <div
-              className="relative overflow-hidden rounded-t-3xl p-8 pb-4"
+              className="relative overflow-hidden rounded-t-3xl p-4 sm:p-8 pb-3 sm:pb-4 shrink-0"
               style={{
                 background: `linear-gradient(180deg, ${primaryColor}12 0%, ${primaryColor}06 50%, transparent 100%)`,
               }}
             >
-              <div className="flex flex-col sm:flex-row items-center gap-6">
+              <div className="flex flex-row items-center gap-4 sm:gap-6">
                 {/* Sprite */}
                 <motion.div
                   className="relative"
@@ -190,7 +190,7 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
                         alt={currentForm?.name || pokemon.name}
                         width={200}
                         height={200}
-                        className="relative z-10 drop-shadow-2xl"
+                        className="relative z-10 drop-shadow-2xl w-[100px] h-[100px] sm:w-[200px] sm:h-[200px]"
                         unoptimized
                         onError={() => setSpriteError(true)}
                       />
@@ -204,7 +204,7 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
                 </motion.div>
 
                 {/* Name & types */}
-                <div className="text-center sm:text-left space-y-3">
+                <div className="text-left space-y-2 sm:space-y-3 min-w-0">
                   <div>
                     <p className="text-xs text-muted-foreground font-mono mb-1">
                       #{pokemon.dexNumber.toString().padStart(3, "0")} · Gen {pokemon.generation}
@@ -216,14 +216,14 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -6 }}
                         transition={{ duration: 0.18 }}
-                        className="text-3xl font-bold tracking-tight"
+                        className="text-xl sm:text-3xl font-bold tracking-tight"
                       >
                         {currentForm?.name || pokemon.name}
                       </motion.h2>
                     </AnimatePresence>
                   </div>
 
-                  <div className="flex gap-2 justify-center sm:justify-start">
+                    <div className="flex gap-2 justify-start">
                     {displayTypes.map((type) => (
                       <span
                         key={type}
@@ -271,13 +271,13 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
             </div>
 
             {/* Tab navigation */}
-            <div className="flex gap-1 px-6 py-2.5 border-b border-gray-100">
+            <div className="flex gap-1 px-3 sm:px-6 py-2 sm:py-2.5 border-b border-gray-100 overflow-x-auto shrink-0 scrollbar-hide">
               {(["stats", "moves", "abilities", "usage", "teams"] as const).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={cn(
-                    "relative px-4 py-2 text-sm font-semibold rounded-lg capitalize transition-colors tracking-tight",
+                    "relative px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg capitalize transition-colors tracking-tight whitespace-nowrap",
                     activeTab === tab
                       ? "text-gray-900"
                       : "text-gray-400 hover:text-gray-600"
@@ -296,7 +296,7 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
             </div>
 
             {/* Tab content */}
-            <div className="p-6 flex-1 overflow-y-auto min-h-0">
+            <div className="p-4 sm:p-6 flex-1 overflow-y-auto min-h-0">
               <AnimatePresence mode="wait">
                 {activeTab === "stats" && (
                   <motion.div
