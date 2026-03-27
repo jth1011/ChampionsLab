@@ -725,16 +725,16 @@ export default function TeamBuilderPage() {
   );
 
   return (
-    <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-8 overflow-x-hidden">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-6"
       >
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          <div className="flex items-center gap-4">
-            <div>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 min-w-0">
+            <div className="shrink-0">
               <h1 className="text-3xl font-bold">
                 <span className="bg-gradient-to-r from-violet-600 to-cyan-600 bg-clip-text text-transparent">
                   Team Builder
@@ -754,16 +754,16 @@ export default function TeamBuilderPage() {
               type="text"
               value={teamName}
               onChange={(e) => setTeamName(e.target.value)}
-              className="px-4 py-2 rounded-xl glass border border-gray-200 focus:border-violet-500/50 focus:outline-none text-lg font-semibold bg-transparent w-64"
+              className="px-4 py-2 rounded-xl glass border border-gray-200 focus:border-violet-500/50 focus:outline-none text-lg font-semibold bg-transparent w-full sm:w-64"
             />
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 sm:overflow-visible sm:flex-wrap">
             <button
               onClick={handleSaveTeam}
               disabled={filledSlots.length === 0}
               className={cn(
-                "px-4 py-2 text-sm rounded-xl flex items-center gap-2 transition-colors",
+                "px-4 py-2 text-sm rounded-xl flex items-center gap-2 transition-colors shrink-0",
                 saveConfirm
                   ? "bg-green-100 text-green-700 border border-green-300"
                   : "glass glass-hover text-muted-foreground hover:text-foreground"
@@ -774,21 +774,21 @@ export default function TeamBuilderPage() {
             </button>
             <button
               onClick={() => setShowSavedTeams(!showSavedTeams)}
-              className="px-4 py-2 text-sm rounded-xl glass glass-hover flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              className="px-4 py-2 text-sm rounded-xl glass glass-hover flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors shrink-0"
             >
               <FolderOpen className="w-4 h-4" />
               Load
             </button>
             <button
               onClick={() => { setShowImport(true); setImportText(""); setImportError(""); }}
-              className="px-4 py-2 text-sm rounded-xl glass glass-hover flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              className="px-4 py-2 text-sm rounded-xl glass glass-hover flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors shrink-0"
             >
               <Upload className="w-4 h-4" />
               Import
             </button>
             <button
               onClick={() => setShowExport(true)}
-              className="px-4 py-2 text-sm rounded-xl glass glass-hover flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              className="px-4 py-2 text-sm rounded-xl glass glass-hover flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors shrink-0"
             >
               <Download className="w-4 h-4" />
               Export
@@ -796,14 +796,14 @@ export default function TeamBuilderPage() {
             <button
               onClick={generateShareImage}
               disabled={filledSlots.length === 0}
-              className="px-5 py-2 text-sm rounded-xl font-semibold flex items-center gap-2 bg-gradient-to-r from-violet-600 to-cyan-600 text-white shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:scale-105 transition-all disabled:opacity-40 disabled:hover:scale-100"
+              className="px-5 py-2 text-sm rounded-xl font-semibold flex items-center gap-2 bg-gradient-to-r from-violet-600 to-cyan-600 text-white shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:scale-105 transition-all disabled:opacity-40 disabled:hover:scale-100 shrink-0"
             >
               <Share2 className="w-4 h-4" />
               Share
             </button>
             <button
               onClick={() => { setSlots(Array.from({ length: 6 }, createEmptySlot)); setCurrentTeamId(undefined); setSelectedSlotIndex(null); setTeamName("My Team"); }}
-              className="px-4 py-2 text-sm rounded-xl glass glass-hover flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors"
+              className="px-4 py-2 text-sm rounded-xl glass glass-hover flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors shrink-0"
             >
               <Trash2 className="w-4 h-4" />
               Clear
@@ -995,7 +995,7 @@ export default function TeamBuilderPage() {
         {/* ══ CENTER COLUMN: Team Slots + Edit Panel ══ */}
         <div className="space-y-6 min-w-0 order-1 xl:order-2">
           {/* Team Slots */}
-          <div className="grid grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {slots.map((slot, i) => (
               <motion.div
                 key={i}
