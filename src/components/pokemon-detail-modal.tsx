@@ -2,16 +2,35 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ChampionsPokemon, TYPE_COLORS, CommonSet } from "@/lib/types";
+import { useRouter } from "next/navigation";
+import { ChampionsPokemon, TYPE_COLORS, CommonSet, WinningTeam } from "@/lib/types";
 import { USAGE_DATA } from "@/lib/usage-data";
 import { getTeamsForPokemon } from "@/lib/winning-teams";
 import { cn } from "@/lib/utils";
-import { X, Sparkles, Zap, Trophy, Coins, Star, Shield, Sword, Target, Gauge, Timer, TrendingUp, Users } from "lucide-react";
-import { useState, useMemo } from "react";
+import { X, Sparkles, Zap, Trophy, Coins, Star, Shield, Sword, Target, Gauge, Timer, TrendingUp, Users, Wrench } from "lucide-react";
+import { useState, useMemo, useCallback } from "react";
+import { deflateRaw } from "pako";
 
 interface PokemonDetailModalProps {
   pokemon: ChampionsPokemon | null;
   onClose: () => void;
+}
+
+function buildTeamBuilderUrl(team: WinningTeam): string {
+  const data = {
+    n: team.name,
+    s: team.pokemon.map((m) => ({
+      p: m.pokemonId,
+      m: [] as string[],
+      sp: [0, 0, 0, 0, 0, 0],
+    })),
+  };
+  const compressed = deflateRaw(JSON.stringify(data));
+  const b64 = btoa(String.fromCharCode(...compressed))
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
+  return `/team-builder?t=${b64}`;
 }
 
 const STAT_NAMES = ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed"];
@@ -699,6 +718,14 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
                               </div>
                             ))}
                           </div>
+
+                          <a
+                            href={buildTeamBuilderUrl(team)}
+                            className="flex items-center justify-center gap-1.5 w-full py-2 rounded-xl bg-violet-50 hover:bg-violet-100 border border-violet-200 hover:border-violet-300 text-violet-700 text-[11px] font-semibold transition-all"
+                          >
+                            <Wrench className="w-3.5 h-3.5" />
+                            Open in Team Builder
+                          </a>
                         </div>
                       ));
                     })()}
