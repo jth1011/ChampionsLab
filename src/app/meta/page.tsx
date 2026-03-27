@@ -12,6 +12,7 @@ import {
 import { POKEMON_SEED } from "@/lib/pokemon-data";
 import { TYPE_COLORS, type PokemonType } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { getMegaIdFromArchetype, getMegaSprite, getMegaName } from "@/lib/mega-utils";
 import {
   predictMetaTeams,
   TOURNAMENT_TEAMS,
@@ -688,6 +689,7 @@ export default function MetaPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {TOURNAMENT_TEAMS.filter(t => t.placement === 1).sort((a, b) => b.year - a.year).slice(0, 8).map(team => {
                 const teamPokemon = team.pokemonIds.map(id => POKEMON_SEED.find(p => p.id === id)).filter((p): p is NonNullable<typeof p> => !!p);
+                const champMegaId = getMegaIdFromArchetype(team.archetype);
                 return (
                   <div key={team.id} className="p-4 rounded-xl bg-amber-50/30 border border-amber-200 hover:border-amber-300 hover:shadow-md transition-all cursor-pointer" onClick={() => { setActiveTab("teams"); setExpandedTeam(team.id); }}>
                     <div className="flex items-center justify-between mb-2">
@@ -701,12 +703,18 @@ export default function MetaPage() {
                       <span className="px-1.5 py-0.5 text-[9px] rounded bg-amber-100 text-amber-700 font-medium capitalize">{team.archetype}</span>
                     </div>
                     <div className="flex gap-1.5">
-                      {teamPokemon.map(p => (
-                        <div key={p.id} className="flex flex-col items-center">
-                          <Image src={p.sprite} alt={p.name} width={30} height={30} className="rounded" unoptimized />
-                          <span className="text-[7px] text-muted-foreground truncate w-9 text-center">{p.name}</span>
-                        </div>
-                      ))}
+                      {teamPokemon.map(p => {
+                        const cIsMega = champMegaId === p.id;
+                        return (
+                          <div key={p.id} className="flex flex-col items-center">
+                            <div className="relative">
+                              <Image src={cIsMega ? getMegaSprite(p) : p.sprite} alt={cIsMega ? getMegaName(p) : p.name} width={30} height={30} className="rounded" unoptimized />
+                              {cIsMega && <span className="absolute -top-1 -right-1 px-0.5 text-[6px] font-bold bg-amber-500 text-white rounded shadow-sm">M</span>}
+                            </div>
+                            <span className={cn("text-[7px] truncate w-10 text-center", cIsMega ? "text-amber-600 font-bold" : "text-muted-foreground")}>{cIsMega ? getMegaName(p) : p.name}</span>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 );
@@ -1760,6 +1768,7 @@ function MetaTeamCard({ meta, expanded, onToggle }: { meta: MetaTeamPrediction; 
 // COMPONENT: Tournament Team Card (clickable with advanced details)
 // ══════════════════════════════════════════════════════════════════════════
 function TournamentTeamCard({ team, expanded, onToggle }: { team: TournamentTeam; expanded: boolean; onToggle: () => void }) {
+  const megaId = getMegaIdFromArchetype(team.archetype);
   const teamPokemon = team.pokemonIds.map(id => POKEMON_SEED.find(p => p.id === id)).filter((p): p is NonNullable<typeof p> => !!p);
   const allTypes = [...new Set(teamPokemon.flatMap(p => p.types))];
   const corePairs = CORE_PAIRS.filter(cp => team.pokemonIds.includes(cp.pokemon1) && team.pokemonIds.includes(cp.pokemon2));
@@ -1781,12 +1790,18 @@ function TournamentTeamCard({ team, expanded, onToggle }: { team: TournamentTeam
           </div>
         </div>
         <div className="flex gap-1.5">
-          {teamPokemon.map(p => (
-            <div key={p.id} className="flex flex-col items-center">
-              <Image src={p.sprite} alt={p.name} width={32} height={32} className="rounded" unoptimized />
-              <span className="text-[7px] text-muted-foreground mt-0.5 truncate w-9 text-center">{p.name}</span>
-            </div>
-          ))}
+          {teamPokemon.map(p => {
+            const isMega = megaId === p.id;
+            return (
+              <div key={p.id} className="flex flex-col items-center">
+                <div className="relative">
+                  <Image src={isMega ? getMegaSprite(p) : p.sprite} alt={isMega ? getMegaName(p) : p.name} width={32} height={32} className="rounded" unoptimized />
+                  {isMega && <span className="absolute -top-1 -right-1 px-0.5 text-[6px] font-bold bg-amber-500 text-white rounded shadow-sm">M</span>}
+                </div>
+                <span className={cn("text-[7px] mt-0.5 truncate w-10 text-center", isMega ? "text-amber-600 font-bold" : "text-muted-foreground")}>{isMega ? getMegaName(p) : p.name}</span>
+              </div>
+            );
+          })}
         </div>
       </button>
 
@@ -1804,12 +1819,16 @@ function TournamentTeamCard({ team, expanded, onToggle }: { team: TournamentTeam
                     {teamPokemon.map(p => {
                       const usage = TOURNAMENT_USAGE.find(u => u.pokemonId === p.id);
                       const mlRank = ML_POKEMON_RANKINGS.findIndex(r => r.name === p.name);
+                      const pIsMega = megaId === p.id;
                       return (
-                        <div key={p.id} className="p-2 rounded-lg bg-white/50 border border-gray-100">
+                        <div key={p.id} className={cn("p-2 rounded-lg border", pIsMega ? "bg-amber-50/50 border-amber-200" : "bg-white/50 border-gray-100")}>
                           <div className="flex items-center gap-2">
-                            <Image src={p.sprite} alt={p.name} width={28} height={28} className="rounded" unoptimized />
+                            <div className="relative">
+                              <Image src={pIsMega ? getMegaSprite(p) : p.sprite} alt={pIsMega ? getMegaName(p) : p.name} width={28} height={28} className="rounded" unoptimized />
+                              {pIsMega && <span className="absolute -top-1 -right-1 px-0.5 text-[6px] font-bold bg-amber-500 text-white rounded shadow-sm">M</span>}
+                            </div>
                             <div className="flex-1 min-w-0">
-                              <p className="text-xs font-semibold">{p.name}</p>
+                              <p className="text-xs font-semibold">{pIsMega ? getMegaName(p) : p.name}{pIsMega && <span className="ml-1 text-[8px] text-amber-600 font-bold">MEGA</span>}</p>
                               <div className="flex gap-0.5">{p.types.map(t => <span key={t} className="px-1 py-0.5 text-[7px] font-bold uppercase rounded text-white/90" style={{ backgroundColor: `${TYPE_COLORS[t]}AA` }}>{t.slice(0, 3)}</span>)}</div>
                             </div>
                             <div className="text-right text-[10px]">

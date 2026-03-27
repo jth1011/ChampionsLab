@@ -98,7 +98,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "1st Place",
     event: "Champions Korea Qualifier",
     pokemon: [
-      { pokemonId: 448, name: "Lucario" },
+      { pokemonId: 448, name: "Lucario" , isMega: true},
       { pokemonId: 547, name: "Whimsicott" },
       { pokemonId: 445, name: "Garchomp" },
       { pokemonId: 727, name: "Incineroar" },
@@ -113,7 +113,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top 4",
     event: "Champions Series Invitational #1",
     pokemon: [
-      { pokemonId: 376, name: "Metagross" },
+      { pokemonId: 376, name: "Metagross" , isMega: true},
       { pokemonId: 445, name: "Garchomp" },
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 282, name: "Gardevoir" },
@@ -158,7 +158,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "1st Place",
     event: "Champions Japan Qualifier",
     pokemon: [
-      { pokemonId: 6, name: "Charizard" },
+      { pokemonId: 6, name: "Charizard" , isMega: true},
       { pokemonId: 3, name: "Venusaur" },
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 350, name: "Milotic" },
@@ -173,7 +173,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "2nd Place",
     event: "Champions Showdown Week 1",
     pokemon: [
-      { pokemonId: 149, name: "Dragonite" },
+      { pokemonId: 149, name: "Dragonite" , isMega: true},
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 350, name: "Milotic" },
       { pokemonId: 445, name: "Garchomp" },
@@ -188,7 +188,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "2nd Place",
     event: "Champions Korea Qualifier",
     pokemon: [
-      { pokemonId: 115, name: "Kangaskhan" },
+      { pokemonId: 115, name: "Kangaskhan" , isMega: true},
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 282, name: "Gardevoir" },
       { pokemonId: 472, name: "Gliscor" },
@@ -218,7 +218,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top 4",
     event: "Champions Showdown Week 2",
     pokemon: [
-      { pokemonId: 130, name: "Gyarados" },
+      { pokemonId: 130, name: "Gyarados" , isMega: true},
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 547, name: "Whimsicott" },
       { pokemonId: 445, name: "Garchomp" },
@@ -233,7 +233,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top 4",
     event: "Champions Showdown Week 1",
     pokemon: [
-      { pokemonId: 212, name: "Scizor" },
+      { pokemonId: 212, name: "Scizor" , isMega: true},
       { pokemonId: 887, name: "Dragapult" },
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 36, name: "Clefable" },
@@ -278,7 +278,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top 8",
     event: "Champions Showdown Week 2",
     pokemon: [
-      { pokemonId: 334, name: "Altaria" },
+      { pokemonId: 334, name: "Altaria" , isMega: true},
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 681, name: "Aegislash" },
       { pokemonId: 350, name: "Milotic" },
@@ -308,7 +308,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top 8",
     event: "Champions Japan Qualifier",
     pokemon: [
-      { pokemonId: 229, name: "Houndoom" },
+      { pokemonId: 229, name: "Houndoom" , isMega: true},
       { pokemonId: 983, name: "Kingambit" },
       { pokemonId: 445, name: "Garchomp" },
       { pokemonId: 727, name: "Incineroar" },
@@ -323,7 +323,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top 8",
     event: "Champions Series Invitational #1",
     pokemon: [
-      { pokemonId: 214, name: "Heracross" },
+      { pokemonId: 214, name: "Heracross" , isMega: true},
       { pokemonId: 858, name: "Hatterene" },
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 350, name: "Milotic" },
@@ -338,7 +338,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "2nd Place",
     event: "Champions Japan Qualifier",
     pokemon: [
-      { pokemonId: 94, name: "Gengar" },
+      { pokemonId: 94, name: "Gengar" , isMega: true},
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 445, name: "Garchomp" },
       { pokemonId: 547, name: "Whimsicott" },
@@ -368,7 +368,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top 4",
     event: "Champions Korea Qualifier",
     pokemon: [
-      { pokemonId: 359, name: "Absol" },
+      { pokemonId: 359, name: "Absol" , isMega: true},
       { pokemonId: 445, name: "Garchomp" },
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 547, name: "Whimsicott" },
@@ -458,7 +458,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top 4",
     event: "Champions Latin Cup",
     pokemon: [
-      { pokemonId: 71, name: "Victreebel" },
+      { pokemonId: 71, name: "Victreebel" , isMega: true},
       { pokemonId: 324, name: "Torkoal" },
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 445, name: "Garchomp" },
@@ -473,7 +473,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "2nd Place",
     event: "Champions Nordic Series",
     pokemon: [
-      { pokemonId: 208, name: "Steelix" },
+      { pokemonId: 208, name: "Steelix" , isMega: true},
       { pokemonId: 248, name: "Tyranitar" },
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 530, name: "Excadrill" },
@@ -582,7 +582,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
     pokemon: [
-      { pokemonId: 15, name: "Beedrill" },
+      { pokemonId: 15, name: "Beedrill" , isMega: true},
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 547, name: "Whimsicott" },
       { pokemonId: 445, name: "Garchomp" },
@@ -657,7 +657,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
     pokemon: [
-      { pokemonId: 65, name: "Alakazam" },
+      { pokemonId: 65, name: "Alakazam" , isMega: true},
       { pokemonId: 59, name: "Arcanine" },
       { pokemonId: 302, name: "Sableye" },
       { pokemonId: 983, name: "Kingambit" },
@@ -702,7 +702,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
     pokemon: [
-      { pokemonId: 127, name: "Pinsir" },
+      { pokemonId: 127, name: "Pinsir" , isMega: true},
       { pokemonId: 547, name: "Whimsicott" },
       { pokemonId: 914, name: "Quaquaval" },
       { pokemonId: 699, name: "Aurorus" },
@@ -792,7 +792,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
     pokemon: [
-      { pokemonId: 181, name: "Ampharos" },
+      { pokemonId: 181, name: "Ampharos" , isMega: true},
       { pokemonId: 858, name: "Hatterene" },
       { pokemonId: 534, name: "Conkeldurr" },
       { pokemonId: 464, name: "Rhyperior" },
@@ -882,7 +882,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
     pokemon: [
-      { pokemonId: 306, name: "Aggron" },
+      { pokemonId: 306, name: "Aggron" , isMega: true},
       { pokemonId: 858, name: "Hatterene" },
       { pokemonId: 392, name: "Infernape" },
       { pokemonId: 547, name: "Whimsicott" },
@@ -1002,7 +1002,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
     pokemon: [
-      { pokemonId: 428, name: "Lopunny" },
+      { pokemonId: 428, name: "Lopunny" , isMega: true},
       { pokemonId: 302, name: "Sableye" },
       { pokemonId: 752, name: "Araquanid" },
       { pokemonId: 445, name: "Garchomp" },
@@ -1047,7 +1047,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
     pokemon: [
-      { pokemonId: 460, name: "Abomasnow" },
+      { pokemonId: 460, name: "Abomasnow" , isMega: true},
       { pokemonId: 478, name: "Froslass" },
       { pokemonId: 6618, name: "Stunfisk-Galar" },
       { pokemonId: 445, name: "Garchomp" },
@@ -1107,7 +1107,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "Top Cut",
     event: "1M Battle Simulation — High ELO",
     pokemon: [
-      { pokemonId: 475, name: "Gallade" },
+      { pokemonId: 475, name: "Gallade" , isMega: true},
       { pokemonId: 157, name: "Typhlosion" },
       { pokemonId: 302, name: "Sableye" },
       { pokemonId: 534, name: "Conkeldurr" },
