@@ -122676,8 +122676,33 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/978.png",
     "officialArt": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/978.png",
     "generation": 9,
-    "forms": [],
-    "hasMega": false,
+    "forms": [
+      {
+        "name": "Mega Tatsugiri",
+        "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10322.png",
+        "types": [
+          "dragon",
+          "water"
+        ],
+        "baseStats": {
+          "hp": 68,
+          "attack": 50,
+          "defense": 80,
+          "spAtk": 160,
+          "spDef": 115,
+          "speed": 102
+        },
+        "abilities": [
+          {
+            "name": "Commander Surge",
+            "description": "Dragon and Water moves gain 30% power. On Mega Evolution, raises ally's Sp. Atk by 1 stage.",
+            "isChampions": true
+          }
+        ],
+        "isMega": true
+      }
+    ],
+    "hasMega": true,
     "season": 1,
     "homeCompatible": true,
     "homeSource": [

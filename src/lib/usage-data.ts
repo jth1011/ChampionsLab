@@ -1186,6 +1186,7 @@ export const USAGE_DATA: Record<number, CommonSet[]> = {
     { name: "Commander Support", nature: "Modest", ability: "Commander", item: "Choice Specs", moves: ["Draco Meteor","Muddy Water","Ice Beam","Dragon Pulse"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 } },
     { name: "Dondozo Partner", nature: "Modest", ability: "Commander", item: "Sitrus Berry", moves: ["Draco Meteor","Muddy Water","Ice Beam","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 } },
     { name: "Scarf Attacker", nature: "Timid", ability: "Commander", item: "Choice Scarf", moves: ["Draco Meteor","Muddy Water","Ice Beam","Dragon Pulse"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 } },
+    { name: "Mega Commander", nature: "Modest", ability: "Commander Surge", item: "Tatsugirite", moves: ["Draco Meteor","Muddy Water","Nasty Plot","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 } },
   ],
 
   // Hisuian Arcanine (id: 5059)
