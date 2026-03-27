@@ -26620,7 +26620,7 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
       },
       {
         "name": "Mega Sol",
-        "description": "Grass and Fairy moves gain 30% power in sun. Summons strong sunlight on Mega Evolution.",
+        "description": "All moves used by this Pokémon behave as if under harsh sunlight.",
         "isChampions": true
       }
     ],
@@ -27467,7 +27467,7 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "abilities": [
           {
             "name": "Mega Sol",
-            "description": "Grass and Fairy moves gain 30% power in sun. Summons strong sunlight on Mega Evolution.",
+            "description": "All moves used by this Pokémon behave as if under harsh sunlight.",
             "isChampions": true
           }
         ],

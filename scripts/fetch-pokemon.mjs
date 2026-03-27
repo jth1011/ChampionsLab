@@ -154,7 +154,7 @@ const MEGA_DATA = {
 
 // Champions-specific ability overrides
 const CHAMPIONS_ABILITIES = {
-  154: [{ name: "Mega Sol", description: "Grass and Fairy moves gain 30% power in sun. Summons strong sunlight on Mega Evolution.", isChampions: true }],
+  154: [{ name: "Mega Sol", description: "All moves used by this Pokémon behave as if under harsh sunlight.", isChampions: true }],
   160: [{ name: "Dragonize", description: "Normal-type moves become Dragon-type and gain 20% power.", isChampions: true }],
 };
 

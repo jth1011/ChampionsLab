@@ -47,6 +47,8 @@ export interface AbilityEffect {
   priorityBoost?: { type: PokemonType; priority: number };
   // STAB boost
   stabMultiplier?: number; // Adaptability: 2 instead of 1.5
+  // Personal weather (moves behave as if this weather is active)
+  personalWeather?: "sun" | "rain" | "sand" | "snow";
   // VGC relevance score (0-10)
   vgcRelevance: number;
 }
@@ -483,6 +485,12 @@ export const ABILITY_DATA: Record<string, AbilityEffect> = {
   "Supreme Commander": {
     name: "Supreme Commander", category: "champions",
     description: "Ally's moves deal 20% more damage. Boosts ally's highest stat by 1 on entry.",
+    vgcRelevance: 9,
+  },
+  "Mega Sol": {
+    name: "Mega Sol", category: "champions",
+    description: "All moves used by this Pokémon behave as if under harsh sunlight.",
+    personalWeather: "sun",
     vgcRelevance: 9,
   },
   "Toxic Crystallize": {

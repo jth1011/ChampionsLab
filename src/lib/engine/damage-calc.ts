@@ -223,11 +223,13 @@ export function calculateDamage(
   }
 
   // Weather modifiers
+  // Mega Sol: all moves behave as if under harsh sunlight
+  const effectiveWeather = attacker.ability === "Mega Sol" ? "sun" : options.weather;
   let weatherMult = 1;
-  if (options.weather === "sun" && move.type === "fire") weatherMult = 1.5;
-  if (options.weather === "sun" && move.type === "water") weatherMult = 0.5;
-  if (options.weather === "rain" && move.type === "water") weatherMult = 1.5;
-  if (options.weather === "rain" && move.type === "fire") weatherMult = 0.5;
+  if (effectiveWeather === "sun" && move.type === "fire") weatherMult = 1.5;
+  if (effectiveWeather === "sun" && move.type === "water") weatherMult = 0.5;
+  if (effectiveWeather === "rain" && move.type === "water") weatherMult = 1.5;
+  if (effectiveWeather === "rain" && move.type === "fire") weatherMult = 0.5;
 
   // Screen multipliers
   let screenMult = 1;
