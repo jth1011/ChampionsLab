@@ -96,6 +96,7 @@ export interface WinningTeamMember {
   pokemonId: number;
   name: string;
   isMega?: boolean;
+  megaFormIndex?: number;
 }
 
 export interface WinningTeam {

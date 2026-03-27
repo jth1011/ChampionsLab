@@ -26,6 +26,7 @@ export interface SavedTeamSlot {
   teraType?: PokemonType;
   item?: string;
   isMega?: boolean;
+  megaFormIndex?: number;
 }
 
 export interface SavedTeam {
@@ -91,6 +92,7 @@ export function serializeTeam(slots: TeamSlot[]): SavedTeamSlot[] {
       teraType: s.teraType,
       item: s.item,
       isMega: s.isMega,
+      megaFormIndex: s.megaFormIndex,
     }));
 }
 
@@ -98,6 +100,17 @@ export function serializeTeam(slots: TeamSlot[]): SavedTeamSlot[] {
 export function deserializeTeam(saved: SavedTeamSlot[]): TeamSlot[] {
   const slots: TeamSlot[] = saved.map((s) => {
     const pokemon = POKEMON_SEED.find((p) => p.id === s.pokemonId) ?? null;
+    // Auto-detect megaFormIndex from item/ability if not stored
+    let megaFormIndex = s.megaFormIndex;
+    if (s.isMega && megaFormIndex === undefined && pokemon) {
+      const megaForms = pokemon.forms?.filter(f => f.isMega) ?? [];
+      if (s.ability) {
+        const idx = megaForms.findIndex(f => f.abilities.some(a => a.name === s.ability));
+        megaFormIndex = idx >= 0 ? idx : 0;
+      } else {
+        megaFormIndex = 0;
+      }
+    }
     return {
       pokemon,
       ability: s.ability,
@@ -107,6 +120,7 @@ export function deserializeTeam(saved: SavedTeamSlot[]): TeamSlot[] {
       teraType: s.teraType,
       item: s.item,
       isMega: s.isMega,
+      megaFormIndex,
     };
   });
   // Pad to 6 slots

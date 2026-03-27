@@ -198,7 +198,7 @@ export default function TeamBuilderPage() {
     const shortId = params.get("s");
     const teamParam = params.get("t") || params.get("team"); // "t" = compressed, "team" = legacy
 
-    const restoreTeam = (data: { n?: string; s: Array<{ p: number; a?: string; t?: string; m: string[]; sp: number[]; te?: string; i?: string; mg?: boolean }> }) => {
+    const restoreTeam = (data: { n?: string; s: Array<{ p: number; a?: string; t?: string; m: string[]; sp: number[]; te?: string; i?: string; mg?: boolean; mgi?: number }> }) => {
       const restored: SavedTeamSlot[] = data.s.map(s => ({
         pokemonId: s.p,
         ability: s.a,
@@ -208,6 +208,7 @@ export default function TeamBuilderPage() {
         teraType: s.te as PokemonType | undefined,
         item: s.i,
         isMega: s.mg,
+        megaFormIndex: s.mgi,
       }));
       setSlots(deserializeTeam(restored));
       setTeamName(data.n || "Shared Team");
@@ -547,16 +548,29 @@ export default function TeamBuilderPage() {
   };
 
   const loadPrebuiltTeam = (team: PrebuiltTeam) => {
+    const isMegaItem = (item: string) => item.endsWith("ite") || item.endsWith("ite X") || item.endsWith("ite Y") || item.endsWith("ite Z");
+    let teamHasMega = false;
     const newSlots = team.pokemonIds.map((id, i) => {
       const pokemon = POKEMON_SEED.find(p => p.id === id);
       if (!pokemon) return createEmptySlot();
       const set = team.sets[i];
+      let isMega = false;
+      let megaFormIndex = 0;
+      if (pokemon.hasMega && !teamHasMega && set?.item && isMegaItem(set.item)) {
+        isMega = true;
+        teamHasMega = true;
+        const megaForms = pokemon.forms?.filter(f => f.isMega) ?? [];
+        const idx = megaForms.findIndex(f => f.abilities.some(a => a.name === set.ability));
+        megaFormIndex = idx >= 0 ? idx : 0;
+      }
       return {
         pokemon,
         ability: set?.ability ?? pokemon.abilities[0]?.name,
         moves: set?.moves ?? pokemon.moves.slice(0, 4).map(m => m.name),
         statPoints: set?.sp ?? { ...EMPTY_STAT_POINTS },
         item: set?.item,
+        isMega,
+        megaFormIndex,
       } as TeamSlot;
     });
     // Pad to 6 if needed
@@ -567,11 +581,38 @@ export default function TeamBuilderPage() {
   };
 
   const loadMetaTeam = (meta: MetaTeamPrediction) => {
+    const isMegaItem = (item: string) => item.endsWith("ite") || item.endsWith("ite X") || item.endsWith("ite Y") || item.endsWith("ite Z");
+    let teamHasMega = false;
     const newSlots = meta.pokemonIds.map((id) => {
       const pokemon = POKEMON_SEED.find(p => p.id === id);
       if (!pokemon) return createEmptySlot();
       const sets = suggestSets(pokemon, []);
       const bestSet = sets.length > 0 ? sets[0].set : null;
+      // Auto-assign mega if pokemon has mega, no other mega on team yet, and best set uses mega stone
+      let isMega = false;
+      let megaFormIndex = 0;
+      if (pokemon.hasMega && !teamHasMega) {
+        const usageSets = USAGE_DATA[pokemon.id] ?? [];
+        const megaSet = usageSets.find(s => isMegaItem(s.item));
+        if (megaSet) {
+          isMega = true;
+          teamHasMega = true;
+          const megaForms = pokemon.forms?.filter(f => f.isMega) ?? [];
+          const idx = megaForms.findIndex(f => f.abilities.some(a => a.name === megaSet.ability));
+          megaFormIndex = idx >= 0 ? idx : 0;
+          const megaAbility = megaForms[megaFormIndex]?.abilities?.[0]?.name;
+          return {
+            pokemon,
+            ability: megaAbility ?? megaSet.ability,
+            nature: megaSet.nature,
+            moves: megaSet.moves,
+            statPoints: megaSet.sp ? { ...megaSet.sp } : { ...EMPTY_STAT_POINTS },
+            item: megaSet.item,
+            isMega: true,
+            megaFormIndex,
+          } as TeamSlot;
+        }
+      }
       return {
         pokemon,
         ability: bestSet?.ability ?? pokemon.abilities[0]?.name,
@@ -579,6 +620,8 @@ export default function TeamBuilderPage() {
         moves: bestSet?.moves ?? pokemon.moves.slice(0, 4).map(m => m.name),
         statPoints: bestSet?.sp ?? { ...EMPTY_STAT_POINTS },
         item: bestSet?.item,
+        isMega,
+        megaFormIndex,
       } as TeamSlot;
     });
     while (newSlots.length < 6) newSlots.push(createEmptySlot());
@@ -592,6 +635,17 @@ export default function TeamBuilderPage() {
     if (emptyIndex === -1) return;
     const sets = suggestSets(pokemon, teamPokemon);
     const bestSet = sets.length > 0 ? sets[0].set : null;
+    const isMegaItem = (item: string) => item.endsWith("ite") || item.endsWith("ite X") || item.endsWith("ite Y") || item.endsWith("ite Z");
+    const teamAlreadyHasMega = slots.some(s => s.isMega);
+    let isMega = false;
+    let megaFormIndex = 0;
+    const setItem = bestSet?.item;
+    if (pokemon.hasMega && !teamAlreadyHasMega && setItem && isMegaItem(setItem)) {
+      isMega = true;
+      const megaForms = pokemon.forms?.filter(f => f.isMega) ?? [];
+      const idx = megaForms.findIndex(f => f.abilities.some(a => a.name === bestSet?.ability));
+      megaFormIndex = idx >= 0 ? idx : 0;
+    }
     const newSlots = [...slots];
     newSlots[emptyIndex] = {
       pokemon,
@@ -600,6 +654,8 @@ export default function TeamBuilderPage() {
       moves: bestSet?.moves ?? pokemon.moves.slice(0, 4).map(m => m.name),
       statPoints: bestSet?.sp ?? { ...EMPTY_STAT_POINTS },
       item: bestSet?.item,
+      isMega,
+      megaFormIndex,
     };
     setSlots(newSlots);
     setSelectedSlotIndex(emptyIndex);
@@ -1511,7 +1567,7 @@ export default function TeamBuilderPage() {
                     </div>
                   </div>
                   <div className="flex gap-1 mb-2">
-                    {meta.pokemonIds.map(id => { const p = POKEMON_SEED.find(pk => pk.id === id); return p ? <div key={id} className="flex flex-col items-center"><Image src={p.sprite} alt={p.name} width={32} height={32} className="rounded" unoptimized /><span className="text-[7px] text-muted-foreground mt-0.5 truncate w-9 text-center">{p.name}</span></div> : null; })}
+                    {meta.pokemonIds.map((id, pidx) => { const p = POKEMON_SEED.find(pk => pk.id === id); if (!p) return null; const megaForms = p.forms?.filter(f => f.isMega) ?? []; const useSets = USAGE_DATA[p.id] ?? []; const hasMegaSet = p.hasMega && useSets.some(s => s.item.endsWith("ite") || s.item.endsWith("ite X") || s.item.endsWith("ite Y") || s.item.endsWith("ite Z")); const isFirstMega = hasMegaSet && !meta.pokemonIds.slice(0, pidx).some(prevId => { const pp = POKEMON_SEED.find(pk => pk.id === prevId); return pp?.hasMega && (USAGE_DATA[prevId] ?? []).some(s => s.item.endsWith("ite") || s.item.endsWith("ite X") || s.item.endsWith("ite Y") || s.item.endsWith("ite Z")); }); const megaSprite = isFirstMega && megaForms[0] ? megaForms[0].sprite : p.sprite; const megaName = isFirstMega && megaForms[0] ? megaForms[0].name : p.name; return <div key={id} className="flex flex-col items-center relative"><Image src={megaSprite} alt={megaName} width={32} height={32} className="rounded" unoptimized />{isFirstMega && <span className="absolute -top-1 -right-1 px-0.5 text-[6px] font-bold bg-amber-500 text-white rounded">M</span>}<span className="text-[7px] text-muted-foreground mt-0.5 truncate w-9 text-center">{megaName.length > 10 ? p.name : megaName}</span></div>; })}
                   </div>
                   {meta.corePairs.length > 0 && <div className="flex flex-wrap gap-1 mb-1.5">{meta.corePairs.map(cp => <span key={cp} className="px-1.5 py-0.5 text-[8px] rounded bg-violet-50 text-violet-600 font-medium">{cp}</span>)}</div>}
                   <div className="space-y-0">

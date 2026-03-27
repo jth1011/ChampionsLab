@@ -21,7 +21,8 @@ interface PokemonDetailModalProps {
 function getMemberSprite(member: WinningTeamMember): string {
   const pkm = POKEMON_SEED.find(p => p.id === member.pokemonId);
   if (member.isMega) {
-    const megaForm = pkm?.forms?.find(f => f.isMega);
+    const megaForms = pkm?.forms?.filter(f => f.isMega) ?? [];
+    const megaForm = megaForms[member.megaFormIndex ?? 0];
     if (megaForm) return megaForm.sprite;
   }
   return pkm?.sprite ?? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${member.pokemonId}.png`;
@@ -30,7 +31,8 @@ function getMemberSprite(member: WinningTeamMember): string {
 function getMemberDisplayName(member: WinningTeamMember): string {
   if (member.isMega) {
     const pkm = POKEMON_SEED.find(p => p.id === member.pokemonId);
-    const megaForm = pkm?.forms?.find(f => f.isMega);
+    const megaForms = pkm?.forms?.filter(f => f.isMega) ?? [];
+    const megaForm = megaForms[member.megaFormIndex ?? 0];
     if (megaForm) return megaForm.name;
   }
   return member.name;
@@ -49,6 +51,18 @@ function buildTeamBuilderUrl(team: WinningTeam): string {
       const bestSet = m.isMega
         ? sets.find(s => isMegaStoneItem(s.item)) ?? sets[0]
         : sets.find(s => !isMegaStoneItem(s.item)) ?? sets[0];
+      // Derive mega form index from ability
+      let mgi: number | undefined;
+      if (m.isMega) {
+        if (m.megaFormIndex !== undefined) {
+          mgi = m.megaFormIndex;
+        } else if (bestSet) {
+          const pkm = POKEMON_SEED.find(p => p.id === m.pokemonId);
+          const megaForms = pkm?.forms?.filter(f => f.isMega) ?? [];
+          const idx = megaForms.findIndex(f => f.abilities.some(a => a.name === bestSet.ability));
+          mgi = idx >= 0 ? idx : 0;
+        }
+      }
       if (bestSet) {
         return {
           p: m.pokemonId,
@@ -58,6 +72,7 @@ function buildTeamBuilderUrl(team: WinningTeam): string {
           sp: [bestSet.sp.hp, bestSet.sp.attack, bestSet.sp.defense, bestSet.sp.spAtk, bestSet.sp.spDef, bestSet.sp.speed],
           i: bestSet.item,
           mg: m.isMega || undefined,
+          mgi,
         };
       }
       // Fallback: just ID + first 4 moves from pokemon data
@@ -68,6 +83,7 @@ function buildTeamBuilderUrl(team: WinningTeam): string {
         m: pkm?.moves.slice(0, 4).map(mv => mv.name) ?? [],
         sp: [0, 0, 0, 0, 0, 0],
         mg: m.isMega || undefined,
+        mgi,
       };
     }),
   };
@@ -774,11 +790,19 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
                     exit={{ opacity: 0, x: 20 }}
                     className="space-y-3"
                   >
-                    <h3 className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-3">Winning Teams</h3>
+                    <h3 className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-3">
+                      {currentForm?.isMega ? `${currentForm.name} Teams` : "Winning Teams"}
+                    </h3>
                     {(() => {
-                      const teams = getTeamsForPokemon(pokemon.id);
+                      const allTeams = getTeamsForPokemon(pokemon.id);
+                      const isMegaView = activeForm > 0 && currentForm?.isMega;
+                      // When viewing a mega form, only show teams where this pokemon is mega
+                      // When viewing base, show all teams (both mega and non-mega)
+                      const teams = isMegaView
+                        ? allTeams.filter(t => t.pokemon.some(m => m.pokemonId === pokemon.id && m.isMega))
+                        : allTeams;
                       if (teams.length === 0) {
-                        return <p className="text-sm text-gray-400 italic">No winning team data available yet.</p>;
+                        return <p className="text-sm text-gray-400 italic">{isMegaView ? `No winning teams with ${currentForm.name} yet.` : "No winning team data available yet."}</p>;
                       }
                       return teams.map((team) => (
                         <div

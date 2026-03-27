@@ -158,7 +158,7 @@ export const WINNING_TEAMS: WinningTeam[] = [
     placement: "1st Place",
     event: "Champions Japan Qualifier",
     pokemon: [
-      { pokemonId: 6, name: "Charizard" , isMega: true},
+      { pokemonId: 6, name: "Charizard" , isMega: true, megaFormIndex: 1},
       { pokemonId: 3, name: "Venusaur" },
       { pokemonId: 727, name: "Incineroar" },
       { pokemonId: 350, name: "Milotic" },
