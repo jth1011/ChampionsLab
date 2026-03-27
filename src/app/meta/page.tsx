@@ -516,7 +516,9 @@ export default function MetaPage() {
                   <Award className="w-3.5 h-3.5 text-amber-500" /> Tournament-Proven (20 Years)
                 </h4>
                 <div className="space-y-2">
-                  {CORE_PAIRS.sort((a, b) => b.winRate - a.winRate).slice(0, 4).map(cp => {
+                  {CORE_PAIRS
+                    .filter(cp => POKEMON_SEED.some(p => p.id === cp.pokemon1) && POKEMON_SEED.some(p => p.id === cp.pokemon2))
+                    .sort((a, b) => b.winRate - a.winRate).slice(0, 4).map(cp => {
                     const p1 = POKEMON_SEED.find(p => p.id === cp.pokemon1);
                     const p2 = POKEMON_SEED.find(p => p.id === cp.pokemon2);
                     return (
@@ -981,7 +983,9 @@ export default function MetaPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {CORE_PAIRS.sort((a, b) => b.winRate - a.winRate).map(cp => {
+                  {CORE_PAIRS
+                    .filter(cp => POKEMON_SEED.some(p => p.id === cp.pokemon1) && POKEMON_SEED.some(p => p.id === cp.pokemon2))
+                    .sort((a, b) => b.winRate - a.winRate).map(cp => {
                     const p1 = POKEMON_SEED.find(p => p.id === cp.pokemon1);
                     const p2 = POKEMON_SEED.find(p => p.id === cp.pokemon2);
                     const tier = cp.usage >= 20 ? "S" : cp.usage >= 12 ? "A" : cp.usage >= 6 ? "B" : "C";
