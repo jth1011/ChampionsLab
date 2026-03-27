@@ -73,10 +73,12 @@ export interface ChampionsPokemon {
 export interface TeamSlot {
   pokemon: ChampionsPokemon | null;
   ability?: string;
+  nature?: string;
   moves: string[];
   statPoints: StatPoints;
   teraType?: PokemonType;
   item?: string;
+  isMega?: boolean;
 }
 
 export interface CommonSet {

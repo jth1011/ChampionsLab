@@ -36,7 +36,7 @@ export default function HomePage() {
   const [selectedGens, setSelectedGens] = useState<number[]>([]);
   const [showMegaOnly, setShowMegaOnly] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
-  const [sortBy, setSortBy] = useState<SortOption>("tier");
+  const [sortBy, setSortBy] = useState<SortOption>("dex");
   const [selectedPokemon, setSelectedPokemon] = useState<ChampionsPokemon | null>(null);
 
   const filteredPokemon = useMemo(() => {

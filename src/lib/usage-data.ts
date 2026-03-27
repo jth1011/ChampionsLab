@@ -724,14 +724,6 @@ export const USAGE_DATA: Record<number, CommonSet[]> = {
   ],
 
   // Tatsugiri (id: 978)
-  978: [
-    { name: "Commander", nature: "Modest", ability: "Commander", item: "Choice Specs", moves: ["Draco Meteor", "Muddy Water", "Ice Beam", "Dragon Pulse"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "steel" },
-    { name: "Focus Sash", nature: "Timid", ability: "Commander", item: "Focus Sash", moves: ["Draco Meteor", "Muddy Water", "Icy Wind", "Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 }, teraType: "steel" },
-    { name: "Nasty Plot", nature: "Timid", ability: "Storm Drain", item: "Sitrus Berry", moves: ["Nasty Plot", "Dragon Pulse", "Muddy Water", "Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 30, spDef: 0, speed: 32 }, teraType: "steel" },
-    { name: "Trick Room", nature: "Quiet", ability: "Commander", item: "Sitrus Berry", moves: ["Draco Meteor", "Muddy Water", "Counter", "Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "steel" },
-    { name: "Mega Supreme", nature: "Modest", ability: "Supreme Commander", item: "Tatsugirite", moves: ["Draco Meteor", "Muddy Water", "Ice Beam", "Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "steel" },
-  ],
-
   // Kingambit (id: 983)
   983: [
     { name: "Supreme Overlord", nature: "Adamant", ability: "Supreme Overlord", item: "Black Glasses", moves: ["Kowtow Cleave", "Sucker Punch", "Iron Head", "Protect"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "dark" },
@@ -762,5 +754,287 @@ export const USAGE_DATA: Record<number, CommonSet[]> = {
     { name: "Supersweet Syrup", nature: "Quiet", ability: "Supersweet Syrup", item: "Life Orb", moves: ["Fickle Beam", "Giga Drain", "Earth Power", "Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "steel" },
     { name: "Offensive", nature: "Modest", ability: "Regenerator", item: "Choice Specs", moves: ["Fickle Beam", "Dragon Pulse", "Giga Drain", "Earth Power"], sp: { hp: 20, attack: 0, defense: 0, spAtk: 32, spDef: 14, speed: 0 }, teraType: "steel" },
     { name: "Bulky Regen", nature: "Calm", ability: "Regenerator", item: "Sitrus Berry", moves: ["Fickle Beam", "Giga Drain", "Recover", "Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 0, spDef: 32, speed: 0 }, teraType: "steel" },
+  ],
+
+  // Beedrill (id: 15)
+  15: [
+    { name: "Mega Lead", nature: "Jolly", ability: "Adaptability", item: "Beedrillite", moves: ["U-turn","Poison Jab","X-Scissor","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "steel" },
+    { name: "Swords Dance", nature: "Jolly", ability: "Adaptability", item: "Beedrillite", moves: ["Swords Dance","Poison Jab","Drill Run","Protect"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 }, teraType: "ground" },
+    { name: "Non-Mega Pivot", nature: "Jolly", ability: "Swarm", item: "Focus Sash", moves: ["U-turn","Poison Jab","Fell Stinger","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "steel" },
+  ],
+
+  // Pidgeot (id: 18)
+  18: [
+    { name: "Mega Special", nature: "Timid", ability: "No Guard", item: "Pidgeotite", moves: ["Hurricane","Heat Wave","U-turn","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "ground" },
+    { name: "Tailwind Lead", nature: "Timid", ability: "No Guard", item: "Pidgeotite", moves: ["Hurricane","Tailwind","Heat Wave","Protect"], sp: { hp: 20, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 12 }, teraType: "steel" },
+  ],
+
+  // Arcanine (id: 59)
+  59: [
+    { name: "Intimidate Support", nature: "Adamant", ability: "Intimidate", item: "Sitrus Berry", moves: ["Flare Blitz","Extreme Speed","Will-O-Wisp","Protect"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "grass" },
+    { name: "AV Attacker", nature: "Adamant", ability: "Intimidate", item: "Assault Vest", moves: ["Flare Blitz","Extreme Speed","Close Combat","Crunch"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "water" },
+    { name: "Bulky Wisp", nature: "Impish", ability: "Intimidate", item: "Leftovers", moves: ["Will-O-Wisp","Flare Blitz","Morning Sun","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "water" },
+    { name: "Scarf", nature: "Jolly", ability: "Intimidate", item: "Choice Scarf", moves: ["Flare Blitz","Close Combat","Wild Charge","Extreme Speed"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "fighting" },
+  ],
+
+  // Alakazam (id: 65)
+  65: [
+    { name: "Mega Attacker", nature: "Timid", ability: "Trace", item: "Alakazite", moves: ["Psychic","Shadow Ball","Focus Blast","Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 }, teraType: "ghost" },
+    { name: "Sash Lead", nature: "Timid", ability: "Magic Guard", item: "Focus Sash", moves: ["Psychic","Dazzling Gleam","Shadow Ball","Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 }, teraType: "fairy" },
+    { name: "Calm Mind", nature: "Timid", ability: "Magic Guard", item: "Life Orb", moves: ["Psyshock","Shadow Ball","Calm Mind","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "steel" },
+  ],
+
+  // Victreebel (id: 71)
+  71: [
+    { name: "Sun Sweeper", nature: "Modest", ability: "Chlorophyll", item: "Life Orb", moves: ["Leaf Storm","Sludge Bomb","Sleep Powder","Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 }, teraType: "fire" },
+    { name: "Physical Sun", nature: "Adamant", ability: "Chlorophyll", item: "Life Orb", moves: ["Power Whip","Sucker Punch","Knock Off","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "dark" },
+  ],
+
+  // Ditto (id: 132)
+  132: [
+    { name: "Imposter Scarf", nature: "Jolly", ability: "Imposter", item: "Choice Scarf", moves: ["Transform"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 0, spDef: 32, speed: 0 }, teraType: "normal" },
+  ],
+
+  // Azumarill (id: 184)
+  184: [
+    { name: "Belly Drum", nature: "Adamant", ability: "Huge Power", item: "Sitrus Berry", moves: ["Belly Drum","Aqua Jet","Play Rough","Protect"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "water" },
+    { name: "AV Attacker", nature: "Adamant", ability: "Huge Power", item: "Assault Vest", moves: ["Play Rough","Aqua Jet","Liquidation","Superpower"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "steel" },
+    { name: "Choice Band", nature: "Adamant", ability: "Huge Power", item: "Choice Band", moves: ["Play Rough","Aqua Jet","Liquidation","Knock Off"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "water" },
+  ],
+
+  // Espeon (id: 196)
+  196: [
+    { name: "Magic Bounce Support", nature: "Timid", ability: "Magic Bounce", item: "Focus Sash", moves: ["Psychic","Dazzling Gleam","Helping Hand","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "fairy" },
+    { name: "Calm Mind", nature: "Timid", ability: "Magic Bounce", item: "Leftovers", moves: ["Psyshock","Shadow Ball","Calm Mind","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "steel" },
+  ],
+
+  // Steelix (id: 208)
+  208: [
+    { name: "Trick Room Tank", nature: "Brave", ability: "Sturdy", item: "Leftovers", moves: ["Earthquake","Iron Head","Body Press","Protect"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "water" },
+    { name: "Hazard Setter", nature: "Relaxed", ability: "Sturdy", item: "Leftovers", moves: ["Stealth Rock","Gyro Ball","Earthquake","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "water" },
+  ],
+
+  // Aggron (id: 306)
+  306: [
+    { name: "Mega Tank", nature: "Adamant", ability: "Filter", item: "Aggronite", moves: ["Iron Head","Earthquake","Heavy Slam","Protect"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "water" },
+    { name: "Body Press", nature: "Impish", ability: "Filter", item: "Aggronite", moves: ["Body Press","Iron Head","Iron Defense","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "water" },
+    { name: "AV Non-Mega", nature: "Adamant", ability: "Sturdy", item: "Assault Vest", moves: ["Iron Head","Earthquake","Head Smash","Rock Slide"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "fighting" },
+  ],
+
+  // Medicham (id: 308)
+  308: [
+    { name: "Mega Fighting", nature: "Jolly", ability: "Pure Power", item: "Medichamite", moves: ["Close Combat","Zen Headbutt","Ice Punch","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "fire" },
+    { name: "Fake Out Lead", nature: "Jolly", ability: "Pure Power", item: "Medichamite", moves: ["Fake Out","Close Combat","Zen Headbutt","Protect"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 }, teraType: "ghost" },
+  ],
+
+  // Manectric (id: 310)
+  310: [
+    { name: "Mega Intimidate", nature: "Timid", ability: "Intimidate", item: "Manectite", moves: ["Thunderbolt","Overheat","Volt Switch","Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 }, teraType: "ice" },
+    { name: "Lightning Rod", nature: "Timid", ability: "Lightning Rod", item: "Focus Sash", moves: ["Thunderbolt","Snarl","Volt Switch","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "grass" },
+  ],
+
+  // Sharpedo (id: 319)
+  319: [
+    { name: "Speed Boost Sweep", nature: "Adamant", ability: "Speed Boost", item: "Focus Sash", moves: ["Crunch","Liquidation","Close Combat","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "dark" },
+    { name: "Band", nature: "Adamant", ability: "Speed Boost", item: "Choice Band", moves: ["Crunch","Liquidation","Close Combat","Poison Jab"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "water" },
+  ],
+
+  // Camerupt (id: 323)
+  323: [
+    { name: "Mega TR", nature: "Quiet", ability: "Sheer Force", item: "Cameruptite", moves: ["Heat Wave","Earth Power","Fire Blast","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "grass" },
+    { name: "Eruption", nature: "Quiet", ability: "Solid Rock", item: "Choice Specs", moves: ["Eruption","Earth Power","Heat Wave","Overheat"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "grass" },
+  ],
+
+  // Banette (id: 354)
+  354: [
+    { name: "Mega Prankster", nature: "Adamant", ability: "Prankster", item: "Banettite", moves: ["Shadow Claw","Shadow Sneak","Will-O-Wisp","Protect"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 }, teraType: "normal" },
+    { name: "Destiny Bond", nature: "Jolly", ability: "Prankster", item: "Banettite", moves: ["Shadow Claw","Destiny Bond","Will-O-Wisp","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "dark" },
+  ],
+
+  // Glalie (id: 362)
+  362: [
+    { name: "Mega Mixed", nature: "Hasty", ability: "Refrigerate", item: "Glalitite", moves: ["Return","Freeze-Dry","Earthquake","Protect"], sp: { hp: 0, attack: 16, defense: 2, spAtk: 16, spDef: 0, speed: 32 }, teraType: "ground" },
+    { name: "Explosion", nature: "Jolly", ability: "Refrigerate", item: "Glalitite", moves: ["Return","Explosion","Ice Shard","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "normal" },
+  ],
+
+  // Lopunny (id: 428)
+  428: [
+    { name: "Mega Fake Out", nature: "Jolly", ability: "Scrappy", item: "Lopunnite", moves: ["Fake Out","High Jump Kick","Return","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "fighting" },
+    { name: "Encore Support", nature: "Jolly", ability: "Scrappy", item: "Lopunnite", moves: ["Fake Out","High Jump Kick","Encore","Protect"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 }, teraType: "ghost" },
+  ],
+
+  // Spiritomb (id: 442)
+  442: [
+    { name: "Bulky WoW", nature: "Bold", ability: "Pressure", item: "Leftovers", moves: ["Will-O-Wisp","Foul Play","Snarl","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "fairy" },
+    { name: "TR Attacker", nature: "Quiet", ability: "Pressure", item: "Choice Specs", moves: ["Shadow Ball","Dark Pulse","Psychic","Trick Room"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "ghost" },
+  ],
+
+  // Abomasnow (id: 460)
+  460: [
+    { name: "Mega Snow", nature: "Brave", ability: "Snow Warning", item: "Abomasite", moves: ["Blizzard","Wood Hammer","Ice Shard","Protect"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "ice" },
+    { name: "Aurora Veil", nature: "Calm", ability: "Snow Warning", item: "Light Clay", moves: ["Blizzard","Aurora Veil","Energy Ball","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 0, spDef: 32, speed: 0 }, teraType: "water" },
+    { name: "Mixed Mega", nature: "Quiet", ability: "Snow Warning", item: "Abomasite", moves: ["Blizzard","Giga Drain","Ice Shard","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "ground" },
+  ],
+
+  // Mamoswine (id: 473)
+  473: [
+    { name: "Band Attacker", nature: "Adamant", ability: "Thick Fat", item: "Choice Band", moves: ["Earthquake","Icicle Crash","Ice Shard","Superpower"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "ice" },
+    { name: "Sash Lead", nature: "Jolly", ability: "Oblivious", item: "Focus Sash", moves: ["Earthquake","Icicle Crash","Ice Shard","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "ground" },
+    { name: "AV Tank", nature: "Adamant", ability: "Thick Fat", item: "Assault Vest", moves: ["Earthquake","Icicle Crash","Ice Shard","Knock Off"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "water" },
+  ],
+
+  // Gallade (id: 475)
+  475: [
+    { name: "Mega Swords", nature: "Jolly", ability: "Inner Focus", item: "Galladite", moves: ["Close Combat","Psycho Cut","Knock Off","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "dark" },
+    { name: "SD Sweeper", nature: "Jolly", ability: "Sharpness", item: "Life Orb", moves: ["Close Combat","Leaf Blade","Psycho Cut","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "steel" },
+  ],
+
+  // Golurk (id: 623)
+  623: [
+    { name: "TR Attacker", nature: "Brave", ability: "Iron Fist", item: "Assault Vest", moves: ["Earthquake","Poltergeist","Drain Punch","Ice Punch"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "water" },
+    { name: "No Guard", nature: "Brave", ability: "No Guard", item: "Life Orb", moves: ["Earthquake","Poltergeist","Rock Slide","Protect"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 }, teraType: "ghost" },
+  ],
+
+  // Floette (id: 670)
+  670: [
+    { name: "Mega Support", nature: "Timid", ability: "Flower Power", item: "Floettite", moves: ["Moonblast","Psychic","Floral Healing","Protect"], sp: { hp: 20, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 12 }, teraType: "steel" },
+    { name: "Calm Mind", nature: "Bold", ability: "Flower Veil", item: "Leftovers", moves: ["Moonblast","Calm Mind","Helping Hand","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "steel" },
+  ],
+
+  // Furfrou (id: 676)
+  676: [
+    { name: "Fur Coat Physical", nature: "Jolly", ability: "Fur Coat", item: "Leftovers", moves: ["Return","Sucker Punch","Thunder Wave","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "ghost" },
+    { name: "Support", nature: "Jolly", ability: "Fur Coat", item: "Sitrus Berry", moves: ["Return","U-turn","Charm","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 0, spDef: 32, speed: 0 }, teraType: "steel" },
+  ],
+
+  // Clawitzer (id: 693)
+  693: [
+    { name: "Launcher Specs", nature: "Quiet", ability: "Mega Launcher", item: "Choice Specs", moves: ["Water Pulse","Dark Pulse","Aura Sphere","Dragon Pulse"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "fairy" },
+    { name: "TR Attacker", nature: "Quiet", ability: "Mega Launcher", item: "Life Orb", moves: ["Water Pulse","Dark Pulse","Aura Sphere","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "steel" },
+  ],
+
+  // Goodra (id: 706)
+  706: [
+    { name: "AV Special", nature: "Modest", ability: "Sap Sipper", item: "Assault Vest", moves: ["Draco Meteor","Fire Blast","Sludge Bomb","Thunderbolt"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "steel" },
+    { name: "Mixed", nature: "Quiet", ability: "Sap Sipper", item: "Assault Vest", moves: ["Draco Meteor","Ice Beam","Power Whip","Fire Blast"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "fairy" },
+  ],
+
+  // Trevenant (id: 709)
+  709: [
+    { name: "TR Attacker", nature: "Brave", ability: "Harvest", item: "Sitrus Berry", moves: ["Wood Hammer","Shadow Claw","Trick Room","Protect"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "fire" },
+    { name: "Will-O-Wisp", nature: "Impish", ability: "Natural Cure", item: "Sitrus Berry", moves: ["Horn Leech","Shadow Claw","Will-O-Wisp","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "water" },
+  ],
+
+  // Avalugg (id: 713)
+  713: [
+    { name: "Body Press Wall", nature: "Relaxed", ability: "Sturdy", item: "Leftovers", moves: ["Body Press","Iron Defense","Avalanche","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "fighting" },
+    { name: "TR Attacker", nature: "Brave", ability: "Sturdy", item: "Assault Vest", moves: ["Avalanche","Heavy Slam","Earthquake","Rapid Spin"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "steel" },
+  ],
+
+  // Mudsdale (id: 750)
+  750: [
+    { name: "Stamina Tank", nature: "Adamant", ability: "Stamina", item: "Leftovers", moves: ["High Horsepower","Heavy Slam","Body Press","Protect"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "water" },
+    { name: "AV Attacker", nature: "Brave", ability: "Stamina", item: "Assault Vest", moves: ["High Horsepower","Close Combat","Rock Slide","Heavy Slam"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "steel" },
+  ],
+
+  // Corviknight (id: 823)
+  823: [
+    { name: "Bulky Tailwind", nature: "Impish", ability: "Mirror Armor", item: "Sitrus Berry", moves: ["Brave Bird","Tailwind","Iron Head","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "water" },
+    { name: "Body Press", nature: "Impish", ability: "Mirror Armor", item: "Leftovers", moves: ["Body Press","Iron Defense","Roost","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "fighting" },
+    { name: "Offensive", nature: "Adamant", ability: "Pressure", item: "Life Orb", moves: ["Brave Bird","Iron Head","U-turn","Protect"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 }, teraType: "flying" },
+  ],
+
+  // Grimmsnarl (id: 861)
+  861: [
+    { name: "Screens Lead", nature: "Careful", ability: "Prankster", item: "Light Clay", moves: ["Light Screen","Reflect","Spirit Break","Fake Out"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 0, spDef: 32, speed: 0 }, teraType: "steel" },
+    { name: "Thunder Wave", nature: "Adamant", ability: "Prankster", item: "Sitrus Berry", moves: ["Spirit Break","Sucker Punch","Thunder Wave","Fake Out"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "poison" },
+    { name: "Taunt Lead", nature: "Careful", ability: "Prankster", item: "Focus Sash", moves: ["Taunt","Thunder Wave","Spirit Break","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 0, spDef: 32, speed: 0 }, teraType: "poison" },
+  ],
+
+  // Runerigus (id: 867)
+  867: [
+    { name: "TR Wall", nature: "Relaxed", ability: "Wandering Spirit", item: "Leftovers", moves: ["Earthquake","Body Press","Trick Room","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "water" },
+    { name: "Hazard Setter", nature: "Relaxed", ability: "Wandering Spirit", item: "Mental Herb", moves: ["Stealth Rock","Will-O-Wisp","Shadow Claw","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "water" },
+  ],
+
+  // Garganacl (id: 934)
+  934: [
+    { name: "Salt Cure Wall", nature: "Careful", ability: "Purifying Salt", item: "Leftovers", moves: ["Salt Cure","Recover","Body Press","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 0, spDef: 32, speed: 0 }, teraType: "ghost" },
+    { name: "Iron Defense Press", nature: "Impish", ability: "Purifying Salt", item: "Leftovers", moves: ["Iron Defense","Body Press","Salt Cure","Recover"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "water" },
+    { name: "AV Attacker", nature: "Adamant", ability: "Purifying Salt", item: "Assault Vest", moves: ["Salt Cure","Rock Slide","Body Press","Heavy Slam"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "ghost" },
+  ],
+
+  // Farigiraf (id: 981)
+  981: [
+    { name: "TR Support", nature: "Quiet", ability: "Armor Tail", item: "Sitrus Berry", moves: ["Hyper Voice","Psychic","Trick Room","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "fairy" },
+    { name: "Nasty Plot", nature: "Modest", ability: "Armor Tail", item: "Throat Spray", moves: ["Hyper Voice","Psyshock","Nasty Plot","Protect"], sp: { hp: 20, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 12 }, teraType: "ghost" },
+    { name: "Support", nature: "Bold", ability: "Armor Tail", item: "Sitrus Berry", moves: ["Psychic","Helping Hand","Trick Room","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "steel" },
+  ],
+
+  // Heat Rotom (id: 10008)
+  10008: [
+    { name: "Choice Specs", nature: "Modest", ability: "Levitate", item: "Choice Specs", moves: ["Overheat","Thunderbolt","Volt Switch","Helping Hand"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "electric" },
+    { name: "Bulky WoW", nature: "Bold", ability: "Levitate", item: "Sitrus Berry", moves: ["Thunderbolt","Overheat","Will-O-Wisp","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "water" },
+    { name: "Nasty Plot", nature: "Timid", ability: "Levitate", item: "Sitrus Berry", moves: ["Nasty Plot","Thunderbolt","Overheat","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "water" },
+  ],
+
+  // Wash Rotom (id: 10009)
+  10009: [
+    { name: "Bulky Pivot", nature: "Bold", ability: "Levitate", item: "Sitrus Berry", moves: ["Hydro Pump","Volt Switch","Will-O-Wisp","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "grass" },
+    { name: "Offensive", nature: "Modest", ability: "Levitate", item: "Choice Specs", moves: ["Hydro Pump","Thunderbolt","Volt Switch","Nasty Plot"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "electric" },
+    { name: "Nasty Plot", nature: "Modest", ability: "Levitate", item: "Sitrus Berry", moves: ["Nasty Plot","Thunderbolt","Hydro Pump","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "grass" },
+  ],
+
+  // Frost Rotom (id: 10010)
+  10010: [
+    { name: "AV Attacker", nature: "Modest", ability: "Levitate", item: "Assault Vest", moves: ["Blizzard","Thunderbolt","Volt Switch","Helping Hand"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "electric" },
+    { name: "Bulky WoW", nature: "Bold", ability: "Levitate", item: "Sitrus Berry", moves: ["Thunderbolt","Blizzard","Will-O-Wisp","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 }, teraType: "water" },
+  ],
+
+  // Fan Rotom (id: 10011)
+  10011: [
+    { name: "Speed Control", nature: "Timid", ability: "Levitate", item: "Sitrus Berry", moves: ["Air Slash","Thunderbolt","Thunder Wave","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "steel" },
+    { name: "Nasty Plot", nature: "Timid", ability: "Levitate", item: "Sitrus Berry", moves: ["Nasty Plot","Air Slash","Thunderbolt","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "steel" },
+  ],
+
+  // Mow Rotom (id: 10012)
+  10012: [
+    { name: "Bulky Pivot", nature: "Modest", ability: "Levitate", item: "Sitrus Berry", moves: ["Leaf Storm","Thunderbolt","Volt Switch","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "fire" },
+    { name: "Nasty Plot", nature: "Modest", ability: "Levitate", item: "Sitrus Berry", moves: ["Nasty Plot","Leaf Storm","Thunderbolt","Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 }, teraType: "fire" },
+  ],
+
+  // Alolan Raichu (id: 10100)
+  10100: [
+    { name: "Terrain Surfer", nature: "Timid", ability: "Surge Surfer", item: "Life Orb", moves: ["Thunderbolt","Psychic","Volt Switch","Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 }, teraType: "electric" },
+    { name: "Fake Out Lead", nature: "Timid", ability: "Surge Surfer", item: "Focus Sash", moves: ["Fake Out","Thunderbolt","Psychic","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "ghost" },
+    { name: "Encore Support", nature: "Timid", ability: "Surge Surfer", item: "Focus Sash", moves: ["Thunderbolt","Encore","Nuzzle","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 30, spDef: 0, speed: 32 }, teraType: "steel" },
+  ],
+
+  // Alolan Ninetales (id: 10103)
+  10103: [
+    { name: "Aurora Veil Lead", nature: "Timid", ability: "Snow Warning", item: "Light Clay", moves: ["Aurora Veil","Blizzard","Moonblast","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "ghost" },
+    { name: "Offensive", nature: "Timid", ability: "Snow Warning", item: "Focus Sash", moves: ["Blizzard","Moonblast","Freeze-Dry","Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 }, teraType: "ground" },
+    { name: "Icy Wind Support", nature: "Timid", ability: "Snow Warning", item: "Focus Sash", moves: ["Icy Wind","Moonblast","Aurora Veil","Protect"], sp: { hp: 20, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 12 }, teraType: "steel" },
+  ],
+
+  // Hisuian Samurott (id: 10336)
+  10336: [
+    { name: "Sharpness SD", nature: "Adamant", ability: "Sharpness", item: "Focus Sash", moves: ["Ceaseless Edge","Razor Shell","Sacred Sword","Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "dark" },
+    { name: "AV Attacker", nature: "Adamant", ability: "Sharpness", item: "Assault Vest", moves: ["Ceaseless Edge","Razor Shell","Aqua Jet","Knock Off"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "water" },
+    { name: "Band", nature: "Jolly", ability: "Sharpness", item: "Choice Band", moves: ["Ceaseless Edge","Razor Shell","Sacred Sword","Aqua Jet"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "water" },
+  ],
+
+  // Hisuian Zoroark (id: 10340)
+  10340: [
+    { name: "Nasty Plot", nature: "Timid", ability: "Illusion", item: "Focus Sash", moves: ["Shadow Ball","Hyper Voice","Nasty Plot","Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 }, teraType: "ghost" },
+    { name: "Specs Attacker", nature: "Timid", ability: "Illusion", item: "Choice Specs", moves: ["Shadow Ball","Hyper Voice","Flamethrower","Focus Blast"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 }, teraType: "normal" },
+    { name: "U-turn Pivot", nature: "Timid", ability: "Illusion", item: "Focus Sash", moves: ["Shadow Ball","Hyper Voice","U-turn","Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 }, teraType: "ghost" },
+  ],
+
+  // Hisuian Decidueye (id: 10341)
+  10341: [
+    { name: "SD Sweeper", nature: "Adamant", ability: "Scrappy", item: "Life Orb", moves: ["Close Combat","Leaf Blade","Swords Dance","Protect"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 }, teraType: "fighting" },
+    { name: "Bulky Attacker", nature: "Adamant", ability: "Scrappy", item: "Assault Vest", moves: ["Close Combat","Leaf Blade","Knock Off","Shadow Sneak"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 }, teraType: "grass" },
+    { name: "Band", nature: "Jolly", ability: "Scrappy", item: "Choice Band", moves: ["Close Combat","Leaf Blade","Brave Bird","U-turn"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 }, teraType: "fighting" },
   ],
 };
