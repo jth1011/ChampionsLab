@@ -256,20 +256,20 @@ function allyCanKO(
   return false;
 }
 
-/** Estimate if user is being doubled (both opponents can threaten it) */
+/** Estimate if user is being doubled (both opponents can threaten it significantly) */
 function isBeingDoubled(
   user: BattlePokemon,
   opponents: (BattlePokemon | null)[],
   field: FieldState,
   oppSide: 1 | 2
 ): boolean {
-  let threatsAbove30 = 0;
+  let threatsAbove50 = 0;
   for (const opp of opponents) {
     if (!opp || opp.isFainted) continue;
     const threat = estimateThreatLevel(opp, user, field, oppSide);
-    if (threat >= 30) threatsAbove30++;
+    if (threat >= 50) threatsAbove50++;
   }
-  return threatsAbove30 >= 2;
+  return threatsAbove50 >= 2;
 }
 
 function evaluateMoveOption(
@@ -312,40 +312,105 @@ function evaluateMoveOption(
     if (threat > maxIncomingThreat) maxIncomingThreat = threat;
   }
   
+  // Fake Out — intelligent targeting (physical move, must be checked BEFORE status block)
+  if (moveName === "Fake Out" && user.canFakeOut) {
+    let score = 0;
+    for (let i = 0; i < targets.length; i++) {
+      const t = targets[i];
+      if (!t || t.isFainted) continue;
+      score = 55;
+      
+      // Target the biggest threat
+      const threatToUs = estimateThreatLevel(t, user, field, oppSide);
+      const ally = allies.find(a => a && !a.isFainted);
+      const threatToAlly = ally ? estimateThreatLevel(t, ally, field, oppSide) : 0;
+      const maxThreat = Math.max(threatToUs, threatToAlly);
+      score += maxThreat * 0.3;
+      
+      // Fake Out the TR/Tailwind setter to prevent THEIR setup
+      if (t.set.moves.includes("Trick Room") || t.set.moves.includes("Tailwind")) score += 20;
+      
+      // Fake Out to PROTECT our ally setter (Fake Out their fastest threat)
+      if (ally && ally.set.moves.some(m => ["Trick Room", "Tailwind"].includes(m))) {
+        score += 25; // Huge bonus — protect the setter
+        // Prefer flinching the fastest opponent (biggest threat to slow setter)
+        if (t.stats.speed >= 80) score += 10;
+      }
+      
+      // Fake Out support mons (Follow Me users, etc.)
+      if (t.set.moves.includes("Follow Me") || t.set.moves.includes("Rage Powder")) score += 15;
+      
+      // Don't Fake Out mons with Inner Focus/Clear Body
+      if (["Inner Focus", "Shield Dust", "Own Tempo"].includes(t.ability)) score -= 40;
+      
+      // Less valuable on weakened mons
+      if (t.currentHP < t.maxHP * 0.3) score -= 20;
+      
+      choices.push({ moveIndex: 0, moveName, targetSlot: i, score });
+    }
+    return choices;
+  }
+  
   // Status moves evaluation
   if (move.category === "status") {
     let score = 0;
     
     // Protect: key VGC move — value depends on position
     if (move.flags.protect) {
-      const protectPenalty = user.protectCount * 40; // Much harder to double-protect
-      score = 25 - protectPenalty;
+      const protectPenalty = user.protectCount * 80; // Double-protect is almost never correct
+      score = 10 - protectPenalty;
       
-      // Protect is EXCELLENT when being doubled into
-      if (beingDoubled) score += 40;
+      // Protect is good when being doubled into by heavy threats
+      if (beingDoubled) score += 20;
       
-      // Protect when low HP and threatened
-      if (user.currentHP < user.maxHP * 0.4 && maxIncomingThreat >= 50) score += 30;
+      // Protect when low HP and heavily threatened
+      if (user.currentHP < user.maxHP * 0.3 && maxIncomingThreat >= 80) score += 18;
       
-      // Protect when ally can KO a threat  
+      // Protect when ally can KO a threat this turn
       const ally = allies.find(a => a && !a.isFainted);
       if (ally) {
         for (const opp of targets) {
-          if (opp && !opp.isFainted && allyCanKO(ally, opp, field, userSide)) score += 15;
+          if (opp && !opp.isFainted && allyCanKO(ally, opp, field, userSide)) score += 8;
         }
       }
       
       // Protect to stall when ahead in endgame
-      if (isAhead && isEndgame) score += 20;
-      
-      // Protect to scout turn 1
-      if (state.turn === 0 && user.currentHP === user.maxHP) score += 10;
+      if (isAhead && isEndgame) score += 10;
       
       // When Tailwind/TR is about to end, protect to stall
       const mySide = userSide === 1 ? field.side1 : field.side2;
-      if (mySide.tailwind === 1 && isAhead) score += 15;
+      if (mySide.tailwind === 1 && isAhead) score += 6;
       
-      choices.push({ moveIndex: 0, moveName, targetSlot: -1, score: Math.max(score, 2) });
+      // Penalty when we can OHKO something — attacking is better
+      for (const opp of targets) {
+        if (!opp || opp.isFainted) continue;
+        for (const m of user.set.moves) {
+          const mv = getMove(m);
+          if (mv && mv.category !== "status") {
+            const atk: DamageCalcPokemon = {
+              baseStats: user.effectiveBaseStats, sp: user.set.sp,
+              nature: user.set.nature as NatureName, types: user.types,
+              ability: user.ability, item: user.item,
+              atkStages: user.boosts.attack, spAtkStages: user.boosts.spAtk,
+              isBurned: user.status === "burn",
+              currentHPPercent: (user.currentHP / user.maxHP) * 100,
+            };
+            const def: DamageCalcTarget = {
+              baseStats: opp.effectiveBaseStats, sp: opp.set.sp,
+              nature: opp.set.nature as NatureName, types: opp.types,
+              ability: opp.ability, item: opp.item,
+              defStages: opp.boosts.defense, spDefStages: opp.boosts.spDef,
+            };
+            const res = calculateDamage(atk, def, m, { weather: field.weather as DamageCalcOptions["weather"], isDoubles: true });
+            if (res.isOHKO || (res.damage[0] / opp.currentHP) >= 1.0) {
+              score -= 40; // Don't Protect when you can KO!
+              break;
+            }
+          }
+        }
+      }
+      
+      choices.push({ moveIndex: 0, moveName, targetSlot: -1, score: Math.max(score, -10) });
       return choices;
     }
     
@@ -358,11 +423,20 @@ function evaluateMoveOption(
       const avgOppSpeed = oppSpeeds.reduce((a, b) => a + b, 0) / Math.max(oppSpeeds.length, 1);
       
       if (!field.trickRoom) {
-        // Set TR if our side is slower
-        score = avgMySpeed < avgOppSpeed ? 85 : 15;
-        // Much more valuable if our bench has slow mons too
-        const benchSlow = myTeam.filter(p => p.isAlive && !myActive.includes(p) && p.stats.speed < 70);
-        if (benchSlow.length > 0) score += 10;
+        // Set TR if our side is slower — this is top priority for TR teams
+        if (avgMySpeed < avgOppSpeed) {
+          score = 120; // TR setup is the #1 priority — the entire team depends on it
+          // Even higher on turn 1 — must set TR before getting overwhelmed
+          if (state.turn <= 1) score += 15;
+          // Ally has Fake Out support — perfect TR setup turn
+          const ally = allies.find(a => a && !a.isFainted);
+          if (ally && ally.set.moves.includes("Fake Out") && ally.canFakeOut) score += 20;
+        } else {
+          score = 15;
+        }
+        // Much more valuable if team has slow mons overall
+        const teamSlow = myTeam.filter(p => p.isAlive && p.stats.speed < 70);
+        if (teamSlow.length >= 2) score += 15;
       } else {
         // Reverse TR if we're actually faster
         score = avgMySpeed > avgOppSpeed ? 75 : 8;
@@ -391,37 +465,6 @@ function evaluateMoveOption(
         if (allies.filter(a => a && !a.isFainted).length === 0 && myAlive <= 1) score -= 20;
       }
       choices.push({ moveIndex: 0, moveName, targetSlot: -1, score });
-      return choices;
-    }
-    
-    // Fake Out — intelligent targeting
-    if (moveName === "Fake Out" && user.canFakeOut) {
-      for (let i = 0; i < targets.length; i++) {
-        const t = targets[i];
-        if (!t || t.isFainted) continue;
-        score = 55;
-        
-        // Target the biggest threat
-        const threatToUs = estimateThreatLevel(t, user, field, oppSide);
-        const ally = allies.find(a => a && !a.isFainted);
-        const threatToAlly = ally ? estimateThreatLevel(t, ally, field, oppSide) : 0;
-        const maxThreat = Math.max(threatToUs, threatToAlly);
-        score += maxThreat * 0.3;
-        
-        // Fake Out the TR/Tailwind setter to prevent setup
-        if (t.set.moves.includes("Trick Room") || t.set.moves.includes("Tailwind")) score += 20;
-        
-        // Fake Out support mons (Follow Me users, etc.)
-        if (t.set.moves.includes("Follow Me") || t.set.moves.includes("Rage Powder")) score += 15;
-        
-        // Don't Fake Out mons with Inner Focus/Clear Body
-        if (["Inner Focus", "Shield Dust", "Own Tempo"].includes(t.ability)) score -= 40;
-        
-        // Less valuable on weakened mons
-        if (t.currentHP < t.maxHP * 0.3) score -= 20;
-        
-        choices.push({ moveIndex: 0, moveName, targetSlot: i, score });
-      }
       return choices;
     }
     
@@ -625,6 +668,31 @@ function evaluateMoveOption(
         score += otherResult.percentHP[0] * 0.35; // Add value from hitting second target
       }
       score += 8; // Small inherent bonus for spread pressure
+      
+      // PENALTY for allAdjacent moves (Earthquake, Surf) that hit ally
+      if (move.target === "allAdjacent") {
+        const allyMon = allies.find(a => a && !a.isFainted);
+        if (allyMon) {
+          const allyDef: DamageCalcTarget = {
+            baseStats: allyMon.effectiveBaseStats, sp: allyMon.set.sp,
+            nature: allyMon.set.nature as NatureName, types: allyMon.types,
+            ability: allyMon.ability, item: allyMon.item,
+            defStages: allyMon.boosts.defense, spDefStages: allyMon.boosts.spDef,
+          };
+          const allyDmg = calculateDamage(attacker, allyDef, moveName, options);
+          const allyDmgPercent = allyDmg.percentHP[0];
+          // Heavy penalty if it would KO the ally
+          if (allyDmg.isOHKO || (allyDmg.damage[1] / allyMon.currentHP) >= 1.0) {
+            score -= 80; // Don't KO your own ally!
+          } else if (allyDmgPercent >= 40) {
+            score -= 35; // Significant ally damage
+          } else if (allyDmgPercent >= 20) {
+            score -= 15; // Moderate ally damage
+          }
+          // Less penalty if ally is Protected
+          if (allyMon.isProtected) score += 25;
+        }
+      }
     }
     
     // Super effective bonus (shows good attack selection)
@@ -712,13 +780,10 @@ function aiChooseAction(
   if (bench.length > 0) {
     let switchScore = -100; // Default: don't switch
     
-    // Palafin Zero to Hero: MUST switch out on turn 1-2 to activate Hero Form
-    if (mon.ability === "Zero To Hero" && !mon.hasSwitchedOut && !mon.hasTransformed) {
+    // Palafin Zero to Hero: MUST switch out to activate Hero Form
+    if (mon.ability === "Zero to Hero" && !mon.hasSwitchedOut && !mon.hasTransformed) {
       // Palafin in Zero Form is USELESS (70 Atk). Switch out immediately.
-      switchScore = 120; // Higher than any move score — this is mandatory VGC play
-      // Slightly less urgent if ally has Fake Out (safe switch next turn)
-      const allyHasFakeOut = allies.some(a => a && !a.isFainted && a.canFakeOut && a.set.moves.includes("Fake Out"));
-      if (state.turn > 1 && allyHasFakeOut) switchScore = 95;
+      switchScore = 150; // Higher than any move score — this is mandatory VGC play
     }
     
     // Bad matchup switch: if our best move does poor damage and we're threatened
@@ -774,7 +839,7 @@ function applySwitch(state: BattleState, sideIndex: 1 | 2, slot: 0 | 1): void {
     leaving.currentHP = Math.min(leaving.maxHP, leaving.currentHP + Math.floor(leaving.maxHP / 3));
   }
   // Mark Palafin as having switched out (for Zero to Hero)
-  if (leaving && leaving.isAlive && !leaving.isFainted && leaving.ability === "Zero To Hero") {
+  if (leaving && leaving.isAlive && !leaving.isFainted && leaving.ability === "Zero to Hero") {
     leaving.hasSwitchedOut = true;
   }
 
@@ -825,7 +890,7 @@ function applySwitch(state: BattleState, sideIndex: 1 | 2, slot: 0 | 1): void {
       if (!state.field.trickRoom && candidate.stats.speed > 100) score += 5;
       
       // HUGE bonus for Palafin that has switched out and can now come back as Hero
-      if (candidate.ability === "Zero To Hero" && candidate.hasSwitchedOut && !candidate.hasTransformed) {
+      if (candidate.ability === "Zero to Hero" && candidate.hasSwitchedOut && !candidate.hasTransformed) {
         score += 50; // Top priority: bring back the Hero nuke
       }
       
@@ -842,7 +907,7 @@ function applySwitch(state: BattleState, sideIndex: 1 | 2, slot: 0 | 1): void {
     next.boosts = { attack: 0, defense: 0, spAtk: 0, spDef: 0, speed: 0 };
     
     // Zero to Hero: transform to Hero Form on re-entry after switching out
-    if (next.ability === "Zero To Hero" && next.hasSwitchedOut && !next.hasTransformed) {
+    if (next.ability === "Zero to Hero" && next.hasSwitchedOut && !next.hasTransformed) {
       applyHeroTransform(next);
     }
     
@@ -1070,6 +1135,14 @@ function executeMove(
     }
   } else if (target && !target.isFainted) {
     targets.push(target);
+  } else {
+    // Retarget: original target fainted mid-turn — redirect to remaining opponent (VGC rule)
+    for (const opp of opponents) {
+      if (opp && !opp.isFainted && opp !== target) {
+        targets.push(opp);
+        break;
+      }
+    }
   }
   
   for (const t of targets) {
@@ -1213,10 +1286,8 @@ function executeMove(
       t.itemConsumed = true;
     }
     
-    // Life Orb recoil
-    if (user.item === "Life Orb" && user.ability !== "Sheer Force") {
-      user.currentHP -= Math.floor(user.maxHP / 10);
-    }
+    // Life Orb recoil — applied once per attack, NOT per target
+    // (moved below after targets loop)
     
     // Recoil
     if (move.flags.recoil) {
@@ -1301,6 +1372,18 @@ function executeMove(
       user.isAlive = false;
       user.isFainted = true;
     }
+  }
+  
+  // Life Orb recoil — once per attack (after all targets processed)
+  if (user.item === "Life Orb" && user.ability !== "Sheer Force" && targets.length > 0) {
+    user.currentHP -= Math.floor(user.maxHP / 10);
+  }
+  
+  // Check user faint from recoil/Life Orb
+  if (user.currentHP <= 0) {
+    user.currentHP = 0;
+    user.isAlive = false;
+    user.isFainted = true;
   }
   
   // Fake Out can only be used once
@@ -1520,6 +1603,8 @@ export function simulateBattle(
     // Execute actions
     for (const action of actions) {
       if (action.mon.isFainted) continue;
+      // Flinch check: Fake Out's flinch sets hasMoved = true, preventing action
+      if (action.mon.hasMoved && !action.switchOut) continue;
       
       // Handle switch-out actions
       if (action.switchOut) {
@@ -1747,6 +1832,11 @@ export function simulateBattleWithLog(
 
     for (const action of actions) {
       if (action.mon.isFainted) continue;
+      // Flinch check: Fake Out's flinch sets hasMoved = true, preventing action
+      if (action.mon.hasMoved && !action.switchOut) {
+        turnEvents.push(`${action.mon.pokemon.name} flinched!`);
+        continue;
+      }
       // Handle switch-out actions
       if (action.switchOut) {
         const active = action.sideIndex === 1 ? state.active1 : state.active2;
@@ -1764,20 +1854,58 @@ export function simulateBattleWithLog(
       const opponents = action.sideIndex === 1 ? state.active2 : state.active1;
       const allies = action.sideIndex === 1 ? state.active1 : state.active2;
       const target = opponents[action.targetSlot] ?? null;
-      const targetName = target?.pokemon.name ?? "the foe";
-      const prevHP = target ? target.currentHP : 0;
-      executeMove(action.mon, action.moveName, target, allies.filter((a): a is BattlePokemon => a !== null && a !== action.mon), opponents.filter((a): a is BattlePokemon => a !== null), state, action.sideIndex);
       const move = getMove(action.moveName);
+
+      // Track HP of targets (excluding user) before the move for proper logging
+      const logTargets = [...opponents, ...allies].filter((m): m is BattlePokemon => m !== null && !m.isFainted && m !== action.mon);
+      const hpBefore = new Map(logTargets.map(m => [m, m.currentHP]));
+      const protectedBefore = new Map(logTargets.map(m => [m, m.isProtected]));
+      const userHPBefore = action.mon.currentHP;
+
+      executeMove(action.mon, action.moveName, target, allies.filter((a): a is BattlePokemon => a !== null && a !== action.mon), opponents.filter((a): a is BattlePokemon => a !== null), state, action.sideIndex);
+
       if (move?.category === "status") {
-        turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName}!`);
-      } else if (target) {
-        const dmg = prevHP - target.currentHP;
-        if (target.isFainted) {
-          turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} on ${targetName} — KO!`);
-        } else if (dmg > 0) {
-          turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} on ${targetName} (${Math.round((dmg / target.maxHP) * 100)}% damage)`);
+        if (move.flags.protect) {
+          if (action.mon.isProtected) {
+            turnEvents.push(`${action.mon.pokemon.name} used Protect!`);
+          } else {
+            turnEvents.push(`${action.mon.pokemon.name}'s Protect failed!`);
+          }
         } else {
-          turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} — missed or no effect`);
+          turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName}!`);
+        }
+      } else {
+        // Log damage to all affected targets (spread moves hit multiple)
+        let hitAnything = false;
+        for (const mon of logTargets) {
+          const prev = hpBefore.get(mon) ?? mon.currentHP;
+          const dmg = prev - mon.currentHP;
+          const wasProtected = protectedBefore.get(mon);
+          if (wasProtected && dmg <= 0 && opponents.includes(mon)) {
+            if (mon === target || (move && isSpreadMove(move))) {
+              turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} on ${mon.pokemon.name} — blocked by Protect!`);
+              hitAnything = true;
+            }
+          } else if (mon.isFainted && dmg > 0) {
+            turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} on ${mon.pokemon.name} — KO!`);
+            hitAnything = true;
+          } else if (dmg > 0) {
+            turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} on ${mon.pokemon.name} (${Math.round((dmg / mon.maxHP) * 100)}% damage)`);
+            hitAnything = true;
+          }
+        }
+        // Log recoil/Life Orb self-damage separately
+        const selfDmg = userHPBefore - action.mon.currentHP;
+        const hasRecoilMove = move && move.flags.recoil;
+        const hasLifeOrb = action.mon.item === "Life Orb";
+        const label = hasRecoilMove ? "recoil" : hasLifeOrb ? "Life Orb damage" : "recoil";
+        if (selfDmg > 0 && action.mon.isFainted) {
+          turnEvents.push(`${action.mon.pokemon.name} fainted from ${label}!`);
+        } else if (selfDmg > 0) {
+          turnEvents.push(`${action.mon.pokemon.name} took ${Math.round((selfDmg / action.mon.maxHP) * 100)}% ${label}!`);
+        }
+        if (!hitAnything && selfDmg <= 0) {
+          turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} — no target`);
         }
       }
     }
