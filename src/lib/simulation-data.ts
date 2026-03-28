@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 // CHAMPIONS LAB — AUTO-GENERATED SIMULATION DATA
 // Generated from 2,000,000 mega-aware battle simulations
-// Date: 2026-03-27T22:19:04.273Z
+// Date: 2026-03-28T00:01:53.032Z
 // ═══════════════════════════════════════════════════════════════════════════════
 
 export interface SimPokemonData {
@@ -54,36 +54,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 3,
     "name": "Venusaur",
     "isMega": false,
-    "elo": 9663,
-    "winRate": 50.5,
-    "appearances": 189709,
-    "wins": 95832,
-    "losses": 93877,
+    "elo": 9715,
+    "winRate": 50.9,
+    "appearances": 191672,
+    "wins": 97629,
+    "losses": 94043,
     "bestPartners": [
       {
-        "name": "Scovillain",
-        "winRate": 54.5,
-        "games": 9851
+        "name": "Mega Greninja",
+        "winRate": 71.2,
+        "games": 3750
       },
       {
-        "name": "Leafeon",
-        "winRate": 54.5,
-        "games": 9851
+        "name": "Scizor",
+        "winRate": 71.2,
+        "games": 3750
       },
       {
-        "name": "Ninetales",
-        "winRate": 54.5,
-        "games": 9851
+        "name": "Heat Rotom",
+        "winRate": 71.2,
+        "games": 3750
       },
       {
-        "name": "Charizard",
-        "winRate": 54.5,
-        "games": 9851
+        "name": "Metagross",
+        "winRate": 59.1,
+        "games": 9433
       },
       {
-        "name": "Garchomp",
-        "winRate": 50.8,
-        "games": 62263
+        "name": "Dragapult",
+        "winRate": 54.4,
+        "games": 20439
       }
     ],
     "bestSets": []
@@ -92,36 +92,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 6,
     "name": "Charizard",
     "isMega": false,
-    "elo": 9652,
-    "winRate": 51.2,
-    "appearances": 303875,
-    "wins": 155623,
-    "losses": 148252,
+    "elo": 9694,
+    "winRate": 51.4,
+    "appearances": 271651,
+    "wins": 139534,
+    "losses": 132117,
     "bestPartners": [
       {
+        "name": "Mega Chesnaught",
+        "winRate": 65.2,
+        "games": 4003
+      },
+      {
         "name": "Excadrill",
-        "winRate": 64.7,
-        "games": 8206
+        "winRate": 63.2,
+        "games": 8562
       },
       {
         "name": "Hydreigon",
-        "winRate": 64.7,
-        "games": 8206
-      },
-      {
-        "name": "Torkoal",
-        "winRate": 61.8,
-        "games": 4379
+        "winRate": 63.2,
+        "games": 8562
       },
       {
         "name": "Chesnaught",
-        "winRate": 61.6,
-        "games": 8793
+        "winRate": 62.4,
+        "games": 8619
       },
       {
-        "name": "Heat Rotom",
-        "winRate": 60.3,
-        "games": 17887
+        "name": "Weavile",
+        "winRate": 61.6,
+        "games": 4376
       }
     ],
     "bestSets": []
@@ -130,36 +130,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 9,
     "name": "Blastoise",
     "isMega": false,
-    "elo": 9708,
-    "winRate": 50.4,
-    "appearances": 104751,
-    "wins": 52757,
-    "losses": 51994,
+    "elo": 9694,
+    "winRate": 50.2,
+    "appearances": 114239,
+    "wins": 57335,
+    "losses": 56904,
     "bestPartners": [
       {
-        "name": "Dragapult",
-        "winRate": 51.5,
-        "games": 10966
+        "name": "Kleavor",
+        "winRate": 53.7,
+        "games": 5095
       },
       {
-        "name": "Meowscarada",
-        "winRate": 51.5,
-        "games": 10966
+        "name": "Excadrill",
+        "winRate": 53.7,
+        "games": 5095
       },
       {
-        "name": "Torterra",
-        "winRate": 50.8,
-        "games": 5615
+        "name": "Milotic",
+        "winRate": 53.7,
+        "games": 5095
       },
       {
-        "name": "Alolan Ninetales",
-        "winRate": 50.8,
-        "games": 11206
+        "name": "Archaludon",
+        "winRate": 53.7,
+        "games": 5095
       },
       {
         "name": "Whimsicott",
-        "winRate": 50.8,
-        "games": 16492
+        "winRate": 51,
+        "games": 10866
       }
     ],
     "bestSets": []
@@ -168,36 +168,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 15,
     "name": "Beedrill",
     "isMega": false,
-    "elo": 9658,
-    "winRate": 43.8,
-    "appearances": 9704,
-    "wins": 4252,
-    "losses": 5452,
+    "elo": 9639,
+    "winRate": 47.4,
+    "appearances": 15560,
+    "wins": 7374,
+    "losses": 8186,
     "bestPartners": [
       {
-        "name": "Krookodile",
-        "winRate": 43.8,
-        "games": 9704
+        "name": "Zoroark",
+        "winRate": 51.1,
+        "games": 5626
       },
       {
-        "name": "Incineroar",
-        "winRate": 43.8,
-        "games": 9704
+        "name": "Scizor",
+        "winRate": 51.1,
+        "games": 5626
       },
       {
-        "name": "Hisuian Arcanine",
-        "winRate": 43.8,
-        "games": 9704
+        "name": "Hisuian Zoroark",
+        "winRate": 51.1,
+        "games": 5626
       },
       {
-        "name": "Greninja",
-        "winRate": 43.8,
-        "games": 9704
+        "name": "Froslass",
+        "winRate": 51.1,
+        "games": 5626
       },
       {
-        "name": "Garchomp",
-        "winRate": 43.8,
-        "games": 9704
+        "name": "Dragapult",
+        "winRate": 51.1,
+        "games": 5626
       }
     ],
     "bestSets": []
@@ -206,36 +206,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 25,
     "name": "Pikachu",
     "isMega": false,
-    "elo": 9613,
-    "winRate": 45.7,
-    "appearances": 15433,
-    "wins": 7049,
-    "losses": 8384,
+    "elo": 9581,
+    "winRate": 39,
+    "appearances": 13294,
+    "wins": 5185,
+    "losses": 8109,
     "bestPartners": [
       {
-        "name": "Whimsicott",
-        "winRate": 49.1,
-        "games": 5605
-      },
-      {
-        "name": "Skarmory",
-        "winRate": 49.1,
-        "games": 5605
-      },
-      {
-        "name": "Pelipper",
-        "winRate": 49.1,
-        "games": 5605
-      },
-      {
-        "name": "Aerodactyl",
-        "winRate": 49.1,
-        "games": 5605
-      },
-      {
         "name": "Gyarados",
-        "winRate": 46.1,
-        "games": 5247
+        "winRate": 46,
+        "games": 5075
+      },
+      {
+        "name": "Arcanine",
+        "winRate": 46,
+        "games": 5075
+      },
+      {
+        "name": "Corviknight",
+        "winRate": 46,
+        "games": 5075
+      },
+      {
+        "name": "Hisuian Arcanine",
+        "winRate": 46,
+        "games": 5075
+      },
+      {
+        "name": "Incineroar",
+        "winRate": 39,
+        "games": 13294
       }
     ],
     "bestSets": []
@@ -244,36 +244,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 26,
     "name": "Raichu",
     "isMega": false,
-    "elo": 9713,
+    "elo": 9662,
     "winRate": 50.1,
-    "appearances": 22103,
-    "wins": 11081,
-    "losses": 11022,
+    "appearances": 21465,
+    "wins": 10752,
+    "losses": 10713,
     "bestPartners": [
       {
-        "name": "Mega Gardevoir",
-        "winRate": 50.4,
-        "games": 10977
+        "name": "Arcanine",
+        "winRate": 50.2,
+        "games": 10816
       },
       {
-        "name": "Garchomp",
-        "winRate": 50.4,
-        "games": 10977
+        "name": "Corviknight",
+        "winRate": 50.2,
+        "games": 10816
       },
       {
-        "name": "Tyranitar",
-        "winRate": 50.4,
-        "games": 10977
+        "name": "Hisuian Arcanine",
+        "winRate": 50.2,
+        "games": 10816
       },
       {
         "name": "Gyarados",
         "winRate": 50.1,
-        "games": 22103
+        "games": 21465
       },
       {
         "name": "Incineroar",
         "winRate": 50.1,
-        "games": 22103
+        "games": 21465
       }
     ],
     "bestSets": []
@@ -282,36 +282,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 36,
     "name": "Clefable",
     "isMega": false,
-    "elo": 9762,
-    "winRate": 51.2,
-    "appearances": 70146,
-    "wins": 35927,
-    "losses": 34219,
+    "elo": 9708,
+    "winRate": 51.5,
+    "appearances": 64068,
+    "wins": 32983,
+    "losses": 31085,
     "bestPartners": [
       {
         "name": "Archaludon",
-        "winRate": 58.5,
-        "games": 9239
+        "winRate": 59,
+        "games": 9240
       },
       {
         "name": "Scizor",
-        "winRate": 58.5,
-        "games": 9239
+        "winRate": 59,
+        "games": 9240
       },
       {
         "name": "Metagross",
-        "winRate": 58.5,
-        "games": 9239
+        "winRate": 59,
+        "games": 9240
       },
       {
         "name": "Kingambit",
-        "winRate": 52.7,
-        "games": 31427
+        "winRate": 52.4,
+        "games": 36871
       },
       {
         "name": "Incineroar",
-        "winRate": 51.6,
-        "games": 48032
+        "winRate": 51.9,
+        "games": 47700
       }
     ],
     "bestSets": []
@@ -320,36 +320,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 38,
     "name": "Ninetales",
     "isMega": false,
-    "elo": 9693,
-    "winRate": 53.1,
-    "appearances": 20576,
-    "wins": 10928,
-    "losses": 9648,
+    "elo": 9685,
+    "winRate": 50.7,
+    "appearances": 20820,
+    "wins": 10562,
+    "losses": 10258,
     "bestPartners": [
       {
         "name": "Torkoal",
-        "winRate": 61.8,
-        "games": 4379
-      },
-      {
-        "name": "Scovillain",
-        "winRate": 54.5,
-        "games": 9851
+        "winRate": 58.3,
+        "games": 4568
       },
       {
         "name": "Leafeon",
-        "winRate": 54.5,
-        "games": 9851
-      },
-      {
-        "name": "Charizard",
-        "winRate": 54.5,
-        "games": 9851
+        "winRate": 53.7,
+        "games": 10058
       },
       {
         "name": "Venusaur",
-        "winRate": 54.5,
-        "games": 9851
+        "winRate": 53.7,
+        "games": 10058
+      },
+      {
+        "name": "Charizard",
+        "winRate": 53.7,
+        "games": 10058
+      },
+      {
+        "name": "Scovillain",
+        "winRate": 53.7,
+        "games": 10058
       }
     ],
     "bestSets": []
@@ -358,36 +358,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 59,
     "name": "Arcanine",
     "isMega": false,
-    "elo": 9689,
-    "winRate": 48.8,
-    "appearances": 671641,
-    "wins": 327888,
-    "losses": 343753,
+    "elo": 9643,
+    "winRate": 49.1,
+    "appearances": 739824,
+    "wins": 363589,
+    "losses": 376235,
     "bestPartners": [
       {
-        "name": "Hydreigon",
-        "winRate": 58,
-        "games": 4585
+        "name": "Kommo-o",
+        "winRate": 74.5,
+        "games": 3640
+      },
+      {
+        "name": "Mega Garchomp",
+        "winRate": 61,
+        "games": 4436
+      },
+      {
+        "name": "Primarina",
+        "winRate": 61,
+        "games": 4436
+      },
+      {
+        "name": "Mega Feraligatr",
+        "winRate": 60.3,
+        "games": 8941
       },
       {
         "name": "Archaludon",
-        "winRate": 53.4,
-        "games": 5301
-      },
-      {
-        "name": "Ninetales",
-        "winRate": 53.4,
-        "games": 5301
-      },
-      {
-        "name": "Ampharos",
-        "winRate": 52.2,
-        "games": 10929
-      },
-      {
-        "name": "Mega Scizor",
-        "winRate": 51.9,
-        "games": 15870
+        "winRate": 59,
+        "games": 13924
       }
     ],
     "bestSets": []
@@ -396,36 +396,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 65,
     "name": "Alakazam",
     "isMega": false,
-    "elo": 9721,
-    "winRate": 48,
-    "appearances": 32240,
-    "wins": 15467,
-    "losses": 16773,
+    "elo": 9622,
+    "winRate": 49.3,
+    "appearances": 26074,
+    "wins": 12845,
+    "losses": 13229,
     "bestPartners": [
       {
-        "name": "Krookodile",
-        "winRate": 50.3,
-        "games": 11146
+        "name": "Mega Lopunny",
+        "winRate": 55,
+        "games": 5106
       },
       {
-        "name": "Azumarill",
-        "winRate": 50.3,
-        "games": 11146
+        "name": "Gardevoir",
+        "winRate": 55,
+        "games": 5106
       },
       {
-        "name": "Conkeldurr",
-        "winRate": 50.3,
-        "games": 11146
+        "name": "Polteageist",
+        "winRate": 55,
+        "games": 5106
       },
       {
-        "name": "Crabominable",
-        "winRate": 50.3,
-        "games": 11146
+        "name": "Hisuian Zoroark",
+        "winRate": 55,
+        "games": 5106
       },
       {
-        "name": "Hatterene",
-        "winRate": 50.2,
-        "games": 5716
+        "name": "Incineroar",
+        "winRate": 51.8,
+        "games": 16132
       }
     ],
     "bestSets": []
@@ -434,36 +434,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 71,
     "name": "Victreebel",
     "isMega": false,
-    "elo": 9713,
-    "winRate": 50.2,
-    "appearances": 21847,
-    "wins": 10974,
-    "losses": 10873,
+    "elo": 9724,
+    "winRate": 49.6,
+    "appearances": 22249,
+    "wins": 11038,
+    "losses": 11211,
     "bestPartners": [
       {
-        "name": "Mega Greninja",
-        "winRate": 51.8,
-        "games": 5355
+        "name": "Meganium",
+        "winRate": 50,
+        "games": 5501
       },
       {
-        "name": "Aegislash",
-        "winRate": 51.8,
-        "games": 5355
+        "name": "Krookodile",
+        "winRate": 50,
+        "games": 5501
       },
       {
-        "name": "Charizard",
-        "winRate": 51.8,
-        "games": 5355
+        "name": "Whimsicott",
+        "winRate": 50,
+        "games": 5501
       },
       {
-        "name": "Metagross",
-        "winRate": 51.8,
-        "games": 5355
+        "name": "Kommo-o",
+        "winRate": 50,
+        "games": 5501
       },
       {
-        "name": "Arcanine",
-        "winRate": 50.2,
-        "games": 16250
+        "name": "Mega Blastoise",
+        "winRate": 49.9,
+        "games": 11220
       }
     ],
     "bestSets": []
@@ -472,36 +472,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 80,
     "name": "Slowbro",
     "isMega": false,
-    "elo": 9694,
-    "winRate": 51.7,
-    "appearances": 106537,
-    "wins": 55059,
-    "losses": 51478,
+    "elo": 9733,
+    "winRate": 51,
+    "appearances": 134023,
+    "wins": 68333,
+    "losses": 65690,
     "bestPartners": [
       {
-        "name": "Heat Rotom",
-        "winRate": 66.8,
-        "games": 3934
+        "name": "Archaludon",
+        "winRate": 68.9,
+        "games": 3909
       },
       {
-        "name": "Archaludon",
-        "winRate": 66.8,
-        "games": 3934
+        "name": "Torkoal",
+        "winRate": 60.8,
+        "games": 4418
+      },
+      {
+        "name": "Heat Rotom",
+        "winRate": 58.1,
+        "games": 9524
       },
       {
         "name": "Mega Gyarados",
-        "winRate": 57.1,
-        "games": 9341
+        "winRate": 57.8,
+        "games": 9362
       },
       {
-        "name": "Snorlax",
-        "winRate": 56.8,
-        "games": 14511
-      },
-      {
-        "name": "Hatterene",
-        "winRate": 54.9,
-        "games": 15025
+        "name": "Garchomp",
+        "winRate": 54.6,
+        "games": 19989
       }
     ],
     "bestSets": []
@@ -510,36 +510,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 94,
     "name": "Gengar",
     "isMega": false,
-    "elo": 9692,
-    "winRate": 49.5,
-    "appearances": 446494,
-    "wins": 220845,
-    "losses": 225649,
+    "elo": 9724,
+    "winRate": 49.8,
+    "appearances": 460597,
+    "wins": 229569,
+    "losses": 231028,
     "bestPartners": [
       {
-        "name": "Mega Chesnaught",
-        "winRate": 66.4,
-        "games": 3878
+        "name": "Chesnaught",
+        "winRate": 62.4,
+        "games": 8619
       },
       {
         "name": "Heat Rotom",
-        "winRate": 63,
-        "games": 12671
-      },
-      {
-        "name": "Chesnaught",
-        "winRate": 61.6,
-        "games": 8793
+        "winRate": 59.3,
+        "games": 18198
       },
       {
         "name": "Greninja",
-        "winRate": 54.8,
-        "games": 34643
+        "winRate": 54.2,
+        "games": 39994
+      },
+      {
+        "name": "Mega Chesnaught",
+        "winRate": 53.9,
+        "games": 15102
       },
       {
         "name": "Charizard",
-        "winRate": 52.6,
-        "games": 50800
+        "winRate": 53,
+        "games": 56803
       }
     ],
     "bestSets": []
@@ -548,36 +548,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 115,
     "name": "Kangaskhan",
     "isMega": false,
-    "elo": 9703,
-    "winRate": 48.9,
-    "appearances": 32145,
-    "wins": 15732,
-    "losses": 16413,
+    "elo": 9705,
+    "winRate": 47.7,
+    "appearances": 31256,
+    "wins": 14920,
+    "losses": 16336,
     "bestPartners": [
       {
         "name": "Mega Gardevoir",
         "winRate": 50,
-        "games": 16246
+        "games": 16290
       },
       {
         "name": "Garchomp",
         "winRate": 50,
-        "games": 16246
+        "games": 16290
       },
       {
         "name": "Tyranitar",
         "winRate": 50,
-        "games": 16246
+        "games": 16290
       },
       {
         "name": "Gyarados",
-        "winRate": 49.6,
-        "games": 27126
+        "winRate": 49.4,
+        "games": 27148
       },
       {
-        "name": "Incineroar",
-        "winRate": 49.6,
-        "games": 27126
+        "name": "Arcanine",
+        "winRate": 48.6,
+        "games": 10858
       }
     ],
     "bestSets": []
@@ -586,36 +586,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 121,
     "name": "Starmie",
     "isMega": false,
-    "elo": 9710,
-    "winRate": 49.7,
-    "appearances": 44169,
-    "wins": 21944,
-    "losses": 22225,
+    "elo": 9649,
+    "winRate": 50.5,
+    "appearances": 54059,
+    "wins": 27291,
+    "losses": 26768,
     "bestPartners": [
       {
-        "name": "Crabominable",
-        "winRate": 50,
-        "games": 11191
+        "name": "Mega Drampa",
+        "winRate": 56,
+        "games": 4841
       },
       {
-        "name": "Drampa",
-        "winRate": 50,
-        "games": 11191
+        "name": "Scizor",
+        "winRate": 56,
+        "games": 4841
       },
       {
-        "name": "Ursaluna",
-        "winRate": 50,
-        "games": 11191
+        "name": "Aegislash",
+        "winRate": 56,
+        "games": 4841
       },
       {
-        "name": "Emboar",
-        "winRate": 50,
-        "games": 10828
+        "name": "Charizard",
+        "winRate": 56,
+        "games": 4841
       },
       {
         "name": "Arcanine",
-        "winRate": 49.9,
-        "games": 16780
+        "winRate": 51.4,
+        "games": 21525
       }
     ],
     "bestSets": []
@@ -624,36 +624,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 127,
     "name": "Pinsir",
     "isMega": false,
-    "elo": 9691,
-    "winRate": 50.6,
-    "appearances": 24935,
-    "wins": 12612,
-    "losses": 12323,
+    "elo": 9594,
+    "winRate": 49,
+    "appearances": 18578,
+    "wins": 9104,
+    "losses": 9474,
     "bestPartners": [
       {
         "name": "Wash Rotom",
-        "winRate": 57.6,
-        "games": 9513
+        "winRate": 57.4,
+        "games": 9499
       },
       {
         "name": "Archaludon",
-        "winRate": 57.6,
-        "games": 9513
+        "winRate": 57.4,
+        "games": 9499
       },
       {
         "name": "Kingambit",
-        "winRate": 57.6,
-        "games": 9513
+        "winRate": 57.4,
+        "games": 9499
       },
       {
         "name": "Tyranitar",
-        "winRate": 57.6,
-        "games": 9513
+        "winRate": 57.4,
+        "games": 9499
       },
       {
         "name": "Metagross",
-        "winRate": 57.6,
-        "games": 9513
+        "winRate": 57.4,
+        "games": 9499
       }
     ],
     "bestSets": []
@@ -662,36 +662,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 130,
     "name": "Gyarados",
     "isMega": false,
-    "elo": 9733,
-    "winRate": 49.7,
-    "appearances": 1259503,
-    "wins": 626352,
-    "losses": 633151,
+    "elo": 9679,
+    "winRate": 49.6,
+    "appearances": 1263259,
+    "wins": 626984,
+    "losses": 636275,
     "bestPartners": [
       {
         "name": "Kleavor",
-        "winRate": 55.6,
-        "games": 5143
+        "winRate": 54.5,
+        "games": 10089
       },
       {
-        "name": "Archaludon",
-        "winRate": 52.4,
-        "games": 21550
+        "name": "Mega Delphox",
+        "winRate": 54.4,
+        "games": 5033
       },
       {
-        "name": "Ampharos",
-        "winRate": 52.2,
-        "games": 10929
+        "name": "Tinkaton",
+        "winRate": 53.6,
+        "games": 10368
       },
       {
         "name": "Tsareena",
-        "winRate": 52,
-        "games": 10702
+        "winRate": 52.9,
+        "games": 5186
       },
       {
-        "name": "Primarina",
-        "winRate": 51.9,
-        "games": 5386
+        "name": "Mega Garchomp Z",
+        "winRate": 52.9,
+        "games": 15732
       }
     ],
     "bestSets": []
@@ -700,36 +700,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 132,
     "name": "Ditto",
     "isMega": false,
-    "elo": 9578,
-    "winRate": 39.7,
-    "appearances": 13587,
-    "wins": 5398,
-    "losses": 8189,
+    "elo": 9554,
+    "winRate": 36.7,
+    "appearances": 12802,
+    "wins": 4695,
+    "losses": 8107,
     "bestPartners": [
       {
         "name": "Mega Gallade",
-        "winRate": 48.2,
-        "games": 5472
+        "winRate": 50,
+        "games": 5341
       },
       {
-        "name": "Corviknight",
-        "winRate": 48.2,
-        "games": 5472
+        "name": "Kingambit",
+        "winRate": 50,
+        "games": 5341
       },
       {
-        "name": "Heat Rotom",
-        "winRate": 48.2,
-        "games": 5472
+        "name": "Tyranitar",
+        "winRate": 50,
+        "games": 5341
       },
       {
-        "name": "Excadrill",
-        "winRate": 48.2,
-        "games": 5472
+        "name": "Galarian Stunfisk",
+        "winRate": 50,
+        "games": 5341
       },
       {
-        "name": "Aggron",
-        "winRate": 48.2,
-        "games": 5472
+        "name": "Gyarados",
+        "winRate": 42.5,
+        "games": 9316
       }
     ],
     "bestSets": []
@@ -738,36 +738,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 134,
     "name": "Vaporeon",
     "isMega": false,
-    "elo": 9754,
-    "winRate": 50.1,
-    "appearances": 43738,
-    "wins": 21908,
-    "losses": 21830,
+    "elo": 9697,
+    "winRate": 49.9,
+    "appearances": 59691,
+    "wins": 29758,
+    "losses": 29933,
     "bestPartners": [
       {
-        "name": "Sandaconda",
-        "winRate": 50.4,
-        "games": 5483
-      },
-      {
         "name": "Arcanine",
-        "winRate": 50.4,
-        "games": 16446
-      },
-      {
-        "name": "Dragonite",
-        "winRate": 50.4,
-        "games": 10903
-      },
-      {
-        "name": "Mudsdale",
-        "winRate": 50.4,
-        "games": 5420
+        "winRate": 50.2,
+        "games": 21528
       },
       {
         "name": "Hisuian Arcanine",
-        "winRate": 50.4,
-        "games": 5543
+        "winRate": 50.2,
+        "games": 5373
+      },
+      {
+        "name": "Pelipper",
+        "winRate": 50.2,
+        "games": 5348
+      },
+      {
+        "name": "Altaria",
+        "winRate": 50.2,
+        "games": 5348
+      },
+      {
+        "name": "Mudsdale",
+        "winRate": 50.2,
+        "games": 5364
       }
     ],
     "bestSets": []
@@ -776,36 +776,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 135,
     "name": "Jolteon",
     "isMega": false,
-    "elo": 9661,
-    "winRate": 50,
-    "appearances": 16316,
-    "wins": 8151,
-    "losses": 8165,
+    "elo": 9599,
+    "winRate": 50.1,
+    "appearances": 16303,
+    "wins": 8160,
+    "losses": 8143,
     "bestPartners": [
       {
         "name": "Incineroar",
         "winRate": 50.5,
-        "games": 5486
-      },
-      {
-        "name": "Arcanine",
-        "winRate": 50.5,
-        "games": 5486
+        "games": 5324
       },
       {
         "name": "Corviknight",
         "winRate": 50.5,
-        "games": 5486
+        "games": 5324
+      },
+      {
+        "name": "Hisuian Arcanine",
+        "winRate": 50.5,
+        "games": 5324
       },
       {
         "name": "Gyarados",
         "winRate": 50.2,
-        "games": 10854
+        "games": 10785
       },
       {
-        "name": "Hisuian Arcanine",
-        "winRate": 50,
-        "games": 10948
+        "name": "Arcanine",
+        "winRate": 50.2,
+        "games": 10785
       }
     ],
     "bestSets": []
@@ -814,36 +814,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 136,
     "name": "Flareon",
     "isMega": false,
-    "elo": 9663,
-    "winRate": 48.1,
-    "appearances": 15966,
-    "wins": 7686,
-    "losses": 8280,
+    "elo": 9629,
+    "winRate": 48.6,
+    "appearances": 16153,
+    "wins": 7845,
+    "losses": 8308,
     "bestPartners": [
       {
-        "name": "Empoleon",
+        "name": "Quaquaval",
         "winRate": 50.1,
-        "games": 5437
+        "games": 5647
       },
       {
-        "name": "Weavile",
+        "name": "Dragapult",
         "winRate": 50.1,
-        "games": 5437
+        "games": 5647
       },
       {
-        "name": "Meowscarada",
+        "name": "Palafin",
         "winRate": 50.1,
-        "games": 5437
+        "games": 5647
+      },
+      {
+        "name": "Pelipper",
+        "winRate": 50.1,
+        "games": 5647
       },
       {
         "name": "Ninetales",
-        "winRate": 48.6,
-        "games": 5472
-      },
-      {
-        "name": "Scovillain",
-        "winRate": 48.6,
-        "games": 5472
+        "winRate": 49.8,
+        "games": 5490
       }
     ],
     "bestSets": []
@@ -852,36 +852,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 142,
     "name": "Aerodactyl",
     "isMega": false,
-    "elo": 9789,
-    "winRate": 51.4,
-    "appearances": 56023,
-    "wins": 28790,
-    "losses": 27233,
+    "elo": 9614,
+    "winRate": 47.1,
+    "appearances": 55615,
+    "wins": 26183,
+    "losses": 29432,
     "bestPartners": [
       {
+        "name": "Scovillain",
+        "winRate": 61.5,
+        "games": 8606
+      },
+      {
         "name": "Tyranitar",
-        "winRate": 60.6,
-        "games": 13437
+        "winRate": 61.4,
+        "games": 12918
       },
       {
         "name": "Kingambit",
-        "winRate": 60.6,
-        "games": 13437
+        "winRate": 61.4,
+        "games": 12918
       },
       {
         "name": "Archaludon",
-        "winRate": 60.6,
-        "games": 13437
-      },
-      {
-        "name": "Scovillain",
-        "winRate": 60.5,
-        "games": 9036
+        "winRate": 61.4,
+        "games": 12918
       },
       {
         "name": "Corviknight",
-        "winRate": 57.6,
-        "games": 19092
+        "winRate": 52.1,
+        "games": 27465
       }
     ],
     "bestSets": []
@@ -890,36 +890,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 143,
     "name": "Snorlax",
     "isMega": false,
-    "elo": 9725,
-    "winRate": 54,
-    "appearances": 25613,
-    "wins": 13821,
-    "losses": 11792,
+    "elo": 9717,
+    "winRate": 51.7,
+    "appearances": 37511,
+    "wins": 19382,
+    "losses": 18129,
     "bestPartners": [
       {
-        "name": "Hatterene",
-        "winRate": 58.1,
-        "games": 9432
+        "name": "Torkoal",
+        "winRate": 55.5,
+        "games": 9815
       },
       {
-        "name": "Kingambit",
-        "winRate": 57.2,
-        "games": 9580
+        "name": "Hatterene",
+        "winRate": 53.5,
+        "games": 15473
       },
       {
         "name": "Slowbro",
-        "winRate": 56.8,
-        "games": 14511
+        "winRate": 52.7,
+        "games": 21007
       },
       {
-        "name": "Torkoal",
-        "winRate": 56.8,
-        "games": 14511
+        "name": "Kingambit",
+        "winRate": 52.4,
+        "games": 26404
       },
       {
-        "name": "Drampa",
-        "winRate": 56.1,
-        "games": 4931
+        "name": "Tyranitar",
+        "winRate": 52,
+        "games": 31853
       }
     ],
     "bestSets": []
@@ -928,36 +928,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 149,
     "name": "Dragonite",
     "isMega": false,
-    "elo": 9764,
-    "winRate": 49.7,
-    "appearances": 506949,
-    "wins": 251930,
-    "losses": 255019,
+    "elo": 9728,
+    "winRate": 49.4,
+    "appearances": 494456,
+    "wins": 244074,
+    "losses": 250382,
     "bestPartners": [
       {
-        "name": "Milotic",
-        "winRate": 52,
-        "games": 21488
+        "name": "Mega Delphox",
+        "winRate": 54.1,
+        "games": 5104
       },
       {
-        "name": "Gardevoir",
-        "winRate": 50.9,
-        "games": 9822
+        "name": "Archaludon",
+        "winRate": 54.1,
+        "games": 5104
       },
       {
-        "name": "Hydreigon",
-        "winRate": 50.9,
-        "games": 27076
+        "name": "Araquanid",
+        "winRate": 54.1,
+        "games": 5104
       },
       {
-        "name": "Gliscor",
-        "winRate": 50.9,
-        "games": 5696
+        "name": "Hisuian Samurott",
+        "winRate": 51.3,
+        "games": 10462
       },
       {
-        "name": "Houndoom",
-        "winRate": 50.8,
-        "games": 11268
+        "name": "Zoroark",
+        "winRate": 51,
+        "games": 5455
       }
     ],
     "bestSets": []
@@ -966,36 +966,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 154,
     "name": "Meganium",
     "isMega": false,
-    "elo": 9696,
-    "winRate": 46.7,
-    "appearances": 67820,
-    "wins": 31689,
-    "losses": 36131,
+    "elo": 9596,
+    "winRate": 46.3,
+    "appearances": 82203,
+    "wins": 38056,
+    "losses": 44147,
     "bestPartners": [
       {
-        "name": "Mega Raichu Y",
-        "winRate": 50.5,
-        "games": 5649
+        "name": "Mega Feraligatr",
+        "winRate": 51.2,
+        "games": 5644
       },
       {
-        "name": "Heat Rotom",
-        "winRate": 50.1,
-        "games": 11416
+        "name": "Dragapult",
+        "winRate": 51.2,
+        "games": 5644
       },
       {
-        "name": "Toxapex",
-        "winRate": 50.1,
-        "games": 11416
+        "name": "Venusaur",
+        "winRate": 51.2,
+        "games": 5644
       },
       {
-        "name": "Wash Rotom",
-        "winRate": 50.1,
-        "games": 11416
+        "name": "Mow Rotom",
+        "winRate": 51,
+        "games": 11244
       },
       {
-        "name": "Gyarados",
-        "winRate": 50,
-        "games": 27969
+        "name": "Meowscarada",
+        "winRate": 51,
+        "games": 5780
       }
     ],
     "bestSets": []
@@ -1004,36 +1004,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 157,
     "name": "Typhlosion",
     "isMega": false,
-    "elo": 9675,
-    "winRate": 48,
-    "appearances": 16007,
-    "wins": 7690,
-    "losses": 8317,
+    "elo": 9613,
+    "winRate": 49.1,
+    "appearances": 14737,
+    "wins": 7243,
+    "losses": 7494,
     "bestPartners": [
       {
-        "name": "Vanilluxe",
-        "winRate": 50.5,
-        "games": 5671
+        "name": "Noivern",
+        "winRate": 57.5,
+        "games": 4756
       },
       {
-        "name": "Palafin",
-        "winRate": 50.5,
-        "games": 5671
+        "name": "Kingambit",
+        "winRate": 57.5,
+        "games": 4756
       },
       {
-        "name": "Garchomp",
-        "winRate": 50.5,
-        "games": 5671
+        "name": "Hydreigon",
+        "winRate": 57.5,
+        "games": 4756
       },
       {
-        "name": "Charizard",
-        "winRate": 50.5,
-        "games": 5671
+        "name": "Gyarados",
+        "winRate": 51.4,
+        "games": 9849
       },
       {
-        "name": "Dragonite",
-        "winRate": 48.3,
-        "games": 10789
+        "name": "Empoleon",
+        "winRate": 51,
+        "games": 9644
       }
     ],
     "bestSets": []
@@ -1042,36 +1042,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 160,
     "name": "Feraligatr",
     "isMega": false,
-    "elo": 9691,
-    "winRate": 50,
-    "appearances": 151514,
-    "wins": 75749,
-    "losses": 75765,
+    "elo": 9710,
+    "winRate": 50.1,
+    "appearances": 109069,
+    "wins": 54660,
+    "losses": 54409,
     "bestPartners": [
       {
-        "name": "Mega Venusaur",
-        "winRate": 56.6,
-        "games": 9697
-      },
-      {
-        "name": "Hisuian Samurott",
-        "winRate": 55.8,
-        "games": 4907
-      },
-      {
-        "name": "Wash Rotom",
-        "winRate": 55.8,
-        "games": 4907
+        "name": "Kleavor",
+        "winRate": 55.3,
+        "games": 4994
       },
       {
         "name": "Archaludon",
-        "winRate": 55.6,
-        "games": 5143
+        "winRate": 55.3,
+        "games": 4994
       },
       {
         "name": "Kingambit",
-        "winRate": 55.6,
-        "games": 5143
+        "winRate": 52.1,
+        "games": 10582
+      },
+      {
+        "name": "Mega Venusaur",
+        "winRate": 51.8,
+        "games": 15945
+      },
+      {
+        "name": "Greninja",
+        "winRate": 51.7,
+        "games": 16059
       }
     ],
     "bestSets": []
@@ -1080,36 +1080,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 181,
     "name": "Ampharos",
     "isMega": false,
-    "elo": 9671,
-    "winRate": 52.2,
-    "appearances": 10929,
-    "wins": 5704,
-    "losses": 5225,
+    "elo": 9654,
+    "winRate": 52,
+    "appearances": 10777,
+    "wins": 5599,
+    "losses": 5178,
     "bestPartners": [
       {
         "name": "Gyarados",
-        "winRate": 52.2,
-        "games": 10929
+        "winRate": 52,
+        "games": 10777
       },
       {
         "name": "Incineroar",
-        "winRate": 52.2,
-        "games": 10929
+        "winRate": 52,
+        "games": 10777
       },
       {
         "name": "Charizard",
-        "winRate": 52.2,
-        "games": 10929
+        "winRate": 52,
+        "games": 10777
       },
       {
         "name": "Arcanine",
-        "winRate": 52.2,
-        "games": 10929
+        "winRate": 52,
+        "games": 10777
       },
       {
         "name": "Whimsicott",
-        "winRate": 52.2,
-        "games": 10929
+        "winRate": 52,
+        "games": 10777
       }
     ],
     "bestSets": []
@@ -1118,36 +1118,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 184,
     "name": "Azumarill",
     "isMega": false,
-    "elo": 9669,
-    "winRate": 50.8,
-    "appearances": 284946,
-    "wins": 144732,
-    "losses": 140214,
+    "elo": 9662,
+    "winRate": 50.5,
+    "appearances": 314349,
+    "wins": 158714,
+    "losses": 155635,
     "bestPartners": [
       {
-        "name": "Sandaconda",
-        "winRate": 60.5,
-        "games": 4647
+        "name": "Empoleon",
+        "winRate": 61,
+        "games": 4436
       },
       {
-        "name": "Samurott",
-        "winRate": 60.5,
-        "games": 4647
-      },
-      {
-        "name": "Milotic",
-        "winRate": 60.5,
-        "games": 4647
-      },
-      {
-        "name": "Clawitzer",
-        "winRate": 60.5,
-        "games": 4647
+        "name": "Aegislash",
+        "winRate": 57,
+        "games": 4755
       },
       {
         "name": "Archaludon",
-        "winRate": 58.7,
-        "games": 4660
+        "winRate": 56.4,
+        "games": 9652
+      },
+      {
+        "name": "Hisuian Arcanine",
+        "winRate": 56.2,
+        "games": 4861
+      },
+      {
+        "name": "Mega Garchomp",
+        "winRate": 55.8,
+        "games": 9839
       }
     ],
     "bestSets": []
@@ -1156,36 +1156,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 186,
     "name": "Politoed",
     "isMega": false,
-    "elo": 9789,
+    "elo": 9673,
     "winRate": 50.2,
-    "appearances": 206829,
-    "wins": 103880,
-    "losses": 102949,
+    "appearances": 244497,
+    "wins": 122616,
+    "losses": 121881,
     "bestPartners": [
       {
-        "name": "Kleavor",
-        "winRate": 55.6,
-        "games": 5143
-      },
-      {
         "name": "Archaludon",
-        "winRate": 55.6,
-        "games": 5143
+        "winRate": 55.3,
+        "games": 4994
       },
       {
         "name": "Mega Venusaur",
-        "winRate": 53.1,
-        "games": 10362
+        "winRate": 52.9,
+        "games": 10400
+      },
+      {
+        "name": "Kleavor",
+        "winRate": 52.3,
+        "games": 10462
       },
       {
         "name": "Kingambit",
-        "winRate": 52,
-        "games": 16007
+        "winRate": 51.6,
+        "games": 16190
       },
       {
-        "name": "Greninja",
-        "winRate": 51.8,
-        "games": 21258
+        "name": "Feraligatr",
+        "winRate": 51,
+        "games": 42961
       }
     ],
     "bestSets": []
@@ -1194,36 +1194,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 196,
     "name": "Espeon",
     "isMega": false,
-    "elo": 9616,
-    "winRate": 41.6,
-    "appearances": 23598,
-    "wins": 9826,
-    "losses": 13772,
+    "elo": 9618,
+    "winRate": 41.5,
+    "appearances": 14027,
+    "wins": 5821,
+    "losses": 8206,
     "bestPartners": [
       {
-        "name": "Sneasler",
-        "winRate": 50.3,
-        "games": 5462
-      },
-      {
-        "name": "Wash Rotom",
-        "winRate": 50.3,
-        "games": 5462
-      },
-      {
-        "name": "Dragonite",
-        "winRate": 50.3,
-        "games": 5462
-      },
-      {
         "name": "Incineroar",
-        "winRate": 49.8,
-        "games": 11180
+        "winRate": 49.6,
+        "games": 5603
       },
       {
         "name": "Kingambit",
-        "winRate": 49.2,
-        "games": 5718
+        "winRate": 49.6,
+        "games": 5603
+      },
+      {
+        "name": "Krookodile",
+        "winRate": 49.6,
+        "games": 5603
+      },
+      {
+        "name": "Azumarill",
+        "winRate": 49.6,
+        "games": 5603
+      },
+      {
+        "name": "Conkeldurr",
+        "winRate": 49.6,
+        "games": 5603
       }
     ],
     "bestSets": []
@@ -1232,36 +1232,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 197,
     "name": "Umbreon",
     "isMega": false,
-    "elo": 9688,
-    "winRate": 48.5,
-    "appearances": 42848,
-    "wins": 20760,
-    "losses": 22088,
+    "elo": 9659,
+    "winRate": 49.9,
+    "appearances": 27420,
+    "wins": 13675,
+    "losses": 13745,
     "bestPartners": [
       {
-        "name": "Delphox",
+        "name": "Rotom",
         "winRate": 50.5,
-        "games": 5650
+        "games": 5630
       },
       {
-        "name": "Charizard",
+        "name": "Volcarona",
         "winRate": 50.5,
-        "games": 5650
+        "games": 5630
       },
       {
-        "name": "Runerigus",
-        "winRate": 50.4,
-        "games": 5339
+        "name": "Dragapult",
+        "winRate": 50.5,
+        "games": 5630
       },
       {
-        "name": "Whimsicott",
-        "winRate": 50.4,
-        "games": 5339
+        "name": "Sneasler",
+        "winRate": 50.5,
+        "games": 5630
       },
       {
-        "name": "Hydreigon",
-        "winRate": 50.4,
-        "games": 5339
+        "name": "Hisuian Typhlosion",
+        "winRate": 50.1,
+        "games": 5306
       }
     ],
     "bestSets": []
@@ -1270,36 +1270,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 199,
     "name": "Slowking",
     "isMega": false,
-    "elo": 9671,
-    "winRate": 50,
-    "appearances": 16893,
-    "wins": 8450,
-    "losses": 8443,
+    "elo": 9684,
+    "winRate": 50.2,
+    "appearances": 16410,
+    "wins": 8243,
+    "losses": 8167,
     "bestPartners": [
       {
+        "name": "Mega Audino",
+        "winRate": 50.6,
+        "games": 5633
+      },
+      {
         "name": "Arcanine",
-        "winRate": 50.4,
-        "games": 5692
+        "winRate": 50.6,
+        "games": 5633
       },
       {
-        "name": "Crabominable",
-        "winRate": 50.4,
-        "games": 5692
+        "name": "Hisuian Zoroark",
+        "winRate": 50.6,
+        "games": 5633
       },
       {
-        "name": "Drampa",
-        "winRate": 50.4,
-        "games": 5692
+        "name": "Galarian Slowbro",
+        "winRate": 50.6,
+        "games": 5633
       },
       {
-        "name": "Ursaluna",
-        "winRate": 50.4,
-        "games": 5692
-      },
-      {
-        "name": "Mega Houndoom",
-        "winRate": 50.4,
-        "games": 5678
+        "name": "Gliscor",
+        "winRate": 50.5,
+        "games": 5436
       }
     ],
     "bestSets": []
@@ -1308,36 +1308,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 208,
     "name": "Steelix",
     "isMega": false,
-    "elo": 9706,
-    "winRate": 49.4,
-    "appearances": 104177,
-    "wins": 51433,
-    "losses": 52744,
+    "elo": 9681,
+    "winRate": 48.7,
+    "appearances": 112489,
+    "wins": 54833,
+    "losses": 57656,
     "bestPartners": [
       {
-        "name": "Gyarados",
-        "winRate": 50.3,
-        "games": 22024
+        "name": "Mr. Rime",
+        "winRate": 50.4,
+        "games": 5659
       },
       {
-        "name": "Quaquaval",
-        "winRate": 50.2,
-        "games": 5615
+        "name": "Drampa",
+        "winRate": 50.4,
+        "games": 5659
       },
       {
-        "name": "Metagross",
-        "winRate": 50.2,
-        "games": 16648
+        "name": "Stunfisk",
+        "winRate": 50.4,
+        "games": 5659
       },
       {
-        "name": "Skarmory",
+        "name": "Ursaluna",
         "winRate": 50.2,
-        "games": 5615
+        "games": 11000
       },
       {
-        "name": "Heat Rotom",
-        "winRate": 50.2,
-        "games": 5615
+        "name": "Archaludon",
+        "winRate": 50.1,
+        "games": 16531
       }
     ],
     "bestSets": []
@@ -1346,36 +1346,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 212,
     "name": "Scizor",
     "isMega": false,
-    "elo": 9779,
-    "winRate": 51.2,
-    "appearances": 412405,
-    "wins": 210988,
-    "losses": 201417,
+    "elo": 9744,
+    "winRate": 51.1,
+    "appearances": 408724,
+    "wins": 208700,
+    "losses": 200024,
     "bestPartners": [
       {
-        "name": "Mega Clefable",
-        "winRate": 62.4,
-        "games": 13098
+        "name": "Venusaur",
+        "winRate": 71.2,
+        "games": 3750
+      },
+      {
+        "name": "Heat Rotom",
+        "winRate": 71.2,
+        "games": 3750
       },
       {
         "name": "Archaludon",
-        "winRate": 62.2,
-        "games": 21741
+        "winRate": 61.3,
+        "games": 17583
       },
       {
-        "name": "Clefable",
-        "winRate": 58.5,
-        "games": 9239
+        "name": "Alcremie",
+        "winRate": 61.1,
+        "games": 4344
       },
       {
-        "name": "Torkoal",
-        "winRate": 58.1,
-        "games": 4683
-      },
-      {
-        "name": "Empoleon",
-        "winRate": 56.3,
-        "games": 14648
+        "name": "Mega Greninja",
+        "winRate": 60.3,
+        "games": 9028
       }
     ],
     "bestSets": []
@@ -1384,36 +1384,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 214,
     "name": "Heracross",
     "isMega": false,
-    "elo": 9714,
-    "winRate": 52.7,
-    "appearances": 10807,
-    "wins": 5692,
-    "losses": 5115,
+    "elo": 9666,
+    "winRate": 51.8,
+    "appearances": 16428,
+    "wins": 8509,
+    "losses": 7919,
     "bestPartners": [
       {
         "name": "Tyranitar",
-        "winRate": 52.7,
-        "games": 10807
+        "winRate": 52.5,
+        "games": 10801
       },
       {
         "name": "Metagross",
-        "winRate": 52.7,
-        "games": 10807
+        "winRate": 52.5,
+        "games": 10801
       },
       {
         "name": "Wash Rotom",
-        "winRate": 52.7,
-        "games": 10807
+        "winRate": 52.5,
+        "games": 10801
       },
       {
         "name": "Greninja",
-        "winRate": 52.7,
-        "games": 10807
+        "winRate": 52.5,
+        "games": 10801
       },
       {
         "name": "Kingambit",
-        "winRate": 52.7,
-        "games": 10807
+        "winRate": 52.5,
+        "games": 10801
       }
     ],
     "bestSets": []
@@ -1422,36 +1422,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 227,
     "name": "Skarmory",
     "isMega": false,
-    "elo": 9728,
-    "winRate": 48.9,
-    "appearances": 70516,
-    "wins": 34468,
-    "losses": 36048,
+    "elo": 9615,
+    "winRate": 47.9,
+    "appearances": 84691,
+    "wins": 40594,
+    "losses": 44097,
     "bestPartners": [
       {
-        "name": "Archaludon",
-        "winRate": 52.2,
-        "games": 5380
+        "name": "Lycanroc",
+        "winRate": 50.9,
+        "games": 5699
       },
       {
-        "name": "Alolan Raichu",
-        "winRate": 52.2,
-        "games": 5380
+        "name": "Hisuian Decidueye",
+        "winRate": 50.9,
+        "games": 5699
       },
       {
-        "name": "Quaquaval",
-        "winRate": 50.2,
-        "games": 5615
+        "name": "Decidueye",
+        "winRate": 50.9,
+        "games": 5699
       },
       {
-        "name": "Arcanine",
-        "winRate": 50.2,
-        "games": 22480
+        "name": "Pelipper",
+        "winRate": 50.9,
+        "games": 5699
       },
       {
-        "name": "Steelix",
-        "winRate": 50.2,
-        "games": 5615
+        "name": "Palafin",
+        "winRate": 50.8,
+        "games": 5628
       }
     ],
     "bestSets": []
@@ -1460,36 +1460,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 229,
     "name": "Houndoom",
     "isMega": false,
-    "elo": 9727,
-    "winRate": 50.6,
-    "appearances": 16692,
-    "wins": 8449,
-    "losses": 8243,
+    "elo": 9674,
+    "winRate": 50.3,
+    "appearances": 22427,
+    "wins": 11271,
+    "losses": 11156,
     "bestPartners": [
       {
+        "name": "Gyarados",
+        "winRate": 50.9,
+        "games": 11229
+      },
+      {
         "name": "Whimsicott",
-        "winRate": 50.8,
-        "games": 11268
+        "winRate": 50.9,
+        "games": 11229
       },
       {
         "name": "Decidueye",
-        "winRate": 50.8,
-        "games": 11268
+        "winRate": 50.9,
+        "games": 11229
       },
       {
         "name": "Dragapult",
-        "winRate": 50.8,
-        "games": 11268
+        "winRate": 50.9,
+        "games": 11229
       },
       {
         "name": "Dragonite",
-        "winRate": 50.8,
-        "games": 11268
-      },
-      {
-        "name": "Gyarados",
-        "winRate": 50.6,
-        "games": 16692
+        "winRate": 50.9,
+        "games": 11229
       }
     ],
     "bestSets": []
@@ -1498,36 +1498,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 248,
     "name": "Tyranitar",
     "isMega": false,
-    "elo": 9697,
-    "winRate": 50.6,
-    "appearances": 684659,
-    "wins": 346309,
-    "losses": 338350,
+    "elo": 9674,
+    "winRate": 50.4,
+    "appearances": 684498,
+    "wins": 344728,
+    "losses": 339770,
     "bestPartners": [
       {
+        "name": "Scovillain",
+        "winRate": 61.5,
+        "games": 8606
+      },
+      {
         "name": "Aerodactyl",
-        "winRate": 60.6,
-        "games": 13437
+        "winRate": 61.4,
+        "games": 12918
       },
       {
         "name": "Corviknight",
-        "winRate": 60.6,
-        "games": 13437
+        "winRate": 61.4,
+        "games": 12918
       },
       {
-        "name": "Scovillain",
-        "winRate": 60.5,
-        "games": 9036
-      },
-      {
-        "name": "Pinsir",
-        "winRate": 57.6,
-        "games": 9513
+        "name": "Mega Scovillain",
+        "winRate": 61.3,
+        "games": 4312
       },
       {
         "name": "Archaludon",
-        "winRate": 57.3,
-        "games": 33341
+        "winRate": 59.2,
+        "games": 27208
       }
     ],
     "bestSets": []
@@ -1536,36 +1536,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 279,
     "name": "Pelipper",
     "isMega": false,
-    "elo": 9664,
-    "winRate": 49.5,
-    "appearances": 98625,
-    "wins": 48818,
-    "losses": 49807,
+    "elo": 9666,
+    "winRate": 50.4,
+    "appearances": 92591,
+    "wins": 46624,
+    "losses": 45967,
     "bestPartners": [
       {
+        "name": "Primarina",
+        "winRate": 60.1,
+        "games": 4444
+      },
+      {
         "name": "Mega Excadrill",
-        "winRate": 50.7,
-        "games": 5666
+        "winRate": 54.9,
+        "games": 9902
       },
       {
-        "name": "Kleavor",
-        "winRate": 50.6,
-        "games": 5717
+        "name": "Talonflame",
+        "winRate": 54.4,
+        "games": 10063
       },
       {
-        "name": "Blastoise",
-        "winRate": 50.6,
-        "games": 5717
+        "name": "Charizard",
+        "winRate": 52.8,
+        "games": 15485
       },
       {
-        "name": "Mega Lucario Z",
-        "winRate": 50.5,
-        "games": 5362
-      },
-      {
-        "name": "Emolga",
-        "winRate": 50.5,
-        "games": 5362
+        "name": "Noivern",
+        "winRate": 51,
+        "games": 26157
       }
     ],
     "bestSets": []
@@ -1574,36 +1574,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 282,
     "name": "Gardevoir",
     "isMega": false,
-    "elo": 9731,
+    "elo": 9650,
     "winRate": 49.8,
-    "appearances": 437985,
-    "wins": 218004,
-    "losses": 219981,
+    "appearances": 433718,
+    "wins": 215835,
+    "losses": 217883,
     "bestPartners": [
       {
         "name": "Mega Scizor",
-        "winRate": 59.3,
-        "games": 4674
+        "winRate": 57.3,
+        "games": 4536
+      },
+      {
+        "name": "Alakazam",
+        "winRate": 55,
+        "games": 5106
+      },
+      {
+        "name": "Polteageist",
+        "winRate": 55,
+        "games": 5106
+      },
+      {
+        "name": "Hisuian Zoroark",
+        "winRate": 55,
+        "games": 5106
       },
       {
         "name": "Mega Garchomp",
         "winRate": 54.6,
-        "games": 5106
-      },
-      {
-        "name": "Milotic",
-        "winRate": 53.4,
-        "games": 10244
-      },
-      {
-        "name": "Primarina",
-        "winRate": 51.9,
-        "games": 5386
-      },
-      {
-        "name": "Azumarill",
-        "winRate": 51.9,
-        "games": 5386
+        "games": 5241
       }
     ],
     "bestSets": []
@@ -1612,36 +1612,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 302,
     "name": "Sableye",
     "isMega": false,
-    "elo": 9556,
-    "winRate": 43.7,
-    "appearances": 78079,
-    "wins": 34117,
-    "losses": 43962,
+    "elo": 9619,
+    "winRate": 46.3,
+    "appearances": 75581,
+    "wins": 34973,
+    "losses": 40608,
     "bestPartners": [
       {
         "name": "Whimsicott",
-        "winRate": 51.3,
-        "games": 5492
+        "winRate": 53.4,
+        "games": 5021
       },
       {
-        "name": "Corviknight",
-        "winRate": 50.7,
-        "games": 5782
+        "name": "Dragapult",
+        "winRate": 52,
+        "games": 10507
       },
       {
-        "name": "Mega Gengar",
-        "winRate": 50.5,
-        "games": 11411
-      },
-      {
-        "name": "Kingambit",
-        "winRate": 50.4,
-        "games": 11138
+        "name": "Archaludon",
+        "winRate": 51.1,
+        "games": 10641
       },
       {
         "name": "Garchomp",
-        "winRate": 50.4,
-        "games": 28040
+        "winRate": 50.8,
+        "games": 27082
+      },
+      {
+        "name": "Kingambit",
+        "winRate": 50.6,
+        "games": 10812
       }
     ],
     "bestSets": []
@@ -1650,36 +1650,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 306,
     "name": "Aggron",
     "isMega": false,
-    "elo": 9685,
-    "winRate": 48.1,
-    "appearances": 91386,
-    "wins": 43982,
-    "losses": 47404,
+    "elo": 9643,
+    "winRate": 48.8,
+    "appearances": 112670,
+    "wins": 55001,
+    "losses": 57669,
     "bestPartners": [
       {
-        "name": "Toucannon",
-        "winRate": 50.8,
-        "games": 5686
+        "name": "Aegislash",
+        "winRate": 53.2,
+        "games": 5131
       },
       {
-        "name": "Garchomp",
-        "winRate": 50.8,
-        "games": 5686
+        "name": "Fan Rotom",
+        "winRate": 51.8,
+        "games": 10649
       },
       {
-        "name": "Stunfisk",
-        "winRate": 50.8,
-        "games": 5686
+        "name": "Mega Heracross",
+        "winRate": 51.7,
+        "games": 5426
       },
       {
-        "name": "Gyarados",
-        "winRate": 50.5,
-        "games": 11274
+        "name": "Corviknight",
+        "winRate": 51.7,
+        "games": 5426
       },
       {
-        "name": "Whimsicott",
-        "winRate": 50.5,
-        "games": 11274
+        "name": "Alolan Raichu",
+        "winRate": 51.7,
+        "games": 5426
       }
     ],
     "bestSets": []
@@ -1688,36 +1688,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 324,
     "name": "Torkoal",
     "isMega": false,
-    "elo": 9629,
-    "winRate": 51.3,
-    "appearances": 198028,
-    "wins": 101494,
-    "losses": 96534,
+    "elo": 9702,
+    "winRate": 50.9,
+    "appearances": 180364,
+    "wins": 91769,
+    "losses": 88595,
     "bestPartners": [
       {
+        "name": "Slowbro",
+        "winRate": 60.8,
+        "games": 4418
+      },
+      {
         "name": "Scovillain",
-        "winRate": 61.8,
-        "games": 4379
+        "winRate": 58.3,
+        "games": 4568
       },
       {
         "name": "Leafeon",
-        "winRate": 61.8,
-        "games": 4379
-      },
-      {
-        "name": "Ninetales",
-        "winRate": 61.8,
-        "games": 4379
+        "winRate": 58.3,
+        "games": 4568
       },
       {
         "name": "Charizard",
-        "winRate": 61.8,
-        "games": 4379
+        "winRate": 58.3,
+        "games": 4568
       },
       {
-        "name": "Mega Starmie",
-        "winRate": 58.1,
-        "games": 4683
+        "name": "Ninetales",
+        "winRate": 58.3,
+        "games": 4568
       }
     ],
     "bestSets": []
@@ -1726,36 +1726,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 334,
     "name": "Altaria",
     "isMega": false,
-    "elo": 9714,
-    "winRate": 46.7,
-    "appearances": 83200,
-    "wins": 38892,
-    "losses": 44308,
+    "elo": 9650,
+    "winRate": 45.9,
+    "appearances": 96090,
+    "wins": 44068,
+    "losses": 52022,
     "bestPartners": [
       {
-        "name": "Toxapex",
-        "winRate": 50.9,
-        "games": 5673
+        "name": "Mega Excadrill",
+        "winRate": 50.6,
+        "games": 5458
+      },
+      {
+        "name": "Mega Metagross",
+        "winRate": 50.4,
+        "games": 5554
       },
       {
         "name": "Greninja",
-        "winRate": 50.9,
-        "games": 5673
-      },
-      {
-        "name": "Mega Excadrill",
-        "winRate": 50.8,
-        "games": 11339
-      },
-      {
-        "name": "Primarina",
         "winRate": 50.4,
-        "games": 11256
+        "games": 5554
       },
       {
-        "name": "Mega Steelix",
-        "winRate": 50.1,
-        "games": 5763
+        "name": "Charizard",
+        "winRate": 50.4,
+        "games": 5554
+      },
+      {
+        "name": "Starmie",
+        "winRate": 50.2,
+        "games": 5670
       }
     ],
     "bestSets": []
@@ -1764,36 +1764,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 350,
     "name": "Milotic",
     "isMega": false,
-    "elo": 9642,
-    "winRate": 50.8,
-    "appearances": 108629,
-    "wins": 55220,
-    "losses": 53409,
+    "elo": 9688,
+    "winRate": 50.7,
+    "appearances": 86595,
+    "wins": 43940,
+    "losses": 42655,
     "bestPartners": [
       {
-        "name": "Heat Rotom",
-        "winRate": 60.5,
-        "games": 4647
+        "name": "Kleavor",
+        "winRate": 53.7,
+        "games": 5095
       },
       {
-        "name": "Azumarill",
-        "winRate": 60.5,
-        "games": 4647
+        "name": "Excadrill",
+        "winRate": 53.7,
+        "games": 5095
       },
       {
-        "name": "Clawitzer",
-        "winRate": 60.5,
-        "games": 4647
+        "name": "Archaludon",
+        "winRate": 53.7,
+        "games": 5095
       },
       {
-        "name": "Sandaconda",
-        "winRate": 54.5,
-        "games": 10461
+        "name": "Blastoise",
+        "winRate": 53.7,
+        "games": 5095
       },
       {
-        "name": "Samurott",
-        "winRate": 54.5,
-        "games": 10461
+        "name": "Slowbro",
+        "winRate": 53.1,
+        "games": 5097
       }
     ],
     "bestSets": []
@@ -1802,36 +1802,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 359,
     "name": "Absol",
     "isMega": false,
-    "elo": 9656,
-    "winRate": 50.5,
-    "appearances": 16975,
-    "wins": 8566,
-    "losses": 8409,
+    "elo": 9688,
+    "winRate": 50.9,
+    "appearances": 11193,
+    "wins": 5702,
+    "losses": 5491,
     "bestPartners": [
       {
         "name": "Arcanine",
-        "winRate": 50.7,
-        "games": 11409
+        "winRate": 50.9,
+        "games": 11193
       },
       {
         "name": "Gyarados",
-        "winRate": 50.7,
-        "games": 11409
+        "winRate": 50.9,
+        "games": 11193
       },
       {
         "name": "Hisuian Zoroark",
-        "winRate": 50.7,
-        "games": 11409
+        "winRate": 50.9,
+        "games": 11193
       },
       {
         "name": "Hisuian Arcanine",
-        "winRate": 50.7,
-        "games": 11409
+        "winRate": 50.9,
+        "games": 11193
       },
       {
         "name": "Dragapult",
-        "winRate": 50.7,
-        "games": 11409
+        "winRate": 50.9,
+        "games": 11193
       }
     ],
     "bestSets": []
@@ -1840,36 +1840,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 376,
     "name": "Metagross",
     "isMega": false,
-    "elo": 9732,
-    "winRate": 51.4,
-    "appearances": 364909,
-    "wins": 187596,
-    "losses": 177313,
+    "elo": 9725,
+    "winRate": 51.6,
+    "appearances": 345366,
+    "wins": 178314,
+    "losses": 167052,
     "bestPartners": [
       {
+        "name": "Mega Greninja",
+        "winRate": 71.2,
+        "games": 3750
+      },
+      {
         "name": "Mega Clefable",
-        "winRate": 67.5,
-        "games": 3946
+        "winRate": 66.6,
+        "games": 3999
+      },
+      {
+        "name": "Mega Chesnaught",
+        "winRate": 65.2,
+        "games": 4003
       },
       {
         "name": "Chesnaught",
-        "winRate": 61.6,
-        "games": 8793
+        "winRate": 62.4,
+        "games": 8619
       },
       {
-        "name": "Clefable",
-        "winRate": 58.5,
-        "games": 9239
-      },
-      {
-        "name": "Archaludon",
-        "winRate": 58.1,
-        "games": 42229
-      },
-      {
-        "name": "Charizard",
-        "winRate": 57.8,
-        "games": 23447
+        "name": "Heat Rotom",
+        "winRate": 61.3,
+        "games": 22065
       }
     ],
     "bestSets": []
@@ -1878,36 +1878,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 389,
     "name": "Torterra",
     "isMega": false,
-    "elo": 9685,
-    "winRate": 49.9,
-    "appearances": 16892,
-    "wins": 8436,
-    "losses": 8456,
+    "elo": 9665,
+    "winRate": 50.4,
+    "appearances": 16301,
+    "wins": 8218,
+    "losses": 8083,
     "bestPartners": [
       {
-        "name": "Blastoise",
-        "winRate": 50.8,
-        "games": 5615
+        "name": "Dragonite",
+        "winRate": 50.7,
+        "games": 5531
       },
       {
-        "name": "Alolan Ninetales",
-        "winRate": 50.8,
-        "games": 5615
+        "name": "Rotom",
+        "winRate": 50.7,
+        "games": 5531
       },
       {
-        "name": "Arcanine",
-        "winRate": 50.8,
-        "games": 5615
+        "name": "Wash Rotom",
+        "winRate": 50.7,
+        "games": 5531
       },
       {
-        "name": "Hisuian Arcanine",
-        "winRate": 50.8,
-        "games": 5615
+        "name": "Froslass",
+        "winRate": 50.7,
+        "games": 5531
       },
       {
-        "name": "Charizard",
-        "winRate": 50.1,
-        "games": 11322
+        "name": "Politoed",
+        "winRate": 50.7,
+        "games": 5531
       }
     ],
     "bestSets": []
@@ -1916,36 +1916,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 392,
     "name": "Infernape",
     "isMega": false,
-    "elo": 9680,
-    "winRate": 50.9,
-    "appearances": 32604,
-    "wins": 16581,
-    "losses": 16023,
+    "elo": 9666,
+    "winRate": 50.3,
+    "appearances": 16607,
+    "wins": 8354,
+    "losses": 8253,
     "bestPartners": [
       {
-        "name": "Tyranitar",
-        "winRate": 56.3,
-        "games": 4946
+        "name": "Vanilluxe",
+        "winRate": 50.7,
+        "games": 5502
       },
       {
-        "name": "Charizard",
-        "winRate": 53.9,
-        "games": 10449
+        "name": "Emolga",
+        "winRate": 50.7,
+        "games": 5502
       },
       {
-        "name": "Mega Metagross",
-        "winRate": 52.9,
-        "games": 10426
+        "name": "Garchomp",
+        "winRate": 50.7,
+        "games": 5502
       },
       {
-        "name": "Krookodile",
-        "winRate": 52.9,
-        "games": 10426
+        "name": "Farigiraf",
+        "winRate": 50.5,
+        "games": 5627
       },
       {
-        "name": "Greninja",
-        "winRate": 52.1,
-        "games": 16176
+        "name": "Alolan Ninetales",
+        "winRate": 50.5,
+        "games": 5627
       }
     ],
     "bestSets": []
@@ -1954,36 +1954,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 395,
     "name": "Empoleon",
     "isMega": false,
-    "elo": 9717,
-    "winRate": 51.1,
-    "appearances": 96421,
-    "wins": 49282,
-    "losses": 47139,
+    "elo": 9651,
+    "winRate": 51.4,
+    "appearances": 90146,
+    "wins": 46323,
+    "losses": 43823,
     "bestPartners": [
       {
-        "name": "Archaludon",
-        "winRate": 62.4,
-        "games": 8796
+        "name": "Azumarill",
+        "winRate": 61,
+        "games": 4436
       },
       {
-        "name": "Mega Clefable",
-        "winRate": 60.2,
-        "games": 9152
+        "name": "Primarina",
+        "winRate": 61,
+        "games": 4436
       },
       {
-        "name": "Aegislash",
-        "winRate": 60.2,
-        "games": 9152
+        "name": "Alcremie",
+        "winRate": 60.9,
+        "games": 4372
       },
       {
-        "name": "Mega Heracross",
-        "winRate": 58.6,
-        "games": 4715
+        "name": "Hisuian Zoroark",
+        "winRate": 60.9,
+        "games": 4372
       },
       {
-        "name": "Corviknight",
-        "winRate": 56.7,
-        "games": 9786
+        "name": "Noivern",
+        "winRate": 57.5,
+        "games": 4756
       }
     ],
     "bestSets": []
@@ -1992,36 +1992,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 442,
     "name": "Spiritomb",
     "isMega": false,
-    "elo": 9605,
-    "winRate": 40.9,
-    "appearances": 37130,
-    "wins": 15176,
-    "losses": 21954,
+    "elo": 9523,
+    "winRate": 37.1,
+    "appearances": 30302,
+    "wins": 11240,
+    "losses": 19062,
     "bestPartners": [
       {
         "name": "Mega Gengar",
-        "winRate": 50.4,
-        "games": 5629
+        "winRate": 49.9,
+        "games": 5593
       },
       {
         "name": "Azumarill",
-        "winRate": 50.4,
-        "games": 5629
+        "winRate": 49.9,
+        "games": 5593
       },
       {
         "name": "Alolan Ninetales",
-        "winRate": 50.4,
-        "games": 5629
+        "winRate": 49.9,
+        "games": 5593
       },
       {
-        "name": "Mega Audino",
-        "winRate": 49.2,
-        "games": 5523
+        "name": "Meowscarada",
+        "winRate": 46.9,
+        "games": 5304
       },
       {
-        "name": "Slowking",
-        "winRate": 49.2,
-        "games": 5523
+        "name": "Gyarados",
+        "winRate": 46.9,
+        "games": 5304
       }
     ],
     "bestSets": []
@@ -2030,36 +2030,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 445,
     "name": "Garchomp",
     "isMega": false,
-    "elo": 9688,
+    "elo": 9655,
     "winRate": 50.4,
-    "appearances": 1769919,
-    "wins": 892117,
-    "losses": 877802,
+    "appearances": 1743362,
+    "wins": 878474,
+    "losses": 864888,
     "bestPartners": [
       {
-        "name": "Mega Froslass",
-        "winRate": 58.3,
-        "games": 4674
+        "name": "Heat Rotom",
+        "winRate": 58,
+        "games": 9617
       },
       {
         "name": "Archaludon",
-        "winRate": 57.4,
-        "games": 33469
+        "winRate": 58,
+        "games": 33062
       },
       {
-        "name": "Lucario",
-        "winRate": 55.6,
-        "games": 14789
+        "name": "Slowbro",
+        "winRate": 54.6,
+        "games": 19989
       },
       {
         "name": "Hydreigon",
-        "winRate": 55,
-        "games": 45081
+        "winRate": 54.3,
+        "games": 51025
       },
       {
-        "name": "Heat Rotom",
-        "winRate": 55,
-        "games": 15192
+        "name": "Charizard",
+        "winRate": 54.2,
+        "games": 24860
       }
     ],
     "bestSets": []
@@ -2068,36 +2068,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 448,
     "name": "Lucario",
     "isMega": false,
-    "elo": 9730,
-    "winRate": 49.9,
-    "appearances": 81852,
-    "wins": 40831,
-    "losses": 41021,
+    "elo": 9657,
+    "winRate": 48.9,
+    "appearances": 84101,
+    "wins": 41166,
+    "losses": 42935,
     "bestPartners": [
       {
-        "name": "Whimsicott",
-        "winRate": 58.7,
-        "games": 4612
-      },
-      {
-        "name": "Azumarill",
-        "winRate": 58.3,
-        "games": 4674
-      },
-      {
-        "name": "Meowscarada",
-        "winRate": 58.3,
-        "games": 4674
-      },
-      {
         "name": "Aegislash",
-        "winRate": 56.7,
-        "games": 9683
+        "winRate": 55.5,
+        "games": 9769
       },
       {
-        "name": "Mega Froslass",
-        "winRate": 56.7,
-        "games": 9671
+        "name": "Whimsicott",
+        "winRate": 53.4,
+        "games": 10301
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 53.2,
+        "games": 5131
+      },
+      {
+        "name": "Garchomp",
+        "winRate": 52.7,
+        "games": 15472
+      },
+      {
+        "name": "Fan Rotom",
+        "winRate": 51.8,
+        "games": 10649
       }
     ],
     "bestSets": []
@@ -2106,36 +2106,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 450,
     "name": "Hippowdon",
     "isMega": false,
-    "elo": 9698,
-    "winRate": 52,
-    "appearances": 21261,
-    "wins": 11051,
-    "losses": 10210,
+    "elo": 9627,
+    "winRate": 50,
+    "appearances": 16297,
+    "wins": 8142,
+    "losses": 8155,
     "bestPartners": [
       {
-        "name": "Toucannon",
-        "winRate": 60.4,
-        "games": 4380
+        "name": "Mega Tyranitar",
+        "winRate": 50.6,
+        "games": 5570
       },
       {
-        "name": "Hisuian Arcanine",
-        "winRate": 60.4,
-        "games": 4380
+        "name": "Excadrill",
+        "winRate": 50.6,
+        "games": 5570
       },
       {
-        "name": "Aegislash",
-        "winRate": 60.4,
-        "games": 4380
+        "name": "Garchomp",
+        "winRate": 50.6,
+        "games": 5570
       },
       {
-        "name": "Heat Rotom",
-        "winRate": 60.4,
-        "games": 4380
+        "name": "Rhyperior",
+        "winRate": 50.6,
+        "games": 5570
       },
       {
-        "name": "Archaludon",
-        "winRate": 54.4,
-        "games": 9950
+        "name": "Krookodile",
+        "winRate": 50.6,
+        "games": 5570
       }
     ],
     "bestSets": []
@@ -2144,36 +2144,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 460,
     "name": "Abomasnow",
     "isMega": false,
-    "elo": 9613,
-    "winRate": 46.9,
-    "appearances": 25451,
-    "wins": 11944,
-    "losses": 13507,
+    "elo": 9666,
+    "winRate": 50.6,
+    "appearances": 35712,
+    "wins": 18069,
+    "losses": 17643,
     "bestPartners": [
       {
+        "name": "Hydreigon",
+        "winRate": 65.3,
+        "games": 4028
+      },
+      {
+        "name": "Primarina",
+        "winRate": 65.3,
+        "games": 4028
+      },
+      {
+        "name": "Drampa",
+        "winRate": 65.3,
+        "games": 4028
+      },
+      {
+        "name": "Hisuian Samurott",
+        "winRate": 56.9,
+        "games": 9643
+      },
+      {
         "name": "Hisuian Typhlosion",
-        "winRate": 50.2,
-        "games": 5427
-      },
-      {
-        "name": "Dragonite",
-        "winRate": 50.2,
-        "games": 5427
-      },
-      {
-        "name": "Azumarill",
-        "winRate": 50.2,
-        "games": 5427
-      },
-      {
-        "name": "Umbreon",
-        "winRate": 50.2,
-        "games": 5427
-      },
-      {
-        "name": "Gyarados",
-        "winRate": 50.1,
-        "games": 16263
+        "winRate": 56.7,
+        "games": 9334
       }
     ],
     "bestSets": []
@@ -2182,36 +2182,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 461,
     "name": "Weavile",
     "isMega": false,
-    "elo": 9628,
-    "winRate": 45.7,
-    "appearances": 15174,
-    "wins": 6937,
-    "losses": 8237,
+    "elo": 9709,
+    "winRate": 51.9,
+    "appearances": 26792,
+    "wins": 13898,
+    "losses": 12894,
     "bestPartners": [
       {
-        "name": "Flareon",
-        "winRate": 50.1,
-        "games": 5437
+        "name": "Mega Metagross",
+        "winRate": 61.6,
+        "games": 4376
       },
       {
-        "name": "Empoleon",
-        "winRate": 50.1,
-        "games": 5437
+        "name": "Greninja",
+        "winRate": 61.6,
+        "games": 4376
       },
       {
-        "name": "Hisuian Decidueye",
-        "winRate": 50.1,
-        "games": 5437
+        "name": "Kommo-o",
+        "winRate": 61.6,
+        "games": 4376
       },
       {
-        "name": "Gyarados",
-        "winRate": 50.1,
-        "games": 5437
+        "name": "Incineroar",
+        "winRate": 61.6,
+        "games": 4376
       },
       {
-        "name": "Polteageist",
-        "winRate": 49.5,
-        "games": 5595
+        "name": "Charizard",
+        "winRate": 61.6,
+        "games": 4376
       }
     ],
     "bestSets": []
@@ -2220,36 +2220,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 464,
     "name": "Rhyperior",
     "isMega": false,
-    "elo": 9640,
-    "winRate": 50.4,
-    "appearances": 190273,
-    "wins": 95828,
-    "losses": 94445,
+    "elo": 9709,
+    "winRate": 50.2,
+    "appearances": 210187,
+    "wins": 105520,
+    "losses": 104667,
     "bestPartners": [
       {
-        "name": "Snorlax",
-        "winRate": 54.3,
-        "games": 5079
-      },
-      {
-        "name": "Greninja",
+        "name": "Sandaconda",
         "winRate": 51,
-        "games": 5572
-      },
-      {
-        "name": "Heat Rotom",
-        "winRate": 51,
-        "games": 5572
-      },
-      {
-        "name": "Tyranitar",
-        "winRate": 50.9,
-        "games": 16138
+        "games": 5584
       },
       {
         "name": "Garchomp",
         "winRate": 50.8,
-        "games": 45267
+        "games": 55409
+      },
+      {
+        "name": "Pawmot",
+        "winRate": 50.8,
+        "games": 11184
+      },
+      {
+        "name": "Snorlax",
+        "winRate": 50.7,
+        "games": 16500
+      },
+      {
+        "name": "Mega Skarmory",
+        "winRate": 50.7,
+        "games": 5600
       }
     ],
     "bestSets": []
@@ -2258,36 +2258,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 470,
     "name": "Leafeon",
     "isMega": false,
-    "elo": 9702,
-    "winRate": 52.7,
-    "appearances": 21087,
-    "wins": 11110,
-    "losses": 9977,
+    "elo": 9689,
+    "winRate": 50.8,
+    "appearances": 26269,
+    "wins": 13354,
+    "losses": 12915,
     "bestPartners": [
       {
         "name": "Torkoal",
-        "winRate": 61.8,
-        "games": 4379
-      },
-      {
-        "name": "Scovillain",
-        "winRate": 54.5,
-        "games": 9851
+        "winRate": 58.3,
+        "games": 4568
       },
       {
         "name": "Ninetales",
-        "winRate": 54.5,
-        "games": 9851
-      },
-      {
-        "name": "Charizard",
-        "winRate": 54.5,
-        "games": 9851
+        "winRate": 53.7,
+        "games": 10058
       },
       {
         "name": "Venusaur",
-        "winRate": 54.5,
-        "games": 9851
+        "winRate": 53.7,
+        "games": 10058
+      },
+      {
+        "name": "Charizard",
+        "winRate": 53.7,
+        "games": 10058
+      },
+      {
+        "name": "Scovillain",
+        "winRate": 53.7,
+        "games": 10058
       }
     ],
     "bestSets": []
@@ -2296,36 +2296,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 471,
     "name": "Glaceon",
     "isMega": false,
-    "elo": 9726,
-    "winRate": 50.1,
-    "appearances": 16584,
-    "wins": 8316,
-    "losses": 8268,
+    "elo": 9665,
+    "winRate": 50,
+    "appearances": 16446,
+    "wins": 8231,
+    "losses": 8215,
     "bestPartners": [
       {
         "name": "Mega Metagross",
-        "winRate": 50.8,
-        "games": 5641
+        "winRate": 50.5,
+        "games": 5531
       },
       {
         "name": "Incineroar",
-        "winRate": 50.8,
-        "games": 5641
+        "winRate": 50.5,
+        "games": 5531
       },
       {
         "name": "Whimsicott",
-        "winRate": 50.8,
-        "games": 5641
+        "winRate": 50.5,
+        "games": 5531
       },
       {
         "name": "Froslass",
-        "winRate": 50.6,
-        "games": 11176
+        "winRate": 50.3,
+        "games": 11019
       },
       {
-        "name": "Mega Skarmory",
-        "winRate": 50.3,
-        "games": 5535
+        "name": "Garchomp",
+        "winRate": 50,
+        "games": 16446
       }
     ],
     "bestSets": []
@@ -2334,36 +2334,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 472,
     "name": "Gliscor",
     "isMega": false,
-    "elo": 9705,
-    "winRate": 51.4,
-    "appearances": 32501,
-    "wins": 16702,
-    "losses": 15799,
+    "elo": 9655,
+    "winRate": 49.4,
+    "appearances": 41575,
+    "wins": 20541,
+    "losses": 21034,
     "bestPartners": [
       {
         "name": "Archaludon",
-        "winRate": 58.7,
-        "games": 4660
-      },
-      {
-        "name": "Corviknight",
-        "winRate": 58.7,
-        "games": 4660
+        "winRate": 58.9,
+        "games": 4548
       },
       {
         "name": "Dragapult",
-        "winRate": 54.4,
-        "games": 10356
+        "winRate": 58.9,
+        "games": 4548
+      },
+      {
+        "name": "Corviknight",
+        "winRate": 58.9,
+        "games": 4548
       },
       {
         "name": "Mega Gyarados",
-        "winRate": 54.1,
-        "games": 10067
+        "winRate": 54,
+        "games": 10001
       },
       {
         "name": "Azumarill",
-        "winRate": 53.6,
-        "games": 10367
+        "winRate": 52.7,
+        "games": 15564
       }
     ],
     "bestSets": []
@@ -2372,36 +2372,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 475,
     "name": "Gallade",
     "isMega": false,
-    "elo": 9638,
-    "winRate": 47.4,
-    "appearances": 10733,
-    "wins": 5084,
-    "losses": 5649,
+    "elo": 9622,
+    "winRate": 47.5,
+    "appearances": 10596,
+    "wins": 5035,
+    "losses": 5561,
     "bestPartners": [
       {
         "name": "Hisuian Arcanine",
-        "winRate": 47.4,
-        "games": 10733
+        "winRate": 47.5,
+        "games": 10596
       },
       {
         "name": "Kingambit",
-        "winRate": 47.4,
-        "games": 10733
+        "winRate": 47.5,
+        "games": 10596
       },
       {
         "name": "Aggron",
-        "winRate": 47.4,
-        "games": 10733
+        "winRate": 47.5,
+        "games": 10596
       },
       {
         "name": "Steelix",
-        "winRate": 47.4,
-        "games": 10733
+        "winRate": 47.5,
+        "games": 10596
       },
       {
         "name": "Galarian Stunfisk",
-        "winRate": 47.4,
-        "games": 10733
+        "winRate": 47.5,
+        "games": 10596
       }
     ],
     "bestSets": []
@@ -2410,36 +2410,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 478,
     "name": "Froslass",
     "isMega": false,
-    "elo": 9743,
-    "winRate": 50.6,
-    "appearances": 22059,
-    "wins": 11155,
-    "losses": 10904,
+    "elo": 9670,
+    "winRate": 48.6,
+    "appearances": 52980,
+    "wins": 25746,
+    "losses": 27234,
     "bestPartners": [
       {
-        "name": "Mega Metagross",
-        "winRate": 50.8,
-        "games": 5641
+        "name": "Beedrill",
+        "winRate": 51.1,
+        "games": 5626
       },
       {
-        "name": "Whimsicott",
-        "winRate": 50.8,
-        "games": 5641
+        "name": "Dragapult",
+        "winRate": 51.1,
+        "games": 5626
       },
       {
-        "name": "Incineroar",
-        "winRate": 50.7,
-        "games": 16524
+        "name": "Zoroark",
+        "winRate": 51,
+        "games": 11081
       },
       {
-        "name": "Glaceon",
-        "winRate": 50.6,
-        "games": 11176
+        "name": "Scizor",
+        "winRate": 51,
+        "games": 11081
       },
       {
-        "name": "Garchomp",
-        "winRate": 50.6,
-        "games": 11176
+        "name": "Hisuian Zoroark",
+        "winRate": 51,
+        "games": 11081
       }
     ],
     "bestSets": []
@@ -2448,36 +2448,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 479,
     "name": "Rotom",
     "isMega": false,
-    "elo": 9756,
-    "winRate": 50.5,
-    "appearances": 60078,
-    "wins": 30315,
-    "losses": 29763,
+    "elo": 9644,
+    "winRate": 50.8,
+    "appearances": 64666,
+    "wins": 32824,
+    "losses": 31842,
     "bestPartners": [
       {
         "name": "Alcremie",
-        "winRate": 61,
-        "games": 4475
-      },
-      {
-        "name": "Archaludon",
-        "winRate": 61,
-        "games": 4475
-      },
-      {
-        "name": "Scizor",
-        "winRate": 55.2,
-        "games": 10155
+        "winRate": 61.1,
+        "games": 4344
       },
       {
         "name": "Metagross",
-        "winRate": 53.3,
-        "games": 15492
+        "winRate": 61.1,
+        "games": 4344
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 57.6,
+        "games": 9418
       },
       {
         "name": "Kingambit",
-        "winRate": 53,
-        "games": 15355
+        "winRate": 54.6,
+        "games": 14960
+      },
+      {
+        "name": "Scizor",
+        "winRate": 53.5,
+        "games": 15618
       }
     ],
     "bestSets": []
@@ -2486,36 +2486,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 497,
     "name": "Serperior",
     "isMega": false,
-    "elo": 9638,
-    "winRate": 47.8,
-    "appearances": 15710,
-    "wins": 7504,
-    "losses": 8206,
+    "elo": 9561,
+    "winRate": 45.7,
+    "appearances": 25566,
+    "wins": 11689,
+    "losses": 13877,
     "bestPartners": [
       {
-        "name": "Mega Tyranitar",
-        "winRate": 50.3,
-        "games": 5396
+        "name": "Heat Rotom",
+        "winRate": 50.9,
+        "games": 5758
       },
       {
-        "name": "Volcarona",
-        "winRate": 50.3,
-        "games": 5396
+        "name": "Toxapex",
+        "winRate": 50.9,
+        "games": 5758
       },
       {
-        "name": "Whimsicott",
-        "winRate": 50.3,
-        "games": 5396
+        "name": "Wash Rotom",
+        "winRate": 50.9,
+        "games": 5758
       },
       {
-        "name": "Hisuian Zoroark",
-        "winRate": 50.3,
-        "games": 5396
+        "name": "Mega Blastoise",
+        "winRate": 49.8,
+        "games": 5719
       },
       {
-        "name": "Charizard",
-        "winRate": 50.3,
-        "games": 5396
+        "name": "Victreebel",
+        "winRate": 49.8,
+        "games": 5719
       }
     ],
     "bestSets": []
@@ -2524,36 +2524,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 500,
     "name": "Emboar",
     "isMega": false,
-    "elo": 9707,
-    "winRate": 50.1,
-    "appearances": 21780,
-    "wins": 10921,
-    "losses": 10859,
+    "elo": 9682,
+    "winRate": 47.4,
+    "appearances": 20460,
+    "wins": 9706,
+    "losses": 10754,
     "bestPartners": [
-      {
-        "name": "Mega Metagross",
-        "winRate": 50.7,
-        "games": 5503
-      },
-      {
-        "name": "Dragonite",
-        "winRate": 50.7,
-        "games": 5503
-      },
-      {
-        "name": "Lucario",
-        "winRate": 50.7,
-        "games": 5503
-      },
       {
         "name": "Dragapult",
         "winRate": 50.3,
-        "games": 10952
+        "games": 5459
+      },
+      {
+        "name": "Mega Dragonite",
+        "winRate": 50.3,
+        "games": 5459
+      },
+      {
+        "name": "Kingambit",
+        "winRate": 50.3,
+        "games": 5459
       },
       {
         "name": "Garchomp",
         "winRate": 50.3,
-        "games": 10952
+        "games": 5459
+      },
+      {
+        "name": "Greninja",
+        "winRate": 50,
+        "games": 16106
       }
     ],
     "bestSets": []
@@ -2563,35 +2563,35 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "name": "Samurott",
     "isMega": false,
     "elo": 9660,
-    "winRate": 51.8,
-    "appearances": 32609,
-    "wins": 16880,
-    "losses": 15729,
+    "winRate": 49.6,
+    "appearances": 21692,
+    "wins": 10763,
+    "losses": 10929,
     "bestPartners": [
       {
-        "name": "Heat Rotom",
-        "winRate": 60.5,
-        "games": 4647
+        "name": "Sandaconda",
+        "winRate": 49.8,
+        "games": 5481
       },
       {
-        "name": "Azumarill",
-        "winRate": 60.5,
-        "games": 4647
+        "name": "Dragonite",
+        "winRate": 49.8,
+        "games": 5481
       },
       {
         "name": "Clawitzer",
-        "winRate": 60.5,
-        "games": 4647
+        "winRate": 49.8,
+        "games": 5481
       },
       {
-        "name": "Sandaconda",
-        "winRate": 54.5,
-        "games": 10461
+        "name": "Vaporeon",
+        "winRate": 49.8,
+        "games": 5481
       },
       {
-        "name": "Milotic",
-        "winRate": 54.5,
-        "games": 10461
+        "name": "Arcanine",
+        "winRate": 49.8,
+        "games": 5481
       }
     ],
     "bestSets": []
@@ -2600,36 +2600,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 530,
     "name": "Excadrill",
     "isMega": false,
-    "elo": 9721,
-    "winRate": 49.5,
-    "appearances": 487761,
-    "wins": 241681,
-    "losses": 246080,
+    "elo": 9675,
+    "winRate": 49.7,
+    "appearances": 506723,
+    "wins": 252089,
+    "losses": 254634,
     "bestPartners": [
       {
         "name": "Charizard",
-        "winRate": 64.7,
-        "games": 8206
+        "winRate": 63.2,
+        "games": 8562
       },
       {
         "name": "Hydreigon",
-        "winRate": 59.3,
-        "games": 18379
+        "winRate": 56.1,
+        "games": 24668
       },
       {
-        "name": "Mega Froslass",
-        "winRate": 55.3,
-        "games": 4997
-      },
-      {
-        "name": "Hisuian Samurott",
-        "winRate": 55.3,
-        "games": 4997
+        "name": "Mega Charizard Y",
+        "winRate": 54.7,
+        "games": 5032
       },
       {
         "name": "Archaludon",
         "winRate": 54.3,
-        "games": 40793
+        "games": 50858
+      },
+      {
+        "name": "Kleavor",
+        "winRate": 53.7,
+        "games": 5095
       }
     ],
     "bestSets": []
@@ -2638,36 +2638,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 531,
     "name": "Audino",
     "isMega": false,
-    "elo": 9580,
-    "winRate": 42.3,
-    "appearances": 9315,
-    "wins": 3936,
-    "losses": 5379,
+    "elo": 9543,
+    "winRate": 41.3,
+    "appearances": 9233,
+    "wins": 3816,
+    "losses": 5417,
     "bestPartners": [
       {
         "name": "Gyarados",
-        "winRate": 42.3,
-        "games": 9315
+        "winRate": 41.3,
+        "games": 9233
       },
       {
         "name": "Hatterene",
-        "winRate": 42.3,
-        "games": 9315
+        "winRate": 41.3,
+        "games": 9233
       },
       {
         "name": "Galarian Slowbro",
-        "winRate": 42.3,
-        "games": 9315
+        "winRate": 41.3,
+        "games": 9233
       },
       {
         "name": "Galarian Slowking",
-        "winRate": 42.3,
-        "games": 9315
+        "winRate": 41.3,
+        "games": 9233
       },
       {
         "name": "Sableye",
-        "winRate": 42.3,
-        "games": 9315
+        "winRate": 41.3,
+        "games": 9233
       }
     ],
     "bestSets": []
@@ -2676,36 +2676,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 534,
     "name": "Conkeldurr",
     "isMega": false,
-    "elo": 9675,
-    "winRate": 50.4,
-    "appearances": 71081,
-    "wins": 35803,
-    "losses": 35278,
+    "elo": 9628,
+    "winRate": 49.9,
+    "appearances": 66360,
+    "wins": 33140,
+    "losses": 33220,
     "bestPartners": [
       {
-        "name": "Hydreigon",
-        "winRate": 61,
-        "games": 4397
-      },
-      {
         "name": "Mega Alakazam",
-        "winRate": 55.1,
-        "games": 10025
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 54.8,
-        "games": 9774
+        "winRate": 50.7,
+        "games": 11306
       },
       {
         "name": "Greninja",
-        "winRate": 54.8,
-        "games": 9774
+        "winRate": 50.7,
+        "games": 5732
       },
       {
-        "name": "Pawmot",
-        "winRate": 51,
-        "games": 5593
+        "name": "Hisuian Arcanine",
+        "winRate": 50.7,
+        "games": 5732
+      },
+      {
+        "name": "Sylveon",
+        "winRate": 50.7,
+        "games": 5732
+      },
+      {
+        "name": "Alakazam",
+        "winRate": 50.3,
+        "games": 11026
       }
     ],
     "bestSets": []
@@ -2714,36 +2714,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 547,
     "name": "Whimsicott",
     "isMega": false,
-    "elo": 9669,
-    "winRate": 50.2,
-    "appearances": 1099626,
-    "wins": 551472,
-    "losses": 548154,
+    "elo": 9714,
+    "winRate": 50.1,
+    "appearances": 1051657,
+    "wins": 527059,
+    "losses": 524598,
     "bestPartners": [
       {
-        "name": "Lucario",
-        "winRate": 58.7,
-        "games": 4612
-      },
-      {
-        "name": "Mega Starmie",
-        "winRate": 58.1,
-        "games": 4683
-      },
-      {
-        "name": "Mega Charizard X",
-        "winRate": 57.5,
-        "games": 9300
-      },
-      {
-        "name": "Galarian Stunfisk",
-        "winRate": 57.5,
-        "games": 9300
-      },
-      {
         "name": "Heat Rotom",
-        "winRate": 57.5,
-        "games": 9506
+        "winRate": 58.1,
+        "games": 9524
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 55.9,
+        "games": 19264
+      },
+      {
+        "name": "Mega Garchomp",
+        "winRate": 54.6,
+        "games": 5241
+      },
+      {
+        "name": "Slowbro",
+        "winRate": 53.7,
+        "games": 25604
+      },
+      {
+        "name": "Lucario",
+        "winRate": 53.4,
+        "games": 10301
       }
     ],
     "bestSets": []
@@ -2752,36 +2752,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 553,
     "name": "Krookodile",
     "isMega": false,
-    "elo": 9650,
-    "winRate": 49,
-    "appearances": 344296,
-    "wins": 168826,
-    "losses": 175470,
+    "elo": 9659,
+    "winRate": 49.7,
+    "appearances": 337490,
+    "wins": 167788,
+    "losses": 169702,
     "bestPartners": [
       {
-        "name": "Hydreigon",
-        "winRate": 56,
-        "games": 29622
-      },
-      {
         "name": "Archaludon",
-        "winRate": 55.9,
-        "games": 29452
+        "winRate": 55,
+        "games": 35042
       },
       {
         "name": "Charizard",
-        "winRate": 54.5,
-        "games": 29229
+        "winRate": 54.8,
+        "games": 25096
+      },
+      {
+        "name": "Hydreigon",
+        "winRate": 54.4,
+        "games": 35251
+      },
+      {
+        "name": "Excadrill",
+        "winRate": 53.3,
+        "games": 51768
       },
       {
         "name": "Mega Charizard X",
-        "winRate": 54.2,
-        "games": 5231
-      },
-      {
-        "name": "Infernape",
-        "winRate": 52.9,
-        "games": 10426
+        "winRate": 53.2,
+        "games": 5411
       }
     ],
     "bestSets": []
@@ -2790,36 +2790,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 569,
     "name": "Garbodor",
     "isMega": false,
-    "elo": 9555,
-    "winRate": 40.5,
-    "appearances": 13695,
-    "wins": 5540,
-    "losses": 8155,
+    "elo": 9637,
+    "winRate": 48.1,
+    "appearances": 15638,
+    "wins": 7517,
+    "losses": 8121,
     "bestPartners": [
       {
-        "name": "Gyarados",
-        "winRate": 50,
-        "games": 5453
+        "name": "Charizard",
+        "winRate": 50.8,
+        "games": 5493
       },
       {
-        "name": "Greninja",
-        "winRate": 50,
-        "games": 5453
+        "name": "Krookodile",
+        "winRate": 50.8,
+        "games": 5493
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 49.6,
+        "games": 5335
       },
       {
         "name": "Umbreon",
-        "winRate": 50,
-        "games": 5453
-      },
-      {
-        "name": "Tyranitar",
-        "winRate": 50,
-        "games": 5453
+        "winRate": 49.6,
+        "games": 5335
       },
       {
         "name": "Meowscarada",
-        "winRate": 50,
-        "games": 5453
+        "winRate": 49.6,
+        "games": 5335
       }
     ],
     "bestSets": []
@@ -2828,36 +2828,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 571,
     "name": "Zoroark",
     "isMega": false,
-    "elo": 9610,
-    "winRate": 44.1,
-    "appearances": 19541,
-    "wins": 8615,
-    "losses": 10926,
+    "elo": 9649,
+    "winRate": 48.8,
+    "appearances": 21209,
+    "wins": 10360,
+    "losses": 10849,
     "bestPartners": [
       {
+        "name": "Beedrill",
+        "winRate": 51.1,
+        "games": 5626
+      },
+      {
+        "name": "Dragapult",
+        "winRate": 51.1,
+        "games": 5626
+      },
+      {
         "name": "Scizor",
-        "winRate": 50.5,
-        "games": 5690
+        "winRate": 51,
+        "games": 11081
       },
       {
-        "name": "Mimikyu",
-        "winRate": 50.5,
-        "games": 5690
-      },
-      {
-        "name": "Corviknight",
-        "winRate": 50.5,
-        "games": 5690
-      },
-      {
-        "name": "Heat Rotom",
-        "winRate": 50.5,
-        "games": 5690
+        "name": "Froslass",
+        "winRate": 51,
+        "games": 11081
       },
       {
         "name": "Dragonite",
-        "winRate": 50.5,
-        "games": 5690
+        "winRate": 51,
+        "games": 5455
       }
     ],
     "bestSets": []
@@ -2866,36 +2866,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 584,
     "name": "Vanilluxe",
     "isMega": false,
-    "elo": 9692,
-    "winRate": 50.4,
-    "appearances": 16908,
-    "wins": 8516,
-    "losses": 8392,
+    "elo": 9675,
+    "winRate": 49.7,
+    "appearances": 16409,
+    "wins": 8163,
+    "losses": 8246,
     "bestPartners": [
-      {
-        "name": "Infernape",
-        "winRate": 50.7,
-        "games": 5750
-      },
       {
         "name": "Emolga",
         "winRate": 50.7,
-        "games": 5750
+        "games": 5502
+      },
+      {
+        "name": "Infernape",
+        "winRate": 50.7,
+        "games": 5502
       },
       {
         "name": "Greninja",
         "winRate": 50.7,
-        "games": 5750
+        "games": 5502
       },
       {
-        "name": "Wash Rotom",
-        "winRate": 50.7,
-        "games": 5750
+        "name": "Gyarados",
+        "winRate": 50,
+        "games": 10843
       },
       {
-        "name": "Palafin",
-        "winRate": 50.5,
-        "games": 5671
+        "name": "Garchomp",
+        "winRate": 49.7,
+        "games": 16409
       }
     ],
     "bestSets": []
@@ -2904,36 +2904,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 587,
     "name": "Emolga",
     "isMega": false,
-    "elo": 9695,
-    "winRate": 45.4,
-    "appearances": 40515,
-    "wins": 18395,
-    "losses": 22120,
+    "elo": 9574,
+    "winRate": 43.2,
+    "appearances": 58013,
+    "wins": 25071,
+    "losses": 32942,
     "bestPartners": [
+      {
+        "name": "Aerodactyl",
+        "winRate": 51,
+        "games": 5752
+      },
+      {
+        "name": "Slowbro",
+        "winRate": 51,
+        "games": 5752
+      },
       {
         "name": "Vanilluxe",
         "winRate": 50.7,
-        "games": 5750
+        "games": 5502
+      },
+      {
+        "name": "Garchomp",
+        "winRate": 50.7,
+        "games": 5502
       },
       {
         "name": "Infernape",
         "winRate": 50.7,
-        "games": 5750
-      },
-      {
-        "name": "Greninja",
-        "winRate": 50.7,
-        "games": 5750
-      },
-      {
-        "name": "Wash Rotom",
-        "winRate": 50.7,
-        "games": 5750
-      },
-      {
-        "name": "Mega Lucario Z",
-        "winRate": 50.5,
-        "games": 5362
+        "games": 5502
       }
     ],
     "bestSets": []
@@ -2942,36 +2942,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 618,
     "name": "Stunfisk",
     "isMega": false,
-    "elo": 9739,
-    "winRate": 50.8,
-    "appearances": 27159,
-    "wins": 13803,
-    "losses": 13356,
+    "elo": 9663,
+    "winRate": 49.8,
+    "appearances": 38503,
+    "wins": 19171,
+    "losses": 19332,
     "bestPartners": [
       {
         "name": "Mega Gyarados",
-        "winRate": 54,
-        "games": 4965
+        "winRate": 51,
+        "games": 5584
       },
       {
-        "name": "Archaludon",
-        "winRate": 54,
-        "games": 4965
+        "name": "Sandaconda",
+        "winRate": 51,
+        "games": 5584
       },
       {
         "name": "Pawmot",
-        "winRate": 54,
-        "games": 4965
+        "winRate": 51,
+        "games": 5584
       },
       {
-        "name": "Mudsdale",
-        "winRate": 54,
-        "games": 4965
+        "name": "Garchomp",
+        "winRate": 51,
+        "games": 5584
       },
       {
-        "name": "Diggersby",
-        "winRate": 54,
-        "games": 4965
+        "name": "Mega Gardevoir",
+        "winRate": 50.8,
+        "games": 5634
       }
     ],
     "bestSets": []
@@ -2980,36 +2980,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 623,
     "name": "Golurk",
     "isMega": false,
-    "elo": 9752,
+    "elo": 9695,
     "winRate": 49.9,
-    "appearances": 22332,
-    "wins": 11142,
-    "losses": 11190,
+    "appearances": 16522,
+    "wins": 8249,
+    "losses": 8273,
     "bestPartners": [
       {
         "name": "Incineroar",
         "winRate": 50.7,
-        "games": 5486
+        "games": 5517
       },
       {
         "name": "Arcanine",
         "winRate": 50.7,
-        "games": 5486
+        "games": 5517
       },
       {
         "name": "Greninja",
         "winRate": 50.7,
-        "games": 5486
-      },
-      {
-        "name": "Kingambit",
-        "winRate": 50.7,
-        "games": 5486
+        "games": 5517
       },
       {
         "name": "Meowscarada",
-        "winRate": 50.5,
-        "games": 10910
+        "winRate": 50.7,
+        "games": 5517
+      },
+      {
+        "name": "Kingambit",
+        "winRate": 49.9,
+        "games": 16522
       }
     ],
     "bestSets": []
@@ -3018,36 +3018,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 635,
     "name": "Hydreigon",
     "isMega": false,
-    "elo": 9701,
-    "winRate": 53.3,
-    "appearances": 122039,
-    "wins": 65059,
-    "losses": 56980,
+    "elo": 9653,
+    "winRate": 52.8,
+    "appearances": 167760,
+    "wins": 88550,
+    "losses": 79210,
     "bestPartners": [
       {
-        "name": "Galarian Stunfisk",
-        "winRate": 67.1,
-        "games": 3855
+        "name": "Heat Rotom",
+        "winRate": 74.5,
+        "games": 3640
+      },
+      {
+        "name": "Hisuian Typhlosion",
+        "winRate": 65.3,
+        "games": 4028
+      },
+      {
+        "name": "Hisuian Samurott",
+        "winRate": 65.3,
+        "games": 4028
+      },
+      {
+        "name": "Abomasnow",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
         "name": "Charizard",
-        "winRate": 64.7,
-        "games": 8206
-      },
-      {
-        "name": "Mega Alakazam",
-        "winRate": 61,
-        "games": 4397
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 61,
-        "games": 4397
-      },
-      {
-        "name": "Conkeldurr",
-        "winRate": 61,
-        "games": 4397
+        "winRate": 63.2,
+        "games": 8562
       }
     ],
     "bestSets": []
@@ -3056,36 +3056,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 637,
     "name": "Volcarona",
     "isMega": false,
-    "elo": 9573,
-    "winRate": 41.1,
-    "appearances": 13763,
-    "wins": 5661,
-    "losses": 8102,
+    "elo": 9648,
+    "winRate": 50.1,
+    "appearances": 22315,
+    "wins": 11172,
+    "losses": 11143,
     "bestPartners": [
       {
-        "name": "Mega Tyranitar",
-        "winRate": 50.3,
-        "games": 5396
+        "name": "Umbreon",
+        "winRate": 50.5,
+        "games": 5630
       },
       {
-        "name": "Serperior",
-        "winRate": 50.3,
-        "games": 5396
+        "name": "Rotom",
+        "winRate": 50.5,
+        "games": 5630
       },
       {
-        "name": "Whimsicott",
-        "winRate": 50.3,
-        "games": 5396
+        "name": "Dragapult",
+        "winRate": 50.5,
+        "games": 5630
       },
       {
-        "name": "Hisuian Zoroark",
-        "winRate": 50.3,
-        "games": 5396
+        "name": "Sneasler",
+        "winRate": 50.5,
+        "games": 5630
       },
       {
-        "name": "Charizard",
-        "winRate": 50.3,
-        "games": 5396
+        "name": "Excadrill",
+        "winRate": 50.5,
+        "games": 5644
       }
     ],
     "bestSets": []
@@ -3094,36 +3094,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 652,
     "name": "Chesnaught",
     "isMega": false,
-    "elo": 9716,
-    "winRate": 55.4,
-    "appearances": 13801,
-    "wins": 7649,
-    "losses": 6152,
+    "elo": 9760,
+    "winRate": 62.4,
+    "appearances": 8619,
+    "wins": 5380,
+    "losses": 3239,
     "bestPartners": [
       {
         "name": "Charizard",
-        "winRate": 61.6,
-        "games": 8793
+        "winRate": 62.4,
+        "games": 8619
       },
       {
         "name": "Metagross",
-        "winRate": 61.6,
-        "games": 8793
+        "winRate": 62.4,
+        "games": 8619
       },
       {
         "name": "Heat Rotom",
-        "winRate": 61.6,
-        "games": 8793
+        "winRate": 62.4,
+        "games": 8619
       },
       {
         "name": "Greninja",
-        "winRate": 61.6,
-        "games": 8793
+        "winRate": 62.4,
+        "games": 8619
       },
       {
         "name": "Gengar",
-        "winRate": 61.6,
-        "games": 8793
+        "winRate": 62.4,
+        "games": 8619
       }
     ],
     "bestSets": []
@@ -3132,36 +3132,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 655,
     "name": "Delphox",
     "isMega": false,
-    "elo": 9686,
-    "winRate": 50.1,
-    "appearances": 39548,
-    "wins": 19807,
-    "losses": 19741,
+    "elo": 9631,
+    "winRate": 50.8,
+    "appearances": 16499,
+    "wins": 8383,
+    "losses": 8116,
     "bestPartners": [
       {
-        "name": "Gyarados",
-        "winRate": 50.6,
-        "games": 16913
-      },
-      {
-        "name": "Hisuian Zoroark",
-        "winRate": 50.6,
-        "games": 11330
-      },
-      {
-        "name": "Scizor",
-        "winRate": 50.6,
-        "games": 5680
-      },
-      {
         "name": "Kingambit",
-        "winRate": 50.6,
-        "games": 11263
+        "winRate": 50.9,
+        "games": 11033
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 50.9,
+        "games": 11033
       },
       {
         "name": "Azumarill",
-        "winRate": 50.6,
-        "games": 11263
+        "winRate": 50.9,
+        "games": 11033
+      },
+      {
+        "name": "Drampa",
+        "winRate": 50.9,
+        "games": 11033
+      },
+      {
+        "name": "Greninja",
+        "winRate": 50.9,
+        "games": 11033
       }
     ],
     "bestSets": []
@@ -3170,36 +3170,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 658,
     "name": "Greninja",
     "isMega": false,
-    "elo": 9718,
-    "winRate": 50.9,
-    "appearances": 409025,
-    "wins": 208133,
-    "losses": 200892,
+    "elo": 9676,
+    "winRate": 50.3,
+    "appearances": 392660,
+    "wins": 197621,
+    "losses": 195039,
     "bestPartners": [
       {
         "name": "Mega Chesnaught",
-        "winRate": 66.4,
-        "games": 3878
+        "winRate": 65.2,
+        "games": 4003
       },
       {
         "name": "Chesnaught",
+        "winRate": 62.4,
+        "games": 8619
+      },
+      {
+        "name": "Weavile",
         "winRate": 61.6,
-        "games": 8793
+        "games": 4376
       },
       {
-        "name": "Charizard",
-        "winRate": 58.4,
-        "games": 28046
+        "name": "Kommo-o",
+        "winRate": 61.6,
+        "games": 4376
       },
       {
-        "name": "Mega Venusaur",
-        "winRate": 57.5,
-        "games": 4790
-      },
-      {
-        "name": "Mega Froslass",
-        "winRate": 56.7,
-        "games": 9671
+        "name": "Heat Rotom",
+        "winRate": 60.2,
+        "games": 17808
       }
     ],
     "bestSets": []
@@ -3208,36 +3208,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 660,
     "name": "Diggersby",
     "isMega": false,
-    "elo": 9662,
-    "winRate": 51.3,
-    "appearances": 16103,
-    "wins": 8260,
-    "losses": 7843,
+    "elo": 9701,
+    "winRate": 50.4,
+    "appearances": 16542,
+    "wins": 8341,
+    "losses": 8201,
     "bestPartners": [
       {
-        "name": "Pawmot",
-        "winRate": 54,
-        "games": 4965
+        "name": "Whimsicott",
+        "winRate": 50.7,
+        "games": 5615
       },
       {
-        "name": "Stunfisk",
-        "winRate": 54,
-        "games": 4965
+        "name": "Heat Rotom",
+        "winRate": 50.7,
+        "games": 5615
       },
       {
-        "name": "Mudsdale",
-        "winRate": 54,
-        "games": 4965
+        "name": "Wash Rotom",
+        "winRate": 50.7,
+        "games": 5615
       },
       {
-        "name": "Mega Gyarados",
-        "winRate": 51.7,
-        "games": 10535
+        "name": "Slowbro",
+        "winRate": 50.5,
+        "games": 11031
       },
       {
-        "name": "Archaludon",
-        "winRate": 51.7,
-        "games": 10535
+        "name": "Froslass",
+        "winRate": 50.5,
+        "games": 11126
       }
     ],
     "bestSets": []
@@ -3246,36 +3246,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 663,
     "name": "Talonflame",
     "isMega": false,
-    "elo": 9642,
-    "winRate": 48,
-    "appearances": 26300,
-    "wins": 12627,
-    "losses": 13673,
+    "elo": 9653,
+    "winRate": 47.2,
+    "appearances": 44734,
+    "wins": 21095,
+    "losses": 23639,
     "bestPartners": [
       {
-        "name": "Mega Abomasnow",
-        "winRate": 53.4,
-        "games": 5301
+        "name": "Mega Excadrill",
+        "winRate": 60.1,
+        "games": 4444
       },
       {
-        "name": "Archaludon",
-        "winRate": 53.4,
-        "games": 5301
+        "name": "Primarina",
+        "winRate": 60.1,
+        "games": 4444
       },
       {
-        "name": "Ninetales",
-        "winRate": 53.4,
-        "games": 5301
+        "name": "Pelipper",
+        "winRate": 54.4,
+        "games": 10063
       },
       {
-        "name": "Arcanine",
-        "winRate": 51.3,
-        "games": 16615
+        "name": "Mega Tyranitar",
+        "winRate": 52.1,
+        "games": 5435
       },
       {
-        "name": "Gyarados",
-        "winRate": 51.2,
-        "games": 16684
+        "name": "Metagross",
+        "winRate": 52.1,
+        "games": 5435
       }
     ],
     "bestSets": []
@@ -3284,36 +3284,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 666,
     "name": "Vivillon",
     "isMega": false,
-    "elo": 9687,
-    "winRate": 46.7,
-    "appearances": 15641,
-    "wins": 7302,
-    "losses": 8339,
+    "elo": 9623,
+    "winRate": 45.5,
+    "appearances": 15197,
+    "wins": 6911,
+    "losses": 8286,
     "bestPartners": [
       {
-        "name": "Garchomp",
-        "winRate": 50.9,
-        "games": 5750
+        "name": "Jolteon",
+        "winRate": 49.8,
+        "games": 5518
       },
       {
-        "name": "Garganacl",
-        "winRate": 50.9,
-        "games": 5750
+        "name": "Pelipper",
+        "winRate": 49.8,
+        "games": 5518
       },
       {
-        "name": "Azumarill",
-        "winRate": 50.9,
-        "games": 5750
+        "name": "Feraligatr",
+        "winRate": 49.8,
+        "games": 5518
       },
       {
-        "name": "Arcanine",
-        "winRate": 49.1,
-        "games": 11060
+        "name": "Pinsir",
+        "winRate": 49.8,
+        "games": 5518
       },
       {
-        "name": "Hisuian Arcanine",
-        "winRate": 49.1,
-        "games": 11060
+        "name": "Gliscor",
+        "winRate": 49.8,
+        "games": 5518
       }
     ],
     "bestSets": []
@@ -3322,36 +3322,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 676,
     "name": "Furfrou",
     "isMega": false,
-    "elo": 9590,
-    "winRate": 37.9,
-    "appearances": 13337,
-    "wins": 5056,
-    "losses": 8281,
+    "elo": 9544,
+    "winRate": 34.9,
+    "appearances": 12473,
+    "wins": 4347,
+    "losses": 8126,
     "bestPartners": [
       {
         "name": "Gyarados",
         "winRate": 44.8,
-        "games": 4966
-      },
-      {
-        "name": "Incineroar",
-        "winRate": 44.8,
-        "games": 4966
+        "games": 4994
       },
       {
         "name": "Mimikyu",
         "winRate": 44.8,
-        "games": 4966
+        "games": 4994
+      },
+      {
+        "name": "Incineroar",
+        "winRate": 40.2,
+        "games": 9190
+      },
+      {
+        "name": "Arcanine",
+        "winRate": 34.9,
+        "games": 12473
       },
       {
         "name": "Hisuian Arcanine",
-        "winRate": 44.8,
-        "games": 4966
-      },
-      {
-        "name": "Spiritomb",
-        "winRate": 43.5,
-        "games": 4934
+        "winRate": 34.9,
+        "games": 8277
       }
     ],
     "bestSets": []
@@ -3360,36 +3360,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 678,
     "name": "Meowstic",
     "isMega": false,
-    "elo": 9668,
-    "winRate": 42.9,
-    "appearances": 19104,
-    "wins": 8203,
-    "losses": 10901,
+    "elo": 9660,
+    "winRate": 44.5,
+    "appearances": 19871,
+    "wins": 8849,
+    "losses": 11022,
     "bestPartners": [
       {
         "name": "Incineroar",
-        "winRate": 49.5,
-        "games": 10989
+        "winRate": 49.4,
+        "games": 11086
       },
       {
         "name": "Kingambit",
-        "winRate": 49.5,
-        "games": 10989
+        "winRate": 49.4,
+        "games": 11086
       },
       {
         "name": "Krookodile",
-        "winRate": 49.5,
-        "games": 10989
+        "winRate": 49.4,
+        "games": 11086
       },
       {
         "name": "Azumarill",
-        "winRate": 49.5,
-        "games": 10989
+        "winRate": 49.4,
+        "games": 11086
       },
       {
         "name": "Conkeldurr",
-        "winRate": 49.5,
-        "games": 10989
+        "winRate": 49.4,
+        "games": 11086
       }
     ],
     "bestSets": []
@@ -3399,35 +3399,35 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "name": "Aegislash",
     "isMega": false,
     "elo": 9698,
-    "winRate": 50.3,
-    "appearances": 447685,
-    "wins": 225345,
-    "losses": 222340,
+    "winRate": 50.2,
+    "appearances": 457579,
+    "wins": 229861,
+    "losses": 227718,
     "bestPartners": [
       {
+        "name": "Azumarill",
+        "winRate": 57,
+        "games": 4755
+      },
+      {
+        "name": "Mega Scizor",
+        "winRate": 57,
+        "games": 4755
+      },
+      {
+        "name": "Starmie",
+        "winRate": 56,
+        "games": 4841
+      },
+      {
+        "name": "Lucario",
+        "winRate": 55.5,
+        "games": 9769
+      },
+      {
         "name": "Archaludon",
-        "winRate": 63.5,
-        "games": 8461
-      },
-      {
-        "name": "Hippowdon",
-        "winRate": 60.4,
-        "games": 4380
-      },
-      {
-        "name": "Mega Clefable",
-        "winRate": 60.2,
-        "games": 9152
-      },
-      {
-        "name": "Empoleon",
-        "winRate": 60.2,
-        "games": 9152
-      },
-      {
-        "name": "Hydreigon",
-        "winRate": 58,
-        "games": 4585
+        "winRate": 53.6,
+        "games": 10172
       }
     ],
     "bestSets": []
@@ -3436,36 +3436,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 693,
     "name": "Clawitzer",
     "isMega": false,
-    "elo": 9728,
-    "winRate": 52.4,
-    "appearances": 21524,
-    "wins": 11268,
-    "losses": 10256,
+    "elo": 9644,
+    "winRate": 49.7,
+    "appearances": 16385,
+    "wins": 8139,
+    "losses": 8246,
     "bestPartners": [
       {
         "name": "Sandaconda",
-        "winRate": 60.5,
-        "games": 4647
+        "winRate": 49.8,
+        "games": 5481
+      },
+      {
+        "name": "Dragonite",
+        "winRate": 49.8,
+        "games": 5481
       },
       {
         "name": "Samurott",
-        "winRate": 60.5,
-        "games": 4647
+        "winRate": 49.8,
+        "games": 5481
       },
       {
-        "name": "Heat Rotom",
-        "winRate": 60.5,
-        "games": 4647
+        "name": "Vaporeon",
+        "winRate": 49.7,
+        "games": 10891
       },
       {
-        "name": "Azumarill",
-        "winRate": 60.5,
-        "games": 4647
-      },
-      {
-        "name": "Milotic",
-        "winRate": 60.5,
-        "games": 4647
+        "name": "Arcanine",
+        "winRate": 49.7,
+        "games": 10975
       }
     ],
     "bestSets": []
@@ -3474,36 +3474,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 697,
     "name": "Tyrantrum",
     "isMega": false,
-    "elo": 9658,
-    "winRate": 50.2,
-    "appearances": 16653,
-    "wins": 8365,
-    "losses": 8288,
+    "elo": 9656,
+    "winRate": 49.5,
+    "appearances": 16536,
+    "wins": 8180,
+    "losses": 8356,
     "bestPartners": [
       {
         "name": "Primarina",
-        "winRate": 51.9,
-        "games": 5386
+        "winRate": 49.9,
+        "games": 5467
       },
       {
-        "name": "Azumarill",
-        "winRate": 51.9,
-        "games": 5386
+        "name": "Whimsicott",
+        "winRate": 49.9,
+        "games": 5467
+      },
+      {
+        "name": "Alolan Ninetales",
+        "winRate": 49.6,
+        "games": 11012
       },
       {
         "name": "Scizor",
-        "winRate": 51.9,
-        "games": 5386
+        "winRate": 49.5,
+        "games": 10991
       },
       {
-        "name": "Gardevoir",
-        "winRate": 50.6,
-        "games": 11018
-      },
-      {
-        "name": "Gyarados",
-        "winRate": 50.6,
-        "games": 11021
+        "name": "Azumarill",
+        "winRate": 49.5,
+        "games": 10991
       }
     ],
     "bestSets": []
@@ -3512,36 +3512,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 699,
     "name": "Aurorus",
     "isMega": false,
-    "elo": 9651,
-    "winRate": 47.4,
-    "appearances": 15844,
-    "wins": 7515,
-    "losses": 8329,
+    "elo": 9580,
+    "winRate": 45.9,
+    "appearances": 15217,
+    "wins": 6990,
+    "losses": 8227,
     "bestPartners": [
       {
+        "name": "Palafin",
+        "winRate": 49.4,
+        "games": 5496
+      },
+      {
         "name": "Leafeon",
-        "winRate": 50.4,
-        "games": 5661
-      },
-      {
-        "name": "Incineroar",
-        "winRate": 50.4,
-        "games": 5661
-      },
-      {
-        "name": "Gyarados",
-        "winRate": 48.7,
-        "games": 10836
-      },
-      {
-        "name": "Whimsicott",
-        "winRate": 48.7,
-        "games": 10836
+        "winRate": 49.4,
+        "games": 5496
       },
       {
         "name": "Kommo-o",
-        "winRate": 47.7,
-        "games": 10669
+        "winRate": 49.4,
+        "games": 5496
+      },
+      {
+        "name": "Dragapult",
+        "winRate": 47.5,
+        "games": 10518
+      },
+      {
+        "name": "Serperior",
+        "winRate": 46.2,
+        "games": 10195
       }
     ],
     "bestSets": []
@@ -3550,36 +3550,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 700,
     "name": "Sylveon",
     "isMega": false,
-    "elo": 9714,
-    "winRate": 50.6,
-    "appearances": 55040,
-    "wins": 27864,
-    "losses": 27176,
+    "elo": 9640,
+    "winRate": 49.7,
+    "appearances": 53554,
+    "wins": 26613,
+    "losses": 26941,
     "bestPartners": [
       {
         "name": "Hydreigon",
-        "winRate": 57.3,
-        "games": 4725
+        "winRate": 57.8,
+        "games": 4581
       },
       {
         "name": "Dragapult",
-        "winRate": 52.8,
-        "games": 15871
+        "winRate": 53,
+        "games": 15358
       },
       {
         "name": "Whimsicott",
-        "winRate": 52.1,
-        "games": 15902
+        "winRate": 52.3,
+        "games": 15466
       },
       {
         "name": "Azumarill",
-        "winRate": 51.2,
-        "games": 5581
+        "winRate": 51.4,
+        "games": 5465
       },
       {
         "name": "Mega Scizor",
-        "winRate": 51.2,
-        "games": 5581
+        "winRate": 51.4,
+        "games": 5465
       }
     ],
     "bestSets": []
@@ -3588,36 +3588,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 701,
     "name": "Hawlucha",
     "isMega": false,
-    "elo": 9663,
-    "winRate": 47.6,
-    "appearances": 58194,
-    "wins": 27688,
-    "losses": 30506,
+    "elo": 9613,
+    "winRate": 45.4,
+    "appearances": 35058,
+    "wins": 15900,
+    "losses": 19158,
     "bestPartners": [
       {
-        "name": "Hisuian Zoroark",
-        "winRate": 50.6,
-        "games": 5680
-      },
-      {
-        "name": "Gyarados",
-        "winRate": 50.5,
-        "games": 5574
-      },
-      {
-        "name": "Ceruledge",
-        "winRate": 50.5,
-        "games": 5574
-      },
-      {
         "name": "Mega Absol Z",
-        "winRate": 50.4,
-        "games": 11520
+        "winRate": 50.2,
+        "games": 5459
       },
       {
-        "name": "Rotom",
-        "winRate": 50.4,
-        "games": 11520
+        "name": "Hisuian Zoroark",
+        "winRate": 50.2,
+        "games": 5459
+      },
+      {
+        "name": "Armarouge",
+        "winRate": 49.5,
+        "games": 5542
+      },
+      {
+        "name": "Crabominable",
+        "winRate": 49.5,
+        "games": 5542
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 49.5,
+        "games": 5542
       }
     ],
     "bestSets": []
@@ -3626,36 +3626,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 707,
     "name": "Klefki",
     "isMega": false,
-    "elo": 9720,
-    "winRate": 49.9,
-    "appearances": 44112,
-    "wins": 22008,
-    "losses": 22104,
+    "elo": 9723,
+    "winRate": 46.6,
+    "appearances": 51470,
+    "wins": 24005,
+    "losses": 27465,
     "bestPartners": [
       {
-        "name": "Mega Garchomp",
-        "winRate": 51.2,
-        "games": 5450
+        "name": "Mega Meganium",
+        "winRate": 50.4,
+        "games": 5718
       },
       {
-        "name": "Azumarill",
-        "winRate": 51.2,
-        "games": 5450
+        "name": "Politoed",
+        "winRate": 50.4,
+        "games": 5718
       },
       {
-        "name": "Primarina",
-        "winRate": 51.2,
-        "games": 5450
+        "name": "Wash Rotom",
+        "winRate": 50.4,
+        "games": 5718
       },
       {
-        "name": "Farigiraf",
-        "winRate": 50.5,
-        "games": 5636
+        "name": "Gyarados",
+        "winRate": 50.1,
+        "games": 11242
       },
       {
-        "name": "Sneasler",
-        "winRate": 50.5,
-        "games": 5636
+        "name": "Scizor",
+        "winRate": 50,
+        "games": 5602
       }
     ],
     "bestSets": []
@@ -3664,36 +3664,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 711,
     "name": "Gourgeist",
     "isMega": false,
-    "elo": 9759,
+    "elo": 9619,
     "winRate": 49.8,
-    "appearances": 16780,
-    "wins": 8356,
-    "losses": 8424,
+    "appearances": 16174,
+    "wins": 8058,
+    "losses": 8116,
     "bestPartners": [
       {
-        "name": "Blastoise",
-        "winRate": 50.4,
-        "games": 5543
-      },
-      {
         "name": "Arcanine",
-        "winRate": 50.4,
-        "games": 5543
+        "winRate": 50.2,
+        "games": 5373
       },
       {
         "name": "Hisuian Arcanine",
-        "winRate": 50.4,
-        "games": 5543
+        "winRate": 50.2,
+        "games": 5373
       },
       {
         "name": "Gyarados",
-        "winRate": 50.4,
-        "games": 5543
+        "winRate": 50.2,
+        "games": 5373
       },
       {
         "name": "Vaporeon",
-        "winRate": 50,
-        "games": 11034
+        "winRate": 49.9,
+        "games": 10783
+      },
+      {
+        "name": "Blastoise",
+        "winRate": 49.8,
+        "games": 16174
       }
     ],
     "bestSets": []
@@ -3702,36 +3702,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 715,
     "name": "Noivern",
     "isMega": false,
-    "elo": 9731,
-    "winRate": 48.3,
-    "appearances": 101071,
-    "wins": 48856,
-    "losses": 52215,
+    "elo": 9616,
+    "winRate": 47.4,
+    "appearances": 69935,
+    "wins": 33134,
+    "losses": 36801,
     "bestPartners": [
       {
-        "name": "Archaludon",
-        "winRate": 52.2,
-        "games": 5380
+        "name": "Primarina",
+        "winRate": 60.1,
+        "games": 4444
       },
       {
-        "name": "Alolan Raichu",
-        "winRate": 52.2,
-        "games": 5380
+        "name": "Charizard",
+        "winRate": 60.1,
+        "games": 4444
       },
       {
-        "name": "Gliscor",
-        "winRate": 50.9,
-        "games": 5696
+        "name": "Typhlosion",
+        "winRate": 57.5,
+        "games": 4756
       },
       {
-        "name": "Fan Rotom",
-        "winRate": 50.9,
-        "games": 5696
+        "name": "Kingambit",
+        "winRate": 57.5,
+        "games": 4756
       },
       {
-        "name": "Mega Excadrill",
-        "winRate": 50.6,
-        "games": 11241
+        "name": "Hydreigon",
+        "winRate": 57.5,
+        "games": 4756
       }
     ],
     "bestSets": []
@@ -3740,36 +3740,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 724,
     "name": "Decidueye",
     "isMega": false,
-    "elo": 9811,
-    "winRate": 50.4,
-    "appearances": 22307,
-    "wins": 11248,
-    "losses": 11059,
+    "elo": 9655,
+    "winRate": 49.7,
+    "appearances": 38101,
+    "wins": 18939,
+    "losses": 19162,
     "bestPartners": [
       {
         "name": "Houndoom",
-        "winRate": 50.8,
-        "games": 11268
+        "winRate": 50.9,
+        "games": 11229
+      },
+      {
+        "name": "Hisuian Decidueye",
+        "winRate": 50.9,
+        "games": 5699
+      },
+      {
+        "name": "Skarmory",
+        "winRate": 50.9,
+        "games": 5699
       },
       {
         "name": "Gyarados",
         "winRate": 50.7,
-        "games": 16673
+        "games": 16554
       },
       {
         "name": "Whimsicott",
         "winRate": 50.7,
-        "games": 16673
-      },
-      {
-        "name": "Dragapult",
-        "winRate": 50.7,
-        "games": 16673
-      },
-      {
-        "name": "Dragonite",
-        "winRate": 50.7,
-        "games": 16673
+        "games": 16554
       }
     ],
     "bestSets": []
@@ -3778,36 +3778,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 727,
     "name": "Incineroar",
     "isMega": false,
-    "elo": 9694,
-    "winRate": 49.9,
-    "appearances": 2043701,
-    "wins": 1019536,
-    "losses": 1024165,
+    "elo": 9653,
+    "winRate": 49.8,
+    "appearances": 2092753,
+    "wins": 1043177,
+    "losses": 1049576,
     "bestPartners": [
       {
         "name": "Mega Clefable",
-        "winRate": 67.5,
-        "games": 3946
+        "winRate": 66.6,
+        "games": 3999
+      },
+      {
+        "name": "Weavile",
+        "winRate": 61.6,
+        "games": 4376
       },
       {
         "name": "Archaludon",
-        "winRate": 58.3,
-        "games": 18677
+        "winRate": 58,
+        "games": 23301
       },
       {
         "name": "Mega Venusaur",
-        "winRate": 57.5,
-        "games": 4790
+        "winRate": 57.3,
+        "games": 4812
       },
       {
         "name": "Mega Garchomp",
         "winRate": 54.6,
-        "games": 5106
-      },
-      {
-        "name": "Alolan Ninetales",
-        "winRate": 54.5,
-        "games": 4984
+        "games": 5241
       }
     ],
     "bestSets": []
@@ -3816,36 +3816,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 730,
     "name": "Primarina",
     "isMega": false,
-    "elo": 9747,
-    "winRate": 50.4,
-    "appearances": 39485,
-    "wins": 19887,
-    "losses": 19598,
+    "elo": 9720,
+    "winRate": 53,
+    "appearances": 40129,
+    "wins": 21255,
+    "losses": 18874,
     "bestPartners": [
       {
-        "name": "Tyrantrum",
-        "winRate": 51.9,
-        "games": 5386
+        "name": "Hisuian Samurott",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
-        "name": "Gyarados",
-        "winRate": 51.9,
-        "games": 5386
+        "name": "Drampa",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
-        "name": "Gardevoir",
-        "winRate": 51.9,
-        "games": 5386
-      },
-      {
-        "name": "Scizor",
-        "winRate": 51.9,
-        "games": 5386
+        "name": "Abomasnow",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
         "name": "Mega Garchomp",
-        "winRate": 51.2,
-        "games": 5450
+        "winRate": 61,
+        "games": 4436
+      },
+      {
+        "name": "Arcanine",
+        "winRate": 61,
+        "games": 4436
       }
     ],
     "bestSets": []
@@ -3854,36 +3854,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 733,
     "name": "Toucannon",
     "isMega": false,
-    "elo": 9662,
-    "winRate": 53.1,
-    "appearances": 15596,
-    "wins": 8285,
-    "losses": 7311,
+    "elo": 9616,
+    "winRate": 50.9,
+    "appearances": 16284,
+    "wins": 8286,
+    "losses": 7998,
     "bestPartners": [
       {
         "name": "Archaludon",
-        "winRate": 60.4,
-        "games": 4380
+        "winRate": 53.8,
+        "games": 5127
+      },
+      {
+        "name": "Pawmot",
+        "winRate": 53.8,
+        "games": 5127
       },
       {
         "name": "Hisuian Arcanine",
-        "winRate": 60.4,
-        "games": 4380
+        "winRate": 53.8,
+        "games": 5127
       },
       {
-        "name": "Hippowdon",
-        "winRate": 60.4,
-        "games": 4380
+        "name": "Metagross",
+        "winRate": 51.9,
+        "games": 10803
       },
       {
-        "name": "Heat Rotom",
-        "winRate": 55,
-        "games": 10066
-      },
-      {
-        "name": "Aegislash",
-        "winRate": 53.1,
-        "games": 15596
+        "name": "Garchomp",
+        "winRate": 50.9,
+        "games": 16284
       }
     ],
     "bestSets": []
@@ -3892,36 +3892,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 740,
     "name": "Crabominable",
     "isMega": false,
-    "elo": 9676,
-    "winRate": 50.4,
-    "appearances": 78059,
-    "wins": 39368,
-    "losses": 38691,
+    "elo": 9581,
+    "winRate": 50.2,
+    "appearances": 77576,
+    "wins": 38940,
+    "losses": 38636,
     "bestPartners": [
       {
-        "name": "Hydreigon",
-        "winRate": 53.9,
-        "games": 5035
+        "name": "Kommo-o",
+        "winRate": 50.9,
+        "games": 5592
       },
       {
-        "name": "Scizor",
-        "winRate": 53.9,
-        "games": 5035
+        "name": "Lucario",
+        "winRate": 50.9,
+        "games": 5592
       },
       {
-        "name": "Meowscarada",
-        "winRate": 53.9,
-        "games": 5035
+        "name": "Hisuian Zoroark",
+        "winRate": 50.9,
+        "games": 5592
+      },
+      {
+        "name": "Mega Alakazam",
+        "winRate": 50.8,
+        "games": 11166
       },
       {
         "name": "Mega Starmie",
-        "winRate": 52.3,
-        "games": 10722
-      },
-      {
-        "name": "Pawmot",
-        "winRate": 51,
-        "games": 5593
+        "winRate": 50.8,
+        "games": 5547
       }
     ],
     "bestSets": []
@@ -3930,36 +3930,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 745,
     "name": "Lycanroc",
     "isMega": false,
-    "elo": 9636,
-    "winRate": 46.3,
-    "appearances": 15565,
-    "wins": 7210,
-    "losses": 8355,
+    "elo": 9693,
+    "winRate": 50.4,
+    "appearances": 16804,
+    "wins": 8474,
+    "losses": 8330,
     "bestPartners": [
+      {
+        "name": "Dragapult",
+        "winRate": 50.9,
+        "games": 5699
+      },
+      {
+        "name": "Hisuian Decidueye",
+        "winRate": 50.9,
+        "games": 5699
+      },
+      {
+        "name": "Skarmory",
+        "winRate": 50.9,
+        "games": 5699
+      },
       {
         "name": "Gyarados",
         "winRate": 50.5,
-        "games": 5661
+        "games": 5486
       },
       {
         "name": "Whimsicott",
         "winRate": 50.5,
-        "games": 5661
-      },
-      {
-        "name": "Dragonite",
-        "winRate": 50.5,
-        "games": 5661
-      },
-      {
-        "name": "Charizard",
-        "winRate": 50.5,
-        "games": 5661
-      },
-      {
-        "name": "Azumarill",
-        "winRate": 48.9,
-        "games": 5564
+        "games": 5486
       }
     ],
     "bestSets": []
@@ -3968,36 +3968,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 748,
     "name": "Toxapex",
     "isMega": false,
-    "elo": 9642,
-    "winRate": 47,
-    "appearances": 135725,
-    "wins": 63780,
-    "losses": 71945,
+    "elo": 9570,
+    "winRate": 47.6,
+    "appearances": 115088,
+    "wins": 54758,
+    "losses": 60330,
     "bestPartners": [
       {
-        "name": "Mega Excadrill",
-        "winRate": 50.9,
-        "games": 5673
+        "name": "Palafin",
+        "winRate": 51.1,
+        "games": 5693
       },
       {
-        "name": "Altaria",
-        "winRate": 50.9,
-        "games": 5673
+        "name": "Charizard",
+        "winRate": 51.1,
+        "games": 5693
       },
       {
-        "name": "Primarina",
-        "winRate": 50.9,
-        "games": 5673
+        "name": "Leafeon",
+        "winRate": 51.1,
+        "games": 5628
       },
       {
-        "name": "Mega Garchomp",
+        "name": "Serperior",
+        "winRate": 50.9,
+        "games": 5758
+      },
+      {
+        "name": "Garganacl",
         "winRate": 50.8,
-        "games": 5617
-      },
-      {
-        "name": "Greninja",
-        "winRate": 50.7,
-        "games": 11052
+        "games": 5472
       }
     ],
     "bestSets": []
@@ -4006,36 +4006,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 750,
     "name": "Mudsdale",
     "isMega": false,
-    "elo": 9700,
-    "winRate": 51.1,
-    "appearances": 15911,
-    "wins": 8129,
-    "losses": 7782,
+    "elo": 9640,
+    "winRate": 49.8,
+    "appearances": 16155,
+    "wins": 8046,
+    "losses": 8109,
     "bestPartners": [
       {
+        "name": "Blastoise",
+        "winRate": 50.2,
+        "games": 5364
+      },
+      {
+        "name": "Arcanine",
+        "winRate": 50.2,
+        "games": 5364
+      },
+      {
+        "name": "Vaporeon",
+        "winRate": 50.2,
+        "games": 5364
+      },
+      {
+        "name": "Dragonite",
+        "winRate": 50.2,
+        "games": 5364
+      },
+      {
         "name": "Mega Gyarados",
-        "winRate": 54,
-        "games": 4965
-      },
-      {
-        "name": "Archaludon",
-        "winRate": 54,
-        "games": 4965
-      },
-      {
-        "name": "Pawmot",
-        "winRate": 54,
-        "games": 4965
-      },
-      {
-        "name": "Stunfisk",
-        "winRate": 54,
-        "games": 4965
-      },
-      {
-        "name": "Diggersby",
-        "winRate": 54,
-        "games": 4965
+        "winRate": 50,
+        "games": 5341
       }
     ],
     "bestSets": []
@@ -4044,36 +4044,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 752,
     "name": "Araquanid",
     "isMega": false,
-    "elo": 9701,
-    "winRate": 48.2,
-    "appearances": 42586,
-    "wins": 20544,
-    "losses": 22042,
+    "elo": 9575,
+    "winRate": 44.6,
+    "appearances": 38260,
+    "wins": 17047,
+    "losses": 21213,
     "bestPartners": [
       {
-        "name": "Mega Excadrill",
-        "winRate": 50.6,
-        "games": 5575
+        "name": "Hisuian Samurott",
+        "winRate": 54.1,
+        "games": 5104
       },
       {
-        "name": "Hydreigon",
-        "winRate": 50.6,
-        "games": 5575
-      },
-      {
-        "name": "Dragapult",
-        "winRate": 50.6,
-        "games": 5575
+        "name": "Archaludon",
+        "winRate": 54.1,
+        "games": 5104
       },
       {
         "name": "Dragonite",
-        "winRate": 50.6,
-        "games": 5575
+        "winRate": 54.1,
+        "games": 5104
       },
       {
-        "name": "Noivern",
-        "winRate": 50.6,
-        "games": 5575
+        "name": "Mega Delphox",
+        "winRate": 52.1,
+        "games": 10350
+      },
+      {
+        "name": "Azumarill",
+        "winRate": 52.1,
+        "games": 10350
       }
     ],
     "bestSets": []
@@ -4082,36 +4082,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 763,
     "name": "Tsareena",
     "isMega": false,
-    "elo": 9680,
-    "winRate": 50.2,
-    "appearances": 20494,
-    "wins": 10293,
-    "losses": 10201,
+    "elo": 9650,
+    "winRate": 51.1,
+    "appearances": 16412,
+    "wins": 8386,
+    "losses": 8026,
     "bestPartners": [
       {
-        "name": "Hisuian Arcanine",
-        "winRate": 53.7,
-        "games": 5213
-      },
-      {
-        "name": "Greninja",
-        "winRate": 53.7,
-        "games": 10429
-      },
-      {
-        "name": "Hisuian Zoroark",
-        "winRate": 53.7,
-        "games": 5213
-      },
-      {
-        "name": "Palafin",
-        "winRate": 53.7,
-        "games": 10429
+        "name": "Gyarados",
+        "winRate": 52.9,
+        "games": 5186
       },
       {
         "name": "Heat Rotom",
-        "winRate": 53.6,
-        "games": 5216
+        "winRate": 52.9,
+        "games": 5186
+      },
+      {
+        "name": "Greninja",
+        "winRate": 52.9,
+        "games": 5186
+      },
+      {
+        "name": "Palafin",
+        "winRate": 51.9,
+        "games": 10879
+      },
+      {
+        "name": "Charizard",
+        "winRate": 51.9,
+        "games": 10879
       }
     ],
     "bestSets": []
@@ -4120,36 +4120,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 765,
     "name": "Oranguru",
     "isMega": false,
-    "elo": 9636,
-    "winRate": 50.7,
-    "appearances": 28311,
-    "wins": 14347,
-    "losses": 13964,
+    "elo": 9712,
+    "winRate": 50.5,
+    "appearances": 27880,
+    "wins": 14081,
+    "losses": 13799,
     "bestPartners": [
       {
-        "name": "Rhyperior",
-        "winRate": 50.8,
-        "games": 22712
-      },
-      {
-        "name": "Hatterene",
-        "winRate": 50.7,
-        "games": 28311
-      },
-      {
-        "name": "Incineroar",
-        "winRate": 50.7,
-        "games": 28311
+        "name": "Torkoal",
+        "winRate": 50.5,
+        "games": 27880
       },
       {
         "name": "Venusaur",
-        "winRate": 50.7,
-        "games": 28311
+        "winRate": 50.5,
+        "games": 27880
       },
       {
-        "name": "Torkoal",
-        "winRate": 50.7,
-        "games": 28311
+        "name": "Incineroar",
+        "winRate": 50.5,
+        "games": 27880
+      },
+      {
+        "name": "Hatterene",
+        "winRate": 50.5,
+        "games": 27880
+      },
+      {
+        "name": "Rhyperior",
+        "winRate": 50.5,
+        "games": 22413
       }
     ],
     "bestSets": []
@@ -4158,36 +4158,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 778,
     "name": "Mimikyu",
     "isMega": false,
-    "elo": 9744,
-    "winRate": 47.6,
-    "appearances": 62941,
-    "wins": 29934,
-    "losses": 33007,
+    "elo": 9612,
+    "winRate": 48,
+    "appearances": 42225,
+    "wins": 20269,
+    "losses": 21956,
     "bestPartners": [
       {
-        "name": "Rhyperior",
+        "name": "Mega Lopunny",
         "winRate": 50.6,
-        "games": 5457
+        "games": 5516
+      },
+      {
+        "name": "Rhyperior",
+        "winRate": 50.5,
+        "games": 5460
       },
       {
         "name": "Ursaluna",
-        "winRate": 50.6,
-        "games": 5457
+        "winRate": 50.5,
+        "games": 5460
       },
       {
         "name": "Kingambit",
-        "winRate": 50.6,
-        "games": 5457
+        "winRate": 50.5,
+        "games": 5460
       },
       {
         "name": "Garchomp",
-        "winRate": 50.6,
-        "games": 5457
-      },
-      {
-        "name": "Zoroark",
         "winRate": 50.5,
-        "games": 5690
+        "games": 5460
       }
     ],
     "bestSets": []
@@ -4196,36 +4196,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 780,
     "name": "Drampa",
     "isMega": false,
-    "elo": 9667,
-    "winRate": 49.5,
-    "appearances": 139743,
-    "wins": 69221,
-    "losses": 70522,
+    "elo": 9672,
+    "winRate": 49.8,
+    "appearances": 128440,
+    "wins": 63918,
+    "losses": 64522,
     "bestPartners": [
       {
-        "name": "Kommo-o",
-        "winRate": 58.1,
-        "games": 4683
+        "name": "Hisuian Typhlosion",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
-        "name": "Snorlax",
-        "winRate": 56.1,
-        "games": 4931
+        "name": "Primarina",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
-        "name": "Whimsicott",
-        "winRate": 54.5,
-        "games": 10132
+        "name": "Abomasnow",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
-        "name": "Mega Starmie",
-        "winRate": 54.1,
-        "games": 10370
+        "name": "Hydreigon",
+        "winRate": 56.4,
+        "games": 9702
       },
       {
-        "name": "Scizor",
-        "winRate": 52.7,
-        "games": 15862
+        "name": "Hisuian Samurott",
+        "winRate": 55.8,
+        "games": 9386
       }
     ],
     "bestSets": []
@@ -4234,36 +4234,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 784,
     "name": "Kommo-o",
     "isMega": false,
-    "elo": 9664,
-    "winRate": 51,
-    "appearances": 75278,
-    "wins": 38402,
-    "losses": 36876,
+    "elo": 9723,
+    "winRate": 52.2,
+    "appearances": 74738,
+    "wins": 38983,
+    "losses": 35755,
     "bestPartners": [
       {
-        "name": "Mega Charizard X",
-        "winRate": 67.1,
-        "games": 3855
+        "name": "Mega Feraligatr",
+        "winRate": 74.5,
+        "games": 3640
       },
       {
-        "name": "Mega Starmie",
-        "winRate": 58.1,
-        "games": 4683
-      },
-      {
-        "name": "Drampa",
-        "winRate": 58.1,
-        "games": 4683
-      },
-      {
-        "name": "Torkoal",
-        "winRate": 58.1,
-        "games": 4683
+        "name": "Arcanine",
+        "winRate": 74.5,
+        "games": 3640
       },
       {
         "name": "Archaludon",
-        "winRate": 57.3,
-        "games": 9519
+        "winRate": 74.5,
+        "games": 3640
+      },
+      {
+        "name": "Heat Rotom",
+        "winRate": 74.5,
+        "games": 3640
+      },
+      {
+        "name": "Greninja",
+        "winRate": 61.6,
+        "games": 4376
       }
     ],
     "bestSets": []
@@ -4272,36 +4272,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 823,
     "name": "Corviknight",
     "isMega": false,
-    "elo": 9708,
-    "winRate": 50.6,
-    "appearances": 212670,
-    "wins": 107524,
-    "losses": 105146,
+    "elo": 9686,
+    "winRate": 50.9,
+    "appearances": 178052,
+    "wins": 90553,
+    "losses": 87499,
     "bestPartners": [
       {
-        "name": "Tyranitar",
-        "winRate": 60.6,
-        "games": 13437
-      },
-      {
         "name": "Scovillain",
-        "winRate": 60.5,
-        "games": 9036
+        "winRate": 61.5,
+        "games": 8606
       },
       {
-        "name": "Archaludon",
-        "winRate": 59.8,
-        "games": 22812
+        "name": "Tyranitar",
+        "winRate": 61.4,
+        "games": 12918
       },
       {
         "name": "Mega Gyarados",
-        "winRate": 58.7,
-        "games": 4660
+        "winRate": 58.9,
+        "games": 4548
       },
       {
         "name": "Gliscor",
-        "winRate": 58.7,
-        "games": 4660
+        "winRate": 58.9,
+        "games": 4548
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 58.6,
+        "games": 22892
       }
     ],
     "bestSets": []
@@ -4310,36 +4310,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 844,
     "name": "Sandaconda",
     "isMega": false,
-    "elo": 9699,
-    "winRate": 53.1,
-    "appearances": 15944,
-    "wins": 8464,
-    "losses": 7480,
+    "elo": 9654,
+    "winRate": 50.4,
+    "appearances": 16375,
+    "wins": 8252,
+    "losses": 8123,
     "bestPartners": [
       {
-        "name": "Heat Rotom",
-        "winRate": 60.5,
-        "games": 4647
+        "name": "Mega Gyarados",
+        "winRate": 51,
+        "games": 5584
       },
       {
-        "name": "Azumarill",
-        "winRate": 60.5,
-        "games": 4647
+        "name": "Rhyperior",
+        "winRate": 51,
+        "games": 5584
       },
       {
-        "name": "Clawitzer",
-        "winRate": 60.5,
-        "games": 4647
+        "name": "Stunfisk",
+        "winRate": 51,
+        "games": 5584
       },
       {
-        "name": "Samurott",
-        "winRate": 54.5,
-        "games": 10461
+        "name": "Pawmot",
+        "winRate": 51,
+        "games": 5584
       },
       {
-        "name": "Milotic",
-        "winRate": 54.5,
-        "games": 10461
+        "name": "Garchomp",
+        "winRate": 51,
+        "games": 5584
       }
     ],
     "bestSets": []
@@ -4348,36 +4348,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 855,
     "name": "Polteageist",
     "isMega": false,
-    "elo": 9611,
-    "winRate": 39.6,
-    "appearances": 18190,
-    "wins": 7197,
-    "losses": 10993,
+    "elo": 9689,
+    "winRate": 47.2,
+    "appearances": 14884,
+    "wins": 7023,
+    "losses": 7861,
     "bestPartners": [
       {
-        "name": "Mega Kangaskhan",
-        "winRate": 49.8,
-        "games": 5452
-      },
-      {
-        "name": "Krookodile",
-        "winRate": 49.8,
-        "games": 5452
-      },
-      {
-        "name": "Rotom",
-        "winRate": 49.8,
-        "games": 5452
+        "name": "Mega Lopunny",
+        "winRate": 55,
+        "games": 5106
       },
       {
         "name": "Gardevoir",
-        "winRate": 49.8,
-        "games": 5452
+        "winRate": 55,
+        "games": 5106
       },
       {
-        "name": "Gyarados",
-        "winRate": 49.8,
-        "games": 5452
+        "name": "Alakazam",
+        "winRate": 55,
+        "games": 5106
+      },
+      {
+        "name": "Hisuian Zoroark",
+        "winRate": 55,
+        "games": 5106
+      },
+      {
+        "name": "Snorlax",
+        "winRate": 49.3,
+        "games": 5582
       }
     ],
     "bestSets": []
@@ -4386,36 +4386,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 858,
     "name": "Hatterene",
     "isMega": false,
-    "elo": 9709,
-    "winRate": 50.2,
-    "appearances": 533675,
-    "wins": 267854,
-    "losses": 265821,
+    "elo": 9724,
+    "winRate": 50.1,
+    "appearances": 517520,
+    "wins": 259081,
+    "losses": 258439,
     "bestPartners": [
       {
         "name": "Mega Scizor",
-        "winRate": 59.3,
-        "games": 4674
+        "winRate": 57.3,
+        "games": 4536
       },
       {
         "name": "Snorlax",
-        "winRate": 58.1,
-        "games": 9432
-      },
-      {
-        "name": "Slowbro",
-        "winRate": 54.9,
-        "games": 15025
+        "winRate": 53.5,
+        "games": 15473
       },
       {
         "name": "Tyranitar",
-        "winRate": 52.6,
-        "games": 31310
+        "winRate": 52.2,
+        "games": 26095
       },
       {
-        "name": "Azumarill",
+        "name": "Slowbro",
         "winRate": 51.9,
-        "games": 5396
+        "games": 15111
+      },
+      {
+        "name": "Scizor",
+        "winRate": 51.5,
+        "games": 5525
       }
     ],
     "bestSets": []
@@ -4424,36 +4424,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 866,
     "name": "Mr. Rime",
     "isMega": false,
-    "elo": 9694,
-    "winRate": 49.2,
-    "appearances": 16203,
-    "wins": 7979,
-    "losses": 8224,
+    "elo": 9646,
+    "winRate": 49.9,
+    "appearances": 16628,
+    "wins": 8297,
+    "losses": 8331,
     "bestPartners": [
       {
+        "name": "Steelix",
+        "winRate": 50.4,
+        "games": 5659
+      },
+      {
+        "name": "Drampa",
+        "winRate": 50.4,
+        "games": 5659
+      },
+      {
+        "name": "Ursaluna",
+        "winRate": 50.4,
+        "games": 5659
+      },
+      {
         "name": "Gyarados",
-        "winRate": 50.2,
-        "games": 5433
-      },
-      {
-        "name": "Krookodile",
-        "winRate": 50.2,
-        "games": 5433
-      },
-      {
-        "name": "Incineroar",
-        "winRate": 50,
-        "games": 10926
+        "winRate": 50.1,
+        "games": 5398
       },
       {
         "name": "Kingambit",
-        "winRate": 50,
-        "games": 10926
-      },
-      {
-        "name": "Galarian Stunfisk",
-        "winRate": 49.8,
-        "games": 5493
+        "winRate": 50.1,
+        "games": 5398
       }
     ],
     "bestSets": []
@@ -4462,36 +4462,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 867,
     "name": "Runerigus",
     "isMega": false,
-    "elo": 9726,
-    "winRate": 50.2,
-    "appearances": 16349,
-    "wins": 8215,
-    "losses": 8134,
+    "elo": 9574,
+    "winRate": 50.3,
+    "appearances": 16319,
+    "wins": 8206,
+    "losses": 8113,
     "bestPartners": [
       {
-        "name": "Hydreigon",
-        "winRate": 50.4,
-        "games": 5339
+        "name": "Kingambit",
+        "winRate": 50.6,
+        "games": 5552
       },
       {
-        "name": "Umbreon",
-        "winRate": 50.4,
-        "games": 5339
-      },
-      {
-        "name": "Dragonite",
-        "winRate": 50.3,
-        "games": 10810
-      },
-      {
-        "name": "Feraligatr",
-        "winRate": 50.3,
-        "games": 10810
+        "name": "Mega Gyarados",
+        "winRate": 50.6,
+        "games": 5552
       },
       {
         "name": "Whimsicott",
-        "winRate": 50.3,
-        "games": 10878
+        "winRate": 50.6,
+        "games": 5552
+      },
+      {
+        "name": "Garchomp",
+        "winRate": 50.6,
+        "games": 5552
+      },
+      {
+        "name": "Azumarill",
+        "winRate": 50.6,
+        "games": 5552
       }
     ],
     "bestSets": []
@@ -4500,36 +4500,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 869,
     "name": "Alcremie",
     "isMega": false,
-    "elo": 9779,
-    "winRate": 54.3,
-    "appearances": 14888,
-    "wins": 8080,
-    "losses": 6808,
+    "elo": 9698,
+    "winRate": 56.7,
+    "appearances": 14209,
+    "wins": 8053,
+    "losses": 6156,
     "bestPartners": [
       {
-        "name": "Archaludon",
-        "winRate": 61,
-        "games": 4475
-      },
-      {
-        "name": "Rotom",
-        "winRate": 61,
-        "games": 4475
-      },
-      {
-        "name": "Metagross",
-        "winRate": 56.6,
-        "games": 9664
-      },
-      {
         "name": "Kingambit",
-        "winRate": 55,
-        "games": 9699
+        "winRate": 61.1,
+        "games": 4344
       },
       {
         "name": "Scizor",
-        "winRate": 54.3,
-        "games": 14888
+        "winRate": 61.1,
+        "games": 4344
+      },
+      {
+        "name": "Metagross",
+        "winRate": 61.1,
+        "games": 4344
+      },
+      {
+        "name": "Rotom",
+        "winRate": 61.1,
+        "games": 4344
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 61,
+        "games": 8716
       }
     ],
     "bestSets": []
@@ -4538,36 +4538,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 877,
     "name": "Morpeko",
     "isMega": false,
-    "elo": 9560,
-    "winRate": 39,
-    "appearances": 17117,
-    "wins": 6676,
-    "losses": 10441,
+    "elo": 9664,
+    "winRate": 49.1,
+    "appearances": 21678,
+    "wins": 10636,
+    "losses": 11042,
     "bestPartners": [
       {
-        "name": "Kingambit",
-        "winRate": 53.5,
-        "games": 5173
+        "name": "Mega Glimmora",
+        "winRate": 50.8,
+        "games": 5615
       },
       {
-        "name": "Greninja",
-        "winRate": 53.5,
-        "games": 5173
+        "name": "Abomasnow",
+        "winRate": 50.8,
+        "games": 5615
       },
       {
-        "name": "Tyranitar",
-        "winRate": 53.5,
-        "games": 5173
+        "name": "Pelipper",
+        "winRate": 50.8,
+        "games": 5615
       },
       {
-        "name": "Hydreigon",
-        "winRate": 48.2,
-        "games": 9752
+        "name": "Mow Rotom",
+        "winRate": 50.8,
+        "games": 5615
       },
       {
-        "name": "Mega Gengar",
-        "winRate": 45.2,
-        "games": 9315
+        "name": "Hisuian Samurott",
+        "winRate": 50.8,
+        "games": 5615
       }
     ],
     "bestSets": []
@@ -4576,36 +4576,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 887,
     "name": "Dragapult",
     "isMega": false,
-    "elo": 9679,
-    "winRate": 50.3,
-    "appearances": 1014307,
-    "wins": 510050,
-    "losses": 504257,
+    "elo": 9657,
+    "winRate": 50.5,
+    "appearances": 1005714,
+    "wins": 507887,
+    "losses": 497827,
     "bestPartners": [
       {
-        "name": "Archaludon",
-        "winRate": 54.7,
-        "games": 10152
+        "name": "Heat Rotom",
+        "winRate": 71.2,
+        "games": 3750
       },
       {
-        "name": "Mega Garchomp",
-        "winRate": 54.6,
-        "games": 5106
+        "name": "Alcremie",
+        "winRate": 60.9,
+        "games": 4372
       },
       {
-        "name": "Alolan Ninetales",
-        "winRate": 54.5,
-        "games": 4984
+        "name": "Mega Greninja",
+        "winRate": 60.3,
+        "games": 9028
       },
       {
         "name": "Gliscor",
-        "winRate": 54.4,
-        "games": 10356
+        "winRate": 58.9,
+        "games": 4548
       },
       {
-        "name": "Corviknight",
-        "winRate": 53.5,
-        "games": 15627
+        "name": "Archaludon",
+        "winRate": 57.5,
+        "games": 13941
       }
     ],
     "bestSets": []
@@ -4614,36 +4614,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 900,
     "name": "Kleavor",
     "isMega": false,
-    "elo": 9691,
-    "winRate": 52.2,
-    "appearances": 16313,
-    "wins": 8519,
-    "losses": 7794,
+    "elo": 9617,
+    "winRate": 52.8,
+    "appearances": 15557,
+    "wins": 8211,
+    "losses": 7346,
     "bestPartners": [
       {
-        "name": "Gyarados",
-        "winRate": 55.6,
-        "games": 5143
-      },
-      {
         "name": "Kingambit",
-        "winRate": 55.6,
-        "games": 5143
-      },
-      {
-        "name": "Politoed",
-        "winRate": 55.6,
-        "games": 5143
-      },
-      {
-        "name": "Archaludon",
-        "winRate": 53.1,
-        "games": 10596
+        "winRate": 55.3,
+        "games": 4994
       },
       {
         "name": "Feraligatr",
-        "winRate": 53,
-        "games": 10860
+        "winRate": 55.3,
+        "games": 4994
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 54.5,
+        "games": 10089
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 54.5,
+        "games": 10089
+      },
+      {
+        "name": "Excadrill",
+        "winRate": 53.7,
+        "games": 5095
       }
     ],
     "bestSets": []
@@ -4652,36 +4652,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 901,
     "name": "Ursaluna",
     "isMega": false,
-    "elo": 9693,
-    "winRate": 50.2,
-    "appearances": 50268,
-    "wins": 25253,
-    "losses": 25015,
+    "elo": 9683,
+    "winRate": 50,
+    "appearances": 49834,
+    "wins": 24940,
+    "losses": 24894,
     "bestPartners": [
       {
-        "name": "Mega Slowbro",
-        "winRate": 51.8,
-        "games": 5503
-      },
-      {
-        "name": "Infernape",
-        "winRate": 51.8,
-        "games": 5503
-      },
-      {
-        "name": "Charizard",
-        "winRate": 51.8,
-        "games": 5503
-      },
-      {
-        "name": "Meowscarada",
-        "winRate": 51.8,
-        "games": 5503
-      },
-      {
         "name": "Mega Starmie",
-        "winRate": 50.8,
-        "games": 5687
+        "winRate": 50.7,
+        "games": 10911
+      },
+      {
+        "name": "Torkoal",
+        "winRate": 50.6,
+        "games": 5364
+      },
+      {
+        "name": "Kommo-o",
+        "winRate": 50.6,
+        "games": 5364
+      },
+      {
+        "name": "Hydreigon",
+        "winRate": 50.6,
+        "games": 5364
+      },
+      {
+        "name": "Mimikyu",
+        "winRate": 50.5,
+        "games": 5460
       }
     ],
     "bestSets": []
@@ -4690,36 +4690,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 902,
     "name": "Basculegion",
     "isMega": false,
-    "elo": 9588,
-    "winRate": 42.2,
-    "appearances": 14030,
-    "wins": 5916,
-    "losses": 8114,
+    "elo": 9704,
+    "winRate": 49.2,
+    "appearances": 16180,
+    "wins": 7955,
+    "losses": 8225,
     "bestPartners": [
       {
         "name": "Krookodile",
-        "winRate": 51,
-        "games": 5646
+        "winRate": 50.6,
+        "games": 5419
       },
       {
         "name": "Incineroar",
-        "winRate": 51,
-        "games": 5646
-      },
-      {
-        "name": "Hydreigon",
-        "winRate": 47,
-        "games": 10225
+        "winRate": 50.6,
+        "games": 5419
       },
       {
         "name": "Whimsicott",
-        "winRate": 42.2,
-        "games": 9451
+        "winRate": 50.6,
+        "games": 5419
       },
       {
         "name": "Meowscarada",
-        "winRate": 42.2,
-        "games": 9451
+        "winRate": 50.6,
+        "games": 5419
+      },
+      {
+        "name": "Hydreigon",
+        "winRate": 50.4,
+        "games": 11093
       }
     ],
     "bestSets": []
@@ -4728,36 +4728,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 903,
     "name": "Sneasler",
     "isMega": false,
-    "elo": 9681,
+    "elo": 9619,
     "winRate": 50,
-    "appearances": 33560,
-    "wins": 16777,
-    "losses": 16783,
+    "appearances": 22299,
+    "wins": 11155,
+    "losses": 11144,
     "bestPartners": [
       {
-        "name": "Pawmot",
-        "winRate": 50.8,
-        "games": 11229
+        "name": "Umbreon",
+        "winRate": 50.5,
+        "games": 5630
       },
       {
-        "name": "Sylveon",
+        "name": "Rotom",
         "winRate": 50.5,
-        "games": 5636
+        "games": 5630
       },
       {
-        "name": "Arcanine",
+        "name": "Volcarona",
         "winRate": 50.5,
-        "games": 5636
+        "games": 5630
       },
       {
-        "name": "Klefki",
+        "name": "Dragapult",
         "winRate": 50.5,
-        "games": 5636
+        "games": 5630
       },
       {
         "name": "Farigiraf",
-        "winRate": 50.4,
-        "games": 16878
+        "winRate": 50.3,
+        "games": 5652
       }
     ],
     "bestSets": []
@@ -4766,36 +4766,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 908,
     "name": "Meowscarada",
     "isMega": false,
-    "elo": 9700,
-    "winRate": 49.4,
-    "appearances": 171073,
-    "wins": 84517,
-    "losses": 86556,
+    "elo": 9614,
+    "winRate": 49.8,
+    "appearances": 141956,
+    "wins": 70637,
+    "losses": 71319,
     "bestPartners": [
       {
+        "name": "Blastoise",
+        "winRate": 51,
+        "games": 10866
+      },
+      {
         "name": "Mega Froslass",
-        "winRate": 58.3,
-        "games": 4674
+        "winRate": 51,
+        "games": 5423
       },
       {
-        "name": "Azumarill",
-        "winRate": 58.3,
-        "games": 4674
+        "name": "Hisuian Samurott",
+        "winRate": 51,
+        "games": 5423
       },
       {
-        "name": "Lucario",
-        "winRate": 58.3,
-        "games": 4674
+        "name": "Mega Charizard Y",
+        "winRate": 51,
+        "games": 5780
       },
       {
-        "name": "Mega Starmie",
-        "winRate": 53.9,
-        "games": 5035
-      },
-      {
-        "name": "Crabominable",
-        "winRate": 53.9,
-        "games": 5035
+        "name": "Meganium",
+        "winRate": 51,
+        "games": 5780
       }
     ],
     "bestSets": []
@@ -4804,36 +4804,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 914,
     "name": "Quaquaval",
     "isMega": false,
-    "elo": 9704,
-    "winRate": 50.7,
-    "appearances": 22042,
-    "wins": 11170,
-    "losses": 10872,
+    "elo": 9603,
+    "winRate": 48.5,
+    "appearances": 21862,
+    "wins": 10600,
+    "losses": 11262,
     "bestPartners": [
       {
-        "name": "Mega Delphox",
-        "winRate": 51.3,
-        "games": 5449
+        "name": "Arcanine",
+        "winRate": 50.2,
+        "games": 5693
       },
       {
-        "name": "Kingambit",
-        "winRate": 51.3,
-        "games": 5449
+        "name": "Metagross",
+        "winRate": 50.2,
+        "games": 5693
       },
       {
-        "name": "Hisuian Decidueye",
-        "winRate": 51.3,
-        "games": 5449
+        "name": "Heat Rotom",
+        "winRate": 50.2,
+        "games": 5693
       },
       {
-        "name": "Drampa",
-        "winRate": 51.3,
-        "games": 5449
+        "name": "Flareon",
+        "winRate": 50.1,
+        "games": 5647
       },
       {
-        "name": "Incineroar",
-        "winRate": 50.9,
-        "games": 5638
+        "name": "Noivern",
+        "winRate": 50.1,
+        "games": 5647
       }
     ],
     "bestSets": []
@@ -4842,36 +4842,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 923,
     "name": "Pawmot",
     "isMega": false,
-    "elo": 9694,
-    "winRate": 50.6,
-    "appearances": 32609,
-    "wins": 16510,
-    "losses": 16099,
+    "elo": 9633,
+    "winRate": 50.9,
+    "appearances": 39017,
+    "wins": 19856,
+    "losses": 19161,
     "bestPartners": [
       {
-        "name": "Mega Gyarados",
-        "winRate": 54,
-        "games": 4965
+        "name": "Toucannon",
+        "winRate": 53.8,
+        "games": 5127
       },
       {
         "name": "Archaludon",
-        "winRate": 54,
-        "games": 4965
+        "winRate": 53.8,
+        "games": 5127
       },
       {
-        "name": "Stunfisk",
-        "winRate": 54,
-        "games": 4965
+        "name": "Hisuian Arcanine",
+        "winRate": 53.8,
+        "games": 5127
       },
       {
-        "name": "Mudsdale",
-        "winRate": 54,
-        "games": 4965
+        "name": "Metagross",
+        "winRate": 53.8,
+        "games": 5127
       },
       {
-        "name": "Diggersby",
-        "winRate": 54,
-        "games": 4965
+        "name": "Garchomp",
+        "winRate": 51,
+        "games": 27585
       }
     ],
     "bestSets": []
@@ -4880,36 +4880,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 925,
     "name": "Maushold",
     "isMega": false,
-    "elo": 9596,
-    "winRate": 38.8,
-    "appearances": 13546,
-    "wins": 5254,
-    "losses": 8292,
+    "elo": 9613,
+    "winRate": 43.9,
+    "appearances": 14529,
+    "wins": 6380,
+    "losses": 8149,
     "bestPartners": [
       {
         "name": "Whimsicott",
-        "winRate": 50.5,
-        "games": 5816
+        "winRate": 50.7,
+        "games": 5685
       },
       {
         "name": "Garchomp",
-        "winRate": 50.5,
-        "games": 5816
+        "winRate": 50.7,
+        "games": 5685
       },
       {
         "name": "Dragapult",
-        "winRate": 50.5,
-        "games": 5816
+        "winRate": 50.7,
+        "games": 5685
       },
       {
         "name": "Kingambit",
-        "winRate": 50.5,
-        "games": 5816
+        "winRate": 50.7,
+        "games": 5685
       },
       {
-        "name": "Gyarados",
-        "winRate": 41.7,
-        "games": 4614
+        "name": "Incineroar",
+        "winRate": 43.9,
+        "games": 14529
       }
     ],
     "bestSets": []
@@ -4918,36 +4918,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 934,
     "name": "Garganacl",
     "isMega": false,
-    "elo": 9664,
-    "winRate": 50.1,
-    "appearances": 44152,
-    "wins": 22100,
-    "losses": 22052,
+    "elo": 9673,
+    "winRate": 49.7,
+    "appearances": 37527,
+    "wins": 18638,
+    "losses": 18889,
     "bestPartners": [
       {
         "name": "Corviknight",
-        "winRate": 51.2,
-        "games": 10967
+        "winRate": 52.1,
+        "games": 10463
       },
       {
-        "name": "Vivillon",
-        "winRate": 50.9,
-        "games": 5750
-      },
-      {
-        "name": "Arcanine",
-        "winRate": 50.9,
-        "games": 5750
-      },
-      {
-        "name": "Garchomp",
-        "winRate": 50.6,
-        "games": 22190
+        "name": "Dragapult",
+        "winRate": 51.1,
+        "games": 27126
       },
       {
         "name": "Azumarill",
-        "winRate": 50.6,
-        "games": 16863
+        "winRate": 51.1,
+        "games": 11159
+      },
+      {
+        "name": "Garchomp",
+        "winRate": 50.9,
+        "games": 16419
+      },
+      {
+        "name": "Whimsicott",
+        "winRate": 50.8,
+        "games": 16211
       }
     ],
     "bestSets": []
@@ -4956,36 +4956,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 936,
     "name": "Armarouge",
     "isMega": false,
-    "elo": 9656,
-    "winRate": 49,
-    "appearances": 16655,
-    "wins": 8161,
-    "losses": 8494,
+    "elo": 9635,
+    "winRate": 49.4,
+    "appearances": 16543,
+    "wins": 8170,
+    "losses": 8373,
     "bestPartners": [
       {
         "name": "Kingambit",
-        "winRate": 49.9,
-        "games": 5708
+        "winRate": 50,
+        "games": 5643
       },
       {
         "name": "Gyarados",
-        "winRate": 49.9,
-        "games": 5708
-      },
-      {
-        "name": "Drampa",
-        "winRate": 49.9,
-        "games": 5708
+        "winRate": 50,
+        "games": 5643
       },
       {
         "name": "Greninja",
-        "winRate": 49.7,
-        "games": 11207
+        "winRate": 50,
+        "games": 5643
       },
       {
         "name": "Azumarill",
-        "winRate": 49.7,
-        "games": 11207
+        "winRate": 50,
+        "games": 5643
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 49.5,
+        "games": 5542
       }
     ],
     "bestSets": []
@@ -4994,36 +4994,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 937,
     "name": "Ceruledge",
     "isMega": false,
-    "elo": 9667,
-    "winRate": 50,
-    "appearances": 16656,
-    "wins": 8329,
-    "losses": 8327,
+    "elo": 9608,
+    "winRate": 49.8,
+    "appearances": 16480,
+    "wins": 8206,
+    "losses": 8274,
     "bestPartners": [
       {
         "name": "Mega Absol",
-        "winRate": 50.5,
-        "games": 5574
+        "winRate": 50.4,
+        "games": 5582
       },
       {
-        "name": "Arcanine",
-        "winRate": 50.5,
-        "games": 5574
-      },
-      {
-        "name": "Hawlucha",
-        "winRate": 50.5,
-        "games": 5574
+        "name": "Galarian Slowbro",
+        "winRate": 50.4,
+        "games": 5582
       },
       {
         "name": "Dragapult",
-        "winRate": 50.5,
-        "games": 5574
+        "winRate": 50.4,
+        "games": 5582
+      },
+      {
+        "name": "Rotom",
+        "winRate": 50.4,
+        "games": 5582
       },
       {
         "name": "Gyarados",
-        "winRate": 50,
-        "games": 11090
+        "winRate": 50.1,
+        "games": 10978
       }
     ],
     "bestSets": []
@@ -5032,36 +5032,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 952,
     "name": "Scovillain",
     "isMega": false,
-    "elo": 9779,
-    "winRate": 57.4,
-    "appearances": 18887,
-    "wins": 10832,
-    "losses": 8055,
+    "elo": 9775,
+    "winRate": 57.3,
+    "appearances": 18664,
+    "wins": 10689,
+    "losses": 7975,
     "bestPartners": [
       {
-        "name": "Torkoal",
-        "winRate": 61.8,
-        "games": 4379
-      },
-      {
         "name": "Aerodactyl",
-        "winRate": 60.5,
-        "games": 9036
+        "winRate": 61.5,
+        "games": 8606
       },
       {
         "name": "Tyranitar",
-        "winRate": 60.5,
-        "games": 9036
+        "winRate": 61.5,
+        "games": 8606
       },
       {
         "name": "Corviknight",
-        "winRate": 60.5,
-        "games": 9036
+        "winRate": 61.5,
+        "games": 8606
       },
       {
         "name": "Kingambit",
-        "winRate": 60.5,
-        "games": 9036
+        "winRate": 61.5,
+        "games": 8606
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 61.5,
+        "games": 8606
       }
     ],
     "bestSets": []
@@ -5070,36 +5070,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 959,
     "name": "Tinkaton",
     "isMega": false,
-    "elo": 9692,
-    "winRate": 48.5,
-    "appearances": 43031,
-    "wins": 20851,
-    "losses": 22180,
+    "elo": 9688,
+    "winRate": 50.1,
+    "appearances": 59547,
+    "wins": 29848,
+    "losses": 29699,
     "bestPartners": [
       {
-        "name": "Mega Garchomp",
-        "winRate": 50.8,
-        "games": 5617
-      },
-      {
-        "name": "Toxapex",
-        "winRate": 50.5,
-        "games": 11242
-      },
-      {
-        "name": "Scizor",
-        "winRate": 50.2,
-        "games": 16758
-      },
-      {
         "name": "Kingambit",
-        "winRate": 50.2,
-        "games": 16758
+        "winRate": 57.9,
+        "games": 4844
       },
       {
-        "name": "Mega Dragonite",
-        "winRate": 50.2,
-        "games": 5645
+        "name": "Mega Garchomp Z",
+        "winRate": 53.6,
+        "games": 10368
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 53.6,
+        "games": 10368
+      },
+      {
+        "name": "Heat Rotom",
+        "winRate": 53.6,
+        "games": 10368
+      },
+      {
+        "name": "Mega Scovillain",
+        "winRate": 50.7,
+        "games": 5559
       }
     ],
     "bestSets": []
@@ -5108,36 +5108,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 964,
     "name": "Palafin",
     "isMega": false,
-    "elo": 9732,
-    "winRate": 50.3,
-    "appearances": 231524,
-    "wins": 116353,
-    "losses": 115171,
+    "elo": 9641,
+    "winRate": 50.2,
+    "appearances": 237714,
+    "wins": 119233,
+    "losses": 118481,
     "bestPartners": [
       {
-        "name": "Mega Venusaur",
-        "winRate": 55.8,
-        "games": 4907
-      },
-      {
-        "name": "Hisuian Samurott",
-        "winRate": 55.8,
-        "games": 4907
-      },
-      {
-        "name": "Wash Rotom",
-        "winRate": 55.8,
-        "games": 4907
-      },
-      {
-        "name": "Tyranitar",
-        "winRate": 55.8,
-        "games": 4907
-      },
-      {
         "name": "Tsareena",
-        "winRate": 53.7,
-        "games": 10429
+        "winRate": 51.9,
+        "games": 10879
+      },
+      {
+        "name": "Heat Rotom",
+        "winRate": 51.5,
+        "games": 10762
+      },
+      {
+        "name": "Toxapex",
+        "winRate": 51.1,
+        "games": 5693
+      },
+      {
+        "name": "Aegislash",
+        "winRate": 51,
+        "games": 11223
+      },
+      {
+        "name": "Charizard",
+        "winRate": 51,
+        "games": 16292
       }
     ],
     "bestSets": []
@@ -5146,36 +5146,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 968,
     "name": "Orthworm",
     "isMega": false,
-    "elo": 9735,
-    "winRate": 50.9,
-    "appearances": 16311,
-    "wins": 8308,
-    "losses": 8003,
+    "elo": 9691,
+    "winRate": 50.5,
+    "appearances": 26903,
+    "wins": 13574,
+    "losses": 13329,
     "bestPartners": [
       {
-        "name": "Mega Altaria",
-        "winRate": 53,
-        "games": 5224
+        "name": "Mega Hawlucha",
+        "winRate": 53.8,
+        "games": 5153
       },
       {
-        "name": "Scizor",
-        "winRate": 53,
-        "games": 5224
+        "name": "Empoleon",
+        "winRate": 53.8,
+        "games": 5153
       },
       {
-        "name": "Kingambit",
-        "winRate": 53,
-        "games": 5224
+        "name": "Archaludon",
+        "winRate": 53.8,
+        "games": 5153
       },
       {
-        "name": "Lucario",
-        "winRate": 53,
-        "games": 5224
+        "name": "Mega Aerodactyl",
+        "winRate": 51.7,
+        "games": 5303
       },
       {
-        "name": "Metagross",
-        "winRate": 53,
-        "games": 5224
+        "name": "Greninja",
+        "winRate": 51.7,
+        "games": 5303
       }
     ],
     "bestSets": []
@@ -5184,36 +5184,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 970,
     "name": "Glimmora",
     "isMega": false,
-    "elo": 9639,
-    "winRate": 49.5,
-    "appearances": 10727,
-    "wins": 5310,
-    "losses": 5417,
+    "elo": 9593,
+    "winRate": 49.7,
+    "appearances": 10823,
+    "wins": 5381,
+    "losses": 5442,
     "bestPartners": [
       {
         "name": "Gyarados",
-        "winRate": 49.5,
-        "games": 10727
+        "winRate": 49.7,
+        "games": 10823
       },
       {
         "name": "Dragonite",
-        "winRate": 49.5,
-        "games": 10727
+        "winRate": 49.7,
+        "games": 10823
       },
       {
         "name": "Feraligatr",
-        "winRate": 49.5,
-        "games": 10727
+        "winRate": 49.7,
+        "games": 10823
       },
       {
         "name": "Politoed",
-        "winRate": 49.5,
-        "games": 10727
+        "winRate": 49.7,
+        "games": 10823
       },
       {
         "name": "Scizor",
-        "winRate": 49.5,
-        "games": 10727
+        "winRate": 49.7,
+        "games": 10823
       }
     ],
     "bestSets": []
@@ -5222,36 +5222,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 977,
     "name": "Dondozo",
     "isMega": false,
-    "elo": 9702,
-    "winRate": 49.6,
-    "appearances": 55468,
-    "wins": 27528,
-    "losses": 27940,
+    "elo": 9678,
+    "winRate": 49.7,
+    "appearances": 55035,
+    "wins": 27362,
+    "losses": 27673,
     "bestPartners": [
       {
         "name": "Scizor",
-        "winRate": 51.2,
-        "games": 5302
+        "winRate": 51.5,
+        "games": 5525
       },
       {
         "name": "Garchomp",
-        "winRate": 49.7,
-        "games": 44407
+        "winRate": 49.8,
+        "games": 43957
       },
       {
         "name": "Incineroar",
-        "winRate": 49.6,
-        "games": 55468
+        "winRate": 49.7,
+        "games": 55035
       },
       {
         "name": "Tatsugiri",
-        "winRate": 49.6,
-        "games": 55468
+        "winRate": 49.7,
+        "games": 55035
       },
       {
         "name": "Hatterene",
-        "winRate": 49.6,
-        "games": 49816
+        "winRate": 49.7,
+        "games": 49495
       }
     ],
     "bestSets": []
@@ -5260,36 +5260,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 978,
     "name": "Tatsugiri",
     "isMega": false,
-    "elo": 9688,
+    "elo": 9670,
     "winRate": 49.7,
-    "appearances": 66717,
-    "wins": 33158,
-    "losses": 33559,
+    "appearances": 66323,
+    "wins": 32993,
+    "losses": 33330,
     "bestPartners": [
       {
         "name": "Scizor",
         "winRate": 50.4,
-        "games": 16551
+        "games": 16813
       },
       {
         "name": "Corviknight",
-        "winRate": 50,
-        "games": 11249
+        "winRate": 49.9,
+        "games": 11288
       },
       {
         "name": "Arcanine",
-        "winRate": 50,
-        "games": 11249
+        "winRate": 49.9,
+        "games": 11288
       },
       {
         "name": "Skarmory",
-        "winRate": 50,
-        "games": 11249
+        "winRate": 49.9,
+        "games": 11288
       },
       {
         "name": "Garchomp",
-        "winRate": 49.7,
-        "games": 44407
+        "winRate": 49.8,
+        "games": 43957
       }
     ],
     "bestSets": []
@@ -5298,36 +5298,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 981,
     "name": "Farigiraf",
     "isMega": false,
-    "elo": 9671,
-    "winRate": 50.4,
-    "appearances": 16878,
-    "wins": 8504,
-    "losses": 8374,
+    "elo": 9626,
+    "winRate": 46.9,
+    "appearances": 15633,
+    "wins": 7334,
+    "losses": 8299,
     "bestPartners": [
       {
-        "name": "Azumarill",
-        "winRate": 51,
-        "games": 5593
-      },
-      {
-        "name": "Pawmot",
-        "winRate": 50.8,
-        "games": 11229
-      },
-      {
-        "name": "Sylveon",
+        "name": "Gyarados",
         "winRate": 50.5,
-        "games": 5636
+        "games": 5627
       },
       {
-        "name": "Arcanine",
+        "name": "Alolan Ninetales",
         "winRate": 50.5,
-        "games": 5636
+        "games": 5627
       },
       {
-        "name": "Klefki",
+        "name": "Infernape",
         "winRate": 50.5,
-        "games": 5636
+        "games": 5627
+      },
+      {
+        "name": "Heracross",
+        "winRate": 50.5,
+        "games": 5627
+      },
+      {
+        "name": "Crabominable",
+        "winRate": 50.4,
+        "games": 11279
       }
     ],
     "bestSets": []
@@ -5336,36 +5336,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 983,
     "name": "Kingambit",
     "isMega": false,
-    "elo": 9721,
-    "winRate": 50.8,
-    "appearances": 782983,
-    "wins": 397820,
-    "losses": 385163,
+    "elo": 9656,
+    "winRate": 50.9,
+    "appearances": 796978,
+    "wins": 405674,
+    "losses": 391304,
     "bestPartners": [
       {
-        "name": "Mega Clefable",
-        "winRate": 67.5,
-        "games": 3946
+        "name": "Scovillain",
+        "winRate": 61.5,
+        "games": 8606
       },
       {
         "name": "Aerodactyl",
-        "winRate": 60.6,
-        "games": 13437
+        "winRate": 61.4,
+        "games": 12918
       },
       {
-        "name": "Scovillain",
-        "winRate": 60.5,
-        "games": 9036
+        "name": "Mega Scovillain",
+        "winRate": 61.3,
+        "games": 4312
       },
       {
-        "name": "Archaludon",
-        "winRate": 59.3,
-        "games": 50641
+        "name": "Alcremie",
+        "winRate": 61.1,
+        "games": 4344
       },
       {
-        "name": "Corviknight",
-        "winRate": 58.3,
-        "games": 18770
+        "name": "Mega Clefable",
+        "winRate": 59.9,
+        "games": 9073
       }
     ],
     "bestSets": []
@@ -5374,36 +5374,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 1013,
     "name": "Sinistcha",
     "isMega": false,
-    "elo": 9738,
-    "winRate": 50.6,
-    "appearances": 16912,
-    "wins": 8562,
-    "losses": 8350,
+    "elo": 9691,
+    "winRate": 49.9,
+    "appearances": 16537,
+    "wins": 8254,
+    "losses": 8283,
     "bestPartners": [
       {
-        "name": "Meowscarada",
-        "winRate": 51.8,
-        "games": 5575
-      },
-      {
-        "name": "Mow Rotom",
-        "winRate": 51.8,
-        "games": 5575
-      },
-      {
-        "name": "Leafeon",
-        "winRate": 51.8,
-        "games": 5575
-      },
-      {
         "name": "Blastoise",
-        "winRate": 50.8,
-        "games": 5591
+        "winRate": 50.4,
+        "games": 5390
       },
       {
         "name": "Alolan Ninetales",
-        "winRate": 50.8,
-        "games": 5591
+        "winRate": 50.4,
+        "games": 5390
+      },
+      {
+        "name": "Arcanine",
+        "winRate": 50.4,
+        "games": 5390
+      },
+      {
+        "name": "Hisuian Arcanine",
+        "winRate": 50.4,
+        "games": 5390
+      },
+      {
+        "name": "Empoleon",
+        "winRate": 50,
+        "games": 5600
       }
     ],
     "bestSets": []
@@ -5412,36 +5412,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 1018,
     "name": "Archaludon",
     "isMega": false,
-    "elo": 9767,
-    "winRate": 56,
-    "appearances": 171267,
-    "wins": 95885,
-    "losses": 75382,
+    "elo": 9653,
+    "winRate": 56.1,
+    "appearances": 175035,
+    "wins": 98133,
+    "losses": 76902,
     "bestPartners": [
       {
-        "name": "Mega Clefable",
-        "winRate": 67.2,
-        "games": 8027
+        "name": "Mega Feraligatr",
+        "winRate": 74.5,
+        "games": 3640
       },
       {
-        "name": "Slowbro",
-        "winRate": 66.8,
-        "games": 3934
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 63.5,
-        "games": 8461
-      },
-      {
-        "name": "Aegislash",
-        "winRate": 63.5,
-        "games": 8461
+        "name": "Kommo-o",
+        "winRate": 74.5,
+        "games": 3640
       },
       {
         "name": "Heat Rotom",
-        "winRate": 63.5,
-        "games": 8314
+        "winRate": 71.6,
+        "games": 7549
+      },
+      {
+        "name": "Slowbro",
+        "winRate": 68.9,
+        "games": 3909
+      },
+      {
+        "name": "Scovillain",
+        "winRate": 61.5,
+        "games": 8606
       }
     ],
     "bestSets": []
@@ -5450,36 +5450,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 1019,
     "name": "Hydrapple",
     "isMega": false,
-    "elo": 9687,
-    "winRate": 49.8,
-    "appearances": 16546,
-    "wins": 8241,
-    "losses": 8305,
+    "elo": 9615,
+    "winRate": 51.6,
+    "appearances": 15830,
+    "wins": 8166,
+    "losses": 7664,
     "bestPartners": [
       {
-        "name": "Charizard",
-        "winRate": 50.3,
-        "games": 5296
+        "name": "Scizor",
+        "winRate": 56.2,
+        "games": 4861
       },
       {
-        "name": "Arcanine",
-        "winRate": 50.3,
-        "games": 5296
+        "name": "Wash Rotom",
+        "winRate": 56.2,
+        "games": 4861
+      },
+      {
+        "name": "Charizard",
+        "winRate": 53.1,
+        "games": 10229
       },
       {
         "name": "Hisuian Arcanine",
-        "winRate": 50.3,
-        "games": 5296
+        "winRate": 53.1,
+        "games": 10229
       },
       {
-        "name": "Gyarados",
-        "winRate": 50.3,
-        "games": 5296
-      },
-      {
-        "name": "Alolan Ninetales",
-        "winRate": 50.2,
-        "games": 10758
+        "name": "Azumarill",
+        "winRate": 52.3,
+        "games": 10462
       }
     ],
     "bestSets": []
@@ -5488,36 +5488,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 5059,
     "name": "Hisuian Arcanine",
     "isMega": false,
-    "elo": 9685,
-    "winRate": 49,
-    "appearances": 409618,
-    "wins": 200829,
-    "losses": 208789,
+    "elo": 9737,
+    "winRate": 48.4,
+    "appearances": 381682,
+    "wins": 184742,
+    "losses": 196940,
     "bestPartners": [
       {
-        "name": "Mega Clefable",
-        "winRate": 66.9,
-        "games": 4081
-      },
-      {
-        "name": "Archaludon",
-        "winRate": 63.5,
-        "games": 8461
-      },
-      {
-        "name": "Hydreigon",
-        "winRate": 61,
-        "games": 4397
+        "name": "Azumarill",
+        "winRate": 56.2,
+        "games": 4861
       },
       {
         "name": "Toucannon",
-        "winRate": 60.4,
-        "games": 4380
+        "winRate": 53.8,
+        "games": 5127
       },
       {
-        "name": "Hippowdon",
-        "winRate": 60.4,
-        "games": 4380
+        "name": "Archaludon",
+        "winRate": 53.8,
+        "games": 5127
+      },
+      {
+        "name": "Pawmot",
+        "winRate": 53.8,
+        "games": 5127
+      },
+      {
+        "name": "Hydrapple",
+        "winRate": 53.1,
+        "games": 10229
       }
     ],
     "bestSets": []
@@ -5526,36 +5526,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 5157,
     "name": "Hisuian Typhlosion",
     "isMega": false,
-    "elo": 9718,
-    "winRate": 50.1,
-    "appearances": 16350,
-    "wins": 8196,
-    "losses": 8154,
+    "elo": 9679,
+    "winRate": 53,
+    "appearances": 14392,
+    "wins": 7630,
+    "losses": 6762,
     "bestPartners": [
       {
-        "name": "Gyarados",
-        "winRate": 50.2,
-        "games": 5427
+        "name": "Hisuian Samurott",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
-        "name": "Dragonite",
-        "winRate": 50.2,
-        "games": 5427
+        "name": "Hydreigon",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
-        "name": "Umbreon",
-        "winRate": 50.2,
-        "games": 5427
+        "name": "Drampa",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
         "name": "Abomasnow",
-        "winRate": 50.2,
-        "games": 5427
+        "winRate": 56.7,
+        "games": 9334
       },
       {
-        "name": "Hawlucha",
-        "winRate": 50.2,
-        "games": 5340
+        "name": "Primarina",
+        "winRate": 54.7,
+        "games": 9086
       }
     ],
     "bestSets": []
@@ -5564,36 +5564,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 6080,
     "name": "Galarian Slowbro",
     "isMega": false,
-    "elo": 9654,
-    "winRate": 44.8,
-    "appearances": 59530,
-    "wins": 26657,
-    "losses": 32873,
+    "elo": 9620,
+    "winRate": 45.8,
+    "appearances": 60657,
+    "wins": 27756,
+    "losses": 32901,
     "bestPartners": [
       {
         "name": "Palafin",
-        "winRate": 50.6,
-        "games": 5721
-      },
-      {
-        "name": "Garchomp",
-        "winRate": 50.4,
-        "games": 16515
-      },
-      {
-        "name": "Kingambit",
-        "winRate": 50.4,
-        "games": 16515
+        "winRate": 50.7,
+        "games": 5708
       },
       {
         "name": "Politoed",
-        "winRate": 50.4,
-        "games": 5427
+        "winRate": 50.7,
+        "games": 5608
       },
       {
-        "name": "Mega Absol Z",
-        "winRate": 50.2,
-        "games": 5840
+        "name": "Azumarill",
+        "winRate": 50.6,
+        "games": 5633
+      },
+      {
+        "name": "Hisuian Zoroark",
+        "winRate": 50.6,
+        "games": 5633
+      },
+      {
+        "name": "Slowking",
+        "winRate": 50.6,
+        "games": 5633
       }
     ],
     "bestSets": []
@@ -5602,36 +5602,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 6199,
     "name": "Galarian Slowking",
     "isMega": false,
-    "elo": 9562,
-    "winRate": 44,
-    "appearances": 14565,
-    "wins": 6408,
-    "losses": 8157,
+    "elo": 9642,
+    "winRate": 41.3,
+    "appearances": 18528,
+    "wins": 7657,
+    "losses": 10871,
     "bestPartners": [
       {
         "name": "Mega Audino",
-        "winRate": 47.1,
-        "games": 5250
+        "winRate": 46.7,
+        "games": 5099
       },
       {
         "name": "Gyarados",
-        "winRate": 44,
-        "games": 14565
+        "winRate": 43.2,
+        "games": 14332
       },
       {
         "name": "Hatterene",
-        "winRate": 44,
-        "games": 14565
-      },
-      {
-        "name": "Galarian Slowbro",
-        "winRate": 44,
-        "games": 14565
+        "winRate": 43.2,
+        "games": 14332
       },
       {
         "name": "Sableye",
-        "winRate": 44,
-        "games": 14565
+        "winRate": 43.2,
+        "games": 14332
+      },
+      {
+        "name": "Galarian Slowbro",
+        "winRate": 41.3,
+        "games": 18528
       }
     ],
     "bestSets": []
@@ -5640,36 +5640,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 6618,
     "name": "Galarian Stunfisk",
     "isMega": false,
-    "elo": 9703,
-    "winRate": 50.4,
-    "appearances": 96962,
-    "wins": 48824,
-    "losses": 48138,
+    "elo": 9663,
+    "winRate": 49.7,
+    "appearances": 70473,
+    "wins": 34998,
+    "losses": 35475,
     "bestPartners": [
       {
-        "name": "Hydreigon",
-        "winRate": 67.1,
-        "games": 3855
+        "name": "Mega Heracross",
+        "winRate": 51.7,
+        "games": 5426
       },
       {
-        "name": "Mega Charizard X",
-        "winRate": 57.5,
-        "games": 9300
+        "name": "Corviknight",
+        "winRate": 51.7,
+        "games": 5426
       },
       {
-        "name": "Whimsicott",
-        "winRate": 57.5,
-        "games": 9300
+        "name": "Alolan Raichu",
+        "winRate": 51.7,
+        "games": 5426
       },
       {
-        "name": "Kommo-o",
-        "winRate": 56,
-        "games": 9332
+        "name": "Archaludon",
+        "winRate": 50.5,
+        "games": 21957
       },
       {
-        "name": "Alcremie",
-        "winRate": 52.9,
-        "games": 5189
+        "name": "Gyarados",
+        "winRate": 50.2,
+        "games": 16391
       }
     ],
     "bestSets": []
@@ -5678,36 +5678,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 10008,
     "name": "Heat Rotom",
     "isMega": false,
-    "elo": 9647,
-    "winRate": 53.2,
-    "appearances": 109119,
-    "wins": 58093,
-    "losses": 51026,
+    "elo": 9680,
+    "winRate": 54.7,
+    "appearances": 106796,
+    "wins": 58424,
+    "losses": 48372,
     "bestPartners": [
       {
-        "name": "Mega Gyarados",
-        "winRate": 66.8,
-        "games": 3934
+        "name": "Mega Feraligatr",
+        "winRate": 74.5,
+        "games": 3640
       },
       {
-        "name": "Slowbro",
-        "winRate": 66.8,
-        "games": 3934
+        "name": "Kommo-o",
+        "winRate": 74.5,
+        "games": 3640
       },
       {
-        "name": "Mega Chesnaught",
-        "winRate": 66.4,
-        "games": 3878
+        "name": "Hydreigon",
+        "winRate": 74.5,
+        "games": 3640
       },
       {
         "name": "Archaludon",
-        "winRate": 63.5,
-        "games": 8314
+        "winRate": 71.6,
+        "games": 7549
       },
       {
-        "name": "Gengar",
-        "winRate": 63,
-        "games": 12671
+        "name": "Mega Greninja",
+        "winRate": 71.2,
+        "games": 3750
       }
     ],
     "bestSets": []
@@ -5716,36 +5716,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 10009,
     "name": "Wash Rotom",
     "isMega": false,
-    "elo": 9713,
-    "winRate": 51.5,
-    "appearances": 134432,
-    "wins": 69228,
-    "losses": 65204,
+    "elo": 9622,
+    "winRate": 51.6,
+    "appearances": 134731,
+    "wins": 69554,
+    "losses": 65177,
     "bestPartners": [
       {
-        "name": "Corviknight",
-        "winRate": 58.6,
-        "games": 4715
-      },
-      {
         "name": "Pinsir",
-        "winRate": 57.6,
-        "games": 9513
+        "winRate": 57.4,
+        "games": 9499
       },
       {
-        "name": "Mega Heracross",
-        "winRate": 56,
-        "games": 9934
+        "name": "Mega Pinsir",
+        "winRate": 56.6,
+        "games": 4791
       },
       {
-        "name": "Feraligatr",
-        "winRate": 55.8,
-        "games": 4907
+        "name": "Archaludon",
+        "winRate": 56.4,
+        "games": 19203
       },
       {
-        "name": "Palafin",
-        "winRate": 55.8,
-        "games": 4907
+        "name": "Hydrapple",
+        "winRate": 56.2,
+        "games": 4861
+      },
+      {
+        "name": "Charizard",
+        "winRate": 56.2,
+        "games": 4861
       }
     ],
     "bestSets": []
@@ -5754,36 +5754,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 10010,
     "name": "Frost Rotom",
     "isMega": false,
-    "elo": 9712,
-    "winRate": 49.4,
-    "appearances": 16650,
-    "wins": 8227,
-    "losses": 8423,
+    "elo": 9607,
+    "winRate": 42.3,
+    "appearances": 14290,
+    "wins": 6049,
+    "losses": 8241,
     "bestPartners": [
       {
-        "name": "Azumarill",
-        "winRate": 49.4,
-        "games": 11207
-      },
-      {
-        "name": "Hawlucha",
-        "winRate": 49.4,
-        "games": 5500
-      },
-      {
         "name": "Dragonite",
-        "winRate": 49.4,
-        "games": 10943
+        "winRate": 49.5,
+        "games": 5530
       },
       {
-        "name": "Noivern",
-        "winRate": 49.4,
-        "games": 5500
+        "name": "Charizard",
+        "winRate": 49.5,
+        "games": 5530
       },
       {
-        "name": "Whimsicott",
-        "winRate": 49.4,
-        "games": 5500
+        "name": "Garchomp",
+        "winRate": 49.5,
+        "games": 5530
+      },
+      {
+        "name": "Pelipper",
+        "winRate": 49.5,
+        "games": 5530
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 45.5,
+        "games": 10104
       }
     ],
     "bestSets": []
@@ -5792,36 +5792,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 10011,
     "name": "Fan Rotom",
     "isMega": false,
-    "elo": 9673,
-    "winRate": 47.8,
-    "appearances": 43124,
-    "wins": 20626,
-    "losses": 22498,
+    "elo": 9702,
+    "winRate": 50.6,
+    "appearances": 27231,
+    "wins": 13785,
+    "losses": 13446,
     "bestPartners": [
       {
-        "name": "Mega Lucario Z",
-        "winRate": 50.9,
-        "games": 5696
+        "name": "Aegislash",
+        "winRate": 53.2,
+        "games": 5131
       },
       {
-        "name": "Noivern",
-        "winRate": 50.9,
-        "games": 5696
+        "name": "Archaludon",
+        "winRate": 53.2,
+        "games": 5131
       },
       {
-        "name": "Dragapult",
-        "winRate": 50.9,
-        "games": 5696
+        "name": "Arcanine",
+        "winRate": 51.8,
+        "games": 10649
       },
       {
-        "name": "Dragonite",
-        "winRate": 50.5,
-        "games": 11459
+        "name": "Lucario",
+        "winRate": 51.8,
+        "games": 10649
       },
       {
-        "name": "Gliscor",
-        "winRate": 50.2,
-        "games": 11403
+        "name": "Aggron",
+        "winRate": 51.8,
+        "games": 10649
       }
     ],
     "bestSets": []
@@ -5830,36 +5830,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 10012,
     "name": "Mow Rotom",
     "isMega": false,
-    "elo": 9766,
-    "winRate": 50.1,
-    "appearances": 22529,
-    "wins": 11277,
-    "losses": 11252,
+    "elo": 9760,
+    "winRate": 50.3,
+    "appearances": 27249,
+    "wins": 13698,
+    "losses": 13551,
     "bestPartners": [
       {
-        "name": "Clawitzer",
-        "winRate": 51.8,
-        "games": 5575
+        "name": "Orthworm",
+        "winRate": 51.7,
+        "games": 5303
       },
       {
-        "name": "Meowscarada",
-        "winRate": 51.8,
-        "games": 5575
+        "name": "Greninja",
+        "winRate": 51.7,
+        "games": 5303
       },
       {
-        "name": "Krookodile",
-        "winRate": 51.8,
-        "games": 5575
+        "name": "Gyarados",
+        "winRate": 51.7,
+        "games": 5303
       },
       {
-        "name": "Leafeon",
-        "winRate": 51.8,
-        "games": 5575
+        "name": "Mega Aerodactyl",
+        "winRate": 51.3,
+        "games": 10903
       },
       {
-        "name": "Sinistcha",
-        "winRate": 51.8,
-        "games": 5575
+        "name": "Mega Feraligatr",
+        "winRate": 51.2,
+        "games": 5644
       }
     ],
     "bestSets": []
@@ -5868,36 +5868,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 10100,
     "name": "Alolan Raichu",
     "isMega": false,
-    "elo": 9712,
-    "winRate": 45.7,
-    "appearances": 55905,
-    "wins": 25543,
-    "losses": 30362,
+    "elo": 9743,
+    "winRate": 50.7,
+    "appearances": 58119,
+    "wins": 29468,
+    "losses": 28651,
     "bestPartners": [
       {
-        "name": "Mega Emboar",
-        "winRate": 52.2,
-        "games": 5380
+        "name": "Alcremie",
+        "winRate": 60.9,
+        "games": 4372
       },
       {
-        "name": "Noivern",
-        "winRate": 52.2,
-        "games": 5380
-      },
-      {
-        "name": "Skarmory",
-        "winRate": 52.2,
-        "games": 5380
-      },
-      {
-        "name": "Whimsicott",
-        "winRate": 52.2,
-        "games": 5380
+        "name": "Hisuian Zoroark",
+        "winRate": 60.9,
+        "games": 4372
       },
       {
         "name": "Archaludon",
-        "winRate": 52.2,
-        "games": 5380
+        "winRate": 55.4,
+        "games": 14711
+      },
+      {
+        "name": "Dragapult",
+        "winRate": 55.1,
+        "games": 9838
+      },
+      {
+        "name": "Mega Emboar",
+        "winRate": 54.5,
+        "games": 4913
       }
     ],
     "bestSets": []
@@ -5906,36 +5906,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 10103,
     "name": "Alolan Ninetales",
     "isMega": false,
-    "elo": 9704,
-    "winRate": 50.6,
-    "appearances": 82748,
-    "wins": 41878,
-    "losses": 40870,
+    "elo": 9669,
+    "winRate": 50.4,
+    "appearances": 103408,
+    "wins": 52154,
+    "losses": 51254,
     "bestPartners": [
       {
         "name": "Dragapult",
-        "winRate": 54.5,
-        "games": 4984
+        "winRate": 54.6,
+        "games": 4981
       },
       {
         "name": "Incineroar",
-        "winRate": 54.5,
-        "games": 4984
+        "winRate": 52.1,
+        "games": 10344
       },
       {
         "name": "Kingambit",
-        "winRate": 54.5,
-        "games": 4984
+        "winRate": 52,
+        "games": 10437
       },
       {
-        "name": "Garchomp",
-        "winRate": 51.4,
-        "games": 21757
+        "name": "Mega Garchomp Z",
+        "winRate": 51.6,
+        "games": 5364
       },
       {
-        "name": "Scizor",
-        "winRate": 51.3,
-        "games": 32775
+        "name": "Mega Garchomp",
+        "winRate": 51.5,
+        "games": 5403
       }
     ],
     "bestSets": []
@@ -5944,36 +5944,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 10336,
     "name": "Hisuian Samurott",
     "isMega": false,
-    "elo": 9714,
-    "winRate": 51.3,
-    "appearances": 31850,
-    "wins": 16337,
-    "losses": 15513,
+    "elo": 9746,
+    "winRate": 51.9,
+    "appearances": 41967,
+    "wins": 21765,
+    "losses": 20202,
     "bestPartners": [
       {
-        "name": "Mega Venusaur",
-        "winRate": 55.8,
-        "games": 4907
+        "name": "Hisuian Typhlosion",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
-        "name": "Feraligatr",
-        "winRate": 55.8,
-        "games": 4907
+        "name": "Hydreigon",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
-        "name": "Palafin",
-        "winRate": 55.8,
-        "games": 4907
+        "name": "Primarina",
+        "winRate": 65.3,
+        "games": 4028
       },
       {
-        "name": "Tyranitar",
-        "winRate": 55.8,
-        "games": 4907
+        "name": "Abomasnow",
+        "winRate": 56.9,
+        "games": 9643
       },
       {
-        "name": "Mega Froslass",
-        "winRate": 55.3,
-        "games": 4997
+        "name": "Drampa",
+        "winRate": 55.8,
+        "games": 9386
       }
     ],
     "bestSets": []
@@ -5982,36 +5982,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 10340,
     "name": "Hisuian Zoroark",
     "isMega": false,
-    "elo": 9666,
-    "winRate": 49.5,
-    "appearances": 134176,
-    "wins": 66439,
-    "losses": 67737,
+    "elo": 9687,
+    "winRate": 50.5,
+    "appearances": 139116,
+    "wins": 70185,
+    "losses": 68931,
     "bestPartners": [
       {
+        "name": "Alcremie",
+        "winRate": 60.9,
+        "games": 4372
+      },
+      {
+        "name": "Empoleon",
+        "winRate": 60.9,
+        "games": 4372
+      },
+      {
+        "name": "Alolan Raichu",
+        "winRate": 60.9,
+        "games": 4372
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 57.2,
+        "games": 9413
+      },
+      {
         "name": "Hydreigon",
-        "winRate": 58,
-        "games": 4585
-      },
-      {
-        "name": "Mega Scizor",
-        "winRate": 54.3,
-        "games": 10166
-      },
-      {
-        "name": "Tsareena",
-        "winRate": 53.7,
-        "games": 5213
-      },
-      {
-        "name": "Aegislash",
-        "winRate": 52.3,
-        "games": 21165
-      },
-      {
-        "name": "Corviknight",
-        "winRate": 51.8,
-        "games": 5517
+        "winRate": 57,
+        "games": 4755
       }
     ],
     "bestSets": []
@@ -6020,1176 +6020,36 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 10341,
     "name": "Hisuian Decidueye",
     "isMega": false,
-    "elo": 9708,
-    "winRate": 47.3,
-    "appearances": 46877,
-    "wins": 22192,
-    "losses": 24685,
+    "elo": 9651,
+    "winRate": 47.4,
+    "appearances": 46905,
+    "wins": 22241,
+    "losses": 24664,
     "bestPartners": [
       {
-        "name": "Quaquaval",
-        "winRate": 51.3,
-        "games": 5449
-      },
-      {
-        "name": "Mega Delphox",
-        "winRate": 50.4,
-        "games": 10811
-      },
-      {
-        "name": "Kingambit",
-        "winRate": 50.4,
-        "games": 10811
-      },
-      {
-        "name": "Drampa",
-        "winRate": 50.4,
-        "games": 10811
-      },
-      {
-        "name": "Empoleon",
-        "winRate": 50.1,
-        "games": 5437
-      }
-    ],
-    "bestSets": []
-  },
-  "478-mega": {
-    "id": 478,
-    "name": "Mega Froslass",
-    "isMega": true,
-    "elo": 9784,
-    "winRate": 54.3,
-    "appearances": 15075,
-    "wins": 8187,
-    "losses": 6888,
-    "bestPartners": [
-      {
-        "name": "Azumarill",
-        "winRate": 58.3,
-        "games": 4674
-      },
-      {
-        "name": "Meowscarada",
-        "winRate": 58.3,
-        "games": 4674
-      },
-      {
-        "name": "Garchomp",
-        "winRate": 58.3,
-        "games": 4674
-      },
-      {
-        "name": "Greninja",
-        "winRate": 56.7,
-        "games": 9671
-      },
-      {
-        "name": "Lucario",
-        "winRate": 56.7,
-        "games": 9671
-      }
-    ],
-    "bestSets": []
-  },
-  "428-mega": {
-    "id": 428,
-    "name": "Mega Lopunny",
-    "isMega": true,
-    "elo": 9779,
-    "winRate": 50,
-    "appearances": 16645,
-    "wins": 8323,
-    "losses": 8322,
-    "bestPartners": [
-      {
-        "name": "Incineroar",
-        "winRate": 50.4,
-        "games": 5448
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 50.4,
-        "games": 5448
-      },
-      {
-        "name": "Hatterene",
-        "winRate": 50.2,
-        "games": 5716
-      },
-      {
-        "name": "Dragapult",
-        "winRate": 50.2,
-        "games": 5716
-      },
-      {
-        "name": "Rotom",
-        "winRate": 50.2,
-        "games": 5716
-      }
-    ],
-    "bestSets": []
-  },
-  "130-mega": {
-    "id": 130,
-    "name": "Mega Gyarados",
-    "isMega": true,
-    "elo": 9778,
-    "winRate": 50.4,
-    "appearances": 228789,
-    "wins": 115387,
-    "losses": 113402,
-    "bestPartners": [
-      {
-        "name": "Heat Rotom",
-        "winRate": 66.8,
-        "games": 3934
-      },
-      {
-        "name": "Corviknight",
-        "winRate": 58.7,
-        "games": 4660
-      },
-      {
-        "name": "Slowbro",
-        "winRate": 57.1,
-        "games": 9341
-      },
-      {
-        "name": "Gliscor",
-        "winRate": 54.1,
-        "games": 10067
-      },
-      {
-        "name": "Pawmot",
-        "winRate": 54,
-        "games": 4965
-      }
-    ],
-    "bestSets": []
-  },
-  "36-mega": {
-    "id": 36,
-    "name": "Mega Clefable",
-    "isMega": true,
-    "elo": 9763,
-    "winRate": 62.4,
-    "appearances": 13098,
-    "wins": 8177,
-    "losses": 4921,
-    "bestPartners": [
-      {
-        "name": "Incineroar",
-        "winRate": 67.5,
-        "games": 3946
-      },
-      {
-        "name": "Kingambit",
-        "winRate": 67.5,
-        "games": 3946
-      },
-      {
-        "name": "Metagross",
-        "winRate": 67.5,
-        "games": 3946
-      },
-      {
-        "name": "Archaludon",
-        "winRate": 67.2,
-        "games": 8027
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 66.9,
-        "games": 4081
-      }
-    ],
-    "bestSets": []
-  },
-  "248-mega": {
-    "id": 248,
-    "name": "Mega Tyranitar",
-    "isMega": true,
-    "elo": 9761,
-    "winRate": 50.4,
-    "appearances": 322913,
-    "wins": 162752,
-    "losses": 160161,
-    "bestPartners": [
-      {
-        "name": "Corviknight",
-        "winRate": 51.8,
-        "games": 5517
-      },
-      {
-        "name": "Hisuian Zoroark",
-        "winRate": 51.1,
-        "games": 10913
-      },
-      {
-        "name": "Excadrill",
-        "winRate": 50.6,
-        "games": 179626
-      },
-      {
-        "name": "Dragapult",
-        "winRate": 50.6,
-        "games": 123263
-      },
-      {
-        "name": "Sylveon",
-        "winRate": 50.6,
-        "games": 5565
-      }
-    ],
-    "bestSets": []
-  },
-  "229-mega": {
-    "id": 229,
-    "name": "Mega Houndoom",
-    "isMega": true,
-    "elo": 9759,
-    "winRate": 50.2,
-    "appearances": 16717,
-    "wins": 8389,
-    "losses": 8328,
-    "bestPartners": [
-      {
-        "name": "Gyarados",
-        "winRate": 50.6,
-        "games": 5405
-      },
-      {
-        "name": "Whimsicott",
-        "winRate": 50.6,
-        "games": 5405
-      },
-      {
-        "name": "Dragapult",
-        "winRate": 50.6,
-        "games": 5405
-      },
-      {
-        "name": "Dragonite",
-        "winRate": 50.6,
-        "games": 5405
-      },
-      {
-        "name": "Gliscor",
-        "winRate": 50.4,
-        "games": 5678
-      }
-    ],
-    "bestSets": []
-  },
-  "214-mega": {
-    "id": 214,
-    "name": "Mega Heracross",
-    "isMega": true,
-    "elo": 9756,
-    "winRate": 53.9,
-    "appearances": 15728,
-    "wins": 8474,
-    "losses": 7254,
-    "bestPartners": [
-      {
-        "name": "Corviknight",
-        "winRate": 58.6,
-        "games": 4715
-      },
-      {
-        "name": "Empoleon",
-        "winRate": 58.6,
-        "games": 4715
-      },
-      {
-        "name": "Archaludon",
-        "winRate": 58.6,
-        "games": 4715
-      },
-      {
-        "name": "Wash Rotom",
-        "winRate": 56,
-        "games": 9934
-      },
-      {
-        "name": "Metagross",
-        "winRate": 56,
-        "games": 9934
-      }
-    ],
-    "bestSets": []
-  },
-  "127-mega": {
-    "id": 127,
-    "name": "Mega Pinsir",
-    "isMega": true,
-    "elo": 9751,
-    "winRate": 51.5,
-    "appearances": 16020,
-    "wins": 8249,
-    "losses": 7771,
-    "bestPartners": [
-      {
-        "name": "Kingambit",
-        "winRate": 56.2,
-        "games": 4888
-      },
-      {
-        "name": "Wash Rotom",
-        "winRate": 52.6,
-        "games": 10391
-      },
-      {
-        "name": "Archaludon",
-        "winRate": 52.6,
-        "games": 10391
-      },
-      {
-        "name": "Metagross",
-        "winRate": 52.6,
-        "games": 10517
-      },
-      {
-        "name": "Tyranitar",
-        "winRate": 51.5,
-        "games": 16020
-      }
-    ],
-    "bestSets": []
-  },
-  "952-mega": {
-    "id": 952,
-    "name": "Mega Scovillain",
-    "isMega": true,
-    "elo": 9743,
-    "winRate": 53.2,
-    "appearances": 15418,
-    "wins": 8208,
-    "losses": 7210,
-    "bestPartners": [
-      {
-        "name": "Archaludon",
-        "winRate": 61,
-        "games": 4401
-      },
-      {
-        "name": "Tyranitar",
-        "winRate": 55,
-        "games": 9763
-      },
-      {
-        "name": "Kingambit",
-        "winRate": 55,
-        "games": 9763
-      },
-      {
-        "name": "Aerodactyl",
-        "winRate": 55,
-        "games": 10056
-      },
-      {
-        "name": "Corviknight",
-        "winRate": 55,
-        "games": 10056
-      }
-    ],
-    "bestSets": []
-  },
-  "9-mega": {
-    "id": 9,
-    "name": "Mega Blastoise",
-    "isMega": true,
-    "elo": 9738,
-    "winRate": 50.1,
-    "appearances": 44017,
-    "wins": 22031,
-    "losses": 21986,
-    "bestPartners": [
-      {
-        "name": "Greninja",
-        "winRate": 51.5,
-        "games": 5545
-      },
-      {
-        "name": "Samurott",
-        "winRate": 51.5,
-        "games": 5545
-      },
-      {
-        "name": "Feraligatr",
-        "winRate": 51.5,
-        "games": 5545
-      },
-      {
-        "name": "Gyarados",
-        "winRate": 50.6,
-        "games": 11082
-      },
-      {
-        "name": "Hydreigon",
-        "winRate": 50.2,
-        "games": 5597
-      }
-    ],
-    "bestSets": []
-  },
-  "26-mega-x": {
-    "id": 26,
-    "name": "Mega Raichu X",
-    "isMega": true,
-    "elo": 9733,
-    "winRate": 47.6,
-    "appearances": 15833,
-    "wins": 7543,
-    "losses": 8290,
-    "bestPartners": [
-      {
-        "name": "Gyarados",
+        "name": "Lycanroc",
         "winRate": 50.9,
-        "games": 5479
+        "games": 5699
       },
       {
-        "name": "Incineroar",
+        "name": "Decidueye",
         "winRate": 50.9,
-        "games": 5479
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 50.9,
-        "games": 5479
-      },
-      {
-        "name": "Arcanine",
-        "winRate": 49.2,
-        "games": 10858
-      },
-      {
-        "name": "Corviknight",
-        "winRate": 47.6,
-        "games": 15833
-      }
-    ],
-    "bestSets": []
-  },
-  "121-mega": {
-    "id": 121,
-    "name": "Mega Starmie",
-    "isMega": true,
-    "elo": 9732,
-    "winRate": 54.1,
-    "appearances": 15405,
-    "wins": 8329,
-    "losses": 7076,
-    "bestPartners": [
-      {
-        "name": "Whimsicott",
-        "winRate": 58.1,
-        "games": 4683
-      },
-      {
-        "name": "Kommo-o",
-        "winRate": 58.1,
-        "games": 4683
-      },
-      {
-        "name": "Torkoal",
-        "winRate": 58.1,
-        "games": 4683
-      },
-      {
-        "name": "Scizor",
-        "winRate": 56,
-        "games": 9718
-      },
-      {
-        "name": "Drampa",
-        "winRate": 54.1,
-        "games": 10370
-      }
-    ],
-    "bestSets": []
-  },
-  "6-mega-x": {
-    "id": 6,
-    "name": "Mega Charizard X",
-    "isMega": true,
-    "elo": 9728,
-    "winRate": 56.3,
-    "appearances": 14531,
-    "wins": 8182,
-    "losses": 6349,
-    "bestPartners": [
-      {
-        "name": "Kommo-o",
-        "winRate": 67.1,
-        "games": 3855
-      },
-      {
-        "name": "Archaludon",
-        "winRate": 59.7,
-        "games": 9086
-      },
-      {
-        "name": "Hydreigon",
-        "winRate": 59.7,
-        "games": 9086
-      },
-      {
-        "name": "Whimsicott",
-        "winRate": 57.5,
-        "games": 9300
-      },
-      {
-        "name": "Galarian Stunfisk",
-        "winRate": 57.5,
-        "games": 9300
-      }
-    ],
-    "bestSets": []
-  },
-  "142-mega": {
-    "id": 142,
-    "name": "Mega Aerodactyl",
-    "isMega": true,
-    "elo": 9718,
-    "winRate": 48.2,
-    "appearances": 16144,
-    "wins": 7781,
-    "losses": 8363,
-    "bestPartners": [
-      {
-        "name": "Gyarados",
-        "winRate": 49.7,
-        "games": 5432
-      },
-      {
-        "name": "Empoleon",
-        "winRate": 49.5,
-        "games": 11071
-      },
-      {
-        "name": "Feraligatr",
-        "winRate": 49.5,
-        "games": 11071
-      },
-      {
-        "name": "Mow Rotom",
-        "winRate": 49.3,
-        "games": 5639
-      },
-      {
-        "name": "Meganium",
-        "winRate": 48.2,
-        "games": 16144
-      }
-    ],
-    "bestSets": []
-  },
-  "3-mega": {
-    "id": 3,
-    "name": "Mega Venusaur",
-    "isMega": true,
-    "elo": 9717,
-    "winRate": 53.9,
-    "appearances": 15269,
-    "wins": 8237,
-    "losses": 7032,
-    "bestPartners": [
-      {
-        "name": "Greninja",
-        "winRate": 57.5,
-        "games": 4790
-      },
-      {
-        "name": "Incineroar",
-        "winRate": 57.5,
-        "games": 4790
-      },
-      {
-        "name": "Feraligatr",
-        "winRate": 56.6,
-        "games": 9697
-      },
-      {
-        "name": "Tyranitar",
-        "winRate": 56.6,
-        "games": 9697
-      },
-      {
-        "name": "Hisuian Samurott",
-        "winRate": 55.8,
-        "games": 4907
-      }
-    ],
-    "bestSets": []
-  },
-  "282-mega": {
-    "id": 282,
-    "name": "Mega Gardevoir",
-    "isMega": true,
-    "elo": 9716,
-    "winRate": 50,
-    "appearances": 431302,
-    "wins": 215513,
-    "losses": 215789,
-    "bestPartners": [
-      {
-        "name": "Mega Gyarados",
-        "winRate": 51.2,
-        "games": 11097
-      },
-      {
-        "name": "Torkoal",
-        "winRate": 50.8,
-        "games": 16882
-      },
-      {
-        "name": "Venusaur",
-        "winRate": 50.8,
-        "games": 16882
-      },
-      {
-        "name": "Whimsicott",
-        "winRate": 50.5,
-        "games": 194493
-      },
-      {
-        "name": "Aegislash",
-        "winRate": 50.4,
-        "games": 66828
-      }
-    ],
-    "bestSets": []
-  },
-  "978-mega": {
-    "id": 978,
-    "name": "Mega Tatsugiri",
-    "isMega": true,
-    "elo": 9716,
-    "winRate": 50,
-    "appearances": 16601,
-    "wins": 8300,
-    "losses": 8301,
-    "bestPartners": [
-      {
-        "name": "Scizor",
-        "winRate": 50.3,
-        "games": 5616
-      },
-      {
-        "name": "Excadrill",
-        "winRate": 50.3,
-        "games": 5616
-      },
-      {
-        "name": "Arcanine",
-        "winRate": 50.3,
-        "games": 5616
-      },
-      {
-        "name": "Klefki",
-        "winRate": 50.2,
-        "games": 5411
-      },
-      {
-        "name": "Corviknight",
-        "winRate": 50.2,
-        "games": 11027
-      }
-    ],
-    "bestSets": []
-  },
-  "445-mega-z": {
-    "id": 445,
-    "name": "Mega Garchomp Z",
-    "isMega": true,
-    "elo": 9716,
-    "winRate": 50.3,
-    "appearances": 16595,
-    "wins": 8353,
-    "losses": 8242,
-    "bestPartners": [
-      {
-        "name": "Gyarados",
-        "winRate": 51.3,
-        "games": 5474
-      },
-      {
-        "name": "Azumarill",
-        "winRate": 51.3,
-        "games": 5474
-      },
-      {
-        "name": "Corviknight",
-        "winRate": 50.7,
-        "games": 11099
-      },
-      {
-        "name": "Alolan Ninetales",
-        "winRate": 50.7,
-        "games": 11099
-      },
-      {
-        "name": "Scizor",
-        "winRate": 50.5,
-        "games": 10970
-      }
-    ],
-    "bestSets": []
-  },
-  "65-mega": {
-    "id": 65,
-    "name": "Mega Alakazam",
-    "isMega": true,
-    "elo": 9713,
-    "winRate": 52.5,
-    "appearances": 21219,
-    "wins": 11134,
-    "losses": 10085,
-    "bestPartners": [
-      {
-        "name": "Hydreigon",
-        "winRate": 61,
-        "games": 4397
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 55.3,
-        "games": 10043
-      },
-      {
-        "name": "Greninja",
-        "winRate": 55.3,
-        "games": 10043
-      },
-      {
-        "name": "Conkeldurr",
-        "winRate": 55.1,
-        "games": 10025
-      },
-      {
-        "name": "Azumarill",
-        "winRate": 53.1,
-        "games": 15573
-      }
-    ],
-    "bestSets": []
-  },
-  "500-mega": {
-    "id": 500,
-    "name": "Mega Emboar",
-    "isMega": true,
-    "elo": 9711,
-    "winRate": 46.8,
-    "appearances": 15032,
-    "wins": 7030,
-    "losses": 8002,
-    "bestPartners": [
-      {
-        "name": "Archaludon",
-        "winRate": 52.2,
-        "games": 5380
-      },
-      {
-        "name": "Alolan Raichu",
-        "winRate": 52.2,
-        "games": 5380
-      },
-      {
-        "name": "Whimsicott",
-        "winRate": 51.1,
-        "games": 10781
-      },
-      {
-        "name": "Gyarados",
-        "winRate": 49.9,
-        "games": 5401
-      },
-      {
-        "name": "Greninja",
-        "winRate": 49.9,
-        "games": 5401
-      }
-    ],
-    "bestSets": []
-  },
-  "71-mega": {
-    "id": 71,
-    "name": "Mega Victreebel",
-    "isMega": true,
-    "elo": 9711,
-    "winRate": 50.1,
-    "appearances": 16610,
-    "wins": 8324,
-    "losses": 8286,
-    "bestPartners": [
-      {
-        "name": "Arcanine",
-        "winRate": 50.2,
-        "games": 11099
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 50.2,
-        "games": 11099
-      },
-      {
-        "name": "Slowbro",
-        "winRate": 50.2,
-        "games": 5657
-      },
-      {
-        "name": "Blastoise",
-        "winRate": 50.1,
-        "games": 16610
-      },
-      {
-        "name": "Empoleon",
-        "winRate": 50.1,
-        "games": 10953
-      }
-    ],
-    "bestSets": []
-  },
-  "652-mega": {
-    "id": 652,
-    "name": "Mega Chesnaught",
-    "isMega": true,
-    "elo": 9711,
-    "winRate": 54.5,
-    "appearances": 14949,
-    "wins": 8151,
-    "losses": 6798,
-    "bestPartners": [
-      {
-        "name": "Heat Rotom",
-        "winRate": 66.4,
-        "games": 3878
-      },
-      {
-        "name": "Greninja",
-        "winRate": 66.4,
-        "games": 3878
-      },
-      {
-        "name": "Gengar",
-        "winRate": 66.4,
-        "games": 3878
-      },
-      {
-        "name": "Charizard",
-        "winRate": 57.8,
-        "games": 9299
-      },
-      {
-        "name": "Metagross",
-        "winRate": 54.5,
-        "games": 14949
-      }
-    ],
-    "bestSets": []
-  },
-  "448-mega": {
-    "id": 448,
-    "name": "Mega Lucario",
-    "isMega": true,
-    "elo": 9710,
-    "winRate": 49.5,
-    "appearances": 38447,
-    "wins": 19040,
-    "losses": 19407,
-    "bestPartners": [
-      {
-        "name": "Hydreigon",
-        "winRate": 50.6,
-        "games": 5587
-      },
-      {
-        "name": "Kingambit",
-        "winRate": 50.6,
-        "games": 5587
-      },
-      {
-        "name": "Greninja",
-        "winRate": 50.3,
-        "games": 11036
-      },
-      {
-        "name": "Aerodactyl",
-        "winRate": 50.2,
-        "games": 10821
-      },
-      {
-        "name": "Charizard",
-        "winRate": 50.2,
-        "games": 10821
-      }
-    ],
-    "bestSets": []
-  },
-  "26-mega-y": {
-    "id": 26,
-    "name": "Mega Raichu Y",
-    "isMega": true,
-    "elo": 9705,
-    "winRate": 50.2,
-    "appearances": 16714,
-    "wins": 8385,
-    "losses": 8329,
-    "bestPartners": [
-      {
-        "name": "Incineroar",
-        "winRate": 50.6,
-        "games": 11104
-      },
-      {
-        "name": "Arcanine",
-        "winRate": 50.6,
-        "games": 5455
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 50.6,
-        "games": 5455
-      },
-      {
-        "name": "Charizard",
-        "winRate": 50.5,
-        "games": 5649
-      },
-      {
-        "name": "Meganium",
-        "winRate": 50.5,
-        "games": 5649
-      }
-    ],
-    "bestSets": []
-  },
-  "460-mega": {
-    "id": 460,
-    "name": "Mega Abomasnow",
-    "isMega": true,
-    "elo": 9704,
-    "winRate": 51,
-    "appearances": 16034,
-    "wins": 8174,
-    "losses": 7860,
-    "bestPartners": [
-      {
-        "name": "Talonflame",
-        "winRate": 53.4,
-        "games": 5301
-      },
-      {
-        "name": "Archaludon",
-        "winRate": 53.4,
-        "games": 5301
-      },
-      {
-        "name": "Ninetales",
-        "winRate": 53.4,
-        "games": 5301
-      },
-      {
-        "name": "Arcanine",
-        "winRate": 51.7,
-        "games": 10599
-      },
-      {
-        "name": "Gyarados",
-        "winRate": 51,
-        "games": 16034
-      }
-    ],
-    "bestSets": []
-  },
-  "970-mega": {
-    "id": 970,
-    "name": "Mega Glimmora",
-    "isMega": true,
-    "elo": 9702,
-    "winRate": 49.8,
-    "appearances": 16484,
-    "wins": 8203,
-    "losses": 8281,
-    "bestPartners": [
-      {
-        "name": "Abomasnow",
-        "winRate": 50,
-        "games": 5383
+        "games": 5699
       },
       {
         "name": "Pelipper",
-        "winRate": 50,
-        "games": 5383
-      },
-      {
-        "name": "Wash Rotom",
-        "winRate": 50,
-        "games": 5383
-      },
-      {
-        "name": "Whimsicott",
-        "winRate": 49.8,
-        "games": 10980
-      },
-      {
-        "name": "Scizor",
-        "winRate": 49.8,
-        "games": 16484
-      }
-    ],
-    "bestSets": []
-  },
-  "445-mega": {
-    "id": 445,
-    "name": "Mega Garchomp",
-    "isMega": true,
-    "elo": 9701,
-    "winRate": 51.8,
-    "appearances": 21717,
-    "wins": 11244,
-    "losses": 10473,
-    "bestPartners": [
-      {
-        "name": "Incineroar",
-        "winRate": 54.6,
-        "games": 5106
-      },
-      {
-        "name": "Whimsicott",
-        "winRate": 54.6,
-        "games": 5106
-      },
-      {
-        "name": "Dragapult",
-        "winRate": 54.6,
-        "games": 5106
-      },
-      {
-        "name": "Gardevoir",
-        "winRate": 54.6,
-        "games": 5106
-      },
-      {
-        "name": "Kingambit",
-        "winRate": 52.1,
-        "games": 16173
-      }
-    ],
-    "bestSets": []
-  },
-  "149-mega": {
-    "id": 149,
-    "name": "Mega Dragonite",
-    "isMega": true,
-    "elo": 9697,
-    "winRate": 49.4,
-    "appearances": 66484,
-    "wins": 32874,
-    "losses": 33610,
-    "bestPartners": [
-      {
-        "name": "Drampa",
-        "winRate": 50.8,
-        "games": 5674
-      },
-      {
-        "name": "Clefable",
-        "winRate": 50.6,
-        "games": 11016
-      },
-      {
-        "name": "Tyranitar",
-        "winRate": 50.6,
-        "games": 11016
-      },
-      {
-        "name": "Metagross",
-        "winRate": 50.5,
-        "games": 11378
-      },
-      {
-        "name": "Hatterene",
-        "winRate": 50.3,
-        "games": 5342
-      }
-    ],
-    "bestSets": []
-  },
-  "530-mega": {
-    "id": 530,
-    "name": "Mega Excadrill",
-    "isMega": true,
-    "elo": 9696,
-    "winRate": 50.7,
-    "appearances": 16914,
-    "wins": 8578,
-    "losses": 8336,
-    "bestPartners": [
-      {
-        "name": "Primarina",
         "winRate": 50.9,
-        "games": 5673
+        "games": 5699
       },
       {
-        "name": "Toxapex",
+        "name": "Skarmory",
         "winRate": 50.9,
-        "games": 5673
+        "games": 5699
       },
       {
-        "name": "Greninja",
-        "winRate": 50.9,
-        "games": 5673
-      },
-      {
-        "name": "Altaria",
-        "winRate": 50.8,
-        "games": 11339
-      },
-      {
-        "name": "Dragapult",
-        "winRate": 50.7,
-        "games": 11248
-      }
-    ],
-    "bestSets": []
-  },
-  "115-mega": {
-    "id": 115,
-    "name": "Mega Kangaskhan",
-    "isMega": true,
-    "elo": 9693,
-    "winRate": 49.5,
-    "appearances": 163221,
-    "wins": 80849,
-    "losses": 82372,
-    "bestPartners": [
-      {
-        "name": "Snorlax",
-        "winRate": 51,
-        "games": 5507
-      },
-      {
-        "name": "Scizor",
-        "winRate": 50.9,
-        "games": 11164
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 50.1,
-        "games": 5476
-      },
-      {
-        "name": "Mimikyu",
-        "winRate": 50,
-        "games": 11103
-      },
-      {
-        "name": "Arcanine",
-        "winRate": 50,
-        "games": 11103
+        "name": "Mega Glimmora",
+        "winRate": 49.6,
+        "games": 5399
       }
     ],
     "bestSets": []
@@ -7198,378 +6058,112 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 658,
     "name": "Mega Greninja",
     "isMega": true,
-    "elo": 9691,
-    "winRate": 51.4,
-    "appearances": 16089,
-    "wins": 8275,
-    "losses": 7814,
+    "elo": 9784,
+    "winRate": 56.3,
+    "appearances": 14563,
+    "wins": 8198,
+    "losses": 6365,
     "bestPartners": [
       {
-        "name": "Scizor",
-        "winRate": 52.6,
-        "games": 5335
-      },
-      {
-        "name": "Dragapult",
-        "winRate": 52.6,
-        "games": 5335
+        "name": "Venusaur",
+        "winRate": 71.2,
+        "games": 3750
       },
       {
         "name": "Metagross",
-        "winRate": 52.2,
-        "games": 10690
-      },
-      {
-        "name": "Victreebel",
-        "winRate": 51.8,
-        "games": 5355
-      },
-      {
-        "name": "Charizard",
-        "winRate": 51.8,
-        "games": 5355
-      }
-    ],
-    "bestSets": []
-  },
-  "154-mega": {
-    "id": 154,
-    "name": "Mega Meganium",
-    "isMega": true,
-    "elo": 9690,
-    "winRate": 49.4,
-    "appearances": 21969,
-    "wins": 10851,
-    "losses": 11118,
-    "bestPartners": [
-      {
-        "name": "Kingambit",
-        "winRate": 50.3,
-        "games": 5437
-      },
-      {
-        "name": "Politoed",
-        "winRate": 50.3,
-        "games": 5437
+        "winRate": 71.2,
+        "games": 3750
       },
       {
         "name": "Heat Rotom",
-        "winRate": 50.2,
-        "games": 5666
-      },
-      {
-        "name": "Wash Rotom",
-        "winRate": 50.2,
-        "games": 5666
-      },
-      {
-        "name": "Gyarados",
-        "winRate": 49.9,
-        "games": 16620
-      }
-    ],
-    "bestSets": []
-  },
-  "376-mega": {
-    "id": 376,
-    "name": "Mega Metagross",
-    "isMega": true,
-    "elo": 9685,
-    "winRate": 50.3,
-    "appearances": 313120,
-    "wins": 157557,
-    "losses": 155563,
-    "bestPartners": [
-      {
-        "name": "Charizard",
-        "winRate": 56.3,
-        "games": 4946
-      },
-      {
-        "name": "Hydreigon",
-        "winRate": 53.3,
-        "games": 10315
-      },
-      {
-        "name": "Infernape",
-        "winRate": 52.9,
-        "games": 10426
-      },
-      {
-        "name": "Greninja",
-        "winRate": 51.5,
-        "games": 54075
-      },
-      {
-        "name": "Krookodile",
-        "winRate": 51.3,
-        "games": 26962
-      }
-    ],
-    "bestSets": []
-  },
-  "15-mega": {
-    "id": 15,
-    "name": "Mega Beedrill",
-    "isMega": true,
-    "elo": 9683,
-    "winRate": 48.1,
-    "appearances": 15803,
-    "wins": 7600,
-    "losses": 8203,
-    "bestPartners": [
-      {
-        "name": "Excadrill",
-        "winRate": 50.8,
-        "games": 5563
-      },
-      {
-        "name": "Wash Rotom",
-        "winRate": 49.2,
-        "games": 10776
-      },
-      {
-        "name": "Incineroar",
-        "winRate": 48.4,
-        "games": 10590
-      },
-      {
-        "name": "Garchomp",
-        "winRate": 48.4,
-        "games": 10590
-      },
-      {
-        "name": "Greninja",
-        "winRate": 48.1,
-        "games": 15803
-      }
-    ],
-    "bestSets": []
-  },
-  "655-mega": {
-    "id": 655,
-    "name": "Mega Delphox",
-    "isMega": true,
-    "elo": 9680,
-    "winRate": 51.5,
-    "appearances": 15953,
-    "wins": 8217,
-    "losses": 7736,
-    "bestPartners": [
-      {
-        "name": "Azumarill",
-        "winRate": 53.8,
-        "games": 5142
-      },
-      {
-        "name": "Greninja",
-        "winRate": 53.8,
-        "games": 5142
-      },
-      {
-        "name": "Gyarados",
-        "winRate": 51.6,
-        "games": 10504
-      },
-      {
-        "name": "Kingambit",
-        "winRate": 51.5,
-        "games": 15953
-      },
-      {
-        "name": "Drampa",
-        "winRate": 51.5,
-        "games": 15953
-      }
-    ],
-    "bestSets": []
-  },
-  "6-mega-y": {
-    "id": 6,
-    "name": "Mega Charizard Y",
-    "isMega": true,
-    "elo": 9676,
-    "winRate": 50.9,
-    "appearances": 27262,
-    "wins": 13866,
-    "losses": 13396,
-    "bestPartners": [
-      {
-        "name": "Hydreigon",
-        "winRate": 55.7,
-        "games": 4942
-      },
-      {
-        "name": "Archaludon",
-        "winRate": 52.9,
-        "games": 10606
-      },
-      {
-        "name": "Garchomp",
-        "winRate": 52.9,
-        "games": 10606
-      },
-      {
-        "name": "Excadrill",
-        "winRate": 51.3,
-        "games": 16083
-      },
-      {
-        "name": "Krookodile",
-        "winRate": 51.1,
-        "games": 21711
-      }
-    ],
-    "bestSets": []
-  },
-  "208-mega": {
-    "id": 208,
-    "name": "Mega Steelix",
-    "isMega": true,
-    "elo": 9675,
-    "winRate": 49.8,
-    "appearances": 16646,
-    "wins": 8292,
-    "losses": 8354,
-    "bestPartners": [
-      {
-        "name": "Charizard",
-        "winRate": 50.1,
-        "games": 11209
-      },
-      {
-        "name": "Blastoise",
-        "winRate": 50.1,
-        "games": 5446
-      },
-      {
-        "name": "Slowbro",
-        "winRate": 50.1,
-        "games": 5446
-      },
-      {
-        "name": "Gyarados",
-        "winRate": 50.1,
-        "games": 5446
-      },
-      {
-        "name": "Altaria",
-        "winRate": 50.1,
-        "games": 5763
-      }
-    ],
-    "bestSets": []
-  },
-  "227-mega": {
-    "id": 227,
-    "name": "Mega Skarmory",
-    "isMega": true,
-    "elo": 9674,
-    "winRate": 50.2,
-    "appearances": 22211,
-    "wins": 11147,
-    "losses": 11064,
-    "bestPartners": [
-      {
-        "name": "Greninja",
-        "winRate": 51,
-        "games": 5572
-      },
-      {
-        "name": "Heat Rotom",
-        "winRate": 51,
-        "games": 5572
-      },
-      {
-        "name": "Garchomp",
-        "winRate": 50.5,
-        "games": 16715
-      },
-      {
-        "name": "Kommo-o",
-        "winRate": 50.4,
-        "games": 5608
-      },
-      {
-        "name": "Hydreigon",
-        "winRate": 50.4,
-        "games": 5608
-      }
-    ],
-    "bestSets": []
-  },
-  "306-mega": {
-    "id": 306,
-    "name": "Mega Aggron",
-    "isMega": true,
-    "elo": 9671,
-    "winRate": 47.5,
-    "appearances": 20633,
-    "wins": 9800,
-    "losses": 10833,
-    "bestPartners": [
-      {
-        "name": "Dragonite",
-        "winRate": 50.4,
-        "games": 5346
-      },
-      {
-        "name": "Whimsicott",
-        "winRate": 50.4,
-        "games": 5346
+        "winRate": 71.2,
+        "games": 3750
       },
       {
         "name": "Dragapult",
-        "winRate": 50,
-        "games": 10818
+        "winRate": 60.3,
+        "games": 9028
       },
       {
-        "name": "Meganium",
-        "winRate": 49.6,
-        "games": 5472
-      },
-      {
-        "name": "Hisuian Decidueye",
-        "winRate": 49.6,
-        "games": 5472
+        "name": "Scizor",
+        "winRate": 60.3,
+        "games": 9028
       }
     ],
     "bestSets": []
   },
-  "80-mega": {
-    "id": 80,
-    "name": "Mega Slowbro",
+  "445-mega": {
+    "id": 445,
+    "name": "Mega Garchomp",
     "isMega": true,
-    "elo": 9669,
-    "winRate": 50.2,
-    "appearances": 16509,
-    "wins": 8286,
-    "losses": 8223,
+    "elo": 9782,
+    "winRate": 54.1,
+    "appearances": 20561,
+    "wins": 11114,
+    "losses": 9447,
     "bestPartners": [
       {
-        "name": "Charizard",
-        "winRate": 51.8,
-        "games": 5503
+        "name": "Arcanine",
+        "winRate": 61,
+        "games": 4436
       },
       {
-        "name": "Ursaluna",
-        "winRate": 51.8,
-        "games": 5503
+        "name": "Primarina",
+        "winRate": 61,
+        "games": 4436
       },
       {
-        "name": "Meowscarada",
-        "winRate": 51.8,
-        "games": 5503
+        "name": "Azumarill",
+        "winRate": 55.8,
+        "games": 9839
+      },
+      {
+        "name": "Empoleon",
+        "winRate": 55.2,
+        "games": 9917
       },
       {
         "name": "Incineroar",
-        "winRate": 50.7,
-        "games": 10861
+        "winRate": 54.6,
+        "games": 5241
+      }
+    ],
+    "bestSets": []
+  },
+  "121-mega": {
+    "id": 121,
+    "name": "Mega Starmie",
+    "isMega": true,
+    "elo": 9718,
+    "winRate": 50.3,
+    "appearances": 16574,
+    "wins": 8340,
+    "losses": 8234,
+    "bestPartners": [
+      {
+        "name": "Arcanine",
+        "winRate": 50.8,
+        "games": 5547
       },
       {
-        "name": "Infernape",
-        "winRate": 50.5,
-        "games": 11151
+        "name": "Crabominable",
+        "winRate": 50.8,
+        "games": 5547
+      },
+      {
+        "name": "Drampa",
+        "winRate": 50.8,
+        "games": 5547
+      },
+      {
+        "name": "Ursaluna",
+        "winRate": 50.7,
+        "games": 10911
+      },
+      {
+        "name": "Torkoal",
+        "winRate": 50.6,
+        "games": 5364
       }
     ],
     "bestSets": []
@@ -7578,378 +6172,454 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 160,
     "name": "Mega Feraligatr",
     "isMega": true,
-    "elo": 9662,
-    "winRate": 49.4,
-    "appearances": 21869,
-    "wins": 10811,
-    "losses": 11058,
+    "elo": 9715,
+    "winRate": 53.8,
+    "appearances": 25353,
+    "wins": 13632,
+    "losses": 11721,
     "bestPartners": [
       {
-        "name": "Dragapult",
-        "winRate": 50.5,
-        "games": 5470
+        "name": "Kommo-o",
+        "winRate": 74.5,
+        "games": 3640
       },
       {
-        "name": "Incineroar",
-        "winRate": 50.3,
-        "games": 10837
+        "name": "Archaludon",
+        "winRate": 74.5,
+        "games": 3640
       },
       {
-        "name": "Galarian Slowbro",
-        "winRate": 50.1,
-        "games": 5367
-      },
-      {
-        "name": "Garchomp",
-        "winRate": 50.1,
-        "games": 5367
-      },
-      {
-        "name": "Kingambit",
-        "winRate": 50.1,
-        "games": 5367
-      }
-    ],
-    "bestSets": []
-  },
-  "780-mega": {
-    "id": 780,
-    "name": "Mega Drampa",
-    "isMega": true,
-    "elo": 9658,
-    "winRate": 50.2,
-    "appearances": 16822,
-    "wins": 8439,
-    "losses": 8383,
-    "bestPartners": [
-      {
-        "name": "Gyarados",
-        "winRate": 50.9,
-        "games": 5725
-      },
-      {
-        "name": "Aegislash",
-        "winRate": 50.5,
-        "games": 11233
-      },
-      {
-        "name": "Arcanine",
-        "winRate": 50.2,
-        "games": 16822
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 50.2,
-        "games": 16822
-      },
-      {
-        "name": "Talonflame",
-        "winRate": 50.2,
-        "games": 11314
-      }
-    ],
-    "bestSets": []
-  },
-  "212-mega": {
-    "id": 212,
-    "name": "Mega Scizor",
-    "isMega": true,
-    "elo": 9657,
-    "winRate": 52,
-    "appearances": 37388,
-    "wins": 19439,
-    "losses": 17949,
-    "bestPartners": [
-      {
-        "name": "Gardevoir",
-        "winRate": 59.3,
-        "games": 4674
-      },
-      {
-        "name": "Hatterene",
-        "winRate": 59.3,
-        "games": 4674
+        "name": "Heat Rotom",
+        "winRate": 74.5,
+        "games": 3640
       },
       {
         "name": "Hydreigon",
-        "winRate": 58,
-        "games": 4585
+        "winRate": 60.3,
+        "games": 9284
       },
-      {
-        "name": "Aegislash",
-        "winRate": 58,
-        "games": 4585
-      },
-      {
-        "name": "Hisuian Zoroark",
-        "winRate": 54.3,
-        "games": 10166
-      }
-    ],
-    "bestSets": []
-  },
-  "678-mega": {
-    "id": 678,
-    "name": "Mega Meowstic",
-    "isMega": true,
-    "elo": 9656,
-    "winRate": 49.8,
-    "appearances": 16349,
-    "wins": 8137,
-    "losses": 8212,
-    "bestPartners": [
-      {
-        "name": "Lucario",
-        "winRate": 50,
-        "games": 10690
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 50,
-        "games": 10690
-      },
-      {
-        "name": "Greninja",
-        "winRate": 50,
-        "games": 10690
-      },
-      {
-        "name": "Kingambit",
-        "winRate": 49.8,
-        "games": 10972
-      },
-      {
-        "name": "Krookodile",
-        "winRate": 49.8,
-        "games": 10972
-      }
-    ],
-    "bestSets": []
-  },
-  "740-mega": {
-    "id": 740,
-    "name": "Mega Crabominable",
-    "isMega": true,
-    "elo": 9655,
-    "winRate": 45.6,
-    "appearances": 15238,
-    "wins": 6945,
-    "losses": 8293,
-    "bestPartners": [
-      {
-        "name": "Gyarados",
-        "winRate": 49.8,
-        "games": 5341
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 49.8,
-        "games": 5341
-      },
-      {
-        "name": "Charizard",
-        "winRate": 49.8,
-        "games": 5341
-      },
-      {
-        "name": "Incineroar",
-        "winRate": 49.1,
-        "games": 10867
-      },
-      {
-        "name": "Starmie",
-        "winRate": 48.5,
-        "games": 5526
-      }
-    ],
-    "bestSets": []
-  },
-  "359-mega-z": {
-    "id": 359,
-    "name": "Mega Absol Z",
-    "isMega": true,
-    "elo": 9654,
-    "winRate": 50.5,
-    "appearances": 17051,
-    "wins": 8611,
-    "losses": 8440,
-    "bestPartners": [
       {
         "name": "Arcanine",
-        "winRate": 50.7,
-        "games": 5531
-      },
-      {
-        "name": "Gyarados",
-        "winRate": 50.7,
-        "games": 5531
-      },
-      {
-        "name": "Hisuian Arcanine",
-        "winRate": 50.7,
-        "games": 5531
-      },
-      {
-        "name": "Dragapult",
-        "winRate": 50.7,
-        "games": 5531
-      },
-      {
-        "name": "Hisuian Zoroark",
-        "winRate": 50.6,
-        "games": 11211
+        "winRate": 60.3,
+        "games": 8941
       }
     ],
     "bestSets": []
   },
-  "359-mega": {
-    "id": 359,
-    "name": "Mega Absol",
+  "282-mega": {
+    "id": 282,
+    "name": "Mega Gardevoir",
     "isMega": true,
-    "elo": 9652,
-    "winRate": 49.8,
-    "appearances": 16656,
-    "wins": 8296,
-    "losses": 8360,
+    "elo": 9713,
+    "winRate": 50.1,
+    "appearances": 456791,
+    "wins": 228642,
+    "losses": 228149,
     "bestPartners": [
       {
-        "name": "Hisuian Zoroark",
+        "name": "Torkoal",
+        "winRate": 51,
+        "games": 16711
+      },
+      {
+        "name": "Venusaur",
+        "winRate": 51,
+        "games": 16711
+      },
+      {
+        "name": "Mega Gyarados",
         "winRate": 50.9,
-        "games": 5694
+        "games": 10942
       },
       {
-        "name": "Gyarados",
+        "name": "Stunfisk",
+        "winRate": 50.8,
+        "games": 5634
+      },
+      {
+        "name": "Hisuian Zoroark",
         "winRate": 50.7,
-        "games": 11268
-      },
-      {
-        "name": "Arcanine",
-        "winRate": 50.7,
-        "games": 11268
-      },
-      {
-        "name": "Ceruledge",
-        "winRate": 50.5,
-        "games": 5574
-      },
-      {
-        "name": "Dragapult",
-        "winRate": 49.8,
-        "games": 16656
+        "games": 11296
       }
     ],
     "bestSets": []
   },
-  "181-mega": {
-    "id": 181,
-    "name": "Mega Ampharos",
+  "500-mega": {
+    "id": 500,
+    "name": "Mega Emboar",
     "isMega": true,
-    "elo": 9650,
-    "winRate": 50,
-    "appearances": 16786,
-    "wins": 8386,
-    "losses": 8400,
+    "elo": 9709,
+    "winRate": 51.4,
+    "appearances": 15607,
+    "wins": 8016,
+    "losses": 7591,
     "bestPartners": [
       {
-        "name": "Aerodactyl",
-        "winRate": 50.7,
-        "games": 5692
+        "name": "Alolan Raichu",
+        "winRate": 54.5,
+        "games": 4913
       },
       {
-        "name": "Charizard",
-        "winRate": 50,
-        "games": 16786
-      },
-      {
-        "name": "Incineroar",
-        "winRate": 50,
-        "games": 11347
-      },
-      {
-        "name": "Arcanine",
-        "winRate": 50,
-        "games": 11347
-      },
-      {
-        "name": "Whimsicott",
-        "winRate": 50,
-        "games": 11347
-      }
-    ],
-    "bestSets": []
-  },
-  "334-mega": {
-    "id": 334,
-    "name": "Mega Altaria",
-    "isMega": true,
-    "elo": 9647,
-    "winRate": 45.1,
-    "appearances": 14480,
-    "wins": 6524,
-    "losses": 7956,
-    "bestPartners": [
-      {
-        "name": "Orthworm",
-        "winRate": 53,
-        "games": 5224
-      },
-      {
-        "name": "Scizor",
-        "winRate": 53,
-        "games": 5224
-      },
-      {
-        "name": "Lucario",
-        "winRate": 53,
-        "games": 5224
+        "name": "Archaludon",
+        "winRate": 54.5,
+        "games": 4913
       },
       {
         "name": "Metagross",
-        "winRate": 53,
-        "games": 5224
+        "winRate": 52.1,
+        "games": 10352
       },
       {
-        "name": "Kingambit",
-        "winRate": 49.4,
-        "games": 10433
+        "name": "Wash Rotom",
+        "winRate": 52.1,
+        "games": 10352
+      },
+      {
+        "name": "Whimsicott",
+        "winRate": 52.1,
+        "games": 10168
       }
     ],
     "bestSets": []
   },
-  "475-mega": {
-    "id": 475,
-    "name": "Mega Gallade",
+  "142-mega": {
+    "id": 142,
+    "name": "Mega Aerodactyl",
     "isMega": true,
-    "elo": 9644,
-    "winRate": 49.2,
-    "appearances": 16524,
-    "wins": 8137,
-    "losses": 8387,
+    "elo": 9707,
+    "winRate": 49.9,
+    "appearances": 16184,
+    "wins": 8078,
+    "losses": 8106,
     "bestPartners": [
       {
-        "name": "Hisuian Arcanine",
-        "winRate": 50.1,
-        "games": 5698
+        "name": "Orthworm",
+        "winRate": 51.7,
+        "games": 5303
+      },
+      {
+        "name": "Greninja",
+        "winRate": 51.7,
+        "games": 5303
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 51.7,
+        "games": 5303
+      },
+      {
+        "name": "Mow Rotom",
+        "winRate": 51.3,
+        "games": 10903
+      },
+      {
+        "name": "Wash Rotom",
+        "winRate": 50.8,
+        "games": 5600
+      }
+    ],
+    "bestSets": []
+  },
+  "376-mega": {
+    "id": 376,
+    "name": "Mega Metagross",
+    "isMega": true,
+    "elo": 9705,
+    "winRate": 50.2,
+    "appearances": 277574,
+    "wins": 139461,
+    "losses": 138113,
+    "bestPartners": [
+      {
+        "name": "Weavile",
+        "winRate": 61.6,
+        "games": 4376
+      },
+      {
+        "name": "Charizard",
+        "winRate": 55.3,
+        "games": 9930
+      },
+      {
+        "name": "Kommo-o",
+        "winRate": 54.8,
+        "games": 9892
+      },
+      {
+        "name": "Hydreigon",
+        "winRate": 52,
+        "games": 5348
+      },
+      {
+        "name": "Greninja",
+        "winRate": 51.6,
+        "games": 42919
+      }
+    ],
+    "bestSets": []
+  },
+  "655-mega": {
+    "id": 655,
+    "name": "Mega Delphox",
+    "isMega": true,
+    "elo": 9699,
+    "winRate": 52.8,
+    "appearances": 15383,
+    "wins": 8129,
+    "losses": 7254,
+    "bestPartners": [
+      {
+        "name": "Kingambit",
+        "winRate": 54.4,
+        "games": 5033
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 54.4,
+        "games": 5033
+      },
+      {
+        "name": "Drampa",
+        "winRate": 54.4,
+        "games": 5033
+      },
+      {
+        "name": "Greninja",
+        "winRate": 54.4,
+        "games": 5033
+      },
+      {
+        "name": "Hisuian Samurott",
+        "winRate": 54.1,
+        "games": 5104
+      }
+    ],
+    "bestSets": []
+  },
+  "214-mega": {
+    "id": 214,
+    "name": "Mega Heracross",
+    "isMega": true,
+    "elo": 9698,
+    "winRate": 51.7,
+    "appearances": 15909,
+    "wins": 8225,
+    "losses": 7684,
+    "bestPartners": [
+      {
+        "name": "Tyranitar",
+        "winRate": 54.4,
+        "games": 5028
+      },
+      {
+        "name": "Metagross",
+        "winRate": 54.4,
+        "games": 5028
+      },
+      {
+        "name": "Wash Rotom",
+        "winRate": 54.4,
+        "games": 5028
       },
       {
         "name": "Kingambit",
-        "winRate": 50.1,
-        "games": 5698
+        "winRate": 54.4,
+        "games": 5028
       },
       {
-        "name": "Steelix",
-        "winRate": 50.1,
-        "games": 5698
+        "name": "Greninja",
+        "winRate": 51.7,
+        "games": 10483
+      }
+    ],
+    "bestSets": []
+  },
+  "208-mega": {
+    "id": 208,
+    "name": "Mega Steelix",
+    "isMega": true,
+    "elo": 9695,
+    "winRate": 49.8,
+    "appearances": 16272,
+    "wins": 8109,
+    "losses": 8163,
+    "bestPartners": [
+      {
+        "name": "Pelipper",
+        "winRate": 50.2,
+        "games": 5348
       },
       {
-        "name": "Galarian Stunfisk",
-        "winRate": 49.8,
-        "games": 11052
+        "name": "Dragonite",
+        "winRate": 50.2,
+        "games": 5348
       },
       {
-        "name": "Aegislash",
-        "winRate": 49.4,
-        "games": 5354
+        "name": "Feraligatr",
+        "winRate": 50.2,
+        "games": 5348
+      },
+      {
+        "name": "Vaporeon",
+        "winRate": 49.9,
+        "games": 10715
+      },
+      {
+        "name": "Altaria",
+        "winRate": 49.9,
+        "games": 10905
+      }
+    ],
+    "bestSets": []
+  },
+  "530-mega": {
+    "id": 530,
+    "name": "Mega Excadrill",
+    "isMega": true,
+    "elo": 9695,
+    "winRate": 52.7,
+    "appearances": 15495,
+    "wins": 8168,
+    "losses": 7327,
+    "bestPartners": [
+      {
+        "name": "Talonflame",
+        "winRate": 60.1,
+        "games": 4444
+      },
+      {
+        "name": "Charizard",
+        "winRate": 60.1,
+        "games": 4444
+      },
+      {
+        "name": "Pelipper",
+        "winRate": 54.9,
+        "games": 9902
+      },
+      {
+        "name": "Noivern",
+        "winRate": 54.9,
+        "games": 9902
+      },
+      {
+        "name": "Primarina",
+        "winRate": 53.9,
+        "games": 10037
+      }
+    ],
+    "bestSets": []
+  },
+  "229-mega": {
+    "id": 229,
+    "name": "Mega Houndoom",
+    "isMega": true,
+    "elo": 9693,
+    "winRate": 50.1,
+    "appearances": 16102,
+    "wins": 8075,
+    "losses": 8027,
+    "bestPartners": [
+      {
+        "name": "Gliscor",
+        "winRate": 50.5,
+        "games": 5436
+      },
+      {
+        "name": "Slowbro",
+        "winRate": 50.5,
+        "games": 5436
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 50.3,
+        "games": 5325
+      },
+      {
+        "name": "Whimsicott",
+        "winRate": 50.3,
+        "games": 5325
+      },
+      {
+        "name": "Dragonite",
+        "winRate": 50.3,
+        "games": 5325
+      }
+    ],
+    "bestSets": []
+  },
+  "9-mega": {
+    "id": 9,
+    "name": "Mega Blastoise",
+    "isMega": true,
+    "elo": 9691,
+    "winRate": 49.8,
+    "appearances": 38715,
+    "wins": 19282,
+    "losses": 19433,
+    "bestPartners": [
+      {
+        "name": "Gyarados",
+        "winRate": 50.6,
+        "games": 5540
+      },
+      {
+        "name": "Meganium",
+        "winRate": 50,
+        "games": 5501
+      },
+      {
+        "name": "Krookodile",
+        "winRate": 50,
+        "games": 5501
+      },
+      {
+        "name": "Kommo-o",
+        "winRate": 50,
+        "games": 5501
+      },
+      {
+        "name": "Politoed",
+        "winRate": 49.9,
+        "games": 21751
+      }
+    ],
+    "bestSets": []
+  },
+  "970-mega": {
+    "id": 970,
+    "name": "Mega Glimmora",
+    "isMega": true,
+    "elo": 9691,
+    "winRate": 50,
+    "appearances": 16511,
+    "wins": 8254,
+    "losses": 8257,
+    "bestPartners": [
+      {
+        "name": "Abomasnow",
+        "winRate": 50.8,
+        "games": 5615
+      },
+      {
+        "name": "Morpeko",
+        "winRate": 50.8,
+        "games": 5615
+      },
+      {
+        "name": "Pelipper",
+        "winRate": 50.8,
+        "games": 5615
+      },
+      {
+        "name": "Mow Rotom",
+        "winRate": 50.8,
+        "games": 5615
+      },
+      {
+        "name": "Hisuian Samurott",
+        "winRate": 50.2,
+        "games": 11014
       }
     ],
     "bestSets": []
@@ -7958,74 +6628,720 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 701,
     "name": "Mega Hawlucha",
     "isMega": true,
-    "elo": 9630,
-    "winRate": 49.2,
-    "appearances": 16228,
-    "wins": 7979,
-    "losses": 8249,
+    "elo": 9690,
+    "winRate": 50.5,
+    "appearances": 15887,
+    "wins": 8020,
+    "losses": 7867,
     "bestPartners": [
       {
-        "name": "Heat Rotom",
-        "winRate": 51.7,
-        "games": 5470
+        "name": "Orthworm",
+        "winRate": 53.8,
+        "games": 5153
       },
       {
-        "name": "Wash Rotom",
-        "winRate": 51.7,
-        "games": 5470
+        "name": "Empoleon",
+        "winRate": 53.8,
+        "games": 5153
       },
       {
-        "name": "Kingambit",
-        "winRate": 50.5,
-        "games": 11072
-      },
-      {
-        "name": "Tyranitar",
-        "winRate": 49.3,
-        "games": 5602
+        "name": "Archaludon",
+        "winRate": 53.8,
+        "games": 5153
       },
       {
         "name": "Excadrill",
-        "winRate": 49.2,
-        "games": 16228
+        "winRate": 50.6,
+        "games": 10240
+      },
+      {
+        "name": "Arcanine",
+        "winRate": 50.5,
+        "games": 15887
       }
     ],
     "bestSets": []
   },
-  "302-mega": {
-    "id": 302,
-    "name": "Mega Sableye",
+  "475-mega": {
+    "id": 475,
+    "name": "Mega Gallade",
     "isMega": true,
-    "elo": 9620,
-    "winRate": 40.1,
-    "appearances": 36481,
-    "wins": 14636,
-    "losses": 21845,
+    "elo": 9687,
+    "winRate": 50.9,
+    "appearances": 16089,
+    "wins": 8193,
+    "losses": 7896,
     "bestPartners": [
       {
-        "name": "Archaludon",
-        "winRate": 49.9,
-        "games": 5409
+        "name": "Corviknight",
+        "winRate": 52.9,
+        "games": 5258
       },
       {
-        "name": "Charizard",
-        "winRate": 47.7,
-        "games": 10428
+        "name": "Heat Rotom",
+        "winRate": 52.9,
+        "games": 5258
       },
       {
-        "name": "Mimikyu",
-        "winRate": 47.5,
-        "games": 5275
-      },
-      {
-        "name": "Azumarill",
-        "winRate": 47.5,
-        "games": 5275
+        "name": "Aegislash",
+        "winRate": 52.9,
+        "games": 5258
       },
       {
         "name": "Hisuian Arcanine",
-        "winRate": 46.8,
-        "games": 5175
+        "winRate": 51.4,
+        "games": 10748
+      },
+      {
+        "name": "Kingambit",
+        "winRate": 50.9,
+        "games": 16089
+      }
+    ],
+    "bestSets": []
+  },
+  "248-mega": {
+    "id": 248,
+    "name": "Mega Tyranitar",
+    "isMega": true,
+    "elo": 9679,
+    "winRate": 50.4,
+    "appearances": 319590,
+    "wins": 161207,
+    "losses": 158383,
+    "bestPartners": [
+      {
+        "name": "Talonflame",
+        "winRate": 52.1,
+        "games": 5435
+      },
+      {
+        "name": "Charizard",
+        "winRate": 50.9,
+        "games": 16534
+      },
+      {
+        "name": "Dragapult",
+        "winRate": 50.6,
+        "games": 127676
+      },
+      {
+        "name": "Aegislash",
+        "winRate": 50.6,
+        "games": 66732
+      },
+      {
+        "name": "Excadrill",
+        "winRate": 50.6,
+        "games": 177878
+      }
+    ],
+    "bestSets": []
+  },
+  "428-mega": {
+    "id": 428,
+    "name": "Mega Lopunny",
+    "isMega": true,
+    "elo": 9678,
+    "winRate": 51.6,
+    "appearances": 16280,
+    "wins": 8405,
+    "losses": 7875,
+    "bestPartners": [
+      {
+        "name": "Alakazam",
+        "winRate": 55,
+        "games": 5106
+      },
+      {
+        "name": "Polteageist",
+        "winRate": 55,
+        "games": 5106
+      },
+      {
+        "name": "Hisuian Zoroark",
+        "winRate": 55,
+        "games": 5106
+      },
+      {
+        "name": "Gardevoir",
+        "winRate": 52.1,
+        "games": 10764
+      },
+      {
+        "name": "Incineroar",
+        "winRate": 51.6,
+        "games": 16280
+      }
+    ],
+    "bestSets": []
+  },
+  "36-mega": {
+    "id": 36,
+    "name": "Mega Clefable",
+    "isMega": true,
+    "elo": 9672,
+    "winRate": 56.3,
+    "appearances": 14653,
+    "wins": 8248,
+    "losses": 6405,
+    "bestPartners": [
+      {
+        "name": "Incineroar",
+        "winRate": 66.6,
+        "games": 3999
+      },
+      {
+        "name": "Metagross",
+        "winRate": 66.6,
+        "games": 3999
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 59.9,
+        "games": 9073
+      },
+      {
+        "name": "Kingambit",
+        "winRate": 59.9,
+        "games": 9073
+      },
+      {
+        "name": "Scizor",
+        "winRate": 57.2,
+        "games": 9579
+      }
+    ],
+    "bestSets": []
+  },
+  "3-mega": {
+    "id": 3,
+    "name": "Mega Venusaur",
+    "isMega": true,
+    "elo": 9672,
+    "winRate": 51.8,
+    "appearances": 15945,
+    "wins": 8262,
+    "losses": 7683,
+    "bestPartners": [
+      {
+        "name": "Greninja",
+        "winRate": 57.3,
+        "games": 4812
+      },
+      {
+        "name": "Tyranitar",
+        "winRate": 57.3,
+        "games": 4812
+      },
+      {
+        "name": "Incineroar",
+        "winRate": 57.3,
+        "games": 4812
+      },
+      {
+        "name": "Politoed",
+        "winRate": 52.9,
+        "games": 10400
+      },
+      {
+        "name": "Feraligatr",
+        "winRate": 51.8,
+        "games": 15945
+      }
+    ],
+    "bestSets": []
+  },
+  "149-mega": {
+    "id": 149,
+    "name": "Mega Dragonite",
+    "isMega": true,
+    "elo": 9666,
+    "winRate": 50,
+    "appearances": 81388,
+    "wins": 40681,
+    "losses": 40707,
+    "bestPartners": [
+      {
+        "name": "Hydreigon",
+        "winRate": 51.3,
+        "games": 10877
+      },
+      {
+        "name": "Lucario",
+        "winRate": 51.3,
+        "games": 10877
+      },
+      {
+        "name": "Garchomp",
+        "winRate": 51.1,
+        "games": 32442
+      },
+      {
+        "name": "Dragapult",
+        "winRate": 51,
+        "games": 21809
+      },
+      {
+        "name": "Greninja",
+        "winRate": 50.7,
+        "games": 27152
+      }
+    ],
+    "bestSets": []
+  },
+  "115-mega": {
+    "id": 115,
+    "name": "Mega Kangaskhan",
+    "isMega": true,
+    "elo": 9665,
+    "winRate": 49.5,
+    "appearances": 160810,
+    "wins": 79578,
+    "losses": 81232,
+    "bestPartners": [
+      {
+        "name": "Scizor",
+        "winRate": 50.7,
+        "games": 11089
+      },
+      {
+        "name": "Snorlax",
+        "winRate": 50.4,
+        "games": 5525
+      },
+      {
+        "name": "Mimikyu",
+        "winRate": 50.2,
+        "games": 5454
+      },
+      {
+        "name": "Whimsicott",
+        "winRate": 49.6,
+        "games": 27197
+      },
+      {
+        "name": "Garchomp",
+        "winRate": 49.5,
+        "games": 138924
+      }
+    ],
+    "bestSets": []
+  },
+  "71-mega": {
+    "id": 71,
+    "name": "Mega Victreebel",
+    "isMega": true,
+    "elo": 9663,
+    "winRate": 50.1,
+    "appearances": 16867,
+    "wins": 8451,
+    "losses": 8416,
+    "bestPartners": [
+      {
+        "name": "Weavile",
+        "winRate": 50.8,
+        "games": 5704
+      },
+      {
+        "name": "Politoed",
+        "winRate": 50.8,
+        "games": 5704
+      },
+      {
+        "name": "Blastoise",
+        "winRate": 50.4,
+        "games": 11345
+      },
+      {
+        "name": "Hisuian Arcanine",
+        "winRate": 50.4,
+        "games": 11345
+      },
+      {
+        "name": "Slowbro",
+        "winRate": 50.1,
+        "games": 16867
+      }
+    ],
+    "bestSets": []
+  },
+  "127-mega": {
+    "id": 127,
+    "name": "Mega Pinsir",
+    "isMega": true,
+    "elo": 9663,
+    "winRate": 50.9,
+    "appearances": 15371,
+    "wins": 7819,
+    "losses": 7552,
+    "bestPartners": [
+      {
+        "name": "Wash Rotom",
+        "winRate": 56.6,
+        "games": 4791
+      },
+      {
+        "name": "Tyranitar",
+        "winRate": 56.6,
+        "games": 4791
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 53.1,
+        "games": 10368
+      },
+      {
+        "name": "Metagross",
+        "winRate": 53.1,
+        "games": 10368
+      },
+      {
+        "name": "Kingambit",
+        "winRate": 51.3,
+        "games": 9794
+      }
+    ],
+    "bestSets": []
+  },
+  "212-mega": {
+    "id": 212,
+    "name": "Mega Scizor",
+    "isMega": true,
+    "elo": 9662,
+    "winRate": 51.6,
+    "appearances": 37178,
+    "wins": 19178,
+    "losses": 18000,
+    "bestPartners": [
+      {
+        "name": "Gardevoir",
+        "winRate": 57.3,
+        "games": 4536
+      },
+      {
+        "name": "Hatterene",
+        "winRate": 57.3,
+        "games": 4536
+      },
+      {
+        "name": "Hydreigon",
+        "winRate": 57,
+        "games": 4755
+      },
+      {
+        "name": "Aegislash",
+        "winRate": 57,
+        "games": 4755
+      },
+      {
+        "name": "Dragapult",
+        "winRate": 54.1,
+        "games": 10001
+      }
+    ],
+    "bestSets": []
+  },
+  "445-mega-z": {
+    "id": 445,
+    "name": "Mega Garchomp Z",
+    "isMega": true,
+    "elo": 9661,
+    "winRate": 52.9,
+    "appearances": 15732,
+    "wins": 8327,
+    "losses": 7405,
+    "bestPartners": [
+      {
+        "name": "Arcanine",
+        "winRate": 57.9,
+        "games": 4844
+      },
+      {
+        "name": "Kingambit",
+        "winRate": 57.9,
+        "games": 4844
+      },
+      {
+        "name": "Heat Rotom",
+        "winRate": 53.6,
+        "games": 10368
+      },
+      {
+        "name": "Tinkaton",
+        "winRate": 53.6,
+        "games": 10368
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 52.9,
+        "games": 15732
+      }
+    ],
+    "bestSets": []
+  },
+  "6-mega-x": {
+    "id": 6,
+    "name": "Mega Charizard X",
+    "isMega": true,
+    "elo": 9660,
+    "winRate": 51.3,
+    "appearances": 16701,
+    "wins": 8571,
+    "losses": 8130,
+    "bestPartners": [
+      {
+        "name": "Krookodile",
+        "winRate": 53.2,
+        "games": 5411
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 53.2,
+        "games": 5411
+      },
+      {
+        "name": "Garchomp",
+        "winRate": 53.2,
+        "games": 5411
+      },
+      {
+        "name": "Excadrill",
+        "winRate": 52.1,
+        "games": 11127
+      },
+      {
+        "name": "Hydreigon",
+        "winRate": 51.5,
+        "games": 10985
+      }
+    ],
+    "bestSets": []
+  },
+  "130-mega": {
+    "id": 130,
+    "name": "Mega Gyarados",
+    "isMega": true,
+    "elo": 9659,
+    "winRate": 50.4,
+    "appearances": 221929,
+    "wins": 111743,
+    "losses": 110186,
+    "bestPartners": [
+      {
+        "name": "Heat Rotom",
+        "winRate": 68.9,
+        "games": 3909
+      },
+      {
+        "name": "Corviknight",
+        "winRate": 58.9,
+        "games": 4548
+      },
+      {
+        "name": "Slowbro",
+        "winRate": 57.8,
+        "games": 9362
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 55.4,
+        "games": 19558
+      },
+      {
+        "name": "Gliscor",
+        "winRate": 54,
+        "games": 10001
+      }
+    ],
+    "bestSets": []
+  },
+  "448-mega": {
+    "id": 448,
+    "name": "Mega Lucario",
+    "isMega": true,
+    "elo": 9652,
+    "winRate": 49,
+    "appearances": 27584,
+    "wins": 13509,
+    "losses": 14075,
+    "bestPartners": [
+      {
+        "name": "Starmie",
+        "winRate": 50.2,
+        "games": 5670
+      },
+      {
+        "name": "Slowbro",
+        "winRate": 50.2,
+        "games": 5670
+      },
+      {
+        "name": "Gliscor",
+        "winRate": 49.9,
+        "games": 5580
+      },
+      {
+        "name": "Charizard",
+        "winRate": 49.9,
+        "games": 5580
+      },
+      {
+        "name": "Incineroar",
+        "winRate": 49.8,
+        "games": 5638
+      }
+    ],
+    "bestSets": []
+  },
+  "652-mega": {
+    "id": 652,
+    "name": "Mega Chesnaught",
+    "isMega": true,
+    "elo": 9652,
+    "winRate": 53.9,
+    "appearances": 15102,
+    "wins": 8140,
+    "losses": 6962,
+    "bestPartners": [
+      {
+        "name": "Charizard",
+        "winRate": 65.2,
+        "games": 4003
+      },
+      {
+        "name": "Metagross",
+        "winRate": 65.2,
+        "games": 4003
+      },
+      {
+        "name": "Greninja",
+        "winRate": 65.2,
+        "games": 4003
+      },
+      {
+        "name": "Heat Rotom",
+        "winRate": 56.5,
+        "games": 9579
+      },
+      {
+        "name": "Gengar",
+        "winRate": 53.9,
+        "games": 15102
+      }
+    ],
+    "bestSets": []
+  },
+  "334-mega": {
+    "id": 334,
+    "name": "Mega Altaria",
+    "isMega": true,
+    "elo": 9649,
+    "winRate": 48.4,
+    "appearances": 16346,
+    "wins": 7919,
+    "losses": 8427,
+    "bestPartners": [
+      {
+        "name": "Metagross",
+        "winRate": 49.5,
+        "games": 5645
+      },
+      {
+        "name": "Lucario",
+        "winRate": 49.5,
+        "games": 5645
+      },
+      {
+        "name": "Orthworm",
+        "winRate": 49.1,
+        "games": 11071
+      },
+      {
+        "name": "Aegislash",
+        "winRate": 48.6,
+        "games": 5426
+      },
+      {
+        "name": "Hisuian Arcanine",
+        "winRate": 48.4,
+        "games": 16346
+      }
+    ],
+    "bestSets": []
+  },
+  "978-mega": {
+    "id": 978,
+    "name": "Mega Tatsugiri",
+    "isMega": true,
+    "elo": 9646,
+    "winRate": 49.5,
+    "appearances": 16290,
+    "wins": 8067,
+    "losses": 8223,
+    "bestPartners": [
+      {
+        "name": "Skarmory",
+        "winRate": 50.4,
+        "games": 5428
+      },
+      {
+        "name": "Scizor",
+        "winRate": 50.2,
+        "games": 11030
+      },
+      {
+        "name": "Corviknight",
+        "winRate": 50.2,
+        "games": 11030
+      },
+      {
+        "name": "Tinkaton",
+        "winRate": 50,
+        "games": 5602
+      },
+      {
+        "name": "Arcanine",
+        "winRate": 49.5,
+        "games": 16290
+      }
+    ],
+    "bestSets": []
+  },
+  "154-mega": {
+    "id": 154,
+    "name": "Mega Meganium",
+    "isMega": true,
+    "elo": 9645,
+    "winRate": 50,
+    "appearances": 22329,
+    "wins": 11163,
+    "losses": 11166,
+    "bestPartners": [
+      {
+        "name": "Heat Rotom",
+        "winRate": 50.5,
+        "games": 5692
+      },
+      {
+        "name": "Toxapex",
+        "winRate": 50.5,
+        "games": 5692
+      },
+      {
+        "name": "Arcanine",
+        "winRate": 50.5,
+        "games": 5692
+      },
+      {
+        "name": "Klefki",
+        "winRate": 50.4,
+        "games": 5718
+      },
+      {
+        "name": "Wash Rotom",
+        "winRate": 50.4,
+        "games": 11410
       }
     ],
     "bestSets": []
@@ -8034,74 +7350,226 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 94,
     "name": "Mega Gengar",
     "isMega": true,
-    "elo": 9619,
-    "winRate": 47.8,
-    "appearances": 31430,
-    "wins": 15036,
-    "losses": 16394,
+    "elo": 9643,
+    "winRate": 48.7,
+    "appearances": 32591,
+    "wins": 15866,
+    "losses": 16725,
     "bestPartners": [
       {
-        "name": "Kingambit",
-        "winRate": 53.5,
-        "games": 5173
-      },
-      {
-        "name": "Hydreigon",
-        "winRate": 53.5,
-        "games": 5173
-      },
-      {
-        "name": "Greninja",
-        "winRate": 51.4,
-        "games": 10790
-      },
-      {
-        "name": "Tyranitar",
-        "winRate": 51.4,
-        "games": 10790
-      },
-      {
         "name": "Corviknight",
-        "winRate": 50.7,
-        "games": 5782
+        "winRate": 50.3,
+        "games": 5661
+      },
+      {
+        "name": "Garchomp",
+        "winRate": 50.3,
+        "games": 5661
+      },
+      {
+        "name": "Arcanine",
+        "winRate": 50.3,
+        "games": 5661
+      },
+      {
+        "name": "Azumarill",
+        "winRate": 50.1,
+        "games": 11254
+      },
+      {
+        "name": "Sableye",
+        "winRate": 50.1,
+        "games": 11254
       }
     ],
     "bestSets": []
   },
-  "448-mega-z": {
-    "id": 448,
-    "name": "Mega Lucario Z",
+  "359-mega-z": {
+    "id": 359,
+    "name": "Mega Absol Z",
     "isMega": true,
-    "elo": 9607,
-    "winRate": 49.8,
-    "appearances": 16299,
-    "wins": 8112,
-    "losses": 8187,
+    "elo": 9641,
+    "winRate": 50.5,
+    "appearances": 16693,
+    "wins": 8433,
+    "losses": 8260,
     "bestPartners": [
       {
-        "name": "Gliscor",
+        "name": "Hisuian Arcanine",
+        "winRate": 50.7,
+        "games": 11234
+      },
+      {
+        "name": "Scizor",
+        "winRate": 50.6,
+        "games": 5694
+      },
+      {
+        "name": "Rotom",
+        "winRate": 50.6,
+        "games": 5694
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 50.5,
+        "games": 10999
+      },
+      {
+        "name": "Dragapult",
+        "winRate": 50.5,
+        "games": 16693
+      }
+    ],
+    "bestSets": []
+  },
+  "678-mega": {
+    "id": 678,
+    "name": "Mega Meowstic",
+    "isMega": true,
+    "elo": 9641,
+    "winRate": 49.6,
+    "appearances": 16285,
+    "wins": 8070,
+    "losses": 8215,
+    "bestPartners": [
+      {
+        "name": "Azumarill",
+        "winRate": 49.8,
+        "games": 5377
+      },
+      {
+        "name": "Kingambit",
+        "winRate": 49.7,
+        "games": 10753
+      },
+      {
+        "name": "Krookodile",
+        "winRate": 49.7,
+        "games": 10753
+      },
+      {
+        "name": "Conkeldurr",
+        "winRate": 49.7,
+        "games": 10753
+      },
+      {
+        "name": "Hisuian Zoroark",
+        "winRate": 49.6,
+        "games": 5376
+      }
+    ],
+    "bestSets": []
+  },
+  "65-mega": {
+    "id": 65,
+    "name": "Mega Alakazam",
+    "isMega": true,
+    "elo": 9640,
+    "winRate": 50.5,
+    "appearances": 22573,
+    "wins": 11406,
+    "losses": 11167,
+    "bestPartners": [
+      {
+        "name": "Kommo-o",
         "winRate": 50.9,
-        "games": 5696
+        "games": 5592
       },
       {
-        "name": "Fan Rotom",
+        "name": "Lucario",
         "winRate": 50.9,
-        "games": 5696
+        "games": 5592
       },
       {
-        "name": "Charizard",
-        "winRate": 50.5,
-        "games": 5362
+        "name": "Hisuian Arcanine",
+        "winRate": 50.8,
+        "games": 11324
       },
       {
-        "name": "Emolga",
-        "winRate": 50.5,
-        "games": 5362
+        "name": "Crabominable",
+        "winRate": 50.8,
+        "games": 11166
       },
       {
-        "name": "Pelipper",
+        "name": "Greninja",
+        "winRate": 50.7,
+        "games": 5732
+      }
+    ],
+    "bestSets": []
+  },
+  "460-mega": {
+    "id": 460,
+    "name": "Mega Abomasnow",
+    "isMega": true,
+    "elo": 9640,
+    "winRate": 51,
+    "appearances": 15895,
+    "wins": 8104,
+    "losses": 7791,
+    "bestPartners": [
+      {
+        "name": "Hisuian Zoroark",
+        "winRate": 54.1,
+        "games": 5041
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 54.1,
+        "games": 5041
+      },
+      {
+        "name": "Aegislash",
+        "winRate": 51.9,
+        "games": 10482
+      },
+      {
+        "name": "Incineroar",
+        "winRate": 51.6,
+        "games": 10454
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 51,
+        "games": 15895
+      }
+    ],
+    "bestSets": []
+  },
+  "227-mega": {
+    "id": 227,
+    "name": "Mega Skarmory",
+    "isMega": true,
+    "elo": 9639,
+    "winRate": 50.3,
+    "appearances": 22426,
+    "wins": 11288,
+    "losses": 11138,
+    "bestPartners": [
+      {
+        "name": "Rhyperior",
+        "winRate": 50.7,
+        "games": 5600
+      },
+      {
+        "name": "Whimsicott",
+        "winRate": 50.7,
+        "games": 5600
+      },
+      {
+        "name": "Pawmot",
+        "winRate": 50.6,
+        "games": 11308
+      },
+      {
+        "name": "Heat Rotom",
         "winRate": 50.5,
-        "games": 5362
+        "games": 5708
+      },
+      {
+        "name": "Drampa",
+        "winRate": 50.5,
+        "games": 5708
       }
     ],
     "bestSets": []
@@ -8110,36 +7578,568 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
     "id": 531,
     "name": "Mega Audino",
     "isMega": true,
-    "elo": 9599,
-    "winRate": 48.8,
-    "appearances": 16277,
-    "wins": 7950,
-    "losses": 8327,
+    "elo": 9635,
+    "winRate": 47.9,
+    "appearances": 15767,
+    "wins": 7545,
+    "losses": 8222,
     "bestPartners": [
       {
-        "name": "Toxapex",
-        "winRate": 50.1,
-        "games": 5504
-      },
-      {
-        "name": "Azumarill",
-        "winRate": 50.1,
-        "games": 5504
+        "name": "Arcanine",
+        "winRate": 50.6,
+        "games": 5633
       },
       {
         "name": "Hisuian Zoroark",
-        "winRate": 50.1,
-        "games": 5504
-      },
-      {
-        "name": "Gengar",
-        "winRate": 50.1,
-        "games": 5504
+        "winRate": 50.6,
+        "games": 5633
       },
       {
         "name": "Slowking",
-        "winRate": 49.2,
-        "games": 5523
+        "winRate": 50.6,
+        "games": 5633
+      },
+      {
+        "name": "Galarian Slowbro",
+        "winRate": 48.7,
+        "games": 10732
+      },
+      {
+        "name": "Azumarill",
+        "winRate": 48.4,
+        "games": 10668
+      }
+    ],
+    "bestSets": []
+  },
+  "6-mega-y": {
+    "id": 6,
+    "name": "Mega Charizard Y",
+    "isMega": true,
+    "elo": 9631,
+    "winRate": 51.2,
+    "appearances": 27660,
+    "wins": 14163,
+    "losses": 13497,
+    "bestPartners": [
+      {
+        "name": "Archaludon",
+        "winRate": 54.7,
+        "games": 5032
+      },
+      {
+        "name": "Excadrill",
+        "winRate": 54.7,
+        "games": 5032
+      },
+      {
+        "name": "Krookodile",
+        "winRate": 52.7,
+        "games": 10643
+      },
+      {
+        "name": "Hydreigon",
+        "winRate": 52.7,
+        "games": 10812
+      },
+      {
+        "name": "Garchomp",
+        "winRate": 52.5,
+        "games": 10615
+      }
+    ],
+    "bestSets": []
+  },
+  "181-mega": {
+    "id": 181,
+    "name": "Mega Ampharos",
+    "isMega": true,
+    "elo": 9622,
+    "winRate": 49.1,
+    "appearances": 16360,
+    "wins": 8038,
+    "losses": 8322,
+    "bestPartners": [
+      {
+        "name": "Krookodile",
+        "winRate": 50.8,
+        "games": 5628
+      },
+      {
+        "name": "Aerodactyl",
+        "winRate": 50.8,
+        "games": 5628
+      },
+      {
+        "name": "Palafin",
+        "winRate": 50.8,
+        "games": 5628
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 49.5,
+        "games": 5536
+      },
+      {
+        "name": "Incineroar",
+        "winRate": 49.5,
+        "games": 5536
+      }
+    ],
+    "bestSets": []
+  },
+  "448-mega-z": {
+    "id": 448,
+    "name": "Mega Lucario Z",
+    "isMega": true,
+    "elo": 9621,
+    "winRate": 47.4,
+    "appearances": 15609,
+    "wins": 7397,
+    "losses": 8212,
+    "bestPartners": [
+      {
+        "name": "Aerodactyl",
+        "winRate": 51,
+        "games": 5752
+      },
+      {
+        "name": "Pelipper",
+        "winRate": 51,
+        "games": 5752
+      },
+      {
+        "name": "Slowbro",
+        "winRate": 51,
+        "games": 5752
+      },
+      {
+        "name": "Emolga",
+        "winRate": 48,
+        "games": 10544
+      },
+      {
+        "name": "Azumarill",
+        "winRate": 48,
+        "games": 10544
+      }
+    ],
+    "bestSets": []
+  },
+  "478-mega": {
+    "id": 478,
+    "name": "Mega Froslass",
+    "isMega": true,
+    "elo": 9621,
+    "winRate": 50.1,
+    "appearances": 16491,
+    "wins": 8259,
+    "losses": 8232,
+    "bestPartners": [
+      {
+        "name": "Tyranitar",
+        "winRate": 51,
+        "games": 5423
+      },
+      {
+        "name": "Meowscarada",
+        "winRate": 51,
+        "games": 5423
+      },
+      {
+        "name": "Hisuian Samurott",
+        "winRate": 50.3,
+        "games": 10986
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 50.3,
+        "games": 10928
+      },
+      {
+        "name": "Kingambit",
+        "winRate": 50.1,
+        "games": 16491
+      }
+    ],
+    "bestSets": []
+  },
+  "740-mega": {
+    "id": 740,
+    "name": "Mega Crabominable",
+    "isMega": true,
+    "elo": 9618,
+    "winRate": 47.1,
+    "appearances": 15376,
+    "wins": 7243,
+    "losses": 8133,
+    "bestPartners": [
+      {
+        "name": "Alolan Raichu",
+        "winRate": 50.5,
+        "games": 5466
+      },
+      {
+        "name": "Delphox",
+        "winRate": 50.5,
+        "games": 5466
+      },
+      {
+        "name": "Gengar",
+        "winRate": 50.5,
+        "games": 5466
+      },
+      {
+        "name": "Dragapult",
+        "winRate": 50.5,
+        "games": 5466
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 50,
+        "games": 5461
+      }
+    ],
+    "bestSets": []
+  },
+  "26-mega-x": {
+    "id": 26,
+    "name": "Mega Raichu X",
+    "isMega": true,
+    "elo": 9616,
+    "winRate": 48.4,
+    "appearances": 15905,
+    "wins": 7700,
+    "losses": 8205,
+    "bestPartners": [
+      {
+        "name": "Hisuian Arcanine",
+        "winRate": 50.9,
+        "games": 5485
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 50.6,
+        "games": 11088
+      },
+      {
+        "name": "Incineroar",
+        "winRate": 50.6,
+        "games": 11088
+      },
+      {
+        "name": "Whimsicott",
+        "winRate": 50.3,
+        "games": 5603
+      },
+      {
+        "name": "Arcanine",
+        "winRate": 47.4,
+        "games": 10302
+      }
+    ],
+    "bestSets": []
+  },
+  "780-mega": {
+    "id": 780,
+    "name": "Mega Drampa",
+    "isMega": true,
+    "elo": 9610,
+    "winRate": 51.9,
+    "appearances": 16165,
+    "wins": 8387,
+    "losses": 7778,
+    "bestPartners": [
+      {
+        "name": "Starmie",
+        "winRate": 56,
+        "games": 4841
+      },
+      {
+        "name": "Aegislash",
+        "winRate": 52.7,
+        "games": 10557
+      },
+      {
+        "name": "Charizard",
+        "winRate": 52.7,
+        "games": 10557
+      },
+      {
+        "name": "Arcanine",
+        "winRate": 51.9,
+        "games": 16165
+      },
+      {
+        "name": "Scizor",
+        "winRate": 51.9,
+        "games": 16165
+      }
+    ],
+    "bestSets": []
+  },
+  "952-mega": {
+    "id": 952,
+    "name": "Mega Scovillain",
+    "isMega": true,
+    "elo": 9606,
+    "winRate": 49.3,
+    "appearances": 13973,
+    "wins": 6883,
+    "losses": 7090,
+    "bestPartners": [
+      {
+        "name": "Tyranitar",
+        "winRate": 61.3,
+        "games": 4312
+      },
+      {
+        "name": "Kingambit",
+        "winRate": 61.3,
+        "games": 4312
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 61.3,
+        "games": 4312
+      },
+      {
+        "name": "Aggron",
+        "winRate": 50.7,
+        "games": 5559
+      },
+      {
+        "name": "Stunfisk",
+        "winRate": 50.7,
+        "games": 5559
+      }
+    ],
+    "bestSets": []
+  },
+  "80-mega": {
+    "id": 80,
+    "name": "Mega Slowbro",
+    "isMega": true,
+    "elo": 9590,
+    "winRate": 49.5,
+    "appearances": 16420,
+    "wins": 8130,
+    "losses": 8290,
+    "bestPartners": [
+      {
+        "name": "Alolan Ninetales",
+        "winRate": 49.7,
+        "games": 5363
+      },
+      {
+        "name": "Conkeldurr",
+        "winRate": 49.7,
+        "games": 5363
+      },
+      {
+        "name": "Crabominable",
+        "winRate": 49.7,
+        "games": 5363
+      },
+      {
+        "name": "Torkoal",
+        "winRate": 49.7,
+        "games": 5363
+      },
+      {
+        "name": "Incineroar",
+        "winRate": 49.5,
+        "games": 16420
+      }
+    ],
+    "bestSets": []
+  },
+  "306-mega": {
+    "id": 306,
+    "name": "Mega Aggron",
+    "isMega": true,
+    "elo": 9574,
+    "winRate": 44.6,
+    "appearances": 19615,
+    "wins": 8744,
+    "losses": 10871,
+    "bestPartners": [
+      {
+        "name": "Dragonite",
+        "winRate": 49.8,
+        "games": 5294
+      },
+      {
+        "name": "Whimsicott",
+        "winRate": 49.8,
+        "games": 5294
+      },
+      {
+        "name": "Dragapult",
+        "winRate": 48.5,
+        "games": 10417
+      },
+      {
+        "name": "Meowscarada",
+        "winRate": 47.9,
+        "games": 15721
+      },
+      {
+        "name": "Hisuian Decidueye",
+        "winRate": 47.2,
+        "games": 5123
+      }
+    ],
+    "bestSets": []
+  },
+  "26-mega-y": {
+    "id": 26,
+    "name": "Mega Raichu Y",
+    "isMega": true,
+    "elo": 9566,
+    "winRate": 44.2,
+    "appearances": 14548,
+    "wins": 6426,
+    "losses": 8122,
+    "bestPartners": [
+      {
+        "name": "Charizard",
+        "winRate": 50.3,
+        "games": 5620
+      },
+      {
+        "name": "Krookodile",
+        "winRate": 50.3,
+        "games": 5620
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 50.2,
+        "games": 5367
+      },
+      {
+        "name": "Incineroar",
+        "winRate": 50.2,
+        "games": 5367
+      },
+      {
+        "name": "Arcanine",
+        "winRate": 50.2,
+        "games": 5367
+      }
+    ],
+    "bestSets": []
+  },
+  "302-mega": {
+    "id": 302,
+    "name": "Mega Sableye",
+    "isMega": true,
+    "elo": 9560,
+    "winRate": 39.2,
+    "appearances": 35258,
+    "wins": 13832,
+    "losses": 21426,
+    "bestPartners": [
+      {
+        "name": "Charizard",
+        "winRate": 50.2,
+        "games": 5421
+      },
+      {
+        "name": "Archaludon",
+        "winRate": 50.2,
+        "games": 5421
+      },
+      {
+        "name": "Mimikyu",
+        "winRate": 47.7,
+        "games": 5207
+      },
+      {
+        "name": "Azumarill",
+        "winRate": 47.7,
+        "games": 5207
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 46.4,
+        "games": 5036
+      }
+    ],
+    "bestSets": []
+  },
+  "359-mega": {
+    "id": 359,
+    "name": "Mega Absol",
+    "isMega": true,
+    "elo": 9550,
+    "winRate": 49.3,
+    "appearances": 16416,
+    "wins": 8094,
+    "losses": 8322,
+    "bestPartners": [
+      {
+        "name": "Hisuian Arcanine",
+        "winRate": 50.9,
+        "games": 5621
+      },
+      {
+        "name": "Dragapult",
+        "winRate": 50.6,
+        "games": 11203
+      },
+      {
+        "name": "Gyarados",
+        "winRate": 50.6,
+        "games": 11203
+      },
+      {
+        "name": "Ceruledge",
+        "winRate": 50.4,
+        "games": 5582
+      },
+      {
+        "name": "Galarian Slowbro",
+        "winRate": 50.4,
+        "games": 5582
+      }
+    ],
+    "bestSets": []
+  },
+  "15-mega": {
+    "id": 15,
+    "name": "Mega Beedrill",
+    "isMega": true,
+    "elo": 9548,
+    "winRate": 45.3,
+    "appearances": 15210,
+    "wins": 6889,
+    "losses": 8321,
+    "bestPartners": [
+      {
+        "name": "Garchomp",
+        "winRate": 47.2,
+        "games": 5283
+      },
+      {
+        "name": "Hisuian Arcanine",
+        "winRate": 46.9,
+        "games": 10544
+      },
+      {
+        "name": "Tyranitar",
+        "winRate": 46.7,
+        "games": 5261
+      },
+      {
+        "name": "Excadrill",
+        "winRate": 46.7,
+        "games": 5261
+      },
+      {
+        "name": "Krookodile",
+        "winRate": 45.3,
+        "games": 15210
       }
     ],
     "bestSets": []
@@ -8149,658 +8149,658 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
 /** Best core pairs from simulation */
 export const SIM_PAIRS: SimPairData[] = [
   {
-    "pokemon1": "Mega Clefable",
-    "pokemon2": "Incineroar",
-    "winRate": 67.5,
-    "games": 3946
-  },
-  {
-    "pokemon1": "Mega Clefable",
-    "pokemon2": "Kingambit",
-    "winRate": 67.5,
-    "games": 3946
-  },
-  {
-    "pokemon1": "Mega Clefable",
-    "pokemon2": "Metagross",
-    "winRate": 67.5,
-    "games": 3946
-  },
-  {
-    "pokemon1": "Archaludon",
-    "pokemon2": "Mega Clefable",
-    "winRate": 67.2,
-    "games": 8027
-  },
-  {
-    "pokemon1": "Mega Charizard X",
+    "pokemon1": "Mega Feraligatr",
     "pokemon2": "Kommo-o",
-    "winRate": 67.1,
-    "games": 3855
-  },
-  {
-    "pokemon1": "Hydreigon",
-    "pokemon2": "Galarian Stunfisk",
-    "winRate": 67.1,
-    "games": 3855
-  },
-  {
-    "pokemon1": "Mega Clefable",
-    "pokemon2": "Hisuian Arcanine",
-    "winRate": 66.9,
-    "games": 4081
-  },
-  {
-    "pokemon1": "Heat Rotom",
-    "pokemon2": "Mega Gyarados",
-    "winRate": 66.8,
-    "games": 3934
-  },
-  {
-    "pokemon1": "Heat Rotom",
-    "pokemon2": "Slowbro",
-    "winRate": 66.8,
-    "games": 3934
+    "winRate": 74.5,
+    "games": 3640
   },
   {
     "pokemon1": "Archaludon",
-    "pokemon2": "Slowbro",
-    "winRate": 66.8,
-    "games": 3934
+    "pokemon2": "Mega Feraligatr",
+    "winRate": 74.5,
+    "games": 3640
   },
   {
     "pokemon1": "Heat Rotom",
-    "pokemon2": "Mega Chesnaught",
-    "winRate": 66.4,
-    "games": 3878
+    "pokemon2": "Mega Feraligatr",
+    "winRate": 74.5,
+    "games": 3640
   },
   {
-    "pokemon1": "Mega Chesnaught",
-    "pokemon2": "Greninja",
-    "winRate": 66.4,
-    "games": 3878
+    "pokemon1": "Arcanine",
+    "pokemon2": "Kommo-o",
+    "winRate": 74.5,
+    "games": 3640
   },
   {
-    "pokemon1": "Mega Chesnaught",
-    "pokemon2": "Gengar",
-    "winRate": 66.4,
-    "games": 3878
+    "pokemon1": "Archaludon",
+    "pokemon2": "Kommo-o",
+    "winRate": 74.5,
+    "games": 3640
   },
   {
-    "pokemon1": "Excadrill",
-    "pokemon2": "Charizard",
-    "winRate": 64.7,
-    "games": 8206
+    "pokemon1": "Heat Rotom",
+    "pokemon2": "Kommo-o",
+    "winRate": 74.5,
+    "games": 3640
   },
   {
-    "pokemon1": "Charizard",
+    "pokemon1": "Heat Rotom",
     "pokemon2": "Hydreigon",
-    "winRate": 64.7,
-    "games": 8206
-  },
-  {
-    "pokemon1": "Archaludon",
-    "pokemon2": "Hisuian Arcanine",
-    "winRate": 63.5,
-    "games": 8461
-  },
-  {
-    "pokemon1": "Archaludon",
-    "pokemon2": "Aegislash",
-    "winRate": 63.5,
-    "games": 8461
+    "winRate": 74.5,
+    "games": 3640
   },
   {
     "pokemon1": "Heat Rotom",
     "pokemon2": "Archaludon",
-    "winRate": 63.5,
-    "games": 8314
+    "winRate": 71.6,
+    "games": 7549
+  },
+  {
+    "pokemon1": "Venusaur",
+    "pokemon2": "Mega Greninja",
+    "winRate": 71.2,
+    "games": 3750
+  },
+  {
+    "pokemon1": "Metagross",
+    "pokemon2": "Mega Greninja",
+    "winRate": 71.2,
+    "games": 3750
   },
   {
     "pokemon1": "Heat Rotom",
-    "pokemon2": "Gengar",
-    "winRate": 63,
-    "games": 12671
+    "pokemon2": "Mega Greninja",
+    "winRate": 71.2,
+    "games": 3750
   },
   {
     "pokemon1": "Scizor",
-    "pokemon2": "Mega Clefable",
-    "winRate": 62.4,
-    "games": 13098
+    "pokemon2": "Venusaur",
+    "winRate": 71.2,
+    "games": 3750
   },
   {
-    "pokemon1": "Archaludon",
-    "pokemon2": "Empoleon",
-    "winRate": 62.4,
-    "games": 8796
+    "pokemon1": "Heat Rotom",
+    "pokemon2": "Venusaur",
+    "winRate": 71.2,
+    "games": 3750
   },
   {
-    "pokemon1": "Archaludon",
+    "pokemon1": "Heat Rotom",
+    "pokemon2": "Dragapult",
+    "winRate": 71.2,
+    "games": 3750
+  },
+  {
+    "pokemon1": "Heat Rotom",
     "pokemon2": "Scizor",
-    "winRate": 62.2,
-    "games": 21741
+    "winRate": 71.2,
+    "games": 3750
   },
   {
-    "pokemon1": "Torkoal",
-    "pokemon2": "Scovillain",
-    "winRate": 61.8,
-    "games": 4379
+    "pokemon1": "Heat Rotom",
+    "pokemon2": "Mega Gyarados",
+    "winRate": 68.9,
+    "games": 3909
   },
   {
-    "pokemon1": "Torkoal",
-    "pokemon2": "Leafeon",
-    "winRate": 61.8,
-    "games": 4379
+    "pokemon1": "Archaludon",
+    "pokemon2": "Slowbro",
+    "winRate": 68.9,
+    "games": 3909
   },
   {
-    "pokemon1": "Torkoal",
-    "pokemon2": "Ninetales",
-    "winRate": 61.8,
-    "games": 4379
+    "pokemon1": "Mega Clefable",
+    "pokemon2": "Incineroar",
+    "winRate": 66.6,
+    "games": 3999
   },
   {
-    "pokemon1": "Torkoal",
+    "pokemon1": "Mega Clefable",
+    "pokemon2": "Metagross",
+    "winRate": 66.6,
+    "games": 3999
+  },
+  {
+    "pokemon1": "Hisuian Samurott",
+    "pokemon2": "Hisuian Typhlosion",
+    "winRate": 65.3,
+    "games": 4028
+  },
+  {
+    "pokemon1": "Hisuian Typhlosion",
+    "pokemon2": "Hydreigon",
+    "winRate": 65.3,
+    "games": 4028
+  },
+  {
+    "pokemon1": "Hisuian Typhlosion",
+    "pokemon2": "Drampa",
+    "winRate": 65.3,
+    "games": 4028
+  },
+  {
+    "pokemon1": "Hisuian Samurott",
+    "pokemon2": "Hydreigon",
+    "winRate": 65.3,
+    "games": 4028
+  },
+  {
+    "pokemon1": "Hisuian Samurott",
+    "pokemon2": "Primarina",
+    "winRate": 65.3,
+    "games": 4028
+  },
+  {
+    "pokemon1": "Abomasnow",
+    "pokemon2": "Hydreigon",
+    "winRate": 65.3,
+    "games": 4028
+  },
+  {
+    "pokemon1": "Primarina",
+    "pokemon2": "Drampa",
+    "winRate": 65.3,
+    "games": 4028
+  },
+  {
+    "pokemon1": "Abomasnow",
+    "pokemon2": "Primarina",
+    "winRate": 65.3,
+    "games": 4028
+  },
+  {
+    "pokemon1": "Abomasnow",
+    "pokemon2": "Drampa",
+    "winRate": 65.3,
+    "games": 4028
+  },
+  {
+    "pokemon1": "Charizard",
+    "pokemon2": "Mega Chesnaught",
+    "winRate": 65.2,
+    "games": 4003
+  },
+  {
+    "pokemon1": "Metagross",
+    "pokemon2": "Mega Chesnaught",
+    "winRate": 65.2,
+    "games": 4003
+  },
+  {
+    "pokemon1": "Mega Chesnaught",
+    "pokemon2": "Greninja",
+    "winRate": 65.2,
+    "games": 4003
+  },
+  {
+    "pokemon1": "Excadrill",
     "pokemon2": "Charizard",
-    "winRate": 61.8,
-    "games": 4379
+    "winRate": 63.2,
+    "games": 8562
+  },
+  {
+    "pokemon1": "Charizard",
+    "pokemon2": "Hydreigon",
+    "winRate": 63.2,
+    "games": 8562
   },
   {
     "pokemon1": "Charizard",
     "pokemon2": "Chesnaught",
-    "winRate": 61.6,
-    "games": 8793
+    "winRate": 62.4,
+    "games": 8619
   },
   {
     "pokemon1": "Metagross",
     "pokemon2": "Chesnaught",
-    "winRate": 61.6,
-    "games": 8793
+    "winRate": 62.4,
+    "games": 8619
   },
   {
     "pokemon1": "Heat Rotom",
     "pokemon2": "Chesnaught",
-    "winRate": 61.6,
-    "games": 8793
+    "winRate": 62.4,
+    "games": 8619
   },
   {
     "pokemon1": "Chesnaught",
     "pokemon2": "Greninja",
-    "winRate": 61.6,
-    "games": 8793
+    "winRate": 62.4,
+    "games": 8619
   },
   {
     "pokemon1": "Chesnaught",
     "pokemon2": "Gengar",
+    "winRate": 62.4,
+    "games": 8619
+  },
+  {
+    "pokemon1": "Mega Metagross",
+    "pokemon2": "Weavile",
     "winRate": 61.6,
-    "games": 8793
+    "games": 4376
   },
   {
-    "pokemon1": "Archaludon",
-    "pokemon2": "Alcremie",
-    "winRate": 61,
-    "games": 4475
+    "pokemon1": "Weavile",
+    "pokemon2": "Greninja",
+    "winRate": 61.6,
+    "games": 4376
   },
   {
-    "pokemon1": "Rotom",
-    "pokemon2": "Alcremie",
-    "winRate": 61,
-    "games": 4475
+    "pokemon1": "Greninja",
+    "pokemon2": "Kommo-o",
+    "winRate": 61.6,
+    "games": 4376
   },
   {
-    "pokemon1": "Archaludon",
-    "pokemon2": "Rotom",
-    "winRate": 61,
-    "games": 4475
+    "pokemon1": "Weavile",
+    "pokemon2": "Kommo-o",
+    "winRate": 61.6,
+    "games": 4376
   },
   {
-    "pokemon1": "Archaludon",
-    "pokemon2": "Mega Scovillain",
-    "winRate": 61,
-    "games": 4401
+    "pokemon1": "Weavile",
+    "pokemon2": "Incineroar",
+    "winRate": 61.6,
+    "games": 4376
   },
   {
-    "pokemon1": "Hydreigon",
-    "pokemon2": "Mega Alakazam",
-    "winRate": 61,
-    "games": 4397
+    "pokemon1": "Weavile",
+    "pokemon2": "Charizard",
+    "winRate": 61.6,
+    "games": 4376
   },
   {
-    "pokemon1": "Hisuian Arcanine",
-    "pokemon2": "Hydreigon",
-    "winRate": 61,
-    "games": 4397
-  },
-  {
-    "pokemon1": "Conkeldurr",
-    "pokemon2": "Hydreigon",
-    "winRate": 61,
-    "games": 4397
-  },
-  {
-    "pokemon1": "Archaludon",
-    "pokemon2": "Hydreigon",
-    "winRate": 60.6,
-    "games": 22234
+    "pokemon1": "Charizard",
+    "pokemon2": "Kommo-o",
+    "winRate": 61.6,
+    "games": 4376
   },
   {
     "pokemon1": "Aerodactyl",
-    "pokemon2": "Tyranitar",
-    "winRate": 60.6,
-    "games": 13437
-  },
-  {
-    "pokemon1": "Aerodactyl",
-    "pokemon2": "Kingambit",
-    "winRate": 60.6,
-    "games": 13437
-  },
-  {
-    "pokemon1": "Archaludon",
-    "pokemon2": "Aerodactyl",
-    "winRate": 60.6,
-    "games": 13437
+    "pokemon2": "Scovillain",
+    "winRate": 61.5,
+    "games": 8606
   },
   {
     "pokemon1": "Tyranitar",
-    "pokemon2": "Corviknight",
-    "winRate": 60.6,
-    "games": 13437
+    "pokemon2": "Scovillain",
+    "winRate": 61.5,
+    "games": 8606
   },
   {
-    "pokemon1": "Heat Rotom",
-    "pokemon2": "Sandaconda",
-    "winRate": 60.5,
-    "games": 4647
+    "pokemon1": "Corviknight",
+    "pokemon2": "Scovillain",
+    "winRate": 61.5,
+    "games": 8606
   },
   {
-    "pokemon1": "Azumarill",
-    "pokemon2": "Sandaconda",
-    "winRate": 60.5,
-    "games": 4647
+    "pokemon1": "Scovillain",
+    "pokemon2": "Kingambit",
+    "winRate": 61.5,
+    "games": 8606
   },
   {
-    "pokemon1": "Clawitzer",
-    "pokemon2": "Sandaconda",
-    "winRate": 60.5,
-    "games": 4647
-  },
-  {
-    "pokemon1": "Heat Rotom",
-    "pokemon2": "Samurott",
-    "winRate": 60.5,
-    "games": 4647
-  },
-  {
-    "pokemon1": "Azumarill",
-    "pokemon2": "Samurott",
-    "winRate": 60.5,
-    "games": 4647
-  },
-  {
-    "pokemon1": "Samurott",
-    "pokemon2": "Clawitzer",
-    "winRate": 60.5,
-    "games": 4647
-  },
-  {
-    "pokemon1": "Heat Rotom",
-    "pokemon2": "Milotic",
-    "winRate": 60.5,
-    "games": 4647
+    "pokemon1": "Archaludon",
+    "pokemon2": "Scovillain",
+    "winRate": 61.5,
+    "games": 8606
   }
 ];
 
 /** Archetype rankings from simulation */
 export const SIM_ARCHETYPES: SimArchetypeData[] = [
   {
-    "name": "Mega Clefable",
-    "elo": 27548,
-    "winRate": 62.4,
-    "wins": 8177,
-    "losses": 4921
-  },
-  {
     "name": "Charizard Base",
-    "elo": 20796,
-    "winRate": 64.7,
-    "wins": 5309,
-    "losses": 2897
-  },
-  {
-    "name": "Mega Charizard",
-    "elo": 19468,
-    "winRate": 53.7,
-    "wins": 16430,
-    "losses": 14184
-  },
-  {
-    "name": "Chesnaught Base",
-    "elo": 17764,
-    "winRate": 61.6,
-    "wins": 5413,
-    "losses": 3380
+    "elo": 19580,
+    "winRate": 63.2,
+    "wins": 5411,
+    "losses": 3151
   },
   {
     "name": "Sand",
-    "elo": 17660,
+    "elo": 18708,
     "winRate": 50.5,
-    "wins": 112448,
-    "losses": 110428
+    "wins": 111807,
+    "losses": 109656
   },
   {
-    "name": "Scovillain Base",
-    "elo": 16620,
-    "winRate": 60.5,
-    "wins": 5463,
-    "losses": 3573
-  },
-  {
-    "name": "Clefable Base",
-    "elo": 14052,
-    "winRate": 58.5,
-    "wins": 5404,
-    "losses": 3835
-  },
-  {
-    "name": "Tailwind",
-    "elo": 13780,
-    "winRate": 50.5,
-    "wins": 76017,
-    "losses": 74482
-  },
-  {
-    "name": "Hard Trick Room",
-    "elo": 13476,
-    "winRate": 55,
-    "wins": 8189,
-    "losses": 6692
-  },
-  {
-    "name": "Pinsir Base",
-    "elo": 13092,
-    "winRate": 57.6,
-    "wins": 5481,
-    "losses": 4032
-  },
-  {
-    "name": "Mega Chesnaught",
-    "elo": 12324,
-    "winRate": 54.5,
-    "wins": 8151,
-    "losses": 6798
-  },
-  {
-    "name": "Mega Froslass",
-    "elo": 11892,
-    "winRate": 54.3,
-    "wins": 8187,
-    "losses": 6888
-  },
-  {
-    "name": "Alcremie Build",
-    "elo": 11676,
-    "winRate": 54.3,
-    "wins": 8080,
-    "losses": 6808
-  },
-  {
-    "name": "Mega Starmie",
-    "elo": 11524,
-    "winRate": 54.1,
-    "wins": 8329,
-    "losses": 7076
-  },
-  {
-    "name": "Mega Heracross",
-    "elo": 11260,
-    "winRate": 53.9,
-    "wins": 8474,
-    "losses": 7254
-  },
-  {
-    "name": "Mega Venusaur",
-    "elo": 11140,
-    "winRate": 53.9,
-    "wins": 8237,
-    "losses": 7032
-  },
-  {
-    "name": "Mega Alakazam",
-    "elo": 10340,
-    "winRate": 53.5,
-    "wins": 8388,
-    "losses": 7283
-  },
-  {
-    "name": "Sun Hyper Offense",
-    "elo": 9780,
-    "winRate": 61.8,
-    "wins": 2707,
-    "losses": 1672
-  },
-  {
-    "name": "Hyper Offense",
-    "elo": 9596,
-    "winRate": 51,
-    "wins": 25024,
-    "losses": 24012
-  },
-  {
-    "name": "Mega Scovillain",
-    "elo": 9484,
-    "winRate": 53.2,
-    "wins": 8208,
-    "losses": 7210
-  },
-  {
-    "name": "Sandaconda Build",
-    "elo": 9372,
-    "winRate": 53.1,
-    "wins": 8464,
-    "losses": 7480
-  },
-  {
-    "name": "Toucannon Build",
-    "elo": 9292,
-    "winRate": 53.1,
-    "wins": 8285,
-    "losses": 7311
-  },
-  {
-    "name": "Sun Trick Room",
-    "elo": 8628,
-    "winRate": 50.5,
-    "wins": 48204,
-    "losses": 47313
-  },
-  {
-    "name": "Pivot Chain",
-    "elo": 8444,
-    "winRate": 59.3,
-    "wins": 2771,
-    "losses": 1903
-  },
-  {
-    "name": "Tsareena Build",
-    "elo": 7972,
-    "winRate": 52.5,
-    "wins": 8362,
-    "losses": 7553
-  },
-  {
-    "name": "Beat Up",
-    "elo": 7900,
-    "winRate": 58.7,
-    "wins": 2706,
-    "losses": 1906
-  },
-  {
-    "name": "Offense",
-    "elo": 7332,
-    "winRate": 52.3,
-    "wins": 8283,
-    "losses": 7554
-  },
-  {
-    "name": "Kleavor Build",
-    "elo": 7300,
-    "winRate": 52.2,
-    "wins": 8519,
-    "losses": 7794
-  },
-  {
-    "name": "Dragon Spam",
-    "elo": 7012,
-    "winRate": 57.3,
-    "wins": 2707,
-    "losses": 2018
-  },
-  {
-    "name": "Metagross Core",
-    "elo": 6748,
-    "winRate": 52.1,
-    "wins": 8156,
-    "losses": 7500
-  },
-  {
-    "name": "Standard",
-    "elo": 6676,
-    "winRate": 50.2,
-    "wins": 96694,
-    "losses": 96047
-  },
-  {
-    "name": "Heracross Base",
-    "elo": 6116,
-    "winRate": 52.7,
-    "wins": 5692,
-    "losses": 5115
-  },
-  {
-    "name": "Mega Delphox",
-    "elo": 5348,
-    "winRate": 51.5,
-    "wins": 8217,
-    "losses": 7736
-  },
-  {
-    "name": "Ampharos Base",
-    "elo": 5332,
-    "winRate": 52.2,
-    "wins": 5704,
-    "losses": 5225
-  },
-  {
-    "name": "Mega Pinsir",
-    "elo": 5324,
-    "winRate": 51.5,
-    "wins": 8249,
-    "losses": 7771
-  },
-  {
-    "name": "Mega Greninja",
-    "elo": 5188,
-    "winRate": 51.4,
-    "wins": 8275,
-    "losses": 7814
-  },
-  {
-    "name": "Aurora Veil",
-    "elo": 5084,
-    "winRate": 54.5,
-    "wins": 2716,
-    "losses": 2268
-  },
-  {
-    "name": "Sun",
-    "elo": 5012,
-    "winRate": 50.5,
-    "wins": 22901,
-    "losses": 22462
+    "name": "Chesnaught Base",
+    "elo": 18628,
+    "winRate": 62.4,
+    "wins": 5380,
+    "losses": 3239
   },
   {
     "name": "Mega Garchomp",
-    "elo": 4828,
-    "winRate": 50.6,
-    "wins": 16811,
-    "losses": 16395
+    "elo": 18396,
+    "winRate": 53.4,
+    "wins": 16582,
+    "losses": 14470
   },
   {
-    "name": "Tailwind Offense",
-    "elo": 4788,
-    "winRate": 50.9,
-    "wins": 11041,
-    "losses": 10630
+    "name": "Scovillain Base",
+    "elo": 17324,
+    "winRate": 61.5,
+    "wins": 5292,
+    "losses": 3314
   },
   {
-    "name": "Balance",
-    "elo": 4300,
-    "winRate": 50.8,
-    "wins": 11145,
-    "losses": 10795
+    "name": "Mega Feraligatr",
+    "elo": 17252,
+    "winRate": 56.8,
+    "wins": 8277,
+    "losses": 6308
   },
   {
-    "name": "Blastoise Base",
-    "elo": 4204,
-    "winRate": 51.5,
-    "wins": 5652,
-    "losses": 5314
+    "name": "Alcremie Build",
+    "elo": 16676,
+    "winRate": 56.7,
+    "wins": 8053,
+    "losses": 6156
   },
   {
-    "name": "Mega Abomasnow",
-    "elo": 4012,
-    "winRate": 51,
-    "wins": 8174,
-    "losses": 7860
+    "name": "Mega Clefable",
+    "elo": 16244,
+    "winRate": 56.3,
+    "wins": 8248,
+    "losses": 6405
   },
   {
-    "name": "Sand Rush",
-    "elo": 3740,
-    "winRate": 50.4,
-    "wins": 17032,
-    "losses": 16752
+    "name": "Mega Greninja",
+    "elo": 16164,
+    "winRate": 56.3,
+    "wins": 8198,
+    "losses": 6365
   },
   {
-    "name": "Steel Stall",
-    "elo": 3684,
-    "winRate": 52.6,
-    "wins": 2803,
-    "losses": 2530
+    "name": "Clefable Base",
+    "elo": 14844,
+    "winRate": 59,
+    "wins": 5454,
+    "losses": 3786
   },
   {
-    "name": "Mega Gyarados",
-    "elo": 3668,
-    "winRate": 50.8,
-    "wins": 8225,
-    "losses": 7954
+    "name": "Pinsir Base",
+    "elo": 12740,
+    "winRate": 57.4,
+    "wins": 5452,
+    "losses": 4047
   },
   {
-    "name": "Slowbro Trick Room",
-    "elo": 3644,
-    "winRate": 50.8,
-    "wins": 8275,
-    "losses": 8007
-  },
-  {
-    "name": "Bulky Offense",
-    "elo": 3604,
+    "name": "Tailwind",
+    "elo": 12604,
     "winRate": 50.5,
-    "wins": 14230,
-    "losses": 13967
+    "wins": 75065,
+    "losses": 73677
+  },
+  {
+    "name": "Hyper Offense",
+    "elo": 11212,
+    "winRate": 51.3,
+    "wins": 24712,
+    "losses": 23498
+  },
+  {
+    "name": "Mega Chesnaught",
+    "elo": 10924,
+    "winRate": 53.9,
+    "wins": 8140,
+    "losses": 6962
+  },
+  {
+    "name": "Hard Trick Room",
+    "elo": 10276,
+    "winRate": 53.5,
+    "wins": 8285,
+    "losses": 7188
+  },
+  {
+    "name": "Mega Charizard",
+    "elo": 10108,
+    "winRate": 51.6,
+    "wins": 17086,
+    "losses": 16010
+  },
+  {
+    "name": "Mega Delphox",
+    "elo": 8500,
+    "winRate": 52.8,
+    "wins": 8129,
+    "losses": 7254
+  },
+  {
+    "name": "Hisuian Typhlosion Build",
+    "elo": 8444,
+    "winRate": 53,
+    "wins": 7630,
+    "losses": 6762
+  },
+  {
+    "name": "Kleavor Build",
+    "elo": 8420,
+    "winRate": 52.8,
+    "wins": 8211,
+    "losses": 7346
   },
   {
     "name": "Mega Excadrill",
-    "elo": 3436,
-    "winRate": 50.7,
-    "wins": 8578,
-    "losses": 8336
+    "elo": 8228,
+    "winRate": 52.7,
+    "wins": 8168,
+    "losses": 7327
+  },
+  {
+    "name": "Sun Trick Room",
+    "elo": 7740,
+    "winRate": 50.4,
+    "wins": 47308,
+    "losses": 46528
+  },
+  {
+    "name": "Sun Hyper Offense",
+    "elo": 7596,
+    "winRate": 58.3,
+    "wins": 2665,
+    "losses": 1903
+  },
+  {
+    "name": "Beat Up",
+    "elo": 7484,
+    "winRate": 58.1,
+    "wins": 2693,
+    "losses": 1945
   },
   {
     "name": "Mega Metagross",
-    "elo": 3220,
+    "elo": 7260,
+    "winRate": 50.3,
+    "wins": 58081,
+    "losses": 57361
+  },
+  {
+    "name": "Dragon Spam",
+    "elo": 7220,
+    "winRate": 57.8,
+    "wins": 2648,
+    "losses": 1933
+  },
+  {
+    "name": "Offense",
+    "elo": 6820,
+    "winRate": 52,
+    "wins": 8446,
+    "losses": 7781
+  },
+  {
+    "name": "Pivot Chain",
+    "elo": 6780,
+    "winRate": 57.3,
+    "wins": 2598,
+    "losses": 1938
+  },
+  {
+    "name": "Mega Drampa",
+    "elo": 6372,
+    "winRate": 51.9,
+    "wins": 8387,
+    "losses": 7778
+  },
+  {
+    "name": "Mega Venusaur",
+    "elo": 6132,
+    "winRate": 51.8,
+    "wins": 8262,
+    "losses": 7683
+  },
+  {
+    "name": "Mega Heracross",
+    "elo": 5828,
+    "winRate": 51.7,
+    "wins": 8225,
+    "losses": 7684
+  },
+  {
+    "name": "Heracross Base",
+    "elo": 5780,
+    "winRate": 52.5,
+    "wins": 5668,
+    "losses": 5133
+  },
+  {
+    "name": "Mega Lopunny",
+    "elo": 5740,
+    "winRate": 51.6,
+    "wins": 8405,
+    "losses": 7875
+  },
+  {
+    "name": "Standard",
+    "elo": 5652,
     "winRate": 50.1,
-    "wins": 58593,
-    "losses": 58378
+    "wins": 96034,
+    "losses": 95515
+  },
+  {
+    "name": "Hydrapple Build",
+    "elo": 5516,
+    "winRate": 51.6,
+    "wins": 8166,
+    "losses": 7664
+  },
+  {
+    "name": "Balance",
+    "elo": 5300,
+    "winRate": 51.1,
+    "wins": 11042,
+    "losses": 10567
+  },
+  {
+    "name": "Sun",
+    "elo": 5188,
+    "winRate": 50.5,
+    "wins": 22635,
+    "losses": 22174
+  },
+  {
+    "name": "Aurora Veil",
+    "elo": 5188,
+    "winRate": 54.6,
+    "wins": 2721,
+    "losses": 2260
+  },
+  {
+    "name": "Mega Emboar",
+    "elo": 4900,
+    "winRate": 51.4,
+    "wins": 8016,
+    "losses": 7591
+  },
+  {
+    "name": "Ampharos Base",
+    "elo": 4868,
+    "winRate": 52,
+    "wins": 5599,
+    "losses": 5178
+  },
+  {
+    "name": "Fan Rotom Build",
+    "elo": 4596,
+    "winRate": 51.8,
+    "wins": 5518,
+    "losses": 5131
+  },
+  {
+    "name": "Tsareena Build",
+    "elo": 4380,
+    "winRate": 51.1,
+    "wins": 8386,
+    "losses": 8026
+  },
+  {
+    "name": "Metagross Core",
+    "elo": 4316,
+    "winRate": 51.1,
+    "wins": 8275,
+    "losses": 7923
+  },
+  {
+    "name": "Steel Stall",
+    "elo": 4244,
+    "winRate": 53.4,
+    "wins": 2667,
+    "losses": 2324
+  },
+  {
+    "name": "Body Press",
+    "elo": 4196,
+    "winRate": 53.4,
+    "wins": 2679,
+    "losses": 2342
+  },
+  {
+    "name": "Bulky Offense",
+    "elo": 4044,
+    "winRate": 50.6,
+    "wins": 14139,
+    "losses": 13821
+  },
+  {
+    "name": "Incineroar Balance",
+    "elo": 4020,
+    "winRate": 51,
+    "wins": 8273,
+    "losses": 7958
+  },
+  {
+    "name": "Mega Abomasnow",
+    "elo": 4004,
+    "winRate": 51,
+    "wins": 8104,
+    "losses": 7791
+  },
+  {
+    "name": "Mega Tyranitar",
+    "elo": 3932,
+    "winRate": 50.9,
+    "wins": 8419,
+    "losses": 8115
+  },
+  {
+    "name": "Mega Gallade",
+    "elo": 3876,
+    "winRate": 50.9,
+    "wins": 8193,
+    "losses": 7896
+  },
+  {
+    "name": "Tailwind Offense",
+    "elo": 3844,
+    "winRate": 50.7,
+    "wins": 11228,
+    "losses": 10935
   }
 ];
 
@@ -8808,403 +8808,403 @@ export const SIM_ARCHETYPES: SimArchetypeData[] = [
 export const SIM_MOVES: SimMoveData[] = [
   {
     "name": "Beat Up",
-    "winRate": 58.7,
-    "appearances": 4612
-  },
-  {
-    "name": "Electro Shot",
-    "winRate": 56,
-    "appearances": 171267
+    "winRate": 58.1,
+    "appearances": 4638
   },
   {
     "name": "Decorate",
-    "winRate": 54.3,
-    "appearances": 14888
+    "winRate": 56.7,
+    "appearances": 14209
   },
   {
-    "name": "Curse",
-    "winRate": 54,
-    "appearances": 25613
-  },
-  {
-    "name": "Pin Missile",
-    "winRate": 53.9,
-    "appearances": 15728
-  },
-  {
-    "name": "Rock Blast",
-    "winRate": 53.5,
-    "appearances": 31324
+    "name": "Electro Shot",
+    "winRate": 56.1,
+    "appearances": 175035
   },
   {
     "name": "Spiky Shield",
-    "winRate": 53.2,
-    "appearances": 24661
+    "winRate": 55,
+    "appearances": 19763
   },
   {
-    "name": "Bullet Seed",
-    "winRate": 53.1,
-    "appearances": 15596
-  },
-  {
-    "name": "Beak Blast",
-    "winRate": 53.1,
-    "appearances": 15596
+    "name": "Wood Hammer",
+    "winRate": 53.8,
+    "appearances": 50504
   },
   {
     "name": "Grass Knot",
     "winRate": 53,
-    "appearances": 15586
-  },
-  {
-    "name": "High Horsepower",
-    "winRate": 52.9,
-    "appearances": 41524
-  },
-  {
-    "name": "Wood Hammer",
-    "winRate": 52.8,
-    "appearances": 56241
-  },
-  {
-    "name": "Megahorn",
-    "winRate": 52.7,
-    "appearances": 10807
-  },
-  {
-    "name": "Body Press",
-    "winRate": 52.5,
-    "appearances": 384100
+    "appearances": 15766
   },
   {
     "name": "Stone Axe",
-    "winRate": 52.2,
-    "appearances": 16313
+    "winRate": 52.8,
+    "appearances": 15557
   },
   {
-    "name": "Coil",
-    "winRate": 52,
-    "appearances": 32255
-  },
-  {
-    "name": "Trick",
-    "winRate": 51.8,
-    "appearances": 10704
-  },
-  {
-    "name": "Flash Cannon",
-    "winRate": 51.7,
-    "appearances": 949678
-  },
-  {
-    "name": "Overheat",
-    "winRate": 51.7,
-    "appearances": 461420
-  },
-  {
-    "name": "Fire Punch",
-    "winRate": 51.7,
-    "appearances": 42893
-  },
-  {
-    "name": "Taunt",
-    "winRate": 51.7,
-    "appearances": 56517
-  },
-  {
-    "name": "Sacred Sword",
-    "winRate": 51.5,
-    "appearances": 64459
-  },
-  {
-    "name": "Bullet Punch",
-    "winRate": 51.4,
-    "appearances": 823323
-  },
-  {
-    "name": "Fire Fang",
-    "winRate": 51.3,
-    "appearances": 123885
-  },
-  {
-    "name": "Ceaseless Edge",
-    "winRate": 51.3,
-    "appearances": 31850
-  },
-  {
-    "name": "Razor Shell",
-    "winRate": 51.3,
-    "appearances": 31850
+    "name": "Fire Blast",
+    "winRate": 52.6,
+    "appearances": 15076
   },
   {
     "name": "Energy Ball",
+    "winRate": 52.4,
+    "appearances": 108478
+  },
+  {
+    "name": "Body Press",
+    "winRate": 52.3,
+    "appearances": 399920
+  },
+  {
+    "name": "Clanging Scales",
+    "winRate": 52.2,
+    "appearances": 74738
+  },
+  {
+    "name": "Overheat",
+    "winRate": 52.2,
+    "appearances": 424937
+  },
+  {
+    "name": "Trick",
+    "winRate": 52.1,
+    "appearances": 10879
+  },
+  {
+    "name": "Ceaseless Edge",
+    "winRate": 51.9,
+    "appearances": 41967
+  },
+  {
+    "name": "Razor Shell",
+    "winRate": 51.9,
+    "appearances": 41967
+  },
+  {
+    "name": "Triple Axel",
+    "winRate": 51.9,
+    "appearances": 26792
+  },
+  {
+    "name": "Megahorn",
+    "winRate": 51.8,
+    "appearances": 16428
+  },
+  {
+    "name": "Curse",
+    "winRate": 51.7,
+    "appearances": 37511
+  },
+  {
+    "name": "Pin Missile",
+    "winRate": 51.7,
+    "appearances": 15909
+  },
+  {
+    "name": "Flash Cannon",
+    "winRate": 51.6,
+    "appearances": 982908
+  },
+  {
+    "name": "Stomping Tantrum",
+    "winRate": 51.6,
+    "appearances": 30146
+  },
+  {
+    "name": "Fickle Beam",
+    "winRate": 51.6,
+    "appearances": 15830
+  },
+  {
+    "name": "Volt Switch",
+    "winRate": 51.4,
+    "appearances": 386975
+  },
+  {
+    "name": "High Jump Kick",
+    "winRate": 51.4,
+    "appearances": 32692
+  },
+  {
+    "name": "Bullet Punch",
     "winRate": 51.3,
-    "appearances": 99241
+    "appearances": 778980
   },
   {
-    "name": "Bug Bite",
-    "winRate": 51.2,
-    "appearances": 449793
+    "name": "Air Slash",
+    "winRate": 51.3,
+    "appearances": 298882
   },
   {
-    "name": "Superpower",
+    "name": "Rock Blast",
+    "winRate": 51.3,
+    "appearances": 32193
+  },
+  {
+    "name": "Flamethrower",
     "winRate": 51.2,
-    "appearances": 384284
+    "appearances": 602385
   },
   {
     "name": "Solar Beam",
     "winRate": 51.2,
-    "appearances": 385348
+    "appearances": 352630
   },
   {
-    "name": "X-Scissor",
-    "winRate": 51.2,
-    "appearances": 72925
+    "name": "Bug Bite",
+    "winRate": 51.1,
+    "appearances": 445902
+  },
+  {
+    "name": "Heat Wave",
+    "winRate": 51.1,
+    "appearances": 615925
+  },
+  {
+    "name": "Superpower",
+    "winRate": 51.1,
+    "appearances": 380843
+  },
+  {
+    "name": "Fire Fang",
+    "winRate": 51.1,
+    "appearances": 113540
+  },
+  {
+    "name": "Sacred Sword",
+    "winRate": 51.1,
+    "appearances": 63659
+  },
+  {
+    "name": "High Horsepower",
+    "winRate": 51.1,
+    "appearances": 53666
   },
   {
     "name": "Dark Pulse",
-    "winRate": 51.1,
-    "appearances": 671047
+    "winRate": 51,
+    "appearances": 695105
   },
   {
-    "name": "Quick Attack",
-    "winRate": 51.1,
-    "appearances": 58660
+    "name": "Zen Headbutt",
+    "winRate": 51,
+    "appearances": 622940
   },
   {
     "name": "Eruption",
     "winRate": 51,
-    "appearances": 219187
-  },
-  {
-    "name": "Meteor Mash",
-    "winRate": 51,
-    "appearances": 31883
-  },
-  {
-    "name": "Clanging Scales",
-    "winRate": 51,
-    "appearances": 75278
+    "appearances": 198283
   },
   {
     "name": "Ice Shard",
     "winRate": 51,
-    "appearances": 16034
-  },
-  {
-    "name": "U-turn",
-    "winRate": 50.9,
-    "appearances": 408892
-  },
-  {
-    "name": "Hydro Pump",
-    "winRate": 50.9,
-    "appearances": 663612
-  },
-  {
-    "name": "Zen Headbutt",
-    "winRate": 50.9,
-    "appearances": 678029
-  },
-  {
-    "name": "Heat Wave",
-    "winRate": 50.9,
-    "appearances": 678159
-  },
-  {
-    "name": "Belly Drum",
-    "winRate": 50.8,
-    "appearances": 284946
-  },
-  {
-    "name": "Kowtow Cleave",
-    "winRate": 50.8,
-    "appearances": 782983
-  },
-  {
-    "name": "Earth Power",
-    "winRate": 50.8,
-    "appearances": 473303
-  },
-  {
-    "name": "Air Slash",
-    "winRate": 50.8,
-    "appearances": 346999
-  },
-  {
-    "name": "Discharge",
-    "winRate": 50.8,
-    "appearances": 27159
-  },
-  {
-    "name": "Hidden Power Ground",
-    "winRate": 50.8,
-    "appearances": 5641
-  },
-  {
-    "name": "Whirlwind",
-    "winRate": 50.8,
-    "appearances": 5741
-  },
-  {
-    "name": "Ice Beam",
-    "winRate": 50.7,
-    "appearances": 912986
+    "appearances": 15895
   },
   {
     "name": "Draco Meteor",
+    "winRate": 50.9,
+    "appearances": 586519
+  },
+  {
+    "name": "Kowtow Cleave",
+    "winRate": 50.9,
+    "appearances": 796978
+  },
+  {
+    "name": "Thunderbolt",
+    "winRate": 50.9,
+    "appearances": 555899
+  },
+  {
+    "name": "Bullet Seed",
+    "winRate": 50.9,
+    "appearances": 16284
+  },
+  {
+    "name": "Beak Blast",
+    "winRate": 50.9,
+    "appearances": 16284
+  },
+  {
+    "name": "Revival Blessing",
+    "winRate": 50.9,
+    "appearances": 39017
+  },
+  {
+    "name": "U-turn",
+    "winRate": 50.8,
+    "appearances": 406976
+  },
+  {
+    "name": "Whirlwind",
     "winRate": 50.7,
-    "appearances": 586284
+    "appearances": 5683
+  },
+  {
+    "name": "Hydro Pump",
+    "winRate": 50.7,
+    "appearances": 661487
+  },
+  {
+    "name": "Earth Power",
+    "winRate": 50.7,
+    "appearances": 468241
+  },
+  {
+    "name": "Quick Attack",
+    "winRate": 50.7,
+    "appearances": 58229
   }
 ];
 
 /** Meta tier snapshot from simulation */
 export const SIM_META: SimMetaSnapshot = {
   "tier1": [
-    "Decidueye",
-    "Politoed",
-    "Aerodactyl",
-    "Mega Froslass",
-    "Scizor",
-    "Alcremie",
-    "Mega Lopunny",
+    "Mega Greninja",
+    "Mega Garchomp",
     "Scovillain",
-    "Mega Gyarados",
-    "Archaludon",
     "Mow Rotom",
+    "Chesnaught",
+    "Hisuian Samurott",
+    "Scizor",
+    "Alolan Raichu",
+    "Hisuian Arcanine",
+    "Slowbro",
     "Dragonite",
-    "Mega Clefable",
-    "Clefable",
-    "Mega Tyranitar",
-    "Mega Houndoom",
-    "Gourgeist",
-    "Rotom"
+    "Metagross",
+    "Gengar",
+    "Hatterene",
+    "Victreebel",
+    "Kommo-o",
+    "Klefki",
+    "Primarina"
   ],
   "tier2": [
+    "Mega Starmie",
+    "Snorlax",
+    "Venusaur",
+    "Mega Feraligatr",
+    "Whimsicott",
+    "Mega Gardevoir",
+    "Oranguru",
+    "Feraligatr",
+    "Rhyperior",
+    "Mega Emboar",
+    "Weavile",
+    "Clefable",
+    "Mega Aerodactyl",
+    "Mega Metagross",
+    "Kangaskhan",
+    "Basculegion",
+    "Torkoal",
+    "Fan Rotom",
+    "Diggersby",
+    "Mega Delphox",
+    "Aegislash",
+    "Alcremie",
     "Mega Heracross",
     "Vaporeon",
+    "Mega Steelix",
+    "Mega Excadrill",
     "Golurk",
-    "Mega Pinsir",
-    "Primarina",
-    "Mimikyu",
-    "Froslass",
-    "Mega Scovillain",
-    "Stunfisk",
+    "Charizard",
+    "Blastoise",
+    "Mega Houndoom",
+    "Lycanroc",
     "Mega Blastoise",
-    "Sinistcha",
     "Orthworm",
-    "Gyarados",
-    "Mega Raichu X",
-    "Palafin",
-    "Metagross",
-    "Mega Starmie",
-    "Gardevoir",
-    "Noivern",
-    "Lucario",
-    "Skarmory",
-    "Clawitzer",
-    "Mega Charizard X",
-    "Houndoom",
-    "Glaceon",
-    "Runerigus",
-    "Snorlax",
-    "Excadrill",
-    "Kingambit",
-    "Alakazam",
-    "Klefki",
-    "Greninja",
-    "Mega Aerodactyl",
-    "Hisuian Typhlosion",
-    "Empoleon",
-    "Mega Venusaur"
+    "Mega Glimmora",
+    "Sinistcha",
+    "Mega Hawlucha"
   ],
   "tier3": [
-    "Mega Gardevoir",
-    "Chesnaught",
-    "Mega Tatsugiri",
-    "Mega Garchomp Z",
-    "Sylveon",
-    "Altaria",
-    "Hisuian Samurott",
-    "Heracross",
-    "Wash Rotom",
-    "Raichu",
-    "Victreebel",
-    "Mega Alakazam",
-    "Alolan Raichu",
-    "Frost Rotom",
-    "Mega Emboar",
-    "Mega Victreebel",
-    "Mega Chesnaught",
-    "Starmie",
-    "Mega Lucario",
-    "Hatterene",
+    "Polteageist",
+    "Leafeon",
+    "Milotic",
+    "Tinkaton",
+    "Absol",
+    "Hisuian Zoroark",
+    "Mega Gallade",
     "Corviknight",
-    "Blastoise",
-    "Hisuian Decidueye",
+    "Ninetales",
+    "Slowking",
+    "Ursaluna",
     "Emboar",
     "Steelix",
-    "Gliscor",
-    "Mega Raichu Y",
-    "Alolan Ninetales",
-    "Quaquaval",
-    "Mega Abomasnow",
-    "Galarian Stunfisk",
-    "Kangaskhan",
+    "Heat Rotom",
+    "Gyarados",
+    "Mega Tyranitar",
+    "Hisuian Typhlosion",
     "Dondozo",
-    "Mega Glimmora",
-    "Leafeon",
-    "Hydreigon",
-    "Araquanid",
-    "Mega Garchomp",
-    "Meowscarada",
-    "Mudsdale",
-    "Sandaconda",
-    "Aegislash",
-    "Hippowdon",
-    "Tyranitar",
-    "Mega Dragonite",
-    "Meganium",
-    "Mega Excadrill",
-    "Emolga",
-    "Incineroar",
-    "Slowbro",
-    "Pawmot",
-    "Mr. Rime",
-    "Ursaluna",
-    "Mega Kangaskhan",
-    "Ninetales",
-    "Gengar",
-    "Tinkaton",
+    "Mega Lopunny",
+    "Greninja",
+    "Excadrill",
     "Vanilluxe",
-    "Mega Greninja",
-    "Feraligatr",
-    "Kleavor",
-    "Pinsir",
-    "Mega Meganium",
-    "Arcanine"
+    "Tyranitar",
+    "Houndoom",
+    "Garganacl",
+    "Politoed",
+    "Drampa",
+    "Mega Clefable",
+    "Mega Venusaur",
+    "Froslass",
+    "Tatsugiri",
+    "Alolan Ninetales",
+    "Mega Dragonite",
+    "Heracross",
+    "Pelipper",
+    "Infernape",
+    "Abomasnow",
+    "Mega Kangaskhan",
+    "Glaceon",
+    "Torterra",
+    "Morpeko",
+    "Mega Victreebel",
+    "Galarian Stunfisk",
+    "Mega Pinsir",
+    "Stunfisk",
+    "Mega Scizor",
+    "Azumarill",
+    "Raichu",
+    "Mega Garchomp Z",
+    "Meowstic",
+    "Mega Charizard X",
+    "Samurott",
+    "Mega Gyarados",
+    "Krookodile",
+    "Umbreon",
+    "Dragapult",
+    "Lucario",
+    "Kingambit",
+    "Tyrantrum",
+    "Garchomp",
+    "Gliscor",
+    "Decidueye",
+    "Sandaconda",
+    "Ampharos"
   ],
   "dominantArchetypes": [
-    "Mega Clefable",
     "Charizard Base",
-    "Mega Charizard",
+    "Sand",
     "Chesnaught Base",
-    "Sand"
+    "Mega Garchomp",
+    "Scovillain Base"
   ],
   "underratedPokemon": [],
   "overratedPokemon": [
     "Meowstic",
-    "Beedrill",
-    "Galarian Slowbro",
-    "Mega Sableye",
-    "Espeon"
+    "Galarian Slowking",
+    "Espeon",
+    "Maushold",
+    "Frost Rotom"
   ],
   "bestCores": [
-    "Mega Clefable + Incineroar",
-    "Mega Clefable + Kingambit",
-    "Mega Clefable + Metagross",
-    "Archaludon + Mega Clefable",
-    "Mega Charizard X + Kommo-o"
+    "Mega Feraligatr + Kommo-o",
+    "Archaludon + Mega Feraligatr",
+    "Heat Rotom + Mega Feraligatr",
+    "Arcanine + Kommo-o",
+    "Archaludon + Kommo-o"
   ]
 };
 
@@ -9212,4 +9212,4 @@ export const SIM_META: SimMetaSnapshot = {
 export const SIM_TOTAL_BATTLES = 2000000;
 
 /** Simulation date */
-export const SIM_DATE = "2026-03-27T22:19:04.276Z";
+export const SIM_DATE = "2026-03-28T00:01:53.034Z";

@@ -6180,8 +6180,7 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "name": "Mega Raichu X",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10304.png",
         "types": [
-          "electric",
-          "fighting"
+          "electric"
         ],
         "baseStats": {
           "hp": 60,
@@ -6204,8 +6203,7 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "name": "Mega Raichu Y",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10305.png",
         "types": [
-          "electric",
-          "psychic"
+          "electric"
         ],
         "baseStats": {
           "hp": 60,
@@ -19292,10 +19290,10 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         ],
         "baseStats": {
           "hp": 60,
-          "attack": 140,
-          "defense": 105,
+          "attack": 115,
+          "defense": 95,
           "spAtk": 130,
-          "spDef": 105,
+          "spDef": 100,
           "speed": 120
         },
         "abilities": [
@@ -26569,9 +26567,9 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         },
         "abilities": [
           {
-            "name": "Dragon Aura",
-            "description": "Boosts the power of Dragon and Flying-type moves by 30%. On Mega Evolution, raises Speed by one stage.",
-            "isChampions": true
+            "name": "Multiscale",
+            "description": "Reduces damage taken when HP is full.",
+            "isChampions": false
           }
         ],
         "isMega": true
@@ -56342,8 +56340,7 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "name": "Mega Garchomp Z",
         "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10058.png",
         "types": [
-          "dragon",
-          "ground"
+          "dragon"
         ],
         "baseStats": {
           "hp": 108,
@@ -66003,9 +66000,9 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         },
         "abilities": [
           {
-            "name": "Frozen Veil",
-            "description": "Ice-type moves gain 30% power and have a 30% chance to freeze the target. Immune to hail damage.",
-            "isChampions": true
+            "name": "Snow Warning",
+            "description": "Summons a hailstorm when entering battle.",
+            "isChampions": false
           }
         ],
         "isMega": true
@@ -71624,9 +71621,9 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         },
         "abilities": [
           {
-            "name": "Reckless Flame",
-            "description": "Recoil moves deal 30% more damage and Fire-type moves gain priority at full HP.",
-            "isChampions": true
+            "name": "Mold Breaker",
+            "description": "Moves can be used on the target regardless of its Abilities.",
+            "isChampions": false
           }
         ],
         "isMega": true
@@ -84964,9 +84961,9 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         },
         "abilities": [
           {
-            "name": "Iron Thorns",
-            "description": "Takes 50% less damage from contact moves. Attackers that make contact lose 1/8 of their max HP.",
-            "isChampions": true
+            "name": "Bulletproof",
+            "description": "Protects the Pokémon from some ball and bomb moves.",
+            "isChampions": false
           }
         ],
         "isMega": true
@@ -85980,9 +85977,9 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         },
         "abilities": [
           {
-            "name": "Astral Flame",
-            "description": "Fire and Psychic-type moves ignore the target's stat changes and Abilities.",
-            "isChampions": true
+            "name": "Levitate",
+            "description": "By floating in the air, the Pokémon receives full immunity to all Ground-type moves.",
+            "isChampions": false
           }
         ],
         "isMega": true
@@ -86879,9 +86876,9 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         },
         "abilities": [
           {
-            "name": "Protean Surge",
-            "description": "All moves gain STAB. The Pokémon changes type to match the move it uses.",
-            "isChampions": true
+            "name": "Protean",
+            "description": "Changes the Pokémon's type to the type of the move it's about to use.",
+            "isChampions": false
           }
         ],
         "isMega": true

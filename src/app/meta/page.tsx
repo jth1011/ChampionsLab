@@ -35,14 +35,24 @@ import {
   SIM_TOTAL_BATTLES, SIM_DATE, SIM_MOVES,
 } from "@/lib/simulation-data";
 
-// ── TIER CALCULATION ─────────────────────────────────────────────────────
+// ── PERCENTILE-BASED TIER CALCULATION ────────────────────────────────────
+const _qualifiedWRs = Object.values(SIM_POKEMON)
+  .filter(p => p.appearances >= 500)
+  .map(p => p.winRate)
+  .sort((a, b) => b - a);
+const _qLen = _qualifiedWRs.length;
+const TIER_S = _qualifiedWRs[Math.max(0, Math.floor(_qLen * 0.04))] ?? 55;
+const TIER_A = _qualifiedWRs[Math.max(0, Math.floor(_qLen * 0.15))] ?? 51;
+const TIER_B = _qualifiedWRs[Math.max(0, Math.floor(_qLen * 0.65))] ?? 46;
+const TIER_C = _qualifiedWRs[Math.max(0, Math.floor(_qLen * 0.88))] ?? 40;
+
 function getMLTier(wr: number, games: number): "S" | "A" | "B" | "C" | "D" {
   if (games < 500) return "D";   // Insufficient data
-  if (wr >= 56) return "S";      // Dominant
-  if (wr >= 52) return "A";      // Above average
-  if (wr >= 49) return "B";      // Average / viable
-  if (wr >= 46) return "C";      // Below average
-  return "D";                    // Weak
+  if (wr >= TIER_S) return "S";  // Top 4%
+  if (wr >= TIER_A) return "A";  // Top 15%
+  if (wr >= TIER_B) return "B";  // Top 65%
+  if (wr >= TIER_C) return "C";  // Top 88%
+  return "D";                    // Bottom 12%
 }
 
 // ── ML SIMULATION RESULTS — derived from simulation-data.ts ────────────

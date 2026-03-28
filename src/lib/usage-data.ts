@@ -637,10 +637,11 @@ export const USAGE_DATA: Record<number, CommonSet[]> = {
 
   // Basculegion (id: 902)
   902: [
-    { name: "Physical Attacker", nature: "Adamant", ability: "Swift Swim", item: "Life Orb", moves: ["Wave Crash", "Aqua Jet", "Crunch", "Protect"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 } },
-    { name: "Choice Band", nature: "Adamant", ability: "Adaptability", item: "Choice Band", moves: ["Wave Crash", "Crunch", "Aqua Jet", "Head Smash"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 } },
+    { name: "Last Respects Sweeper", nature: "Adamant", ability: "Swift Swim", item: "Choice Band", moves: ["Last Respects", "Wave Crash", "Aqua Jet", "Shadow Ball"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 } },
+    { name: "Physical Attacker", nature: "Adamant", ability: "Swift Swim", item: "Life Orb", moves: ["Wave Crash", "Last Respects", "Aqua Jet", "Protect"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 } },
     { name: "Special Swift Swim", nature: "Modest", ability: "Swift Swim", item: "Choice Specs", moves: ["Hydro Pump", "Shadow Ball", "Ice Beam", "Surf"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 } },
-    { name: "Rain Sweeper", nature: "Jolly", ability: "Swift Swim", item: "Life Orb", moves: ["Wave Crash", "Crunch", "Aqua Jet", "Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 } },
+    { name: "Adaptability Wallbreaker", nature: "Adamant", ability: "Adaptability", item: "Life Orb", moves: ["Wave Crash", "Last Respects", "Shadow Ball", "Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 } },
+    { name: "Focus Sash Lead", nature: "Jolly", ability: "Swift Swim", item: "Focus Sash", moves: ["Last Respects", "Wave Crash", "Shadow Ball", "Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 } },
   ],
 
   // Sneasler (id: 903)
