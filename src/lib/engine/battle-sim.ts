@@ -146,13 +146,105 @@ function getActualSpeed(mon: BattlePokemon, field: FieldState, sideIndex: 1 | 2)
   return Math.floor(speed);
 }
 
-// ── AI DECISION ENGINE ───────────────────────────────────────────────────────
+// ── AI DECISION ENGINE (VGC WORLD-CLASS) ─────────────────────────────────────
+// Human-like AI that models top VGC play: threat assessment, focus fire,
+// protect reads, position awareness, endgame logic, intelligent switching
 
 interface MoveChoice {
   moveIndex: number;
   moveName: string;
-  targetSlot: number; // 0 or 1 for opponent slots
+  targetSlot: number; // 0 or 1 for opponent slots, -1 for self/field
   score: number;
+}
+
+/** Estimate how much damage an opponent can deal to a mon this turn */
+function estimateThreatLevel(
+  attacker: BattlePokemon,
+  defender: BattlePokemon,
+  field: FieldState,
+  attackerSide: 1 | 2
+): number {
+  let maxPercent = 0;
+  const options: DamageCalcOptions = {
+    weather: field.weather as DamageCalcOptions["weather"],
+    isDoubles: true,
+    reflect: (attackerSide === 1 ? field.side2 : field.side1).reflect > 0,
+    lightScreen: (attackerSide === 1 ? field.side2 : field.side1).lightScreen > 0,
+  };
+  for (const moveName of attacker.set.moves) {
+    const move = getMove(moveName);
+    if (!move || move.category === "status") continue;
+    const atk: DamageCalcPokemon = {
+      baseStats: attacker.effectiveBaseStats, sp: attacker.set.sp,
+      nature: attacker.set.nature as NatureName, types: attacker.types,
+      ability: attacker.ability, item: attacker.item,
+      atkStages: attacker.boosts.attack, spAtkStages: attacker.boosts.spAtk,
+      isBurned: attacker.status === "burn",
+      currentHPPercent: (attacker.currentHP / attacker.maxHP) * 100,
+    };
+    const def: DamageCalcTarget = {
+      baseStats: defender.effectiveBaseStats, sp: defender.set.sp,
+      nature: defender.set.nature as NatureName, types: defender.types,
+      ability: defender.ability, item: defender.item,
+      defStages: defender.boosts.defense, spDefStages: defender.boosts.spDef,
+    };
+    const result = calculateDamage(atk, def, moveName, options);
+    if (result.percentHP[0] > maxPercent) maxPercent = result.percentHP[0];
+  }
+  return maxPercent;
+}
+
+/** Check if ally can KO the same target (for focus fire coordination) */
+function allyCanKO(
+  ally: BattlePokemon | null,
+  target: BattlePokemon,
+  field: FieldState,
+  allySide: 1 | 2
+): boolean {
+  if (!ally || ally.isFainted) return false;
+  const options: DamageCalcOptions = {
+    weather: field.weather as DamageCalcOptions["weather"],
+    isDoubles: true,
+    reflect: (allySide === 1 ? field.side2 : field.side1).reflect > 0,
+    lightScreen: (allySide === 1 ? field.side2 : field.side1).lightScreen > 0,
+  };
+  for (const moveName of ally.set.moves) {
+    const move = getMove(moveName);
+    if (!move || move.category === "status") continue;
+    const atk: DamageCalcPokemon = {
+      baseStats: ally.effectiveBaseStats, sp: ally.set.sp,
+      nature: ally.set.nature as NatureName, types: ally.types,
+      ability: ally.ability, item: ally.item,
+      atkStages: ally.boosts.attack, spAtkStages: ally.boosts.spAtk,
+      isBurned: ally.status === "burn",
+      currentHPPercent: (ally.currentHP / ally.maxHP) * 100,
+    };
+    const def: DamageCalcTarget = {
+      baseStats: target.effectiveBaseStats, sp: target.set.sp,
+      nature: target.set.nature as NatureName, types: target.types,
+      ability: target.ability, item: target.item,
+      defStages: target.boosts.defense, spDefStages: target.boosts.spDef,
+    };
+    const result = calculateDamage(atk, def, moveName, options);
+    if (result.isOHKO) return true;
+  }
+  return false;
+}
+
+/** Estimate if user is being doubled (both opponents can threaten it) */
+function isBeingDoubled(
+  user: BattlePokemon,
+  opponents: (BattlePokemon | null)[],
+  field: FieldState,
+  oppSide: 1 | 2
+): boolean {
+  let threatsAbove30 = 0;
+  for (const opp of opponents) {
+    if (!opp || opp.isFainted) continue;
+    const threat = estimateThreatLevel(opp, user, field, oppSide);
+    if (threat >= 30) threatsAbove30++;
+  }
+  return threatsAbove30 >= 2;
 }
 
 function evaluateMoveOption(
@@ -161,12 +253,14 @@ function evaluateMoveOption(
   targets: (BattlePokemon | null)[],
   allies: (BattlePokemon | null)[],
   moveName: string,
-  field: FieldState
+  field: FieldState,
+  state: BattleState
 ): MoveChoice[] {
   const move = getMove(moveName);
   if (!move) return [];
   
   const choices: MoveChoice[] = [];
+  const oppSide: 1 | 2 = userSide === 1 ? 2 : 1;
   const options: DamageCalcOptions = {
     weather: field.weather as DamageCalcOptions["weather"],
     isDoubles: true,
@@ -175,53 +269,271 @@ function evaluateMoveOption(
     auroraVeil: (userSide === 1 ? field.side2 : field.side1).auroraVeil > 0,
   };
   
+  // Context: our alive counts and theirs for position awareness
+  const myTeam = userSide === 1 ? state.team1 : state.team2;
+  const oppTeam = userSide === 1 ? state.team2 : state.team1;
+  const myAlive = myTeam.filter(p => p.isAlive).length;
+  const oppAlive = oppTeam.filter(p => p.isAlive).length;
+  const isAhead = myAlive > oppAlive;
+  const isBehind = myAlive < oppAlive;
+  const isEndgame = myAlive <= 2 && oppAlive <= 2;
+  
+  // Check incoming threats
+  const beingDoubled = isBeingDoubled(user, targets, field, oppSide);
+  let maxIncomingThreat = 0;
+  for (const opp of targets) {
+    if (!opp || opp.isFainted) continue;
+    const threat = estimateThreatLevel(opp, user, field, oppSide);
+    if (threat > maxIncomingThreat) maxIncomingThreat = threat;
+  }
+  
   // Status moves evaluation
   if (move.category === "status") {
     let score = 0;
     
-    // Protect: good when threatened or stalling
+    // Protect: key VGC move — value depends on position
     if (move.flags.protect) {
-      score = 35 - user.protectCount * 25;
-      if (user.currentHP < user.maxHP * 0.5) score += 15;
-      choices.push({ moveIndex: 0, moveName, targetSlot: -1, score });
+      const protectPenalty = user.protectCount * 40; // Much harder to double-protect
+      score = 25 - protectPenalty;
+      
+      // Protect is EXCELLENT when being doubled into
+      if (beingDoubled) score += 40;
+      
+      // Protect when low HP and threatened
+      if (user.currentHP < user.maxHP * 0.4 && maxIncomingThreat >= 50) score += 30;
+      
+      // Protect when ally can KO a threat  
+      const ally = allies.find(a => a && !a.isFainted);
+      if (ally) {
+        for (const opp of targets) {
+          if (opp && !opp.isFainted && allyCanKO(ally, opp, field, userSide)) score += 15;
+        }
+      }
+      
+      // Protect to stall when ahead in endgame
+      if (isAhead && isEndgame) score += 20;
+      
+      // Protect to scout turn 1
+      if (state.turn === 0 && user.currentHP === user.maxHP) score += 10;
+      
+      // When Tailwind/TR is about to end, protect to stall
+      const mySide = userSide === 1 ? field.side1 : field.side2;
+      if (mySide.tailwind === 1 && isAhead) score += 15;
+      
+      choices.push({ moveIndex: 0, moveName, targetSlot: -1, score: Math.max(score, 2) });
       return choices;
     }
     
-    // Trick Room
+    // Trick Room — crucial VGC speed control
     if (moveName === "Trick Room") {
-      const avgSpeed = (user.stats.speed + (allies[0]?.stats.speed ?? 0)) / 2;
-      score = avgSpeed < 70 ? 80 : 20;
-      if (field.trickRoom) score = avgSpeed < 70 ? 10 : 70; // Re-reverse if fast
+      const myActive = userSide === 1 ? state.active1 : state.active2;
+      const allySpeeds = myActive.filter(Boolean).map(m => m!.stats.speed);
+      const avgMySpeed = allySpeeds.reduce((a, b) => a + b, 0) / allySpeeds.length;
+      const oppSpeeds = targets.filter(Boolean).map(t => t!.stats.speed);
+      const avgOppSpeed = oppSpeeds.reduce((a, b) => a + b, 0) / Math.max(oppSpeeds.length, 1);
+      
+      if (!field.trickRoom) {
+        // Set TR if our side is slower
+        score = avgMySpeed < avgOppSpeed ? 85 : 15;
+        // Much more valuable if our bench has slow mons too
+        const benchSlow = myTeam.filter(p => p.isAlive && !myActive.includes(p) && p.stats.speed < 70);
+        if (benchSlow.length > 0) score += 10;
+      } else {
+        // Reverse TR if we're actually faster
+        score = avgMySpeed > avgOppSpeed ? 75 : 8;
+      }
+      
+      // Don't set TR if already winning speed control
+      const mySide = userSide === 1 ? field.side1 : field.side2;
+      if (mySide.tailwind > 0 && !field.trickRoom) score -= 30;
+      
       choices.push({ moveIndex: 0, moveName, targetSlot: -1, score });
       return choices;
     }
     
-    // Tailwind
+    // Tailwind — premier speed control
     if (moveName === "Tailwind") {
       const side = userSide === 1 ? field.side1 : field.side2;
-      score = side.tailwind > 0 ? 5 : 65;
+      if (side.tailwind > 0) {
+        score = 3; // Already have it
+      } else {
+        score = 72;
+        // Less valuable if we already outspeed or have TR
+        if (field.trickRoom) score = 10;
+        // More valuable early
+        if (state.turn <= 1) score += 10;
+        // Less valuable if only 1 mon left
+        if (allies.filter(a => a && !a.isFainted).length === 0 && myAlive <= 1) score -= 20;
+      }
       choices.push({ moveIndex: 0, moveName, targetSlot: -1, score });
       return choices;
     }
     
-    // Fake Out
+    // Fake Out — intelligent targeting
     if (moveName === "Fake Out" && user.canFakeOut) {
       for (let i = 0; i < targets.length; i++) {
         const t = targets[i];
         if (!t || t.isFainted) continue;
-        score = 70; // Fake Out is almost always good
+        score = 55;
+        
+        // Target the biggest threat
+        const threatToUs = estimateThreatLevel(t, user, field, oppSide);
+        const ally = allies.find(a => a && !a.isFainted);
+        const threatToAlly = ally ? estimateThreatLevel(t, ally, field, oppSide) : 0;
+        const maxThreat = Math.max(threatToUs, threatToAlly);
+        score += maxThreat * 0.3;
+        
+        // Fake Out the TR/Tailwind setter to prevent setup
+        if (t.set.moves.includes("Trick Room") || t.set.moves.includes("Tailwind")) score += 20;
+        
+        // Fake Out support mons (Follow Me users, etc.)
+        if (t.set.moves.includes("Follow Me") || t.set.moves.includes("Rage Powder")) score += 15;
+        
+        // Don't Fake Out mons with Inner Focus/Clear Body
+        if (["Inner Focus", "Shield Dust", "Own Tempo"].includes(t.ability)) score -= 40;
+        
+        // Less valuable on weakened mons
+        if (t.currentHP < t.maxHP * 0.3) score -= 20;
+        
         choices.push({ moveIndex: 0, moveName, targetSlot: i, score });
       }
       return choices;
     }
     
-    // Support moves (Helping Hand, etc.)
-    score = 30;
+    // Follow Me / Rage Powder — redirect support
+    if (moveName === "Follow Me" || moveName === "Rage Powder") {
+      const ally = allies.find(a => a && !a.isFainted);
+      if (ally) {
+        score = 40;
+        // High value if ally is setting up (TR, Tailwind, boosts)
+        if (ally.set.moves.some(m => ["Trick Room", "Tailwind", "Swords Dance", "Calm Mind", "Dragon Dance", "Nasty Plot", "Shell Smash"].includes(m))) score += 30;
+        // High value if ally is threatened
+        const allyThreat = Math.max(...targets.filter(Boolean).map(t => estimateThreatLevel(t!, ally, field, oppSide)));
+        if (allyThreat >= 80) score += 20;
+      } else {
+        score = 5;
+      }
+      choices.push({ moveIndex: 0, moveName, targetSlot: -1, score });
+      return choices;
+    }
+    
+    // Helping Hand — boost ally's attack
+    if (moveName === "Helping Hand") {
+      const ally = allies.find(a => a && !a.isFainted);
+      if (ally) {
+        score = 35;
+        // Check if Helping Hand pushes ally to a KO
+        for (const opp of targets) {
+          if (!opp || opp.isFainted) continue;
+          // Rough check: if ally deals 60-99% without help, helping hand makes it a KO
+          for (const allyMove of ally.set.moves) {
+            const am = getMove(allyMove);
+            if (!am || am.category === "status") continue;
+            const atk: DamageCalcPokemon = {
+              baseStats: ally.effectiveBaseStats, sp: ally.set.sp,
+              nature: ally.set.nature as NatureName, types: ally.types,
+              ability: ally.ability, item: ally.item,
+              atkStages: ally.boosts.attack, spAtkStages: ally.boosts.spAtk,
+              isBurned: ally.status === "burn",
+              currentHPPercent: (ally.currentHP / ally.maxHP) * 100,
+            };
+            const def: DamageCalcTarget = {
+              baseStats: opp.effectiveBaseStats, sp: opp.set.sp,
+              nature: opp.set.nature as NatureName, types: opp.types,
+              ability: opp.ability, item: opp.item,
+              defStages: opp.boosts.defense, spDefStages: opp.boosts.spDef,
+            };
+            const res = calculateDamage(atk, def, allyMove, options);
+            const percentVsCurrentHP = (res.damage[0] / opp.currentHP) * 100;
+            // Helping Hand is 1.5x — if base damage is 60-99% of remaining HP, it secures the KO
+            if (percentVsCurrentHP >= 55 && percentVsCurrentHP < 100) {
+              score += 35;
+              break;
+            }
+          }
+        }
+      } else {
+        score = 3;
+      }
+      choices.push({ moveIndex: 0, moveName, targetSlot: -1, score });
+      return choices;
+    }
+    
+    // Will-O-Wisp — weaken physical attackers
+    if (moveName === "Will-O-Wisp" || moveName === "Thunder Wave" || moveName === "Nuzzle") {
+      for (let i = 0; i < targets.length; i++) {
+        const t = targets[i];
+        if (!t || t.isFainted || t.status) continue;
+        score = 35;
+        if (moveName === "Will-O-Wisp") {
+          // Very valuable vs physical attackers
+          if (t.effectiveBaseStats.attack > t.effectiveBaseStats.spAtk) score += 25;
+          // Don't burn Fire types
+          if (t.types.includes("fire")) { score = 0; choices.push({ moveIndex: 0, moveName, targetSlot: i, score }); continue; }
+        }
+        if (moveName === "Thunder Wave" || moveName === "Nuzzle") {
+          // Valuable vs fast threats
+          if (t.stats.speed > user.stats.speed) score += 20;
+          // Don't paralyze Electric or Ground types
+          if (t.types.includes("electric") || t.types.includes("ground")) { score = 0; choices.push({ moveIndex: 0, moveName, targetSlot: i, score }); continue; }
+        }
+        choices.push({ moveIndex: 0, moveName, targetSlot: i, score });
+      }
+      return choices;
+    }
+    
+    // Self-boosting moves (Swords Dance, Calm Mind, Dragon Dance, etc.)
+    if (move.selfBoost) {
+      score = 40;
+      // More valuable with redirect support
+      const redirectAlly = allies.find(a => a && !a.isFainted && a.set.moves.some(m => ["Follow Me", "Rage Powder"].includes(m)));
+      if (redirectAlly) score += 20;
+      // Less valuable when low HP
+      if (user.currentHP < user.maxHP * 0.5) score -= 25;
+      // Less valuable if already boosted
+      const currentBoost = Math.max(user.boosts.attack, user.boosts.spAtk);
+      if (currentBoost >= 2) score -= 20;
+      // More valuable early in battle
+      if (state.turn <= 2) score += 10;
+      choices.push({ moveIndex: 0, moveName, targetSlot: -1, score });
+      return choices;
+    }
+    
+    // Screens (Light Screen, Reflect)
+    if (moveName === "Light Screen" || moveName === "Reflect") {
+      const mySide = userSide === 1 ? field.side1 : field.side2;
+      const alreadyUp = moveName === "Light Screen" ? mySide.lightScreen > 0 : mySide.reflect > 0;
+      score = alreadyUp ? 3 : 45;
+      choices.push({ moveIndex: 0, moveName, targetSlot: -1, score });
+      return choices;
+    }
+    
+    // Encore — lock opponent into a move
+    if (moveName === "Encore") {
+      score = 30;
+      choices.push({ moveIndex: 0, moveName, targetSlot: 0, score });
+      return choices;
+    }
+    
+    // Generic status moves
+    if (move.secondary?.status) {
+      for (let i = 0; i < targets.length; i++) {
+        const t = targets[i];
+        if (!t || t.isFainted || t.status) continue;
+        score = 30;
+        choices.push({ moveIndex: 0, moveName, targetSlot: i, score });
+      }
+      if (choices.length === 0) choices.push({ moveIndex: 0, moveName, targetSlot: 0, score: 5 });
+      return choices;
+    }
+    
+    // Other status moves fallback
+    score = 20;
     choices.push({ moveIndex: 0, moveName, targetSlot: -1, score });
     return choices;
   }
   
-  // Damaging moves
+  // ── DAMAGING MOVES ─────────────────────────────────────────────
   for (let i = 0; i < targets.length; i++) {
     const target = targets[i];
     if (!target || target.isFainted) continue;
@@ -254,28 +566,75 @@ function evaluateMoveOption(
     
     let score = 0;
     
-    // OHKO is highest priority
-    if (result.isOHKO) {
-      score = 100;
+    // Damage-based scoring with current HP awareness
+    const percentOfCurrent = target.currentHP > 0 ? (result.damage[0] / target.currentHP) * 100 : 0;
+    
+    if (result.isOHKO || percentOfCurrent >= 100) {
+      score = 110; // Securing a KO is top priority
+    } else if (percentOfCurrent >= 80) {
+      score = 85 + percentOfCurrent * 0.1; // Near-KO
     } else if (result.is2HKO) {
-      score = 70 + result.percentHP[0] / 2;
+      score = 65 + result.percentHP[0] * 0.2;
     } else {
-      score = result.percentHP[0] * 0.6;
+      score = result.percentHP[0] * 0.55;
     }
     
-    // Priority bonus when both sides are low
-    if (move.priority > 0 && target.currentHP < target.maxHP * 0.4) {
-      score += 20;
+    // Priority move bonus: securing KOs on weakened mons
+    if (move.priority > 0) {
+      if (percentOfCurrent >= 100) score += 25; // Priority KO is extremely safe
+      else if (target.currentHP < target.maxHP * 0.4) score += 15;
     }
     
-    // Spread move bonus (hits both in doubles)
+    // Spread move bonus (hits both opponents in doubles)
     if (isSpreadMove(move)) {
-      score += 15;
+      const otherTarget = targets[1 - i];
+      if (otherTarget && !otherTarget.isFainted) {
+        // Estimate combined damage value
+        const otherDef: DamageCalcTarget = {
+          baseStats: otherTarget.effectiveBaseStats, sp: otherTarget.set.sp,
+          nature: otherTarget.set.nature as NatureName, types: otherTarget.types,
+          ability: otherTarget.ability, item: otherTarget.item,
+          defStages: otherTarget.boosts.defense, spDefStages: otherTarget.boosts.spDef,
+        };
+        const otherResult = calculateDamage(attacker, otherDef, moveName, options);
+        score += otherResult.percentHP[0] * 0.35; // Add value from hitting second target
+      }
+      score += 8; // Small inherent bonus for spread pressure
     }
     
-    // Type effectiveness bonus
-    if (result.effectiveness >= 2) score += 10;
-    if (result.effectiveness === 0) score = 0;
+    // Super effective bonus (shows good attack selection)
+    if (result.effectiveness >= 2) score += 12;
+    if (result.effectiveness >= 4) score += 8; // 4x SE extra bonus
+    
+    // Immune = never use
+    if (result.effectiveness === 0) score = -10;
+    
+    // Focus fire: bonus for targeting a weakened mon (can KO with combined attacks)
+    if (target.currentHP < target.maxHP * 0.6) {
+      score += 8; // Prefer to finish off weakened targets
+    }
+    
+    // Coordinate with ally: if ally can KO this target, prefer the other target
+    const ally = allies.find(a => a && !a.isFainted);
+    if (ally && allyCanKO(ally, target, field, userSide) && !result.isOHKO) {
+      // Ally handles this one — look at the other target (small penalty)
+      score -= 10;
+    }
+    
+    // Don't waste big moves on nearly dead mons (overkill penalty)
+    if (result.isOHKO && target.currentHP < target.maxHP * 0.2 && move.basePower >= 100) {
+      score -= 8; // Slight preference for efficient damage use
+    }
+    
+    // Endgame: when behind, prioritize highest immediate damage
+    if (isBehind && isEndgame) score += percentOfCurrent * 0.15;
+    
+    // Target selection: prefer KO-ing the bigger threat
+    const targetThreat = estimateThreatLevel(target, user, field, oppSide);
+    score += targetThreat * 0.08; // Small bias toward threatening targets
+    
+    // Accuracy penalty for low-accuracy moves
+    if (move.accuracy > 0 && move.accuracy < 90) score -= (100 - move.accuracy) * 0.3;
     
     choices.push({ moveIndex: 0, moveName, targetSlot: i, score });
   }
@@ -288,7 +647,8 @@ function aiChooseAction(
   sideIndex: 1 | 2,
   opponents: (BattlePokemon | null)[],
   allies: (BattlePokemon | null)[],
-  field: FieldState
+  field: FieldState,
+  state: BattleState
 ): { moveName: string; targetSlot: number } {
   const allChoices: MoveChoice[] = [];
   
@@ -297,7 +657,7 @@ function aiChooseAction(
     // Can't use Fake Out after turn 1
     if (moveName === "Fake Out" && !mon.canFakeOut) continue;
     
-    const moveChoices = evaluateMoveOption(mon, sideIndex, opponents, allies, moveName, field);
+    const moveChoices = evaluateMoveOption(mon, sideIndex, opponents, allies, moveName, field, state);
     allChoices.push(...moveChoices);
   }
   
@@ -306,13 +666,21 @@ function aiChooseAction(
     return { moveName: mon.set.moves[0], targetSlot: 0 };
   }
   
-  // Add small randomness (±4 to score) for variety
+  // Human-like variance: ±12 for score randomness (humans aren't perfect calculators)
+  // Higher variance on close decisions simulates human uncertainty
   for (const c of allChoices) {
-    c.score += (Math.random() - 0.5) * 8;
+    c.score += (Math.random() - 0.5) * 24;
   }
   
-  // Pick best option
+  // Occasional suboptimal play (5% chance to pick 2nd-best option — humans misread sometimes)
   allChoices.sort((a, b) => b.score - a.score);
+  if (allChoices.length >= 2 && Math.random() < 0.05) {
+    // Only if the gap is small (within 20 points — humans don't make huge mistakes)
+    if (allChoices[0].score - allChoices[1].score < 20) {
+      return { moveName: allChoices[1].moveName, targetSlot: allChoices[1].targetSlot };
+    }
+  }
+  
   return { moveName: allChoices[0].moveName, targetSlot: allChoices[0].targetSlot };
 }
 
@@ -331,28 +699,76 @@ function createInitialField(): FieldState {
 function applySwitch(state: BattleState, sideIndex: 1 | 2, slot: 0 | 1): void {
   const team = sideIndex === 1 ? state.team1 : state.team2;
   const active = sideIndex === 1 ? state.active1 : state.active2;
+  const opponents = sideIndex === 1 ? state.active2 : state.active1;
+  const oppSide: 1 | 2 = sideIndex === 1 ? 2 : 1;
   
-  // Find a benched alive Pokémon
+  // Find benched alive Pokémon
   const bench = team.filter(p =>
     p.isAlive && !p.isFainted &&
     p !== active[0] && p !== active[1]
   );
   
   if (bench.length > 0) {
-    const next = bench[0];
+    // Intelligent bench selection: score each option
+    let bestMon = bench[0];
+    let bestScore = -Infinity;
+    
+    for (const candidate of bench) {
+      let score = 0;
+      
+      // Type advantage over current opponents
+      for (const opp of opponents) {
+        if (!opp || opp.isFainted) continue;
+        // Offensive coverage: our types vs their defense
+        for (const type of candidate.types) {
+          const eff = getMatchup(type, opp.types);
+          if (eff > 1) score += 15;
+          if (eff < 1) score -= 5;
+        }
+        // Defensive resilience: their types vs our defense
+        for (const oppType of opp.types) {
+          const eff = getMatchup(oppType, candidate.types);
+          if (eff < 1) score += 10;
+          if (eff > 1) score -= 8;
+        }
+      }
+      
+      // Intimidate is very valuable on switch-in
+      if (candidate.ability === "Intimidate") score += 20;
+      
+      // Fake Out available = immediate pressure
+      if (candidate.set.moves.includes("Fake Out")) score += 12;
+      
+      // Weather setter synergy
+      const abilityEffect = getAbilityEffect(candidate.ability);
+      if (abilityEffect?.setsWeather) score += 8;
+      
+      // Prefer mons with more HP remaining
+      score += (candidate.currentHP / candidate.maxHP) * 15;
+      
+      // Prefer mons that match current speed control
+      if (state.field.trickRoom && candidate.stats.speed < 70) score += 10;
+      if (!state.field.trickRoom && candidate.stats.speed > 100) score += 5;
+      
+      if (score > bestScore) {
+        bestScore = score;
+        bestMon = candidate;
+      }
+    }
+    
+    const next = bestMon;
     active[slot] = next;
     next.canFakeOut = true;
     next.protectCount = 0;
     next.boosts = { attack: 0, defense: 0, spAtk: 0, spDef: 0, speed: 0 };
     
     // On-entry abilities
-    const abilityEffect = getAbilityEffect(next.ability);
-    if (abilityEffect?.setsWeather) {
-      state.field.weather = abilityEffect.setsWeather;
+    const entryAbility = getAbilityEffect(next.ability);
+    if (entryAbility?.setsWeather) {
+      state.field.weather = entryAbility.setsWeather;
       state.field.weatherTurns = 5;
     }
     if (next.ability === "Intimidate") {
-      const opponents = sideIndex === 1 ? state.active2 : state.active1;
       for (const opp of opponents) {
         if (opp && opp.isAlive) {
           if (!isIntimidateBlocked(opp)) {
@@ -690,6 +1106,67 @@ function pick4(teamLen: number): number[] {
   return indices.slice(0, Math.min(4, teamLen));
 }
 
+/** Intelligently pick 4 Pokémon and order leads smartly (VGC team preview) */
+function smartPick4(
+  pokemon: ChampionsPokemon[],
+  sets: CommonSet[],
+  oppPokemon: ChampionsPokemon[]
+): number[] {
+  if (pokemon.length <= 4) return Array.from({ length: pokemon.length }, (_, i) => i);
+  
+  // Score each pokemon's value against the opposing team
+  const scores: { idx: number; score: number; isLead: boolean; hasFakeOut: boolean; hasSpeedControl: boolean }[] = [];
+  
+  for (let i = 0; i < pokemon.length; i++) {
+    const p = pokemon[i];
+    const s = sets[i];
+    let score = 50; // Base value
+    
+    // Type coverage vs opponent team
+    for (const opp of oppPokemon) {
+      // Offensive coverage
+      for (const pType of p.types) {
+        const eff = getMatchup(pType, opp.types);
+        if (eff > 1) score += 6;
+      }
+      // Defensive resilience
+      for (const oType of opp.types) {
+        const eff = getMatchup(oType, p.types);
+        if (eff < 1) score += 3;
+      }
+    }
+    
+    const hasFakeOut = s.moves.includes("Fake Out");
+    const hasSpeedControl = s.moves.includes("Tailwind") || s.moves.includes("Trick Room");
+    const isWeather = ["Drought", "Drizzle", "Sand Stream", "Snow Warning"].includes(s.ability);
+    const isIntimidate = s.ability === "Intimidate";
+    
+    // VGC lead qualities
+    if (hasFakeOut) score += 15;
+    if (hasSpeedControl) score += 12;
+    if (isWeather) score += 18;
+    if (isIntimidate) score += 10;
+    
+    // Mega stones are often brought
+    if (isMegaStoneItem(s.item)) score += 10;
+    
+    scores.push({ idx: i, score, isLead: hasFakeOut || hasSpeedControl || isWeather, hasFakeOut, hasSpeedControl });
+  }
+  
+  // Sort by score and take top 4
+  scores.sort((a, b) => b.score - a.score);
+  const selected = scores.slice(0, 4);
+  
+  // Order: leads first (Fake Out > Speed Control > Weather > others)
+  selected.sort((a, b) => {
+    const aLead = (a.hasFakeOut ? 4 : 0) + (a.hasSpeedControl ? 3 : 0) + (a.isLead ? 2 : 0);
+    const bLead = (b.hasFakeOut ? 4 : 0) + (b.hasSpeedControl ? 3 : 0) + (b.isLead ? 2 : 0);
+    return bLead - aLead; // Leads first
+  });
+  
+  return selected.map(s => s.idx);
+}
+
 /** Run a single simulated battle between two teams */
 export function simulateBattle(
   team1Pokemon: ChampionsPokemon[],
@@ -697,9 +1174,9 @@ export function simulateBattle(
   team2Pokemon: ChampionsPokemon[],
   team2Sets: CommonSet[]
 ): { winner: 1 | 2; turnsPlayed: number; team1Remaining: number; team2Remaining: number } {
-  // Randomly pick 4 from 6 (VGC team preview)
-  const idx1 = pick4(team1Pokemon.length);
-  const idx2 = pick4(team2Pokemon.length);
+  // Smart pick 4 from 6 (VGC team preview — intelligent selection)
+  const idx1 = smartPick4(team1Pokemon, team1Sets, team2Pokemon);
+  const idx2 = smartPick4(team2Pokemon, team2Sets, team1Pokemon);
   const bt1 = idx1.map(i => createBattlePokemon(team1Pokemon[i], team1Sets[i]));
   const bt2 = idx2.map(i => createBattlePokemon(team2Pokemon[i], team2Sets[i]));
   
@@ -765,7 +1242,7 @@ export function simulateBattle(
     ] as [BattlePokemon | null, 1 | 2, (BattlePokemon | null)[], (BattlePokemon | null)[]][]) {
       if (!mon || mon.isFainted) continue;
       
-      const choice = aiChooseAction(mon, sideIndex, opponents, allies, state.field);
+      const choice = aiChooseAction(mon, sideIndex, opponents, allies, state.field, state);
       const move = getMove(choice.moveName);
       const priority = move?.priority ?? 0;
       
@@ -901,8 +1378,8 @@ export function simulateBattleWithLog(
   team2Pokemon: ChampionsPokemon[],
   team2Sets: CommonSet[]
 ): DetailedBattleResult {
-  const idx1 = pick4(team1Pokemon.length);
-  const idx2 = pick4(team2Pokemon.length);
+  const idx1 = smartPick4(team1Pokemon, team1Sets, team2Pokemon);
+  const idx2 = smartPick4(team2Pokemon, team2Sets, team1Pokemon);
   const bt1 = idx1.map(i => createBattlePokemon(team1Pokemon[i], team1Sets[i]));
   const bt2 = idx2.map(i => createBattlePokemon(team2Pokemon[i], team2Sets[i]));
 
@@ -968,7 +1445,7 @@ export function simulateBattleWithLog(
       [state.active2[1], 2, state.active1, [state.active2[0]]],
     ] as [BattlePokemon | null, 1 | 2, (BattlePokemon | null)[], (BattlePokemon | null)[]][]) {
       if (!mon || mon.isFainted) continue;
-      const choice = aiChooseAction(mon, sideIndex, opponents, allies, state.field);
+      const choice = aiChooseAction(mon, sideIndex, opponents, allies, state.field, state);
       const move = getMove(choice.moveName);
       let effectivePriority = move?.priority ?? 0;
       if (mon.ability === "Prankster" && move?.category === "status") effectivePriority += 1;
