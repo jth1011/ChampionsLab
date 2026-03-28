@@ -412,6 +412,11 @@ export const ABILITY_DATA: Record<string, AbilityEffect> = {
     description: "Aura and Pulse moves deal 50% more damage and gain +1 priority.",
     damageMultiplier: 1.5, vgcRelevance: 9,
   },
+  "Commander Surge": {
+    name: "Commander Surge", category: "champions",
+    description: "Dragon moves gain 30% power. On entry, boosts Sp.Atk by 1 stage.",
+    damageMultiplier: 1.3, vgcRelevance: 8,
+  },
   "Dragonize": {
     name: "Dragonize", category: "champions",
     description: "Normal-type moves become Dragon-type and gain 20% power.",
@@ -493,10 +498,20 @@ export const ABILITY_DATA: Record<string, AbilityEffect> = {
     personalWeather: "sun",
     vgcRelevance: 9,
   },
+  "Mind Surge": {
+    name: "Mind Surge", category: "champions",
+    description: "Psychic moves gain 30% power. Sets Psychic Terrain on entry.",
+    damageMultiplier: 1.3, vgcRelevance: 8,
+  },
   "Toxic Crystallize": {
     name: "Toxic Crystallize", category: "champions",
     description: "Poison/Rock moves gain 30% power. Poison moves have 50% poison chance.",
     damageMultiplier: 1.3, vgcRelevance: 7,
+  },
+  "Volt Rush": {
+    name: "Volt Rush", category: "champions",
+    description: "Electric and Fighting moves gain 20% power. Speed increases by 1 stage after KO.",
+    damageMultiplier: 1.2, vgcRelevance: 8,
   },
   "Zero To Hero": {
     name: "Zero To Hero", category: "form-change",
