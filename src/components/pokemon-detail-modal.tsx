@@ -299,7 +299,7 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -6 }}
                         transition={{ duration: 0.18 }}
-                        className="text-xl sm:text-3xl font-bold tracking-tight"
+                        className="text-xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100"
                       >
                         {currentForm?.name || pokemon.name}
                       </motion.h2>
