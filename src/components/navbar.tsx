@@ -91,30 +91,25 @@ export function Navbar() {
                   </Link>
                 );
               })}
-              {/* About */}
-              <Link
-                href="/about"
-                className={cn(
-                  "ml-1 px-2 py-1.5 rounded-lg text-[11px] font-medium transition-colors flex items-center gap-1",
-                  pathname === "/about"
-                    ? "text-foreground bg-gray-900/[0.05]"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                <Heart className="w-3 h-3" />
-                About
-              </Link>
               {/* Support Us */}
               <a
                 href="https://buymeacoffee.com/championslab"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-amber-400 to-yellow-500 text-gray-900 hover:from-amber-500 hover:to-yellow-600 transition-all flex items-center gap-1.5 shadow-sm"
+                className="ml-2 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-amber-400 to-yellow-500 text-gray-900 hover:from-amber-500 hover:to-yellow-600 transition-all flex items-center gap-1.5 shadow-sm"
               >
                 <Coffee className="w-3.5 h-3.5" />
                 Support Us
               </a>
             </nav>
+            {/* About - subtle link below desktop nav */}
+            <Link
+              href="/about"
+              className="hidden md:flex absolute right-6 top-14 items-center gap-1 text-[10px] text-muted-foreground/60 hover:text-muted-foreground transition-colors"
+            >
+              <Heart className="w-2.5 h-2.5" />
+              About Us
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
