@@ -48,14 +48,14 @@ import {
 import { deflateRaw, inflateRaw } from "pako";
 
 const EMPTY_STAT_POINTS: StatPoints = { hp: 0, attack: 0, defense: 0, spAtk: 0, spDef: 0, speed: 0 };
-const MAX_TOTAL_POINTS = 64;
+const MAX_TOTAL_POINTS = 66;
 const MAX_PER_STAT = 32;
 const STAT_KEYS: (keyof StatPoints)[] = ["hp", "attack", "defense", "spAtk", "spDef", "speed"];
 const STAT_LABELS: Record<string, string> = { hp: "HP", attack: "Atk", defense: "Def", spAtk: "SpA", spDef: "SpD", speed: "Spe" };
 
 // ── Showdown EV ↔ SP conversion ─────────────────────────────────────────
 // Showdown: 0-252 per stat (multiples of 4), 510 total
-// Champions Lab: 0-32 per stat, 64 total
+// Champions Lab: 0-32 per stat, 66 total
 function evsToStatPoints(evs: StatPoints): StatPoints {
   const raw = STAT_KEYS.map(k => (evs[k] / 252) * MAX_PER_STAT);
   const result = raw.map(v => Math.floor(v));
