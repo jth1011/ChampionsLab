@@ -1234,11 +1234,11 @@ export default function TeamBuilderPage() {
                   <>
                     <button
                       onClick={(e) => { e.stopPropagation(); removeSlot(i); }}
-                      className="absolute top-2 right-2 z-20 p-1 rounded-lg bg-white/80 dark:bg-gray-800/80 hover:bg-red-100 dark:hover:bg-red-500/20 text-gray-600 hover:text-red-600 dark:hover:text-red-400 transition-colors"
+                      className="absolute top-2 right-2 z-20 p-1 rounded-lg bg-white/80 dark:bg-[#1a2540]/80 hover:bg-red-100 dark:hover:bg-red-500/20 text-gray-600 hover:text-red-600 dark:hover:text-red-400 transition-colors"
                     >
                       <X className="w-3.5 h-3.5" />
                     </button>
-                    <div className="absolute top-2 left-2 z-20 w-6 h-6 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                    <div className="absolute top-2 left-2 z-20 w-6 h-6 rounded-lg bg-gray-100 dark:bg-[#1a2540] flex items-center justify-center">
                       <span className="text-[10px] font-bold text-muted-foreground">{i + 1}</span>
                     </div>
                     {slot.isMega && (() => {

@@ -236,7 +236,7 @@ export function PokemonDetailModal({ pokemon, onClose }: PokemonDetailModalProps
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-30 p-2 rounded-xl bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-700 shadow-sm hover:shadow border border-gray-200/80 dark:border-gray-200/10 transition-all"
+              className="absolute top-4 right-4 z-30 p-2 rounded-xl bg-white/90 dark:bg-[#1a2540]/90 hover:bg-white dark:hover:bg-[#1a2540] shadow-sm hover:shadow border border-gray-200/80 dark:border-gray-200/10 transition-all"
             >
               <X className="w-4 h-4 text-gray-500" />
             </button>
