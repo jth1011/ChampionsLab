@@ -1518,9 +1518,9 @@ export default function TeamBuilderPage() {
                           return (
                             <div key={stat} className="flex items-center gap-2">
                               <span className="text-[10px] font-medium text-muted-foreground w-7">{STAT_LABELS[stat]}</span>
-                              <button onClick={() => updateSP(selectedSlotIndex, stat, -4)} className="w-5 h-5 rounded bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"><Minus className="w-2.5 h-2.5" /></button>
+                              <button onClick={() => updateSP(selectedSlotIndex, stat, -2)} className="w-5 h-5 rounded bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"><Minus className="w-2.5 h-2.5" /></button>
                               <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden"><div className="h-full rounded-full bg-violet-400 transition-all duration-150" style={{ width: `${(value / MAX_PER_STAT) * 100}%` }} /></div>
-                              <button onClick={() => updateSP(selectedSlotIndex, stat, 4)} className="w-5 h-5 rounded bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"><Plus className="w-2.5 h-2.5" /></button>
+                              <button onClick={() => updateSP(selectedSlotIndex, stat, 2)} className="w-5 h-5 rounded bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"><Plus className="w-2.5 h-2.5" /></button>
                               <input type="number" min={0} max={MAX_PER_STAT} value={value} onChange={(e) => setSPDirect(selectedSlotIndex, stat, parseInt(e.target.value) || 0)} className="w-10 text-center text-[11px] font-medium rounded bg-gray-50 border border-gray-200 focus:outline-none focus:ring-1 focus:ring-violet-300 py-0.5" />
                             </div>
                           );
