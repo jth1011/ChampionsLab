@@ -1,4 +1,13 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
+  },
+});
 
 export async function POST(req: Request) {
   try {
@@ -22,35 +31,38 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Message too long (max 5000 characters)." }, { status: 400 });
     }
 
-    let imageInfo = "";
+    const attachments: { filename: string; content: Buffer }[] = [];
     if (image && image.size > 0) {
       if (image.size > 5 * 1024 * 1024) {
         return NextResponse.json({ error: "Image too large (max 5MB)." }, { status: 400 });
       }
-      imageInfo = `\nAttached image: ${image.name} (${(image.size / 1024).toFixed(1)} KB)`;
+      const buffer = Buffer.from(await image.arrayBuffer());
+      attachments.push({ filename: image.name, content: buffer });
     }
 
-    // Build email body - for now we log it; a real SMTP setup can be added later
     const emailBody = [
       `New ${type} from Champions Lab`,
-      `─────────────────────────────`,
+      `---`,
       `Name: ${name}`,
       `Email: ${email}`,
       `Type: ${type}`,
+      ``,
       `Message:`,
       message,
-      imageInfo,
     ].join("\n");
 
-    // Log the contact submission (in production, integrate with an email service)
-    console.log("[Contact Form Submission]");
-    console.log(emailBody);
-
-    // If you have nodemailer or a similar service configured, send here:
-    // await sendEmail({ to: "lui21andrew@gmail.com", subject: `[Champions Lab] ${type}`, body: emailBody });
+    await transporter.sendMail({
+      from: `"Champions Lab" <${process.env.GMAIL_USER}>`,
+      to: process.env.GMAIL_USER,
+      replyTo: email,
+      subject: `[Champions Lab] ${type} from ${name}`,
+      text: emailBody,
+      attachments,
+    });
 
     return NextResponse.json({ success: true, message: "Thanks for your message! We'll get back to you soon." });
-  } catch {
+  } catch (err) {
+    console.error("[Contact Form Error]", err);
     return NextResponse.json({ error: "Something went wrong. Please try again." }, { status: 500 });
   }
 }
