@@ -13,7 +13,6 @@ import {
   TrendingUp,
   GraduationCap,
   Heart,
-  Coffee,
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -24,6 +23,7 @@ const NAV_ITEMS = [
   { href: "/meta", label: "Meta", icon: TrendingUp },
   { href: "/battle-bot", label: "Battle Bot", icon: Swords },
   { href: "/learn", label: "PokéSchool", icon: GraduationCap },
+  { href: "/about", label: "About", icon: Heart },
 ];
 
 export function Navbar() {
@@ -91,25 +91,17 @@ export function Navbar() {
                   </Link>
                 );
               })}
-              {/* Support Us */}
+              {/* Buy Me a Coffee */}
               <a
                 href="https://buymeacoffee.com/championslab"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-2 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-amber-400 to-yellow-500 text-gray-900 hover:from-amber-500 hover:to-yellow-600 transition-all flex items-center gap-1.5 shadow-sm"
+                className="ml-2 px-4 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-yellow-400 to-orange-500 text-white hover:from-yellow-500 hover:to-orange-600 shadow-sm shadow-orange-500/20 flex items-center gap-2 transition-all hover:scale-105"
               >
-                <Coffee className="w-3.5 h-3.5" />
-                Support Us
+                <Heart className="w-4 h-4 fill-white" />
+                <span>Support Us</span>
               </a>
             </nav>
-            {/* About - subtle link below desktop nav */}
-            <Link
-              href="/about"
-              className="hidden md:flex absolute right-6 top-14 items-center gap-1 text-[10px] text-muted-foreground/60 hover:text-muted-foreground transition-colors"
-            >
-              <Heart className="w-2.5 h-2.5" />
-              About Us
-            </Link>
 
             {/* Mobile Menu Button */}
             <button
@@ -154,26 +146,16 @@ export function Navbar() {
                 </Link>
               );
             })}
-            <div className="border-t border-gray-200/60 mt-2 pt-2 flex items-center justify-between px-4">
-              <Link
-                href="/about"
-                onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Heart className="w-3.5 h-3.5" />
-                About
-              </Link>
-              <a
-                href="https://buymeacoffee.com/championslab"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileOpen(false)}
-                className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-amber-400 to-yellow-500 text-gray-900 hover:from-amber-500 hover:to-yellow-600 transition-all flex items-center gap-1.5"
-              >
-                <Coffee className="w-3.5 h-3.5" />
-                Support Us
-              </a>
-            </div>
+            <a
+              href="https://buymeacoffee.com/championslab"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold bg-gradient-to-r from-yellow-400 to-orange-500 text-white"
+            >
+              <Heart className="w-5 h-5 fill-white" />
+              Support Us
+            </a>
           </nav>
         </motion.div>
       </header>
