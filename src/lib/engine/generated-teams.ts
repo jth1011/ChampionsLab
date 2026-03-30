@@ -64,7 +64,7 @@ export const PREBUILT_TEAMS: PrebuiltTeam[] = [
     pokemonIds: [858, 36, 983, 464, 727, 780],
     sets: [
       { name: "TR Setter", nature: "Quiet", ability: "Magic Bounce", item: "Mental Herb", moves: ["Trick Room", "Dazzling Gleam", "Psychic", "Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 } },
-      { name: "Follow Me Support", nature: "Bold", ability: "Friend Guard", item: "Sitrus Berry", moves: ["Follow Me", "Moonblast", "Helping Hand", "Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 } },
+      { name: "Follow Me Support", nature: "Bold", ability: "Magic Guard", item: "Sitrus Berry", moves: ["Follow Me", "Moonblast", "Helping Hand", "Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 } },
       { name: "Supreme Overlord", nature: "Adamant", ability: "Supreme Overlord", item: "Assault Vest", moves: ["Sucker Punch", "Iron Head", "Kowtow Cleave", "Close Combat"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 } },
       { name: "TR Sweeper", nature: "Brave", ability: "Solid Rock", item: "Life Orb", moves: ["Rock Slide", "Earthquake", "Ice Punch", "Protect"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 } },
       { name: "Intimidate Pivot", nature: "Careful", ability: "Intimidate", item: "Figy Berry", moves: ["Flare Blitz", "Darkest Lariat", "Fake Out", "Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 0, spDef: 32, speed: 0 } },
@@ -174,7 +174,7 @@ export const PREBUILT_TEAMS: PrebuiltTeam[] = [
     pokemonIds: [149, 36, 727, 681, 445, 547],
     sets: [
       { name: "Dragon Dance", nature: "Adamant", ability: "Multiscale", item: "Lum Berry", moves: ["Dragon Dance", "Dragon Claw", "Extreme Speed", "Protect"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 } },
-      { name: "Follow Me Support", nature: "Bold", ability: "Friend Guard", item: "Sitrus Berry", moves: ["Follow Me", "Moonblast", "Helping Hand", "Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 } },
+      { name: "Follow Me Support", nature: "Bold", ability: "Magic Guard", item: "Sitrus Berry", moves: ["Follow Me", "Moonblast", "Helping Hand", "Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 } },
       { name: "Intimidate Support", nature: "Careful", ability: "Intimidate", item: "Figy Berry", moves: ["Flare Blitz", "Darkest Lariat", "Fake Out", "Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 0, spDef: 32, speed: 0 } },
       { name: "Stance Change", nature: "Quiet", ability: "Stance Change", item: "Weakness Policy", moves: ["Shadow Ball", "Flash Cannon", "King's Shield", "Shadow Sneak"], sp: { hp: 32, attack: 16, defense: 2, spAtk: 16, spDef: 0, speed: 0 } },
       { name: "Offensive Pivot", nature: "Jolly", ability: "Rough Skin", item: "Choice Scarf", moves: ["Earthquake", "Dragon Claw", "Rock Slide", "Poison Jab"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 } },
@@ -506,17 +506,17 @@ export const PREBUILT_TEAMS: PrebuiltTeam[] = [
 
   {
     id: "pre-29", name: "Clefable Redirect", archetype: "Follow Me",
-    description: "Friend Guard Clefable Follow Me + Garchomp setup",
+    description: "Magic Guard Clefable Follow Me + Garchomp setup",
     pokemonIds: [36, 445, 727, 887, 983, 858],
     sets: [
-      { name: "Follow Me", nature: "Bold", ability: "Friend Guard", item: "Rocky Helmet", moves: ["Follow Me", "Moonblast", "Helping Hand", "Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 2, spDef: 0, speed: 0 } },
+      { name: "Follow Me", nature: "Bold", ability: "Magic Guard", item: "Rocky Helmet", moves: ["Follow Me", "Moonblast", "Helping Hand", "Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 2, spDef: 0, speed: 0 } },
       { name: "SD Sweeper", nature: "Jolly", ability: "Rough Skin", item: "Life Orb", moves: ["Earthquake", "Dragon Claw", "Swords Dance", "Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 } },
       { name: "Fake Out", nature: "Careful", ability: "Intimidate", item: "Sitrus Berry", moves: ["Flare Blitz", "Darkest Lariat", "Fake Out", "Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 0, spDef: 32, speed: 0 } },
       { name: "Fast Ghost", nature: "Timid", ability: "Clear Body", item: "Choice Specs", moves: ["Shadow Ball", "Draco Meteor", "Thunderbolt", "Flamethrower"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 } },
       { name: "Finisher", nature: "Adamant", ability: "Supreme Overlord", item: "Assault Vest", moves: ["Sucker Punch", "Iron Head", "Kowtow Cleave", "Brick Break"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 } },
       { name: "TR Backup", nature: "Quiet", ability: "Magic Bounce", item: "Focus Sash", moves: ["Trick Room", "Dazzling Gleam", "Psychic", "Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 0 } },
     ],
-    tags: ["follow-me", "redirection", "setup", "friend-guard"],
+    tags: ["follow-me", "redirection", "setup", "magic-guard"],
     tier: "A",
   },
 

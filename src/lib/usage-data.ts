@@ -49,7 +49,7 @@ export const USAGE_DATA: Record<number, CommonSet[]> = {
 
   // Clefable (id: 36)
   36: [
-    { name: "Follow Me Support", nature: "Bold", ability: "Friend Guard", item: "Sitrus Berry", moves: ["Follow Me", "Moonblast", "Helping Hand", "Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 } },
+    { name: "Follow Me Support", nature: "Bold", ability: "Magic Guard", item: "Sitrus Berry", moves: ["Follow Me", "Moonblast", "Helping Hand", "Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 } },
     { name: "Trick Room Setter", nature: "Relaxed", ability: "Magic Guard", item: "Mental Herb", moves: ["Trick Room", "Follow Me", "Moonblast", "Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 } },
     { name: "Offensive Follow Me", nature: "Modest", ability: "Magic Guard", item: "Life Orb", moves: ["Moonblast", "Flamethrower", "Follow Me", "Protect"], sp: { hp: 20, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 12 } },
     { name: "Calm Mind Tank", nature: "Bold", ability: "Unaware", item: "Leftovers", moves: ["Calm Mind", "Moonblast", "Soft-Boiled", "Protect"], sp: { hp: 32, attack: 0, defense: 20, spAtk: 0, spDef: 14, speed: 0 } },
