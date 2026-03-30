@@ -20,18 +20,29 @@ const PALAFIN_ZERO_STATS: BaseStats = {
   hp: 100, attack: 70, defense: 72, spAtk: 53, spDef: 62, speed: 100
 };
 
+// ── AEGISLASH BLADE/SHIELD FORM STATS ────────────────────────────────────────
+const AEGISLASH_SHIELD_STATS: BaseStats = {
+  hp: 60, attack: 50, defense: 140, spAtk: 50, spDef: 140, speed: 60
+};
+const AEGISLASH_BLADE_STATS: BaseStats = {
+  hp: 60, attack: 140, defense: 50, spAtk: 140, spDef: 50, speed: 60
+};
+
 // ── MEGA DETECTION ───────────────────────────────────────────────────────────
 
 function isMegaStoneItem(item: string): boolean {
   return item.endsWith("ite") || item.endsWith("ite X") || item.endsWith("ite Y") || item.endsWith("ite Z");
 }
 
-/** Resolve mega form data for a Pokémon holding its mega stone */
+/** Resolve mega form data for a Pokémon holding its mega stone (used for pre-resolution only) */
 function resolveMegaForm(pokemon: ChampionsPokemon, set: CommonSet): {
   baseStats: BaseStats;
   types: PokemonType[];
   ability: string;
   isMega: boolean;
+  megaBaseStats?: BaseStats;
+  megaTypes?: PokemonType[];
+  megaAbility?: string;
 } {
   if (!pokemon.hasMega || !pokemon.forms || !isMegaStoneItem(set.item)) {
     return { baseStats: pokemon.baseStats, types: [...pokemon.types], ability: set.ability, isMega: false };
@@ -40,11 +51,15 @@ function resolveMegaForm(pokemon: ChampionsPokemon, set: CommonSet): {
   if (!megaForm) {
     return { baseStats: pokemon.baseStats, types: [...pokemon.types], ability: set.ability, isMega: false };
   }
+  // Return base form stats but store mega data for in-battle evolution
   return {
-    baseStats: megaForm.baseStats,
-    types: [...megaForm.types] as PokemonType[],
-    ability: megaForm.abilities[0]?.name ?? set.ability,
-    isMega: true,
+    baseStats: pokemon.baseStats,
+    types: [...pokemon.types] as PokemonType[],
+    ability: set.ability,
+    isMega: false, // Start in base form
+    megaBaseStats: megaForm.baseStats,
+    megaTypes: [...megaForm.types] as PokemonType[],
+    megaAbility: megaForm.abilities[0]?.name ?? set.ability,
   };
 }
 
@@ -64,6 +79,7 @@ interface BattlePokemon {
   canFakeOut: boolean;
   isProtected: boolean;
   protectCount: number;
+  protectMoveName?: string;
   item: string;
   itemConsumed: boolean;
   ability: string;
@@ -72,6 +88,27 @@ interface BattlePokemon {
   effectiveBaseStats: BaseStats;
   hasTransformed: boolean;  // Zero to Hero tracking
   hasSwitchedOut: boolean;  // Palafin: switched out at least once
+  // Mega Evolution support (in-battle transformation)
+  canMegaEvolve: boolean;
+  hasMegaEvolved: boolean;
+  megaBaseStats?: BaseStats;
+  megaTypes?: PokemonType[];
+  megaAbility?: string;
+  // Aegislash Stance Change
+  stanceForm?: "shield" | "blade";
+  // Disguise (Mimikyu)
+  disguiseIntact: boolean;
+  // Illusion (Zoroark)
+  illusionActive: boolean;
+  illusionDisguise?: { name: string; types: PokemonType[]; sprite: string };
+  // Imposter / Transform
+  isTransformed: boolean;
+  originalStats?: ReturnType<typeof calculateStats>;
+  originalTypes?: PokemonType[];
+  originalAbility?: string;
+  originalBaseStats?: BaseStats;
+  // Protean/Libero type change (once per switch-in)
+  hasChangedType: boolean;
 }
 
 interface FieldState {
@@ -97,9 +134,23 @@ interface BattleState {
 
 // ── BATTLE POKEMON FACTORY ───────────────────────────────────────────────────
 
-function createBattlePokemon(pokemon: ChampionsPokemon, set: CommonSet): BattlePokemon {
+function createBattlePokemon(pokemon: ChampionsPokemon, set: CommonSet, teamForIllusion?: { pokemon: ChampionsPokemon; set: CommonSet }[]): BattlePokemon {
   const mega = resolveMegaForm(pokemon, set);
   const stats = calculateStats(mega.baseStats, set.sp, set.nature as NatureName);
+  
+  // Illusion: disguise as the last Pokémon in team
+  let illusionDisguise: BattlePokemon["illusionDisguise"] = undefined;
+  if (set.ability === "Illusion" && teamForIllusion && teamForIllusion.length > 1) {
+    const lastMon = teamForIllusion[teamForIllusion.length - 1];
+    if (lastMon.pokemon.id !== pokemon.id) {
+      illusionDisguise = {
+        name: lastMon.pokemon.name,
+        types: [...lastMon.pokemon.types] as PokemonType[],
+        sprite: lastMon.pokemon.sprite,
+      };
+    }
+  }
+
   return {
     pokemon,
     set,
@@ -118,10 +169,27 @@ function createBattlePokemon(pokemon: ChampionsPokemon, set: CommonSet): BattleP
     itemConsumed: false,
     ability: mega.ability,
     types: mega.types,
-    isMega: mega.isMega,
+    isMega: false, // Always start in base form
     effectiveBaseStats: mega.baseStats,
     hasTransformed: false,
     hasSwitchedOut: false,
+    // Mega Evolution: store mega data for in-battle trigger
+    canMegaEvolve: !!mega.megaBaseStats,
+    hasMegaEvolved: false,
+    megaBaseStats: mega.megaBaseStats,
+    megaTypes: mega.megaTypes,
+    megaAbility: mega.megaAbility,
+    // Aegislash Stance Change
+    stanceForm: set.ability === "Stance Change" ? "shield" : undefined,
+    // Disguise (Mimikyu)
+    disguiseIntact: set.ability === "Disguise",
+    // Illusion (Zoroark)
+    illusionActive: !!illusionDisguise,
+    illusionDisguise,
+    // Transform/Imposter
+    isTransformed: false,
+    // Protean/Libero
+    hasChangedType: false,
   };
 }
 
@@ -136,6 +204,88 @@ function applyHeroTransform(mon: BattlePokemon): void {
   mon.stats = newStats;
   mon.maxHP = newStats.hp;
   mon.currentHP = Math.max(1, Math.floor(hpRatio * newStats.hp));
+}
+
+/** Apply Mega Evolution in-battle - transforms stats, types, and ability */
+function applyMegaEvolution(mon: BattlePokemon): void {
+  if (mon.hasMegaEvolved || !mon.canMegaEvolve || !mon.megaBaseStats) return;
+  mon.hasMegaEvolved = true;
+  mon.isMega = true;
+  mon.effectiveBaseStats = mon.megaBaseStats;
+  if (mon.megaTypes) mon.types = mon.megaTypes;
+  if (mon.megaAbility) mon.ability = mon.megaAbility;
+  // Recalculate stats with mega base stats, keeping HP ratio  
+  const hpRatio = mon.currentHP / mon.maxHP;
+  const newStats = calculateStats(mon.megaBaseStats, mon.set.sp, mon.set.nature as NatureName);
+  mon.stats = newStats;
+  mon.maxHP = newStats.hp;
+  mon.currentHP = Math.max(1, Math.floor(hpRatio * newStats.hp));
+  // Process on-entry effects for the new mega ability
+  const abilityEffect = getAbilityEffect(mon.ability);
+  if (abilityEffect?.setsWeather) {
+    // Weather is set by mega evolution (e.g., Mega Charizard Y's Drought)
+    // Will be handled by the caller via returned flag
+  }
+}
+
+/** Apply Aegislash Stance Change to Blade Forme */
+function applyStanceChange(mon: BattlePokemon, form: "blade" | "shield"): void {
+  if (mon.stanceForm === form) return;
+  mon.stanceForm = form;
+  const newBase = form === "blade" ? AEGISLASH_BLADE_STATS : AEGISLASH_SHIELD_STATS;
+  mon.effectiveBaseStats = newBase;
+  const hpRatio = mon.currentHP / mon.maxHP;
+  const newStats = calculateStats(newBase, mon.set.sp, mon.set.nature as NatureName);
+  mon.stats = newStats;
+  mon.maxHP = newStats.hp;
+  mon.currentHP = Math.max(1, Math.floor(hpRatio * newStats.hp));
+}
+
+/** Apply Imposter transformation - copy target's stats, types, ability, and moves */
+function applyImposterTransform(mon: BattlePokemon, target: BattlePokemon): void {
+  if (mon.isTransformed) return;
+  mon.isTransformed = true;
+  // Save original data for reference
+  mon.originalStats = { ...mon.stats };
+  mon.originalTypes = [...mon.types];
+  mon.originalAbility = mon.ability;
+  mon.originalBaseStats = { ...mon.effectiveBaseStats };
+  // Copy target's data
+  mon.types = [...target.types];
+  mon.ability = target.ability;
+  mon.effectiveBaseStats = { ...target.effectiveBaseStats };
+  // Recalculate stats using target's base stats but keep own HP
+  const newStats = calculateStats(target.effectiveBaseStats, mon.set.sp, mon.set.nature as NatureName);
+  mon.stats = newStats;
+  // HP stays the same (Ditto keeps its own HP)
+  // Copy target moves (replace moveset with target's current 4 moves)
+  mon.set = {
+    ...mon.set,
+    moves: [...target.set.moves],
+    ability: target.ability,
+  };
+  // Copy boosts
+  mon.boosts = { ...target.boosts };
+}
+
+/** Break Illusion disguise */
+function breakIllusion(mon: BattlePokemon): void {
+  if (!mon.illusionActive) return;
+  mon.illusionActive = false;
+  mon.illusionDisguise = undefined;
+}
+
+/** Break Disguise (Mimikyu) - takes 1/8 HP recoil */
+function breakDisguise(mon: BattlePokemon): void {
+  if (!mon.disguiseIntact) return;
+  mon.disguiseIntact = false;
+  // Takes 1/8 max HP as recoil when disguise breaks
+  mon.currentHP -= Math.floor(mon.maxHP / 8);
+  if (mon.currentHP <= 0) {
+    mon.currentHP = 0;
+    mon.isAlive = false;
+    mon.isFainted = true;
+  }
 }
 
 // ── SPEED CALCULATION ────────────────────────────────────────────────────────
@@ -946,6 +1096,12 @@ function applySwitch(state: BattleState, sideIndex: 1 | 2, slot: 0 | 1): void {
     next.canFakeOut = true;
     next.protectCount = 0;
     next.boosts = { attack: 0, defense: 0, spAtk: 0, spDef: 0, speed: 0 };
+    // Reset Protean/Libero type change on switch-in
+    next.hasChangedType = false;
+    // Reset Stance Change to shield form on switch-in
+    if (next.ability === "Stance Change") {
+      applyStanceChange(next, "shield");
+    }
     
     // Zero to Hero: transform to Hero Form on re-entry after switching out
     if (next.ability === "Zero to Hero" && next.hasSwitchedOut && !next.hasTransformed) {
@@ -1000,6 +1156,11 @@ function applySwitch(state: BattleState, sideIndex: 1 | 2, slot: 0 | 1): void {
           }
         }
       }
+    }
+    // Imposter (Ditto): transform into opponent on switch-in
+    if (next.ability === "Imposter") {
+      const oppTarget = opponents.find(o => o && !o.isFainted);
+      if (oppTarget) applyImposterTransform(next, oppTarget);
     }
   } else {
     active[slot] = null;
@@ -1093,6 +1254,51 @@ function executeMove(
   const move = getMove(moveName);
   if (!move) return;
   
+  // ── MEGA EVOLUTION: triggers before first attacking move ────────────────
+  if (user.canMegaEvolve && !user.hasMegaEvolved) {
+    // Check that no ally on our side has already mega evolved this battle
+    const myTeam = userSide === 1 ? state.team1 : state.team2;
+    const teamAlreadyMega = myTeam.some(p => p !== user && p.hasMegaEvolved);
+    if (!teamAlreadyMega) {
+      applyMegaEvolution(user);
+      // Apply weather from mega ability (e.g., Mega Charizard Y's Drought)
+      const newAbilityEffect = getAbilityEffect(user.ability);
+      if (newAbilityEffect?.setsWeather) {
+        state.field.weather = newAbilityEffect.setsWeather;
+        state.field.weatherTurns = 5;
+      }
+      if (newAbilityEffect?.setsTerrain) {
+        state.field.terrain = newAbilityEffect.setsTerrain;
+        state.field.terrainTurns = 5;
+      }
+      // Intimidate from new mega ability
+      if (user.ability === "Intimidate") {
+        for (const opp of opponents) {
+          if (opp && opp.isAlive && !opp.isFainted && !isIntimidateBlocked(opp)) {
+            opp.boosts.attack = Math.max(-6, opp.boosts.attack - 1);
+            if (opp.ability === "Competitive") opp.boosts.spAtk = Math.min(6, opp.boosts.spAtk + 2);
+            if (opp.ability === "Defiant") opp.boosts.attack = Math.min(6, opp.boosts.attack + 2);
+          }
+        }
+      }
+    }
+  }
+
+  // ── STANCE CHANGE (Aegislash): Blade before attacking, Shield before King's Shield ──
+  if (user.ability === "Stance Change") {
+    if (move.category !== "status") {
+      applyStanceChange(user, "blade");
+    } else if (moveName === "King's Shield") {
+      applyStanceChange(user, "shield");
+    }
+  }
+
+  // ── PROTEAN / LIBERO: change type to match move (once per switch-in) ──
+  if ((user.ability === "Protean" || user.ability === "Libero") && !user.hasChangedType) {
+    user.hasChangedType = true;
+    user.types = [move.type as PokemonType];
+  }
+
   // Paralysis check
   if (user.status === "paralysis" && Math.random() < 0.25) return;
   
@@ -1104,12 +1310,13 @@ function executeMove(
     return;
   }
   
-  // Protect check
+  // Protect check (King's Shield: also lowers Attack of contact attackers)
   if (move.flags.protect) {
     const successRate = Math.pow(1 / 3, user.protectCount);
     if (Math.random() < successRate) {
       user.protectCount++;
       user.isProtected = true;
+      user.protectMoveName = moveName;
       return;
     }
     user.protectCount = 0;
@@ -1124,6 +1331,13 @@ function executeMove(
     if (moveName === "Tailwind") {
       const side = userSide === 1 ? state.field.side1 : state.field.side2;
       side.tailwind = 4;
+      // Wind Rider: Attack +1 for allies with Wind Rider when Tailwind is set
+      const myActive = userSide === 1 ? state.active1 : state.active2;
+      for (const ally of myActive) {
+        if (ally && !ally.isFainted && ally.ability === "Wind Rider") {
+          ally.boosts.attack = Math.min(6, ally.boosts.attack + 1);
+        }
+      }
       return;
     }
     // Trick Room
@@ -1189,6 +1403,10 @@ function executeMove(
   for (const t of targets) {
     // Protected targets block all damage (except Drill Force pierce)
     if (t.isProtected) {
+      // King's Shield: lower attacker's Attack by 1 on contact
+      if (t.protectMoveName === "King's Shield" && move.flags.contact) {
+        user.boosts.attack = Math.max(-6, user.boosts.attack - 1);
+      }
       if (user.ability === "Drill Force" && (move.type === "ground" || move.type === "steel")) {
         // Drill Force pierces Protect for 25% damage - continue but reduce damage later
       } else {
@@ -1232,8 +1450,10 @@ function executeMove(
       continue; // Move is fully absorbed
     }
     
-    // Accuracy check
-    if (move.accuracy > 0 && Math.random() * 100 > move.accuracy) continue;
+    // Accuracy check (weather bypass: Blizzard in snow, Thunder/Hurricane in rain)
+    const weatherBypass = (move.name === "Blizzard" && state.field.weather === "snow")
+      || ((move.name === "Thunder" || move.name === "Hurricane") && state.field.weather === "rain");
+    if (!weatherBypass && move.accuracy > 0 && Math.random() * 100 > move.accuracy) continue;
     
     // Focus Sash precheck
     const hadFocusSash = t.item === "Focus Sash" && !t.itemConsumed && t.currentHP === t.maxHP;
@@ -1285,6 +1505,17 @@ function executeMove(
     let damage = result.damage[0] + Math.floor(Math.random() * (result.damage[1] - result.damage[0] + 1));
     damage = Math.max(1, damage);
     
+    // ── DISGUISE (Mimikyu): block first hit, take 1/8 max HP chip ──
+    if (t.disguiseIntact) {
+      breakDisguise(t);
+      continue; // Hit was fully blocked by Disguise
+    }
+    
+    // ── ILLUSION (Zoroark): reveal true form when taking damage ──
+    if (t.illusionActive) {
+      breakIllusion(t);
+    }
+    
     // Friend Guard: reduce damage by 25% if ally has Friend Guard
     const defenderSide = state.active1.includes(t) ? state.active1 : state.active2;
     const friendGuardAlly = defenderSide.find(a => a && a !== t && !a.isFainted && a.ability === "Friend Guard");
@@ -1300,6 +1531,11 @@ function executeMove(
     // Prism Armor: reduce super-effective damage by 25%
     if (t.ability === "Prism Armor" && result.effectiveness >= 2) {
       damage = Math.floor(damage * 0.75);
+    }
+    
+    // Multiscale / Shadow Shield: halve damage at full HP
+    if ((t.ability === "Multiscale" || t.ability === "Shadow Shield") && t.currentHP === t.maxHP) {
+      damage = Math.floor(damage * 0.5);
     }
     
     // Drill Force through Protect: only 25% damage
@@ -1539,8 +1775,10 @@ export function simulateBattle(
   // Smart pick 4 from 6 (VGC team preview - intelligent selection)
   const idx1 = smartPick4(team1Pokemon, team1Sets, team2Pokemon);
   const idx2 = smartPick4(team2Pokemon, team2Sets, team1Pokemon);
-  const bt1 = idx1.map(i => createBattlePokemon(team1Pokemon[i], team1Sets[i]));
-  const bt2 = idx2.map(i => createBattlePokemon(team2Pokemon[i], team2Sets[i]));
+  const team1Picked = idx1.map(j => ({ pokemon: team1Pokemon[j], set: team1Sets[j] }));
+  const team2Picked = idx2.map(j => ({ pokemon: team2Pokemon[j], set: team2Sets[j] }));
+  const bt1 = idx1.map((i, k) => createBattlePokemon(team1Pokemon[i], team1Sets[i], team1Picked));
+  const bt2 = idx2.map((i, k) => createBattlePokemon(team2Pokemon[i], team2Sets[i], team2Picked));
   
   const state: BattleState = {
     team1: bt1,
@@ -1596,6 +1834,11 @@ export function simulateBattle(
       // Razor Plating: +1 Defense on entry
       if (mon?.ability === "Razor Plating") {
         mon.boosts.defense = Math.min(6, mon.boosts.defense + 1);
+      }
+      // Imposter (Ditto): transform into opponent on entry
+      if (mon?.ability === "Imposter") {
+        const oppTarget = opponents.find(o => o && !o.isFainted);
+        if (oppTarget) applyImposterTransform(mon, oppTarget);
       }
     }
   }
@@ -1794,8 +2037,10 @@ export function simulateBattleWithLog(
 ): DetailedBattleResult {
   const idx1 = smartPick4(team1Pokemon, team1Sets, team2Pokemon);
   const idx2 = smartPick4(team2Pokemon, team2Sets, team1Pokemon);
-  const bt1 = idx1.map(i => createBattlePokemon(team1Pokemon[i], team1Sets[i]));
-  const bt2 = idx2.map(i => createBattlePokemon(team2Pokemon[i], team2Sets[i]));
+  const team1Picked = idx1.map(j => ({ pokemon: team1Pokemon[j], set: team1Sets[j] }));
+  const team2Picked = idx2.map(j => ({ pokemon: team2Pokemon[j], set: team2Sets[j] }));
+  const bt1 = idx1.map((i, k) => createBattlePokemon(team1Pokemon[i], team1Sets[i], team1Picked));
+  const bt2 = idx2.map((i, k) => createBattlePokemon(team2Pokemon[i], team2Sets[i], team2Picked));
 
   const state: BattleState = {
     team1: bt1, team2: bt2,
@@ -1860,6 +2105,14 @@ export function simulateBattleWithLog(
       if (mon?.ability === "Razor Plating") {
         mon.boosts.defense = Math.min(6, mon.boosts.defense + 1);
         entryEvents.push(`${mon.pokemon.name}'s Razor Plating raised its Defense!`);
+      }
+      // Imposter (Ditto): transform into opponent on entry
+      if (mon?.ability === "Imposter") {
+        const oppTarget = opponents.find(o => o && !o.isFainted);
+        if (oppTarget) {
+          applyImposterTransform(mon, oppTarget);
+          entryEvents.push(`${mon.pokemon.name} transformed into ${oppTarget.pokemon.name} using Imposter!`);
+        }
       }
     }
   }
@@ -1931,6 +2184,12 @@ export function simulateBattleWithLog(
       const target = opponents[action.targetSlot] ?? null;
       const move = getMove(action.moveName);
 
+      // Track transformation states before the move
+      const wasMega = action.mon.hasMegaEvolved;
+      const allDisguiseBefore = new Map([...opponents, ...allies].filter((m): m is BattlePokemon => m !== null).map(m => [m, m.disguiseIntact]));
+      const allIllusionBefore = new Map([...opponents, ...allies].filter((m): m is BattlePokemon => m !== null).map(m => [m, m.illusionActive]));
+      const stanceBefore = action.mon.stanceForm;
+
       // Track HP of targets (excluding user) before the move for proper logging
       const logTargets = [...opponents, ...allies].filter((m): m is BattlePokemon => m !== null && !m.isFainted && m !== action.mon);
       const hpBefore = new Map(logTargets.map(m => [m, m.currentHP]));
@@ -1939,12 +2198,30 @@ export function simulateBattleWithLog(
 
       executeMove(action.mon, action.moveName, target, allies.filter((a): a is BattlePokemon => a !== null && a !== action.mon), opponents.filter((a): a is BattlePokemon => a !== null), state, action.sideIndex);
 
+      // Log transformation events
+      if (!wasMega && action.mon.hasMegaEvolved) {
+        turnEvents.push(`${action.mon.pokemon.name} Mega Evolved!`);
+      }
+      if (stanceBefore !== action.mon.stanceForm && action.mon.ability === "Stance Change") {
+        turnEvents.push(`${action.mon.pokemon.name} changed to ${action.mon.stanceForm === "blade" ? "Blade" : "Shield"} Forme!`);
+      }
+      for (const [mon, hadDisguise] of allDisguiseBefore) {
+        if (hadDisguise && !mon.disguiseIntact) {
+          turnEvents.push(`${mon.pokemon.name}'s Disguise was busted!`);
+        }
+      }
+      for (const [mon, hadIllusion] of allIllusionBefore) {
+        if (hadIllusion && !mon.illusionActive) {
+          turnEvents.push(`${mon.pokemon.name}'s Illusion broke!`);
+        }
+      }
+
       if (move?.category === "status") {
         if (move.flags.protect) {
           if (action.mon.isProtected) {
-            turnEvents.push(`${action.mon.pokemon.name} used Protect!`);
+            turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName}!`);
           } else {
-            turnEvents.push(`${action.mon.pokemon.name}'s Protect failed!`);
+            turnEvents.push(`${action.mon.pokemon.name}'s ${action.moveName} failed!`);
           }
         } else {
           turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName}!`);

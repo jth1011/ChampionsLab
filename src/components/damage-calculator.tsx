@@ -72,6 +72,29 @@ const TERRAIN_COLORS: Record<string, string> = {
 
 // ── Helpers ──────────────────────────────────────────────────────────────
 
+function isMegaStoneItem(item: string): boolean {
+  return item.endsWith("ite") || item.endsWith("ite X") || item.endsWith("ite Y") || item.endsWith("ite Z");
+}
+
+/** Resolve mega form base stats, types, and ability for damage calc display */
+function resolveMegaForCalc(p: ChampionsPokemon, set: CommonSet): {
+  baseStats: ChampionsPokemon["baseStats"];
+  types: PokemonType[];
+  ability: string;
+} {
+  if (p.hasMega && p.forms && isMegaStoneItem(set.item)) {
+    const megaForm = p.forms.find(f => f.isMega);
+    if (megaForm) {
+      return {
+        baseStats: megaForm.baseStats,
+        types: [...megaForm.types] as PokemonType[],
+        ability: megaForm.abilities[0]?.name ?? set.ability,
+      };
+    }
+  }
+  return { baseStats: p.baseStats, types: [...p.types] as PokemonType[], ability: set.ability };
+}
+
 function getDefaultSet(p: ChampionsPokemon): CommonSet {
   const usage = USAGE_DATA[p.id];
   if (usage && usage.length > 0) return usage[0];
@@ -123,15 +146,17 @@ export default function DamageCalculator() {
   const [pickerTarget, setPickerTarget] = useState<"attacker" | "defender" | null>(null);
   const [pickerSearch, setPickerSearch] = useState("");
 
-  // Calculate stats for display
+  // Calculate stats for display (resolving mega forms)
   const attackerStats = useMemo(() => {
     if (!attacker.pokemon || !attacker.set) return null;
-    return calculateStats(attacker.pokemon.baseStats, attacker.set.sp, attacker.set.nature as NatureName);
+    const resolved = resolveMegaForCalc(attacker.pokemon, attacker.set);
+    return calculateStats(resolved.baseStats, attacker.set.sp, attacker.set.nature as NatureName);
   }, [attacker.pokemon, attacker.set]);
 
   const defenderStats = useMemo(() => {
     if (!defender.pokemon || !defender.set) return null;
-    return calculateStats(defender.pokemon.baseStats, defender.set.sp, defender.set.nature as NatureName);
+    const resolved = resolveMegaForCalc(defender.pokemon, defender.set);
+    return calculateStats(resolved.baseStats, defender.set.sp, defender.set.nature as NatureName);
   }, [defender.pokemon, defender.set]);
 
   // Calculate damage for all moves
@@ -141,12 +166,14 @@ export default function DamageCalculator() {
       weather, terrain, isDoubles, isCrit, helpingHand,
       lightScreen, reflect, auroraVeil, friendGuard,
     };
+    const atkResolved = resolveMegaForCalc(attacker.pokemon, attacker.set);
+    const defResolved = resolveMegaForCalc(defender.pokemon, defender.set);
     const atkData: DamageCalcPokemon = {
-      baseStats: attacker.pokemon.baseStats,
+      baseStats: atkResolved.baseStats,
       sp: attacker.set.sp,
       nature: attacker.set.nature as NatureName,
-      types: attacker.pokemon.types,
-      ability: attacker.set.ability,
+      types: atkResolved.types,
+      ability: atkResolved.ability,
       item: attacker.set.item,
       atkStages: attacker.stages.atk,
       spAtkStages: attacker.stages.spAtk,
@@ -154,11 +181,11 @@ export default function DamageCalculator() {
       currentHPPercent: attacker.currentHP,
     };
     const defData: DamageCalcTarget = {
-      baseStats: defender.pokemon.baseStats,
+      baseStats: defResolved.baseStats,
       sp: defender.set.sp,
       nature: defender.set.nature as NatureName,
-      types: defender.pokemon.types,
-      ability: defender.set.ability,
+      types: defResolved.types,
+      ability: defResolved.ability,
       item: defender.set.item,
       defStages: defender.stages.def,
       spDefStages: defender.stages.spDef,
@@ -609,6 +636,8 @@ function PokemonPanel({
   const usageSets = p ? (USAGE_DATA[p.id] ?? []) : [];
   const totalSP = set ? Object.values(set.sp).reduce((a, b) => a + b, 0) : 0;
   const natureDisplay = set ? getNatureDisplay(set.nature) : { plus: null, minus: null };
+  // Resolve mega form stats for display
+  const resolvedStats = p && set ? resolveMegaForCalc(p, set) : null;
 
   return (
     <div className={cn("glass rounded-2xl border overflow-hidden", borderColor)}>
@@ -621,7 +650,7 @@ function PokemonPanel({
             <div className="flex-1 min-w-0">
               <p className="text-lg font-bold truncate">{p.name}</p>
               <div className="flex gap-1 mt-1">
-                {p.types.map(t => (
+                {(resolvedStats?.types ?? p.types).map(t => (
                   <span
                     key={t}
                     className="px-2 py-0.5 rounded-md text-[9px] font-bold text-white capitalize"
@@ -771,7 +800,7 @@ function PokemonPanel({
             {/* Stat bars (always shown) */}
             <div className="space-y-1.5">
               {STAT_KEYS.map(stat => {
-                const base = p.baseStats[stat];
+                const base = resolvedStats ? resolvedStats.baseStats[stat] : p.baseStats[stat];
                 const calc = stats?.[stat] ?? 0;
                 const sp = set.sp[stat];
                 const natMod = stat !== "hp" ? getNatureModifier(set.nature as NatureName, stat as "attack" | "defense" | "spAtk" | "spDef" | "speed") : 1;
