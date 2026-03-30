@@ -109,6 +109,8 @@ interface BattlePokemon {
   originalBaseStats?: BaseStats;
   // Protean/Libero type change (once per switch-in)
   hasChangedType: boolean;
+  // Tracking for log: last move missed
+  lastMoveMissed: boolean;
 }
 
 interface FieldState {
@@ -190,6 +192,8 @@ function createBattlePokemon(pokemon: ChampionsPokemon, set: CommonSet, teamForI
     isTransformed: false,
     // Protean/Libero
     hasChangedType: false,
+    // Log tracking
+    lastMoveMissed: false,
   };
 }
 
@@ -1255,34 +1259,7 @@ function executeMove(
   if (!move) return;
   
   // ── MEGA EVOLUTION: triggers before first attacking move ────────────────
-  if (user.canMegaEvolve && !user.hasMegaEvolved) {
-    // Check that no ally on our side has already mega evolved this battle
-    const myTeam = userSide === 1 ? state.team1 : state.team2;
-    const teamAlreadyMega = myTeam.some(p => p !== user && p.hasMegaEvolved);
-    if (!teamAlreadyMega) {
-      applyMegaEvolution(user);
-      // Apply weather from mega ability (e.g., Mega Charizard Y's Drought)
-      const newAbilityEffect = getAbilityEffect(user.ability);
-      if (newAbilityEffect?.setsWeather) {
-        state.field.weather = newAbilityEffect.setsWeather;
-        state.field.weatherTurns = 5;
-      }
-      if (newAbilityEffect?.setsTerrain) {
-        state.field.terrain = newAbilityEffect.setsTerrain;
-        state.field.terrainTurns = 5;
-      }
-      // Intimidate from new mega ability
-      if (user.ability === "Intimidate") {
-        for (const opp of opponents) {
-          if (opp && opp.isAlive && !opp.isFainted && !isIntimidateBlocked(opp)) {
-            opp.boosts.attack = Math.max(-6, opp.boosts.attack - 1);
-            if (opp.ability === "Competitive") opp.boosts.spAtk = Math.min(6, opp.boosts.spAtk + 2);
-            if (opp.ability === "Defiant") opp.boosts.attack = Math.min(6, opp.boosts.attack + 2);
-          }
-        }
-      }
-    }
-  }
+  // (Moved to start-of-turn in simulateBattle/simulateBattleWithLog)
 
   // ── STANCE CHANGE (Aegislash): Blade before attacking, Shield before King's Shield ──
   if (user.ability === "Stance Change") {
@@ -1400,6 +1377,7 @@ function executeMove(
     }
   }
   
+  user.lastMoveMissed = false;
   for (const t of targets) {
     // Protected targets block all damage (except Drill Force pierce)
     if (t.isProtected) {
@@ -1453,7 +1431,10 @@ function executeMove(
     // Accuracy check (weather bypass: Blizzard in snow, Thunder/Hurricane in rain)
     const weatherBypass = (move.name === "Blizzard" && state.field.weather === "snow")
       || ((move.name === "Thunder" || move.name === "Hurricane") && state.field.weather === "rain");
-    if (!weatherBypass && move.accuracy > 0 && Math.random() * 100 > move.accuracy) continue;
+    if (!weatherBypass && move.accuracy > 0 && Math.random() * 100 > move.accuracy) {
+      user.lastMoveMissed = true;
+      continue;
+    }
     
     // Focus Sash precheck
     const hadFocusSash = t.item === "Focus Sash" && !t.itemConsumed && t.currentHP === t.maxHP;
@@ -1605,7 +1586,9 @@ function executeMove(
         t.status = move.secondary.status;
       }
       if (move.secondary.volatileStatus === "flinch") {
-        t.hasMoved = true; // Simplified: prevent action
+        if (!["Inner Focus", "Shield Dust", "Own Tempo"].includes(t.ability)) {
+          t.hasMoved = true; // Simplified: prevent action
+        }
       }
       if (move.secondary.boosts && t.currentHP > 0) {
         const boostTarget = move.secondary.self ? user : t;
@@ -1911,6 +1894,44 @@ export function simulateBattle(
       return b.speed - a.speed;
     });
     
+    // ── MEGA EVOLUTION PHASE: before any moves execute ──────────────────
+    for (const action of actions) {
+      if (action.mon.isFainted || action.switchOut) continue;
+      if (action.mon.canMegaEvolve && !action.mon.hasMegaEvolved) {
+        const myTeam = action.sideIndex === 1 ? state.team1 : state.team2;
+        const teamAlreadyMega = myTeam.some(p => p !== action.mon && p.hasMegaEvolved);
+        if (!teamAlreadyMega) {
+          applyMegaEvolution(action.mon);
+          const opponents = action.sideIndex === 1 ? state.active2 : state.active1;
+          const newAbilityEffect = getAbilityEffect(action.mon.ability);
+          if (newAbilityEffect?.setsWeather) {
+            state.field.weather = newAbilityEffect.setsWeather;
+            state.field.weatherTurns = 5;
+          }
+          if (newAbilityEffect?.setsTerrain) {
+            state.field.terrain = newAbilityEffect.setsTerrain;
+            state.field.terrainTurns = 5;
+          }
+          if (action.mon.ability === "Intimidate") {
+            for (const opp of opponents) {
+              if (opp && opp.isAlive && !opp.isFainted && !isIntimidateBlocked(opp)) {
+                opp.boosts.attack = Math.max(-6, opp.boosts.attack - 1);
+                if (opp.ability === "Competitive") opp.boosts.spAtk = Math.min(6, opp.boosts.spAtk + 2);
+                if (opp.ability === "Defiant") opp.boosts.attack = Math.min(6, opp.boosts.attack + 2);
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    // Re-sort after mega evolutions (speed may have changed)
+    actions.sort((a, b) => {
+      if (a.priority !== b.priority) return b.priority - a.priority;
+      if (state.field.trickRoom) return a.speed - b.speed;
+      return b.speed - a.speed;
+    });
+    
     // Execute actions
     for (const action of actions) {
       if (action.mon.isFainted) continue;
@@ -2158,6 +2179,45 @@ export function simulateBattleWithLog(
       return b.speed - a.speed;
     });
 
+    // ── MEGA EVOLUTION PHASE: before any moves execute ──────────────────
+    for (const action of actions) {
+      if (action.mon.isFainted || action.switchOut) continue;
+      if (action.mon.canMegaEvolve && !action.mon.hasMegaEvolved) {
+        const myTeam = action.sideIndex === 1 ? state.team1 : state.team2;
+        const teamAlreadyMega = myTeam.some(p => p !== action.mon && p.hasMegaEvolved);
+        if (!teamAlreadyMega) {
+          applyMegaEvolution(action.mon);
+          const megaOpponents = action.sideIndex === 1 ? state.active2 : state.active1;
+          const newAbilityEffect = getAbilityEffect(action.mon.ability);
+          if (newAbilityEffect?.setsWeather) {
+            state.field.weather = newAbilityEffect.setsWeather;
+            state.field.weatherTurns = 5;
+          }
+          if (newAbilityEffect?.setsTerrain) {
+            state.field.terrain = newAbilityEffect.setsTerrain;
+            state.field.terrainTurns = 5;
+          }
+          if (action.mon.ability === "Intimidate") {
+            for (const opp of megaOpponents) {
+              if (opp && opp.isAlive && !opp.isFainted && !isIntimidateBlocked(opp)) {
+                opp.boosts.attack = Math.max(-6, opp.boosts.attack - 1);
+                if (opp.ability === "Competitive") opp.boosts.spAtk = Math.min(6, opp.boosts.spAtk + 2);
+                if (opp.ability === "Defiant") opp.boosts.attack = Math.min(6, opp.boosts.attack + 2);
+              }
+            }
+          }
+          turnEvents.push(`${action.mon.pokemon.name} Mega Evolved!`);
+        }
+      }
+    }
+
+    // Re-sort after mega evolutions (speed may have changed)
+    actions.sort((a, b) => {
+      if (a.priority !== b.priority) return b.priority - a.priority;
+      if (state.field.trickRoom) return a.speed - b.speed;
+      return b.speed - a.speed;
+    });
+
     for (const action of actions) {
       if (action.mon.isFainted) continue;
       // Flinch check: Fake Out's flinch sets hasMoved = true, preventing action
@@ -2185,7 +2245,6 @@ export function simulateBattleWithLog(
       const move = getMove(action.moveName);
 
       // Track transformation states before the move
-      const wasMega = action.mon.hasMegaEvolved;
       const allDisguiseBefore = new Map([...opponents, ...allies].filter((m): m is BattlePokemon => m !== null).map(m => [m, m.disguiseIntact]));
       const allIllusionBefore = new Map([...opponents, ...allies].filter((m): m is BattlePokemon => m !== null).map(m => [m, m.illusionActive]));
       const stanceBefore = action.mon.stanceForm;
@@ -2199,9 +2258,6 @@ export function simulateBattleWithLog(
       executeMove(action.mon, action.moveName, target, allies.filter((a): a is BattlePokemon => a !== null && a !== action.mon), opponents.filter((a): a is BattlePokemon => a !== null), state, action.sideIndex);
 
       // Log transformation events
-      if (!wasMega && action.mon.hasMegaEvolved) {
-        turnEvents.push(`${action.mon.pokemon.name} Mega Evolved!`);
-      }
       if (stanceBefore !== action.mon.stanceForm && action.mon.ability === "Stance Change") {
         turnEvents.push(`${action.mon.pokemon.name} changed to ${action.mon.stanceForm === "blade" ? "Blade" : "Shield"} Forme!`);
       }
@@ -2257,7 +2313,11 @@ export function simulateBattleWithLog(
           turnEvents.push(`${action.mon.pokemon.name} took ${Math.round((selfDmg / action.mon.maxHP) * 100)}% ${label}!`);
         }
         if (!hitAnything && selfDmg <= 0) {
-          turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} - no target`);
+          if (action.mon.lastMoveMissed) {
+            turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} - missed!`);
+          } else {
+            turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} - no target`);
+          }
         }
       }
     }
