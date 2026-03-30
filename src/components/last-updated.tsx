@@ -14,6 +14,16 @@ const CHANGELOGS: Record<string, { description: string; entries: ChangelogEntry[
     description: "Thanks for the support - we're updating the website as fast as possible to adapt to everything new from Pokémon Champions!",
     entries: [
       {
+        date: "30/03/2026",
+        items: [
+          "Fixed Clefable ability: now uses Magic Guard instead of Friend Guard (Clefairy-only)",
+          "Corrected stat calculation formula: SP points now applied before nature modifier",
+          "Snow weather: +50% Defense for Ice types",
+          "Sand weather: +50% Special Defense for Rock types",
+          "Added Multiscale and Shadow Shield abilities",
+        ],
+      },
+      {
         date: "29/03/2026",
         items: [
           "Dark mode support across all pages and modals",
@@ -31,6 +41,13 @@ const CHANGELOGS: Record<string, { description: string; entries: ChangelogEntry[
   meta: {
     description: "Thanks for the support - we're updating the website as fast as possible to adapt to everything new from Pokémon Champions!",
     entries: [
+      {
+        date: "30/03/2026",
+        items: [
+          "Corrected stat calculation formula: SP points now applied before nature modifier",
+          "Updated tier rankings reflect improved battle engine accuracy",
+        ],
+      },
       {
         date: "29/03/2026",
         items: [
@@ -52,6 +69,10 @@ const CHANGELOGS: Record<string, { description: string; entries: ChangelogEntry[
       {
         date: "30/03/2026",
         items: [
+          "Mega Evolution now happens at start of turn, before any attacks",
+          "Inner Focus, Shield Dust, and Own Tempo now block Fake Out flinch",
+          "Battle logs correctly show 'missed!' instead of 'no target' on accuracy fails",
+          "Corrected stat calculation formula: SP points applied before nature modifier (thanks jth1011!)",
           "Mega Evolution now triggers in-battle (no longer pre-resolved)",
           "Battle logs show 'X Mega Evolved!' with stat/type/ability changes",
           "One Mega Evolution per team per battle (VGC rule enforced)",
@@ -93,6 +114,7 @@ const CHANGELOGS: Record<string, { description: string; entries: ChangelogEntry[
       {
         date: "30/03/2026",
         items: [
+          "Corrected stat calculation formula: SP points applied before nature modifier (thanks jth1011!)",
           "Damage Calculator: Mega form stats, types, and abilities now resolve automatically",
           "Battle replays show Mega Evolution, Stance Change, Disguise, and Illusion events",
           "Improved battle accuracy with 28/28 QA tests passing",
