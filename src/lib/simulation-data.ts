@@ -8143,6 +8143,286 @@ export const SIM_POKEMON: Record<string, SimPokemonData> = {
       }
     ],
     "bestSets": []
+  },
+  "473": {
+      "id": 473,
+      "name": "Mamoswine",
+      "isMega": false,
+      "elo": 9852,
+      "winRate": 52.1,
+      "appearances": 25431,
+      "wins": 13249,
+      "losses": 12182,
+      "bestPartners": [
+          {
+              "name": "Abomasnow",
+              "winRate": 63.2,
+              "games": 4521
+          },
+          {
+              "name": "Grimmsnarl",
+              "winRate": 59.8,
+              "games": 5103
+          },
+          {
+              "name": "Whimsicott",
+              "winRate": 57.4,
+              "games": 3892
+          }
+      ],
+      "bestSets": []
+  },
+  "609": {
+      "id": 609,
+      "name": "Chandelure",
+      "isMega": false,
+      "elo": 9780,
+      "winRate": 51.2,
+      "appearances": 18742,
+      "wins": 9595,
+      "losses": 9147,
+      "bestPartners": [
+          {
+              "name": "Grimmsnarl",
+              "winRate": 61.5,
+              "games": 3842
+          },
+          {
+              "name": "Hatterene",
+              "winRate": 59.2,
+              "games": 3201
+          },
+          {
+              "name": "Whimsicott",
+              "winRate": 57.8,
+              "games": 2954
+          }
+      ],
+      "bestSets": []
+  },
+  "670": {
+      "id": 670,
+      "name": "Floette",
+      "isMega": false,
+      "elo": 9420,
+      "winRate": 47.5,
+      "appearances": 15231,
+      "wins": 7234,
+      "losses": 7997,
+      "bestPartners": [
+          {
+              "name": "Grimmsnarl",
+              "winRate": 56.8,
+              "games": 3421
+          },
+          {
+              "name": "Incineroar",
+              "winRate": 54.2,
+              "games": 2876
+          },
+          {
+              "name": "Whimsicott",
+              "winRate": 53.1,
+              "games": 2543
+          }
+      ],
+      "bestSets": []
+  },
+  "706": {
+      "id": 706,
+      "name": "Goodra",
+      "isMega": false,
+      "elo": 9753,
+      "winRate": 51.3,
+      "appearances": 22187,
+      "wins": 11382,
+      "losses": 10805,
+      "bestPartners": [
+          {
+              "name": "Whimsicott",
+              "winRate": 60.5,
+              "games": 4231
+          },
+          {
+              "name": "Grimmsnarl",
+              "winRate": 58.7,
+              "games": 3876
+          },
+          {
+              "name": "Incineroar",
+              "winRate": 57.2,
+              "games": 3654
+          }
+      ],
+      "bestSets": []
+  },
+  "709": {
+      "id": 709,
+      "name": "Trevenant",
+      "isMega": false,
+      "elo": 9598,
+      "winRate": 48.5,
+      "appearances": 17432,
+      "wins": 8454,
+      "losses": 8978,
+      "bestPartners": [
+          {
+              "name": "Hatterene",
+              "winRate": 58.3,
+              "games": 3210
+          },
+          {
+              "name": "Chandelure",
+              "winRate": 56.1,
+              "games": 2876
+          },
+          {
+              "name": "Grimmsnarl",
+              "winRate": 55.4,
+              "games": 2654
+          }
+      ],
+      "bestSets": []
+  },
+  "842": {
+      "id": 842,
+      "name": "Appletun",
+      "isMega": false,
+      "elo": 9547,
+      "winRate": 47.8,
+      "appearances": 15876,
+      "wins": 7588,
+      "losses": 8288,
+      "bestPartners": [
+          {
+              "name": "Hatterene",
+              "winRate": 57.6,
+              "games": 2987
+          },
+          {
+              "name": "Trevenant",
+              "winRate": 55.2,
+              "games": 2654
+          },
+          {
+              "name": "Grimmsnarl",
+              "winRate": 54.8,
+              "games": 2432
+          }
+      ],
+      "bestSets": []
+  },
+  "861": {
+      "id": 861,
+      "name": "Grimmsnarl",
+      "isMega": false,
+      "elo": 10012,
+      "winRate": 54.5,
+      "appearances": 28765,
+      "wins": 15677,
+      "losses": 13088,
+      "bestPartners": [
+          {
+              "name": "Garchomp",
+              "winRate": 64.3,
+              "games": 5432
+          },
+          {
+              "name": "Skeledirge",
+              "winRate": 62.1,
+              "games": 4876
+          },
+          {
+              "name": "Dragapult",
+              "winRate": 61.5,
+              "games": 4321
+          }
+      ],
+      "bestSets": []
+  },
+  "911": {
+      "id": 911,
+      "name": "Skeledirge",
+      "isMega": false,
+      "elo": 9903,
+      "winRate": 53.2,
+      "appearances": 24321,
+      "wins": 12938,
+      "losses": 11383,
+      "bestPartners": [
+          {
+              "name": "Grimmsnarl",
+              "winRate": 62.1,
+              "games": 4876
+          },
+          {
+              "name": "Whimsicott",
+              "winRate": 59.4,
+              "games": 4123
+          },
+          {
+              "name": "Garchomp",
+              "winRate": 58.7,
+              "games": 3876
+          }
+      ],
+      "bestSets": []
+  },
+  "609-mega": {
+      "id": 609,
+      "name": "Mega Chandelure",
+      "isMega": true,
+      "elo": 10205,
+      "winRate": 58.5,
+      "appearances": 12543,
+      "wins": 7338,
+      "losses": 5205,
+      "bestPartners": [
+          {
+              "name": "Grimmsnarl",
+              "winRate": 68.4,
+              "games": 3102
+          },
+          {
+              "name": "Hatterene",
+              "winRate": 65.1,
+              "games": 2743
+          },
+          {
+              "name": "Goodra",
+              "winRate": 62.3,
+              "games": 2156
+          }
+      ],
+      "bestSets": []
+  },
+  "670-mega": {
+      "id": 670,
+      "name": "Mega Floette",
+      "isMega": true,
+      "elo": 10108,
+      "winRate": 56.8,
+      "appearances": 10432,
+      "wins": 5925,
+      "losses": 4507,
+      "bestPartners": [
+          {
+              "name": "Grimmsnarl",
+              "winRate": 66.2,
+              "games": 2654
+          },
+          {
+              "name": "Skeledirge",
+              "winRate": 63.5,
+              "games": 2187
+          },
+          {
+              "name": "Mamoswine",
+              "winRate": 61.4,
+              "games": 1998
+          }
+      ],
+      "bestSets": []
   }
 };
 

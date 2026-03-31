@@ -14,6 +14,16 @@ const CHANGELOGS: Record<string, { description: string; entries: ChangelogEntry[
     description: "Thanks for the support - we're updating the website as fast as possible to adapt to everything new from Pokémon Champions!",
     entries: [
       {
+        date: "31/03/2026",
+        items: [
+          "Added 8 missing Pokémon: Mamoswine, Chandelure, Floette, Goodra, Trevenant, Appletun, Grimmsnarl, Skeledirge",
+          "Mega Chandelure with Soul Furnace ability (Ghost/Fire 30% boost)",
+          "Mega Floette with Eternal Bloom ability (Fairy 30% boost + regen)",
+          "Full movesets, competitive sets, and simulation data for all 8",
+          "Roster expanded to 155+ Pokémon",
+        ],
+      },
+      {
         date: "30/03/2026",
         items: [
           "Fixed Clefable ability: now uses Magic Guard instead of Friend Guard (Clefairy-only)",
@@ -42,6 +52,15 @@ const CHANGELOGS: Record<string, { description: string; entries: ChangelogEntry[
     description: "Thanks for the support - we're updating the website as fast as possible to adapt to everything new from Pokémon Champions!",
     entries: [
       {
+        date: "31/03/2026",
+        items: [
+          "8 new Pokémon added to tier rankings and simulation data",
+          "Mega Chandelure (S-tier) and Mega Floette (A-tier) join the meta",
+          "Grimmsnarl Prankster screens support enters A-tier",
+          "5 new prebuilt teams featuring the new roster additions",
+        ],
+      },
+      {
         date: "30/03/2026",
         items: [
           "Corrected stat calculation formula: SP points now applied before nature modifier",
@@ -66,6 +85,15 @@ const CHANGELOGS: Record<string, { description: string; entries: ChangelogEntry[
   "battle-engine": {
     description: "Thanks for the support - we're updating the website as fast as possible to adapt to everything new from Pokémon Champions!",
     entries: [
+      {
+        date: "31/03/2026",
+        items: [
+          "Soul Furnace ability: Ghost/Fire 30% boost + Sp.Def drop on entry",
+          "Eternal Bloom ability: Fairy 30% boost + 1/16 HP regen per turn",
+          "Chandelure and Floette Mega Evolutions fully integrated in engine",
+          "15/15 QA tests passing with new Pokémon",
+        ],
+      },
       {
         date: "30/03/2026",
         items: [
@@ -117,6 +145,15 @@ const CHANGELOGS: Record<string, { description: string; entries: ChangelogEntry[
   "team-builder": {
     description: "Thanks for the support - we're updating the website as fast as possible to adapt to everything new from Pokémon Champions!",
     entries: [
+      {
+        date: "31/03/2026",
+        items: [
+          "Competitive sets added for all 8 new Pokémon",
+          "Mega Chandelure and Mega Floette sets with mega stones",
+          "Grimmsnarl screens, Skeledirge Unaware, Mamoswine Thick Fat builds",
+          "5 new prebuilt teams: Hail, Mega Chandelure TR, Fairy Core, Screens HO, Dragon Balance",
+        ],
+      },
       {
         date: "30/03/2026",
         items: [

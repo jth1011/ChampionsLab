@@ -695,6 +695,86 @@ export const PREBUILT_TEAMS: PrebuiltTeam[] = [
     tags: ["goodstuff", "balanced", "no-gimmick", "consistent"],
     tier: "S",
   },
+
+  {
+    id: "pre-41", name: "Mamoswine Hail", archetype: "Weather",
+    description: "Abomasnow snow + Mamoswine physical sweeper with Grimmsnarl screens",
+    pokemonIds: [460, 473, 478, 706, 861, 911],
+    sets: [
+      {"name":"Snow Setter","nature":"Brave","ability":"Snow Warning","item":"Abomasite","moves":["Blizzard","Wood Hammer","Ice Shard","Protect"],"sp":{"hp":32,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":0}},
+      {"name":"Physical Attacker","nature":"Adamant","ability":"Thick Fat","item":"Life Orb","moves":["Icicle Crash","Earthquake","Ice Shard","Protect"],"sp":{"hp":0,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":32}},
+      {"name":"Icy Attacker","nature":"Timid","ability":"Cursed Body","item":"Focus Sash","moves":["Blizzard","Shadow Ball","Icy Wind","Protect"],"sp":{"hp":0,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":32}},
+      {"name":"Special Tank","nature":"Modest","ability":"Sap Sipper","item":"Assault Vest","moves":["Draco Meteor","Flamethrower","Thunderbolt","Sludge Bomb"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":0}},
+      {"name":"Screens Lead","nature":"Careful","ability":"Prankster","item":"Light Clay","moves":["Reflect","Light Screen","Spirit Break","Fake Out"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":0,"spDef":32,"speed":0}},
+      {"name":"Unaware Wall","nature":"Bold","ability":"Unaware","item":"Sitrus Berry","moves":["Torch Song","Shadow Ball","Will-O-Wisp","Protect"],"sp":{"hp":32,"attack":0,"defense":32,"spAtk":0,"spDef":2,"speed":0}},
+    ],
+    tags: ["weather","snow","physical","screens"],
+    tier: "B",
+  },
+
+  {
+    id: "pre-42", name: "Mega Chandelure TR", archetype: "Trick Room",
+    description: "Mega Chandelure under Trick Room with slow powerhouses",
+    pokemonIds: [609, 858, 709, 842, 861, 473],
+    sets: [
+      {"name":"Mega Soul Furnace","nature":"Quiet","ability":"Soul Furnace","item":"Chandelurite","moves":["Heat Wave","Shadow Ball","Energy Ball","Protect"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":0}},
+      {"name":"TR Setter","nature":"Quiet","ability":"Magic Bounce","item":"Focus Sash","moves":["Trick Room","Dazzling Gleam","Psychic","Protect"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":0}},
+      {"name":"Harvest TR","nature":"Brave","ability":"Harvest","item":"Sitrus Berry","moves":["Wood Hammer","Shadow Claw","Horn Leech","Protect"],"sp":{"hp":32,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":0}},
+      {"name":"TR Tank","nature":"Quiet","ability":"Thick Fat","item":"Sitrus Berry","moves":["Apple Acid","Dragon Pulse","Recover","Protect"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":0}},
+      {"name":"Screens Lead","nature":"Careful","ability":"Prankster","item":"Light Clay","moves":["Reflect","Light Screen","Spirit Break","Fake Out"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":0,"spDef":32,"speed":0}},
+      {"name":"Ice Attacker","nature":"Adamant","ability":"Thick Fat","item":"Assault Vest","moves":["Icicle Crash","Earthquake","Rock Slide","Ice Shard"],"sp":{"hp":32,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":0}},
+    ],
+    tags: ["mega","trick-room","fire","ghost"],
+    tier: "A",
+  },
+
+  {
+    id: "pre-43", name: "Mega Floette Fairy", archetype: "Fairy Core",
+    description: "Mega Floette spamming Fairy damage with Grimmsnarl support",
+    pokemonIds: [670, 861, 911, 473, 706, 547],
+    sets: [
+      {"name":"Mega Eternal Bloom","nature":"Timid","ability":"Eternal Bloom","item":"Floettite","moves":["Moonblast","Dazzling Gleam","Psychic","Protect"],"sp":{"hp":0,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":32}},
+      {"name":"Screens Lead","nature":"Careful","ability":"Prankster","item":"Light Clay","moves":["Reflect","Light Screen","Spirit Break","Fake Out"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":0,"spDef":32,"speed":0}},
+      {"name":"Unaware Wall","nature":"Bold","ability":"Unaware","item":"Sitrus Berry","moves":["Torch Song","Shadow Ball","Will-O-Wisp","Protect"],"sp":{"hp":32,"attack":0,"defense":32,"spAtk":0,"spDef":2,"speed":0}},
+      {"name":"Physical Attacker","nature":"Adamant","ability":"Thick Fat","item":"Life Orb","moves":["Icicle Crash","Earthquake","Ice Shard","Protect"],"sp":{"hp":0,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":32}},
+      {"name":"Special Tank","nature":"Modest","ability":"Sap Sipper","item":"Assault Vest","moves":["Draco Meteor","Flamethrower","Thunderbolt","Sludge Bomb"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":0}},
+      {"name":"Tailwind","nature":"Timid","ability":"Prankster","item":"Focus Sash","moves":["Tailwind","Moonblast","Encore","Protect"],"sp":{"hp":4,"attack":0,"defense":0,"spAtk":30,"spDef":0,"speed":32}},
+    ],
+    tags: ["mega","fairy","screens","offensive"],
+    tier: "A",
+  },
+
+  {
+    id: "pre-44", name: "Grimmsnarl Screens HO", archetype: "Hyper Offense",
+    description: "Grimmsnarl sets screens for hyper offensive sweepers",
+    pokemonIds: [861, 445, 911, 609, 530, 282],
+    sets: [
+      {"name":"Screens Lead","nature":"Careful","ability":"Prankster","item":"Light Clay","moves":["Reflect","Light Screen","Spirit Break","Fake Out"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":0,"spDef":32,"speed":0}},
+      {"name":"EQ Sweeper","nature":"Jolly","ability":"Rough Skin","item":"Life Orb","moves":["Earthquake","Dragon Claw","Rock Slide","Protect"],"sp":{"hp":0,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":32}},
+      {"name":"Special Attacker","nature":"Modest","ability":"Blaze","item":"Life Orb","moves":["Torch Song","Shadow Ball","Heat Wave","Protect"],"sp":{"hp":0,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":32}},
+      {"name":"Mega Soul Furnace","nature":"Timid","ability":"Soul Furnace","item":"Chandelurite","moves":["Heat Wave","Shadow Ball","Energy Ball","Protect"],"sp":{"hp":0,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":32}},
+      {"name":"Sand Rush","nature":"Jolly","ability":"Sand Rush","item":"Choice Scarf","moves":["Earthquake","Iron Head","Rock Slide","Rapid Spin"],"sp":{"hp":0,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":32}},
+      {"name":"Mega Support","nature":"Timid","ability":"Pixilate","item":"Gardevoirite","moves":["Hyper Voice","Psychic","Trick Room","Protect"],"sp":{"hp":20,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":12}},
+    ],
+    tags: ["hyper-offense","screens","dark","fairy"],
+    tier: "A",
+  },
+
+  {
+    id: "pre-45", name: "Dragon Core Balance", archetype: "Balance",
+    description: "Goodra and Appletun dragon core with balanced coverage",
+    pokemonIds: [706, 709, 842, 473, 727, 547],
+    sets: [
+      {"name":"Special Tank","nature":"Modest","ability":"Sap Sipper","item":"Assault Vest","moves":["Draco Meteor","Flamethrower","Thunderbolt","Sludge Bomb"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":0}},
+      {"name":"Harvest TR","nature":"Brave","ability":"Harvest","item":"Sitrus Berry","moves":["Wood Hammer","Shadow Claw","Horn Leech","Protect"],"sp":{"hp":32,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":0}},
+      {"name":"TR Tank","nature":"Quiet","ability":"Thick Fat","item":"Sitrus Berry","moves":["Apple Acid","Dragon Pulse","Recover","Protect"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":0}},
+      {"name":"Focus Sash Lead","nature":"Jolly","ability":"Thick Fat","item":"Focus Sash","moves":["Icicle Crash","Earthquake","Ice Shard","Protect"],"sp":{"hp":0,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":32}},
+      {"name":"Intimidate","nature":"Careful","ability":"Intimidate","item":"Sitrus Berry","moves":["Flare Blitz","Darkest Lariat","Fake Out","Protect"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":0,"spDef":32,"speed":0}},
+      {"name":"Tailwind","nature":"Timid","ability":"Prankster","item":"Focus Sash","moves":["Tailwind","Moonblast","Encore","Protect"],"sp":{"hp":4,"attack":0,"defense":0,"spAtk":30,"spDef":0,"speed":32}},
+    ],
+    tags: ["dragon","balance","bulky","coverage"],
+    tier: "B",
+  },
 ];
 
 /** Get prebuilt teams filtered by tag */

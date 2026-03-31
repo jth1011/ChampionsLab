@@ -452,6 +452,11 @@ export const ABILITY_DATA: Record<string, AbilityEffect> = {
     description: "Grass moves restore 25% HP dealt. Status moves gain +1 priority.",
     vgcRelevance: 8,
   },
+  "Eternal Bloom": {
+    name: "Eternal Bloom", category: "champions",
+    description: "Fairy-type moves gain 30% power. Restores 1/16 max HP at the end of each turn.",
+    damageMultiplier: 1.3, vgcRelevance: 8,
+  },
   "Frozen Veil": {
     name: "Frozen Veil", category: "champions",
     description: "Ice-type moves gain STAB even without being Ice type. Takes 50% less Ice damage.",
@@ -491,6 +496,11 @@ export const ABILITY_DATA: Record<string, AbilityEffect> = {
     name: "Sky High", category: "champions",
     description: "Flying moves gain 30% power. Immune to Ground. Ignores weather damage.",
     damageMultiplier: 1.3, typeImmunity: "ground", vgcRelevance: 8,
+  },
+  "Soul Furnace": {
+    name: "Soul Furnace", category: "champions",
+    description: "Ghost and Fire-type moves gain 30% power. On switch-in, lowers adjacent opponents' Sp. Def by 1 stage.",
+    damageMultiplier: 1.3, vgcRelevance: 9,
   },
   "Spectral Doom": {
     name: "Spectral Doom", category: "champions",

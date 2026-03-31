@@ -1231,4 +1231,64 @@ export const USAGE_DATA: Record<number, CommonSet[]> = {
     { name: "Bulky Trapper", nature: "Impish", ability: "Mimicry", item: "Sitrus Berry", moves: ["Iron Head","Earthquake","Snap Trap","Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 } },
     { name: "Assault Vest", nature: "Adamant", ability: "Mimicry", item: "Assault Vest", moves: ["Iron Head","Earthquake","Rock Slide","Stomping Tantrum"], sp: { hp: 32, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 0 } },
   ],
+  // Mamoswine (id: 473)
+  473: [
+    {"name":"Physical Attacker","nature":"Adamant","ability":"Thick Fat","item":"Life Orb","moves":["Icicle Crash","Earthquake","Ice Shard","Protect"],"sp":{"hp":0,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":32}},
+    {"name":"Assault Vest","nature":"Adamant","ability":"Thick Fat","item":"Assault Vest","moves":["Icicle Crash","Earthquake","Rock Slide","Ice Shard"],"sp":{"hp":32,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":0}},
+    {"name":"Focus Sash Lead","nature":"Jolly","ability":"Thick Fat","item":"Focus Sash","moves":["Icicle Crash","Earthquake","Ice Shard","Protect"],"sp":{"hp":0,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":32}},
+    {"name":"Choice Scarf","nature":"Jolly","ability":"Thick Fat","item":"Choice Scarf","moves":["Icicle Crash","Earthquake","Rock Slide","Knock Off"],"sp":{"hp":0,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":32}},
+  ],
+
+  // Chandelure (id: 609)
+  609: [
+    {"name":"Mega Soul Furnace","nature":"Timid","ability":"Soul Furnace","item":"Chandelurite","moves":["Heat Wave","Shadow Ball","Energy Ball","Protect"],"sp":{"hp":0,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":32}},
+    {"name":"Trick Room Setter","nature":"Quiet","ability":"Flash Fire","item":"Focus Sash","moves":["Heat Wave","Shadow Ball","Trick Room","Protect"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":0}},
+    {"name":"Choice Specs","nature":"Modest","ability":"Flash Fire","item":"Choice Specs","moves":["Heat Wave","Shadow Ball","Overheat","Energy Ball"],"sp":{"hp":0,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":32}},
+    {"name":"WoW Support","nature":"Timid","ability":"Flash Fire","item":"Sitrus Berry","moves":["Shadow Ball","Will-O-Wisp","Heat Wave","Protect"],"sp":{"hp":20,"attack":0,"defense":14,"spAtk":0,"spDef":0,"speed":32}},
+  ],
+
+  // Floette (id: 670)
+  670: [
+    {"name":"Mega Eternal Bloom","nature":"Timid","ability":"Eternal Bloom","item":"Floettite","moves":["Moonblast","Dazzling Gleam","Psychic","Protect"],"sp":{"hp":0,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":32}},
+    {"name":"Calm Mind","nature":"Timid","ability":"Flower Veil","item":"Sitrus Berry","moves":["Moonblast","Calm Mind","Psychic","Protect"],"sp":{"hp":20,"attack":0,"defense":14,"spAtk":0,"spDef":0,"speed":32}},
+    {"name":"Support","nature":"Bold","ability":"Flower Veil","item":"Light Clay","moves":["Moonblast","Light Screen","Helping Hand","Protect"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":0,"spDef":32,"speed":0}},
+  ],
+
+  // Goodra (id: 706)
+  706: [
+    {"name":"Special Tank","nature":"Modest","ability":"Sap Sipper","item":"Assault Vest","moves":["Draco Meteor","Flamethrower","Thunderbolt","Sludge Bomb"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":0}},
+    {"name":"Life Orb Attacker","nature":"Modest","ability":"Sap Sipper","item":"Life Orb","moves":["Draco Meteor","Flamethrower","Muddy Water","Protect"],"sp":{"hp":4,"attack":0,"defense":0,"spAtk":32,"spDef":0,"speed":30}},
+    {"name":"Choice Specs","nature":"Modest","ability":"Sap Sipper","item":"Choice Specs","moves":["Draco Meteor","Flamethrower","Ice Beam","Thunderbolt"],"sp":{"hp":4,"attack":0,"defense":0,"spAtk":32,"spDef":0,"speed":30}},
+    {"name":"Bulky Dragon","nature":"Calm","ability":"Gooey","item":"Sitrus Berry","moves":["Dragon Pulse","Flamethrower","Breaking Swipe","Protect"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":0,"spDef":32,"speed":0}},
+  ],
+
+  // Trevenant (id: 709)
+  709: [
+    {"name":"Harvest TR","nature":"Brave","ability":"Harvest","item":"Sitrus Berry","moves":["Wood Hammer","Shadow Claw","Horn Leech","Protect"],"sp":{"hp":32,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":0}},
+    {"name":"Will-O-Wisp Tank","nature":"Impish","ability":"Natural Cure","item":"Sitrus Berry","moves":["Will-O-Wisp","Shadow Claw","Horn Leech","Protect"],"sp":{"hp":32,"attack":0,"defense":32,"spAtk":0,"spDef":2,"speed":0}},
+    {"name":"Physical Attacker","nature":"Adamant","ability":"Frisk","item":"Life Orb","moves":["Wood Hammer","Shadow Claw","Drain Punch","Protect"],"sp":{"hp":0,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":32}},
+  ],
+
+  // Appletun (id: 842)
+  842: [
+    {"name":"Trick Room Tank","nature":"Quiet","ability":"Thick Fat","item":"Sitrus Berry","moves":["Apple Acid","Dragon Pulse","Recover","Protect"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":0}},
+    {"name":"Body Press Wall","nature":"Bold","ability":"Thick Fat","item":"Leftovers","moves":["Apple Acid","Body Press","Iron Defense","Protect"],"sp":{"hp":32,"attack":0,"defense":32,"spAtk":0,"spDef":2,"speed":0}},
+    {"name":"Assault Vest","nature":"Quiet","ability":"Thick Fat","item":"Assault Vest","moves":["Apple Acid","Dragon Pulse","Energy Ball","Draco Meteor"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":0}},
+  ],
+
+  // Grimmsnarl (id: 861)
+  861: [
+    {"name":"Screens Lead","nature":"Careful","ability":"Prankster","item":"Light Clay","moves":["Reflect","Light Screen","Spirit Break","Fake Out"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":0,"spDef":32,"speed":0}},
+    {"name":"Thunder Wave Support","nature":"Impish","ability":"Prankster","item":"Sitrus Berry","moves":["Thunder Wave","Spirit Break","Fake Out","Protect"],"sp":{"hp":32,"attack":0,"defense":32,"spAtk":0,"spDef":2,"speed":0}},
+    {"name":"Physical Attacker","nature":"Adamant","ability":"Prankster","item":"Life Orb","moves":["Play Rough","Sucker Punch","Fake Out","Protect"],"sp":{"hp":0,"attack":32,"defense":2,"spAtk":0,"spDef":0,"speed":32}},
+    {"name":"Bulky Taunt","nature":"Careful","ability":"Prankster","item":"Sitrus Berry","moves":["Taunt","Spirit Break","Fake Out","Protect"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":0,"spDef":32,"speed":0}},
+  ],
+
+  // Skeledirge (id: 911)
+  911: [
+    {"name":"Unaware Wall","nature":"Bold","ability":"Unaware","item":"Sitrus Berry","moves":["Torch Song","Shadow Ball","Will-O-Wisp","Protect"],"sp":{"hp":32,"attack":0,"defense":32,"spAtk":0,"spDef":2,"speed":0}},
+    {"name":"Special Attacker","nature":"Modest","ability":"Blaze","item":"Life Orb","moves":["Torch Song","Shadow Ball","Heat Wave","Protect"],"sp":{"hp":0,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":32}},
+    {"name":"TR Tank","nature":"Quiet","ability":"Unaware","item":"Sitrus Berry","moves":["Torch Song","Shadow Ball","Earth Power","Protect"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":32,"spDef":0,"speed":0}},
+    {"name":"Snarl Support","nature":"Calm","ability":"Unaware","item":"Leftovers","moves":["Torch Song","Snarl","Will-O-Wisp","Protect"],"sp":{"hp":32,"attack":0,"defense":2,"spAtk":0,"spDef":32,"speed":0}},
+  ],
 };
