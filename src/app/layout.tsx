@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -101,7 +102,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <LazyParticles />
         <Navbar />
-        <main className="flex-1 relative z-10">{children}</main>
+        <Suspense>
+          <main className="flex-1 relative z-10">{children}</main>
+        </Suspense>
         <ThemeToggle />
       </body>
     </html>
