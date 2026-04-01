@@ -1122,6 +1122,12 @@ export const MOVE_DATA: Record<string, EngineMove> = {
     flags: {},
     effect: "Sacrifices 25% max HP to create a decoy that absorbs damage.",
   },
+  "Shed Tail": {
+    name: "Shed Tail", type: "normal", category: "status", basePower: 0,
+    accuracy: 0, pp: 10, priority: 0, target: "self",
+    flags: {},
+    effect: "Creates a substitute using 50% of max HP, then switches out.",
+  },
   "Endure": {
     name: "Endure", type: "normal", category: "status", basePower: 0,
     accuracy: 0, pp: 10, priority: 4, target: "self",
