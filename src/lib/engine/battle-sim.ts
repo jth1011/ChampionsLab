@@ -124,6 +124,9 @@ interface BattlePokemon {
   lastMoveMissed: boolean;
   // Tracking for log: last move was immune
   lastMoveImmune: boolean;
+  // Tracking for log: spread move per-target results
+  spreadMissed: string[];
+  spreadImmune: string[];
 }
 
 interface FieldState {
@@ -210,6 +213,8 @@ function createBattlePokemon(pokemon: ChampionsPokemon, set: CommonSet, teamForI
     // Log tracking
     lastMoveMissed: false,
     lastMoveImmune: false,
+    spreadMissed: [],
+    spreadImmune: [],
   };
 }
 
@@ -1409,6 +1414,8 @@ function executeMove(
   
   user.lastMoveMissed = false;
   user.lastMoveImmune = false;
+  user.spreadMissed = [];
+  user.spreadImmune = [];
   for (const t of targets) {
     // Protected targets block all damage (except Drill Force pierce)
     if (t.isProtected) {
@@ -1426,6 +1433,7 @@ function executeMove(
     // Bulletproof: immune to bullet/bomb moves
     if (t.ability === "Bulletproof" && move.flags?.bullet && user.ability !== "Mold Breaker") {
       user.lastMoveImmune = true;
+      user.spreadImmune.push(t.pokemon.name);
       continue;
     }
 
@@ -1433,6 +1441,7 @@ function executeMove(
     if (t.ability === "Wind Rider" && move.flags?.wind && user.ability !== "Mold Breaker") {
       t.boosts.attack = Math.min(6, t.boosts.attack + 1);
       user.lastMoveImmune = true;
+      user.spreadImmune.push(t.pokemon.name);
       continue;
     }
 
@@ -1459,6 +1468,7 @@ function executeMove(
         t.boosts.attack = Math.min(6, t.boosts.attack + 1);
       }
       user.lastMoveImmune = true;
+      user.spreadImmune.push(t.pokemon.name);
       continue; // Move is fully absorbed
     }
     
@@ -1467,6 +1477,7 @@ function executeMove(
       || ((move.name === "Thunder" || move.name === "Hurricane") && state.field.weather === "rain");
     if (!weatherBypass && move.accuracy > 0 && Math.random() * 100 > move.accuracy) {
       user.lastMoveMissed = true;
+      user.spreadMissed.push(t.pokemon.name);
       continue;
     }
     
@@ -1519,6 +1530,7 @@ function executeMove(
     // Type/ability immunity: skip this target entirely (0 damage)
     if (result.effectiveness === 0) {
       user.lastMoveImmune = true;
+      user.spreadImmune.push(t.pokemon.name);
       continue;
     }
     
@@ -2368,12 +2380,13 @@ export function simulateBattleWithLog(
       } else {
         // Log damage to all affected targets (spread moves hit multiple)
         let hitAnything = false;
+        const isSpread = move && isSpreadMove(move);
         for (const mon of logTargets) {
           const prev = hpBefore.get(mon) ?? mon.currentHP;
           const dmg = prev - mon.currentHP;
           const wasProtected = protectedBefore.get(mon);
           if (wasProtected && dmg <= 0 && opponents.includes(mon)) {
-            if (mon === target || (move && isSpreadMove(move))) {
+            if (mon === target || isSpread) {
               turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} on ${mon.pokemon.name} - blocked by Protect!`);
               hitAnything = true;
             }
@@ -2383,6 +2396,15 @@ export function simulateBattleWithLog(
           } else if (dmg > 0) {
             turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} on ${mon.pokemon.name} (${Math.round((dmg / mon.maxHP) * 100)}% damage)`);
             hitAnything = true;
+          } else if (isSpread && opponents.includes(mon) && !mon.isFainted) {
+            // Spread move: check per-target miss/immune tracking
+            if (action.mon.spreadMissed.includes(mon.pokemon.name)) {
+              turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} on ${mon.pokemon.name} - missed!`);
+              hitAnything = true;
+            } else if (action.mon.spreadImmune.includes(mon.pokemon.name)) {
+              turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} on ${mon.pokemon.name} - no effect!`);
+              hitAnything = true;
+            }
           }
         }
         // Log recoil/Life Orb self-damage separately
