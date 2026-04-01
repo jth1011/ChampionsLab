@@ -1247,8 +1247,8 @@ export default function TeamBuilderPage() {
                       const activeMega = megaForms[slot.megaFormIndex ?? 0];
                       const label = megaForms.length > 1 && activeMega ? activeMega.name.replace(slot.pokemon.name, "").replace("Mega ", "").trim() : "MEGA";
                       return (
-                        <div className="absolute top-2 left-10 z-20 px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-500/20 border border-amber-300 dark:border-amber-500/40 leading-none">
-                          <span className="text-[7px] font-bold text-amber-700 dark:text-amber-400 leading-none">{label || "MEGA"}</span>
+                        <div className="absolute top-2 left-10 z-20 px-1 rounded bg-amber-200/60 dark:bg-amber-500/20 border border-amber-400/50 dark:border-amber-500/30 flex items-center" style={{ height: 16 }}>
+                          <span className="text-[7px] font-bold text-amber-700 dark:text-amber-400">{label || "MEGA"}</span>
                         </div>
                       );
                     })()}
