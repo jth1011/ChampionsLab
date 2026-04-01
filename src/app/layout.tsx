@@ -3,7 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
-import { PokeballParticles } from "@/components/pokeball-particles";
+import { LazyParticles } from "@/components/lazy-particles";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const inter = Inter({
@@ -94,7 +94,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <PokeballParticles />
+        <LazyParticles />
         <Navbar />
         <main className="flex-1 relative z-10">{children}</main>
         <ThemeToggle />
