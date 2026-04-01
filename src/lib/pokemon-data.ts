@@ -3321,6 +3321,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 10,
         "description": "The user lets loose a huge yawn that lulls the target into falling asleep on the next turn."
+      },
+      {
+        "name": "Follow Me",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "accuracy": 0,
+        "pp": 20,
+        "description": "The user draws attention to itself, making all targets take aim only at the user."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/9.png",
@@ -5149,6 +5158,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 90,
         "pp": 10,
         "description": "A move that leaves the target badly poisoned. Its poison damage worsens every turn."
+      },
+      {
+              "name": "Fake Out",
+              "type": "normal",
+              "category": "physical",
+              "power": 40,
+              "accuracy": 100,
+              "pp": 10,
+              "description": "A move that hits first and makes the target flinch. Only works on the first turn."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/25.png",
@@ -6179,6 +6197,24 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 90,
         "pp": 10,
         "description": "A move that leaves the target badly poisoned. Its poison damage worsens every turn."
+      },
+      {
+              "name": "Psychic",
+              "type": "psychic",
+              "category": "special",
+              "power": 90,
+              "accuracy": 100,
+              "pp": 10,
+              "description": "Has a good chance of lowering SP. DEF."
+      },
+      {
+              "name": "Close Combat",
+              "type": "fighting",
+              "category": "physical",
+              "power": 120,
+              "accuracy": 100,
+              "pp": 5,
+              "description": "The user fights the target up close without guarding itself. It also cuts the user's Defense and Sp. Def."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/26.png",
@@ -8681,6 +8717,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 30,
         "description": "The user is roused, and its Attack and Sp. Atk stats are boosted."
+      },
+      {
+              "name": "Trick Room",
+              "type": "psychic",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 5,
+              "description": "The user creates a bizarre area in which slower Pokémon get to move first for five turns."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/36.png",
@@ -9628,6 +9673,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 85,
         "pp": 15,
         "description": "The user shoots a sinister flame at the target to inflict a burn."
+      },
+      {
+              "name": "Psychic",
+              "type": "psychic",
+              "category": "special",
+              "power": 90,
+              "accuracy": 100,
+              "pp": 10,
+              "description": "Has a good chance of lowering SP. DEF."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/38.png",
@@ -11314,6 +11368,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 85,
         "pp": 15,
         "description": "The user shoots a sinister flame at the target to inflict a burn."
+      },
+      {
+              "name": "Morning Sun",
+              "type": "normal",
+              "category": "status",
+              "power": 0,
+              "accuracy": 100,
+              "pp": 5,
+              "description": "A move called Morning Sun."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/59.png",
@@ -11918,6 +11981,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 20,
         "description": "The user lays a trap of levitating stones around the foe. The trap hurts foes that switch into battle."
+      },
+      {
+              "name": "Head Smash",
+              "type": "rock",
+              "category": "physical",
+              "power": 150,
+              "accuracy": 80,
+              "pp": 5,
+              "description": "The user attacks with a hazardous, full-power headbutt. The user also takes terrible damage."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10230.png",
@@ -21817,6 +21889,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 30,
         "description": "The user is roused, and its Attack and Sp. Atk stats increase."
+      },
+      {
+              "name": "Wish",
+              "type": "normal",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 10,
+              "description": "A move called Wish."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/134.png",
@@ -27450,6 +27531,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 100,
         "pp": 10,
         "description": "A seed that causes worry is planted on the target. It prevents sleep by making the target's Ability Insomnia."
+      },
+      {
+              "name": "Dragon Pulse",
+              "type": "dragon",
+              "category": "special",
+              "power": 85,
+              "accuracy": 100,
+              "pp": 10,
+              "description": "The target is attacked with a shock wave generated by the user's gaping mouth."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/154.png",
@@ -31772,6 +31862,24 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 30,
         "description": "The user is roused, and its Attack and Sp. Atk stats are boosted."
+      },
+      {
+              "name": "Belly Drum",
+              "type": "normal",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 10,
+              "description": "Maximizes ATTACK while sacrificing HP."
+      },
+      {
+              "name": "Aqua Jet",
+              "type": "water",
+              "category": "physical",
+              "power": 40,
+              "accuracy": 100,
+              "pp": 20,
+              "description": "The user lunges at the target at a speed that makes it almost invisible. It is sure to strike first."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/184.png",
@@ -34511,6 +34619,24 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 30,
         "description": "The user is roused, and its Attack and Sp. Atk stats are boosted."
+      },
+      {
+              "name": "Yawn",
+              "type": "normal",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 10,
+              "description": "A move called Yawn."
+      },
+      {
+              "name": "Wish",
+              "type": "normal",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 10,
+              "description": "A move called Wish."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/197.png",
@@ -46145,6 +46271,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 90,
         "pp": 10,
         "description": "A move that leaves the target badly poisoned. Its poison damage worsens every turn."
+      },
+      {
+              "name": "Head Smash",
+              "type": "rock",
+              "category": "physical",
+              "power": 150,
+              "accuracy": 80,
+              "pp": 5,
+              "description": "The user attacks with a hazardous, full-power headbutt. The user also takes terrible damage."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/306.png",
@@ -51670,6 +51805,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 10,
         "description": "The user turns the ground under everyone’s feet to grass for five turns. This restores the HP of Pokémon on the ground a little every turn."
+      },
+      {
+              "name": "Heavy Slam",
+              "type": "steel",
+              "category": "physical",
+              "power": 80,
+              "accuracy": 100,
+              "pp": 10,
+              "description": "A move called Heavy Slam."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/389.png",
@@ -54599,6 +54743,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 30,
         "description": "The user is roused, and its Attack and Sp. Atk stats are boosted."
+      },
+      {
+              "name": "Fake Out",
+              "type": "normal",
+              "category": "physical",
+              "power": 40,
+              "accuracy": 100,
+              "pp": 10,
+              "description": "A move that hits first and makes the target flinch. Only works on the first turn."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/428.png",
@@ -57443,6 +57596,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 30,
         "description": "The user is roused, and its Attack and Sp. Atk stats are boosted."
+      },
+      {
+              "name": "Iron Head",
+              "type": "steel",
+              "category": "physical",
+              "power": 80,
+              "accuracy": 100,
+              "pp": 15,
+              "description": "The foe slams the target with its steel-hard head. It may also make the target flinch."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/448.png",
@@ -58161,6 +58323,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 10,
         "description": "The user lets loose a huge yawn that lulls the target into falling asleep on the next turn."
+      },
+      {
+              "name": "Whirlwind",
+              "type": "normal",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 20,
+              "description": "A move called Whirlwind."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/450.png",
@@ -59814,6 +59985,24 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 10,
         "description": "The user summons a snowstorm lasting five turns. This boosts the Defense stats of Ice types."
+      },
+      {
+              "name": "Fake Out",
+              "type": "normal",
+              "category": "physical",
+              "power": 40,
+              "accuracy": 100,
+              "pp": 10,
+              "description": "A move that hits first and makes the target flinch. Only works on the first turn."
+      },
+      {
+              "name": "Low Kick",
+              "type": "fighting",
+              "category": "physical",
+              "power": 80,
+              "accuracy": 100,
+              "pp": 20,
+              "description": "A move called Low Kick."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/461.png",
@@ -66640,6 +66829,24 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 85,
         "pp": 15,
         "description": "The user shoots a sinister flame at the target to inflict a burn."
+      },
+      {
+              "name": "Hydro Pump",
+              "type": "water",
+              "category": "special",
+              "power": 110,
+              "accuracy": 80,
+              "pp": 5,
+              "description": "Blasts water at high pressure to hit the foe."
+      },
+      {
+              "name": "Overheat",
+              "type": "fire",
+              "category": "special",
+              "power": 130,
+              "accuracy": 90,
+              "pp": 5,
+              "description": "Allows a full-power attack, but sharply lowers SP. ATK."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/479.png",
@@ -70652,6 +70859,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 100,
         "pp": 10,
         "description": "A seed that causes worry is planted on the target. It prevents sleep by making the target's Ability Insomnia."
+      },
+      {
+              "name": "Hidden Power Fire",
+              "type": "fire",
+              "category": "special",
+              "power": 60,
+              "accuracy": 100,
+              "pp": 15,
+              "description": "A move called Hidden Power Fire."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/497.png",
@@ -73155,6 +73371,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 100,
         "pp": 20,
         "description": "The target is taunted into a rage that allows it to use only attack moves for three turns."
+      },
+      {
+              "name": "Sacred Sword",
+              "type": "fighting",
+              "category": "physical",
+              "power": 90,
+              "accuracy": 100,
+              "pp": 15,
+              "description": "A move called Sacred Sword."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10236.png",
@@ -79634,6 +79859,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 15,
         "description": "The user teleports using a strange power and switches its place with one of its allies."
+      },
+      {
+              "name": "Aurora Veil",
+              "type": "ice",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 20,
+              "description": "A move called Aurora Veil."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/584.png",
@@ -81277,6 +81511,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 20,
         "description": "The user lays a trap of levitating stones around the foe. The trap hurts foes that switch into battle."
+      },
+      {
+              "name": "Iron Head",
+              "type": "steel",
+              "category": "physical",
+              "power": 80,
+              "accuracy": 100,
+              "pp": 15,
+              "description": "The foe slams the target with its steel-hard head. It may also make the target flinch."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/10180.png",
@@ -88882,6 +89125,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 20,
         "description": "The user lightly performs a beautiful, mystic dance. It boosts the user’s Sp. Atk, Sp. Def, and Speed stats."
+      },
+      {
+              "name": "Rage Powder",
+              "type": "bug",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 20,
+              "description": "A move called Rage Powder."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/666.png",
@@ -90919,6 +91171,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 90,
         "pp": 10,
         "description": "A move that leaves the target badly poisoned. Its poison damage worsens every turn."
+      },
+      {
+              "name": "King's Shield",
+              "type": "steel",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 10,
+              "description": "Protects the user from attacks. Lowers Attack of any attacker that makes contact."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/681.png",
@@ -92827,6 +93088,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 20,
         "description": "The user lays a trap of levitating stones around the foe. The trap hurts foes that switch into battle."
+      },
+      {
+              "name": "Aurora Veil",
+              "type": "ice",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 20,
+              "description": "A move called Aurora Veil."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/699.png",
@@ -93584,6 +93854,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 30,
         "description": "The user is roused, and its Attack and Sp. Atk stats are boosted."
+      },
+      {
+              "name": "Yawn",
+              "type": "normal",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 10,
+              "description": "A move called Yawn."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/700.png",
@@ -101965,6 +102244,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 90,
         "pp": 10,
         "description": "A move that leaves the target badly poisoned. Its poison damage worsens every turn."
+      },
+      {
+              "name": "Counter",
+              "type": "fighting",
+              "category": "physical",
+              "power": 0,
+              "accuracy": 100,
+              "pp": 20,
+              "description": "A move called Counter."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/745.png",
@@ -110886,6 +111174,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 10,
         "description": "This protects Pokémon on the ground from priority moves and powers up Psychic-type moves for five turns."
+      },
+      {
+              "name": "Fake Out",
+              "type": "normal",
+              "category": "physical",
+              "power": 40,
+              "accuracy": 100,
+              "pp": 10,
+              "description": "A move that hits first and makes the target flinch. Only works on the first turn."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/866.png",
@@ -115586,6 +115883,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 20,
         "description": "The user lays a trap of poison spikes at the feet of the opposing team. The spikes will poison opposing Pokémon that switch into battle."
+      },
+      {
+              "name": "Fake Out",
+              "type": "normal",
+              "category": "physical",
+              "power": 40,
+              "accuracy": 100,
+              "pp": 10,
+              "description": "A move that hits first and makes the target flinch. Only works on the first turn."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/903.png",
@@ -116272,6 +116578,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 100,
         "pp": 10,
         "description": "A seed that causes worry is planted on the target. It prevents sleep by making the target's Ability Insomnia."
+      },
+      {
+              "name": "Sucker Punch",
+              "type": "dark",
+              "category": "physical",
+              "power": 70,
+              "accuracy": 100,
+              "pp": 5,
+              "description": "Enables the user to attack first. Fails if the target is not readying an attack."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/908.png",
@@ -117476,6 +117791,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 90,
         "pp": 20,
         "description": "The user launches a weak jolt of electricity that paralyzes the target."
+      },
+      {
+              "name": "Fake Out",
+              "type": "normal",
+              "category": "physical",
+              "power": 40,
+              "accuracy": 100,
+              "pp": 10,
+              "description": "A move that hits first and makes the target flinch. Only works on the first turn."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/923.png",
@@ -117958,6 +118282,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 10,
         "description": "The user tidies up and removes the effects of Spikes, Stealth Rock, Sticky Web, Toxic Spikes, and Substitute. This also boosts the user’s Attack and Speed stats."
+      },
+      {
+              "name": "Bite",
+              "type": "dark",
+              "category": "physical",
+              "power": 60,
+              "accuracy": 100,
+              "pp": 25,
+              "description": "A move called Bite."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/925.png",
@@ -120023,6 +120356,33 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 100,
         "pp": 10,
         "description": "A seed that causes worry is planted on the target. It prevents sleep by making the target's Ability Insomnia."
+      },
+      {
+              "name": "Flare Blitz",
+              "type": "fire",
+              "category": "physical",
+              "power": 120,
+              "accuracy": 100,
+              "pp": 15,
+              "description": "A move called Flare Blitz."
+      },
+      {
+              "name": "Power Whip",
+              "type": "grass",
+              "category": "physical",
+              "power": 120,
+              "accuracy": 85,
+              "pp": 10,
+              "description": "The user violently whirls its vines or tentacles to harshly lash the foe."
+      },
+      {
+              "name": "Destiny Bond",
+              "type": "ghost",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 5,
+              "description": "A move called Destiny Bond."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/952.png",
@@ -120531,6 +120891,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 90,
         "pp": 20,
         "description": "The user launches a weak jolt of electricity that paralyzes the target."
+      },
+      {
+              "name": "U-turn",
+              "type": "bug",
+              "category": "physical",
+              "power": 70,
+              "accuracy": 100,
+              "pp": 20,
+              "description": "After making its attack, the user rushes back to switch places with a party Pokémon in waiting."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/959.png",
@@ -121408,6 +121777,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 10,
         "description": "Makes a decoy with 1/4 user's max HP."
+      },
+      {
+        "name": "Shed Tail",
+        "type": "normal",
+        "category": "status",
+        "power": 0,
+        "accuracy": null,
+        "pp": 10,
+        "description": "Creates a substitute using 50% of max HP, then switches out."
       },
       {
         "name": "Curse",
@@ -122789,6 +123167,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 100,
         "pp": 20,
         "description": "The target is taunted into a rage that allows it to use only attack moves for three turns."
+      },
+      {
+              "name": "Ice Beam",
+              "type": "ice",
+              "category": "special",
+              "power": 90,
+              "accuracy": 100,
+              "pp": 10,
+              "description": "An attack that may freeze the foe."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/978.png",
@@ -124086,6 +124473,15 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": 100,
         "pp": 15,
         "description": "The user torments and enrages the target, making it incapable of using the same move twice in a row."
+      },
+      {
+              "name": "Sucker Punch",
+              "type": "dark",
+              "category": "physical",
+              "power": 70,
+              "accuracy": 100,
+              "pp": 5,
+              "description": "Enables the user to attack first. Fails if the target is not readying an attack."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/983.png",
@@ -124492,6 +124888,24 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
         "accuracy": null,
         "pp": 40,
         "description": "The user withdraws its body into its hard shell, boosting its Defense stat."
+      },
+      {
+              "name": "Psyshock",
+              "type": "psychic",
+              "category": "special",
+              "power": 80,
+              "accuracy": 100,
+              "pp": 10,
+              "description": "A move called Psyshock."
+      },
+      {
+              "name": "Helping Hand",
+              "type": "normal",
+              "category": "status",
+              "power": 0,
+              "accuracy": 0,
+              "pp": 20,
+              "description": "A move called Helping Hand."
       }
     ],
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1013.png",
