@@ -1629,9 +1629,9 @@ export default function BattleBotPage() {
                         <p className="text-[10px] text-muted-foreground uppercase font-medium mb-1.5">Ability</p>
                         <div className="space-y-1">
                           {editPkm.abilities.map((ab) => (
-                            <button key={ab.name} onClick={() => updateSetField(editingSlotIndex, { ability: ab.name })} className={cn("w-full text-left px-2.5 py-1.5 rounded-lg text-[10px] border transition-all", editSet.ability === ab.name ? "bg-violet-100 dark:bg-violet-500/20 border-violet-300 dark:border-violet-500/40 font-semibold text-violet-800 dark:text-violet-200" : "bg-gray-50 dark:bg-gray-200/5 border-gray-200 dark:border-gray-200/10 hover:bg-gray-100 dark:hover:bg-gray-200/10")}>
+                            <button key={ab.name} onClick={() => updateSetField(editingSlotIndex, { ability: ab.name })} className={cn("w-full text-left px-2.5 py-1.5 rounded-lg text-[10px] border transition-all", editSet.ability === ab.name ? "bg-violet-100 dark:bg-violet-500/20 border-violet-300 dark:border-violet-500/40 font-semibold text-violet-800 dark:text-violet-100" : "bg-gray-50 dark:bg-gray-200/5 border-gray-200 dark:border-gray-200/10 hover:bg-gray-100 dark:hover:bg-gray-200/10")}>
                               <span>{ab.name}{ab.isHidden ? " (H)" : ""}{ab.isChampions ? " ✦" : ""}</span>
-                              <p className="text-[8px] text-muted-foreground mt-0.5 line-clamp-1">{ab.description}</p>
+                              <p className={cn("text-[8px] mt-0.5 line-clamp-1", editSet.ability === ab.name ? "text-violet-600 dark:text-violet-300" : "text-muted-foreground")}>{ab.description}</p>
                             </button>
                           ))}
                           {megaForms.map((form, fi) => {
@@ -1642,9 +1642,9 @@ export default function BattleBotPage() {
                               return s?.item ?? usageSets.find(s2 => isMegaItem(s2.item))?.item;
                             };
                             return (
-                              <button key={megaAb.name} onClick={() => updateSetField(editingSlotIndex, { ability: megaAb.name, item: getMegaStone() ?? editSet.item })} className={cn("w-full text-left px-2.5 py-1.5 rounded-lg text-[10px] border transition-all", editSet.ability === megaAb.name ? "bg-amber-100 dark:bg-amber-500/20 border-amber-300 dark:border-amber-500/40 font-semibold text-amber-800 dark:text-amber-200" : "bg-gray-50 dark:bg-gray-200/5 border-gray-200 dark:border-gray-200/10 hover:bg-gray-100 dark:hover:bg-gray-200/10")}>
+                              <button key={megaAb.name} onClick={() => updateSetField(editingSlotIndex, { ability: megaAb.name, item: getMegaStone() ?? editSet.item })} className={cn("w-full text-left px-2.5 py-1.5 rounded-lg text-[10px] border transition-all", editSet.ability === megaAb.name ? "bg-amber-100 dark:bg-amber-500/20 border-amber-300 dark:border-amber-500/40 font-semibold text-amber-800 dark:text-amber-100" : "bg-gray-50 dark:bg-gray-200/5 border-gray-200 dark:border-gray-200/10 hover:bg-gray-100 dark:hover:bg-gray-200/10")}>
                                 <span>{megaAb.name} <span className="text-[8px] text-amber-600 dark:text-amber-400 font-bold">MEGA</span></span>
-                                <p className="text-[8px] text-muted-foreground mt-0.5 line-clamp-1">{megaAb.description}</p>
+                                <p className={cn("text-[8px] mt-0.5 line-clamp-1", editSet.ability === megaAb.name ? "text-amber-600 dark:text-amber-300" : "text-muted-foreground")}>{megaAb.description}</p>
                               </button>
                             );
                           })}
