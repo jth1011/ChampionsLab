@@ -11,7 +11,7 @@ import {
   GraduationCap,
   Heart,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics";
 
@@ -26,11 +26,10 @@ const NAV_ITEMS = [
 
 export function Navbar() {
   const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Close mobile nav on route change
+  // Close mobile nav on route change (body class is set by inline script in layout)
   useEffect(() => {
-    setMobileOpen(false);
+    document.body.classList.remove('mobile-open');
   }, [pathname]);
 
   return (
@@ -92,59 +91,41 @@ export function Navbar() {
                 <span>Support Us</span>
               </a>
             </nav>
-            {/* Mobile hamburger button — same pattern as ThemeToggle */}
-            <button
-              onClick={() => setMobileOpen((o) => !o)}
-              className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg cursor-pointer touch-manipulation"
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? (
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
           </div>
         </div>
 
-        {/* Mobile nav panel */}
-        {mobileOpen && (
-          <nav className="md:hidden border-t border-gray-200/60 px-4 py-3 space-y-1">
-            {NAV_ITEMS.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => { setMobileOpen(false); trackEvent("nav_click", "navigation", `mobile_${item.label}`); }}
-                  className={cn(
-                    "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors",
-                    isActive
-                      ? "bg-gray-900/[0.05] text-foreground"
-                      : "text-muted-foreground hover:text-foreground hover:bg-gray-900/[0.03]"
-                  )}
-                >
-                  <item.icon className="w-5 h-5" />
-                  {item.label}
-                </Link>
-              );
-            })}
-            <a
-              href="https://buymeacoffee.com/championslab"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackEvent("support_click", "engagement", "mobile")}
-              className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold bg-gradient-to-r from-yellow-400 to-orange-500 text-white"
-            >
-              <Heart className="w-5 h-5 fill-white" />
-              Support Us
-            </a>
-          </nav>
-        )}
+        {/* Mobile nav panel — visibility controlled by body.mobile-open class (set by inline script in layout) */}
+        <nav className="mobile-nav-panel md:hidden border-t border-gray-200/60 px-4 py-3 space-y-1">
+          {NAV_ITEMS.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => trackEvent("nav_click", "navigation", `mobile_${item.label}`)}
+                className={cn(
+                  "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors",
+                  isActive
+                    ? "bg-gray-900/[0.05] text-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-gray-900/[0.03]"
+                )}
+              >
+                <item.icon className="w-5 h-5" />
+                {item.label}
+              </Link>
+            );
+          })}
+          <a
+            href="https://buymeacoffee.com/championslab"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent("support_click", "engagement", "mobile")}
+            className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold bg-gradient-to-r from-yellow-400 to-orange-500 text-white"
+          >
+            <Heart className="w-5 h-5 fill-white" />
+            Support Us
+          </a>
+        </nav>
       </header>
 
       {/* Spacer for fixed navbar */}
