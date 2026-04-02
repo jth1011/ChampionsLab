@@ -68,16 +68,17 @@ console.log("\n🔬 TEST 1: Stat Calculation (SP System)");
   const stats = calculateStats(garchomp.baseStats, { hp: 0, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 32 }, "Jolly");
   
   // HP = floor((2*108+31)*50/100) + 60 + 0 = floor(123.5) + 60 = 123+60 = 183
-  // Atk = floor(((2*130+31)*50/100+5)*1.0) + 32 = floor(150.5+5) + 32 = 155+32 = 187 (no nature boost on Atk for Jolly)
-  // Spe = floor(((2*102+31)*50/100+5)*1.1) + 32 = floor((117.5+5)*1.1) + 32 = floor(134.75) + 32 = 134+32 = 166
+  // Spe = floor(floor(((2*102+31)*50/100+5)+32)*1.1) = floor(floor(154.5)*1.1) = floor(169.9) = 169
   
   assert(stats.hp === 183, `Garchomp HP = ${stats.hp} (expected 183)`);
-  assert(stats.speed === 166, `Garchomp Spe (Jolly, 32SP) = ${stats.speed} (expected 166)`);
+  assert(stats.speed === 169, `Garchomp Spe (Jolly, 32SP) = ${stats.speed} (expected 169)`);
   
   // Test Adamant nature boost on Attack
   const atkStats = calculateStats(garchomp.baseStats, { hp: 0, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 0 }, "Adamant");
-  // Atk = floor(((2*130+31)*50/100+5)*1.1) + 32 = floor((145.5+5)*1.1) + 32 = floor(165.55) + 32 = 165+32 = 197
-  assert(atkStats.attack === 197, `Garchomp Atk (Adamant, 32SP) = ${atkStats.attack} (expected 197)`);
+  
+  // Atk = floor(floor(((2*130+31)*50/100+5)+32)*1.1) = floor(floor(182.5)*1.1) = floor(200.2) = 200
+  
+  assert(atkStats.attack === 200, `Garchomp Atk (Adamant, 32SP) = ${atkStats.attack} (expected 200)`);
 }
 
 // ── TEST 2: Basic Damage Calculation ──────────────────────────────────
