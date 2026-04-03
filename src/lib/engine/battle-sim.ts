@@ -969,6 +969,7 @@ function aiChooseAction(
         // Check if bench has a significantly better matchup
         for (const candidate of bench) {
           let typeScore = 0;
+          const candidateImmunity = getTypeImmunity(candidate.ability);
           for (const opp of opponents) {
             if (!opp || opp.isFainted) continue;
             for (const type of candidate.types) {
@@ -978,6 +979,10 @@ function aiChooseAction(
             for (const oppType of opp.types) {
               const eff = getMatchup(oppType, candidate.types);
               if (eff > 1) typeScore -= 5;
+            }
+            // Ability immunity: huge bonus for absorbing opponent's STAB
+            if (candidateImmunity && opp.types.includes(candidateImmunity)) {
+              typeScore += 20;
             }
           }
           if (typeScore >= 8) { switchScore = Math.max(switchScore, 35); break; }
@@ -1001,6 +1006,17 @@ function aiChooseAction(
 }
 
 // ── BATTLE SIMULATION ────────────────────────────────────────────────────────
+
+/** Weather rocks extend duration from 5 to 8 turns */
+function getWeatherDuration(weather: string, item: string): number {
+  if ((weather === "rain" && item === "Damp Rock") ||
+      (weather === "sun" && item === "Heat Rock") ||
+      (weather === "sand" && item === "Smooth Rock") ||
+      (weather === "snow" && item === "Icy Rock")) {
+    return 8;
+  }
+  return 5;
+}
 
 function createInitialField(): FieldState {
   return {
@@ -1060,6 +1076,24 @@ function applySwitch(state: BattleState, sideIndex: 1 | 2, slot: 0 | 1): void {
       // Intimidate is very valuable on switch-in
       if (candidate.ability === "Intimidate") score += 20;
       
+      // Ability-based type immunity: huge bonus for absorbing opponent's STAB
+      const candidateImmunity = getTypeImmunity(candidate.ability);
+      if (candidateImmunity) {
+        for (const opp of opponents) {
+          if (!opp || opp.isFainted) continue;
+          // If opponent's STAB type matches our immunity, massive bonus
+          if (opp.types.includes(candidateImmunity)) score += 25;
+          // Also check opponent's moves directly for even stronger signal
+          for (const moveName of opp.set.moves) {
+            const moveData = getMove(moveName);
+            if (moveData && moveData.type === candidateImmunity && moveData.category !== "status") {
+              score += 15;
+              break;
+            }
+          }
+        }
+      }
+      
       // Fake Out available = immediate pressure
       if (candidate.set.moves.includes("Fake Out")) score += 12;
       
@@ -1108,7 +1142,7 @@ function applySwitch(state: BattleState, sideIndex: 1 | 2, slot: 0 | 1): void {
     const entryAbility = getAbilityEffect(next.ability);
     if (entryAbility?.setsWeather) {
       state.field.weather = entryAbility.setsWeather;
-      state.field.weatherTurns = 5;
+      state.field.weatherTurns = getWeatherDuration(entryAbility.setsWeather, next.item);
     }
     if (entryAbility?.setsTerrain) {
       state.field.terrain = entryAbility.setsTerrain;
@@ -1210,6 +1244,12 @@ function applyEndOfTurn(state: BattleState): void {
       // Leftovers
       if (mon.item === "Leftovers") {
         mon.currentHP = Math.min(mon.maxHP, mon.currentHP + Math.floor(mon.maxHP / 16));
+      }
+      
+      // Lum Berry: cure any status condition
+      if (mon.item === "Lum Berry" && !mon.itemConsumed && mon.status) {
+        mon.status = null;
+        mon.itemConsumed = true;
       }
       
       // Sand damage
@@ -1768,7 +1808,7 @@ export function simulateBattle(
     const abilityEffect = getAbilityEffect(mon.ability);
     if (abilityEffect?.setsWeather) {
       state.field.weather = abilityEffect.setsWeather;
-      state.field.weatherTurns = 5;
+      state.field.weatherTurns = getWeatherDuration(abilityEffect.setsWeather, mon.item);
     }
   }
   // Terrain setters on entry
@@ -1913,7 +1953,7 @@ export function simulateBattle(
           const newAbilityEffect = getAbilityEffect(action.mon.ability);
           if (newAbilityEffect?.setsWeather) {
             state.field.weather = newAbilityEffect.setsWeather;
-            state.field.weatherTurns = 5;
+            state.field.weatherTurns = getWeatherDuration(newAbilityEffect.setsWeather, action.mon.item);
           }
           if (newAbilityEffect?.setsTerrain) {
             state.field.terrain = newAbilityEffect.setsTerrain;
@@ -2091,7 +2131,7 @@ export function simulateBattleWithLog(
     const abilityEffect = getAbilityEffect(mon.ability);
     if (abilityEffect?.setsWeather) {
       state.field.weather = abilityEffect.setsWeather;
-      state.field.weatherTurns = 5;
+      state.field.weatherTurns = getWeatherDuration(abilityEffect.setsWeather, mon.item);
       entryEvents.push(`${mon.pokemon.name}'s ${mon.ability} set the ${abilityEffect.setsWeather}!`);
     }
   }
@@ -2221,7 +2261,7 @@ export function simulateBattleWithLog(
           const newAbilityEffect = getAbilityEffect(action.mon.ability);
           if (newAbilityEffect?.setsWeather) {
             state.field.weather = newAbilityEffect.setsWeather;
-            state.field.weatherTurns = 5;
+            state.field.weatherTurns = getWeatherDuration(newAbilityEffect.setsWeather, action.mon.item);
           }
           if (newAbilityEffect?.setsTerrain) {
             state.field.terrain = newAbilityEffect.setsTerrain;

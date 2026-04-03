@@ -353,19 +353,26 @@ export default function TeamBuilderPage() {
     ctx.fillText("championslab.xyz", W - 40, 80);
 
     if (logo) {
-      const logoSize = 80;
-      ctx.drawImage(logo, W - 40 - brandWidth - logoSize - 14, 10, logoSize, logoSize);
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+      const logoW = 120;
+      const logoH = 80;
+      ctx.drawImage(logo, W - 40 - brandWidth - logoW - 14, 10, logoW, logoH);
     }
     ctx.textAlign = "left";
 
-    // Load sprites as images
+    // Load sprites as images (use mega sprite if slot is mega)
     const spritePromises = filled.map(s => {
+      const megaForms = s.pokemon!.forms?.filter(f => f.isMega) ?? [];
+      const megaSprite = s.isMega && megaForms[s.megaFormIndex ?? 0]
+        ? megaForms[s.megaFormIndex ?? 0].sprite
+        : s.pokemon!.sprite;
       return new Promise<HTMLImageElement | null>((resolve) => {
         const img = new window.Image();
         img.crossOrigin = "anonymous";
         img.onload = () => resolve(img);
         img.onerror = () => resolve(null);
-        img.src = s.pokemon!.sprite;
+        img.src = megaSprite;
       });
     });
     const sprites = await Promise.all(spritePromises);
@@ -395,31 +402,31 @@ export default function TeamBuilderPage() {
 
       // Name + Item
       ctx.fillStyle = "#ffffff";
-      ctx.font = "bold 20px Inter, system-ui, sans-serif";
+      ctx.font = "bold 24px Inter, system-ui, sans-serif";
       ctx.fillText(p.name, x + 110, y + 48);
       if (s.item) {
         const nameWidth = ctx.measureText(p.name).width;
-        ctx.font = "13px Inter, system-ui, sans-serif";
-        ctx.fillStyle = "rgba(255,255,255,0.5)";
+        ctx.font = "15px Inter, system-ui, sans-serif";
+        ctx.fillStyle = "rgba(255,255,255,0.6)";
         ctx.fillText(`@ ${s.item}`, x + 110 + nameWidth + 10, y + 48);
       }
 
       // Nature + Ability
-      ctx.font = "13px Inter, system-ui, sans-serif";
-      ctx.fillStyle = "rgba(255,255,255,0.7)";
+      ctx.font = "15px Inter, system-ui, sans-serif";
+      ctx.fillStyle = "rgba(255,255,255,0.8)";
       const info = [s.nature && `${s.nature} Nature`, s.ability].filter(Boolean).join(" · ");
-      ctx.fillText(info, x + 110, y + 70);
+      ctx.fillText(info, x + 110, y + 72);
 
       // Moves
-      ctx.font = "12px Inter, system-ui, sans-serif";
+      ctx.font = "14px Inter, system-ui, sans-serif";
       s.moves.forEach((m, mi) => {
-        const mx = x + 110 + (mi >= 2 ? 140 : 0);
-        const my = y + 95 + (mi % 2) * 22;
+        const mx = x + 110 + (mi >= 2 ? 150 : 0);
+        const my = y + 97 + (mi % 2) * 24;
         ctx.fillStyle = "rgba(255,255,255,0.15)";
         ctx.beginPath();
-        ctx.roundRect(mx, my - 13, 130, 20, 6);
+        ctx.roundRect(mx, my - 14, 140, 22, 6);
         ctx.fill();
-        ctx.fillStyle = "rgba(255,255,255,0.85)";
+        ctx.fillStyle = "rgba(255,255,255,0.9)";
         ctx.fillText(`• ${m}`, mx + 6, my);
       });
 
@@ -427,10 +434,10 @@ export default function TeamBuilderPage() {
       const sp = s.statPoints;
       const totalSP = Object.values(sp).reduce((a, b) => a + b, 0);
       if (totalSP > 0) {
-        ctx.font = "11px Inter, system-ui, sans-serif";
-        ctx.fillStyle = "rgba(255,255,255,0.4)";
+        ctx.font = "14px Inter, system-ui, sans-serif";
+        ctx.fillStyle = "rgba(255,255,255,0.7)";
         const spText = STAT_KEYS.filter(k => sp[k] > 0).map(k => `${sp[k]} ${STAT_LABELS[k]}`).join(" / ");
-        ctx.fillText(spText, x + 110, y + 155);
+        ctx.fillText(spText, x + 110, y + 158);
       }
 
       // Type badges
@@ -747,20 +754,46 @@ export default function TeamBuilderPage() {
     setShowPokemonPicker(true);
   };
 
-  // Coverage calculation
-  const teamTypes = filledSlots.flatMap((s) => s.pokemon!.types);
+  // Coverage calculation — resolve mega types per slot
+  const ATE_ABILITIES: Record<string, PokemonType> = {
+    Aerilate: "flying", Pixilate: "fairy", Refrigerate: "ice",
+    Galvanize: "electric", Dragonize: "dragon",
+  };
+  const resolveSlotTypes = (s: TeamSlot): PokemonType[] => {
+    if (s.isMega && s.pokemon!.forms) {
+      const megaForms = s.pokemon!.forms.filter(f => f.isMega);
+      const mf = megaForms[s.megaFormIndex ?? 0];
+      if (mf) return mf.types as PokemonType[];
+    }
+    return s.pokemon!.types;
+  };
+  const resolveSlotAbility = (s: TeamSlot): string => {
+    if (s.ability) return s.ability;
+    if (s.isMega && s.pokemon!.forms) {
+      const megaForms = s.pokemon!.forms.filter(f => f.isMega);
+      const mf = megaForms[s.megaFormIndex ?? 0];
+      if (mf) return mf.abilities[0]?.name ?? s.pokemon!.abilities[0]?.name ?? "";
+    }
+    return s.pokemon!.abilities[0]?.name ?? "";
+  };
+  const teamTypes = filledSlots.flatMap((s) => resolveSlotTypes(s));
 
   // Offensive coverage: check selected moves (slot.moves), not full movepool
+  // Accounts for -ate abilities converting Normal-type moves
   const offensiveCoverage: Record<string, number> = {};
   ALL_TYPES.forEach((defType) => {
     let count = 0;
     filledSlots.forEach((s) => {
+      const ability = resolveSlotAbility(s);
+      const ateType = ATE_ABILITIES[ability];
       // Check if any of this slot's selected moves are SE vs defType
       const hasHit = s.moves.some((moveName) => {
-        // Look up move type from the pokemon's move data first
         const moveData = s.pokemon!.moves.find((m) => m.name === moveName);
-        if (!moveData) return false;
-        const eff = TYPE_CHART[moveData.type as PokemonType]?.[defType] ?? 1;
+        if (!moveData || moveData.category === "status") return false;
+        // -ate abilities convert Normal moves to the ability's type
+        let moveType = moveData.type as PokemonType;
+        if (ateType && moveType === "normal") moveType = ateType;
+        const eff = TYPE_CHART[moveType]?.[defType] ?? 1;
         return eff >= 2;
       });
       if (hasHit) count++;
@@ -769,7 +802,7 @@ export default function TeamBuilderPage() {
   });
 
   // Defensive profile: count weaknesses, resistances, and immunities per type
-  // Now accounts for ability-based immunities and resistances
+  // Uses mega types and accounts for ability-based immunities and resistances
   const ABILITY_RESISTS: Record<string, string[]> = {
     "Thick Fat": ["fire", "ice"],
     "Heatproof": ["fire"],
@@ -786,13 +819,13 @@ export default function TeamBuilderPage() {
     let weakCount = 0;
     let resistCount = 0;
     filledSlots.forEach((s) => {
-      const types = s.pokemon!.types;
+      const types = resolveSlotTypes(s);
       let mult = 1;
       for (const t of types) {
         mult *= TYPE_CHART[atkType]?.[t] ?? 1;
       }
       // Apply ability-based type modifiers
-      const ability = s.ability || s.pokemon!.abilities[0]?.name || "";
+      const ability = resolveSlotAbility(s);
       const immuneType = getTypeImmunity(ability);
       if (immuneType === atkType) {
         mult = 0; // Full immunity from ability (Levitate, Water Absorb, etc.)
@@ -998,7 +1031,7 @@ export default function TeamBuilderPage() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-6"
       >
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex flex-col gap-4">
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 min-w-0">
             <div className="shrink-0">
               <h1 className="text-3xl font-bold">
@@ -1025,7 +1058,7 @@ export default function TeamBuilderPage() {
             />
           </div>
 
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 sm:overflow-visible sm:flex-wrap">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 sm:overflow-visible sm:flex-wrap sm:justify-center">
             <button
               onClick={generateShareImage}
               disabled={filledSlots.length === 0}

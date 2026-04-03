@@ -216,6 +216,22 @@ export const ITEMS: Record<string, ItemEffect> = {
     name: "Light Clay",
     description: "Extends Light Screen and Reflect from 5 to 8 turns.",
   },
+  "Damp Rock": {
+    name: "Damp Rock",
+    description: "Extends rain from 5 to 8 turns.",
+  },
+  "Heat Rock": {
+    name: "Heat Rock",
+    description: "Extends sun from 5 to 8 turns.",
+  },
+  "Smooth Rock": {
+    name: "Smooth Rock",
+    description: "Extends sandstorm from 5 to 8 turns.",
+  },
+  "Icy Rock": {
+    name: "Icy Rock",
+    description: "Extends snow from 5 to 8 turns.",
+  },
   "Terrain Extender": {
     name: "Terrain Extender",
     description: "Extends terrain from 5 to 8 turns.",

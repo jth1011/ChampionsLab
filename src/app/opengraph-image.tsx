@@ -1,11 +1,15 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
-export const runtime = "edge";
 export const alt = "Champions Lab - Pokémon Champions 2026";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+export default async function Image() {
+  const logoBytes = await readFile(join(process.cwd(), "public/logo.png"));
+  const logoBase64 = `data:image/png;base64,${logoBytes.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -28,26 +32,13 @@ export default function Image() {
             gap: "16px",
           }}
         >
-          <div
-            style={{
-              fontSize: "72px",
-              display: "flex",
-            }}
-          >
-            ⚡
-          </div>
-          <div
-            style={{
-              fontSize: "56px",
-              fontWeight: 800,
-              background: "linear-gradient(90deg, #a78bfa, #22d3ee)",
-              backgroundClip: "text",
-              color: "transparent",
-              letterSpacing: "-2px",
-            }}
-          >
-            Champions Lab
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logoBase64}
+            alt=""
+            width={200}
+            height={200}
+          />
           <div
             style={{
               fontSize: "24px",
