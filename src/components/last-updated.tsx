@@ -18,6 +18,13 @@ const SHARED_ENTRIES: ChangelogEntry[] = [
       "Share image now shows Mega sprites when a Pokémon is Mega Evolved",
       "Share image text enlarged and improved readability",
       "Instant hamburger menu: pure HTML button, zero React hydration delay",
+      "Team Builder buttons centered and no longer overlap team name",
+      "Fixed navbar title/subtitle wrapping at mid-range resolutions",
+      "Battle AI now considers ability immunities when switching (Lightning Rod, Storm Drain, Flash Fire, Water Absorb, etc.)",
+      "Damp Rock, Heat Rock, Smooth Rock, Icy Rock now extend weather from 5 to 8 turns",
+      "Lum Berry now cures status conditions in battle",
+      "Type Coverage in Team Builder now accounts for -ate abilities (Dragonize, Pixilate, etc.)",
+      "Type Coverage now uses Mega form types for defensive matchups",
     ],
   },
   {

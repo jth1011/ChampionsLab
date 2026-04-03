@@ -43,17 +43,17 @@ export function Navbar() {
                 <Image
                   src="/logo.png"
                   alt="Champions Lab"
-                  width={100}
-                  height={80}
+                  width={76}
+                  height={60}
                   className="-my-3"
                   unoptimized
                 />
               </div>
-              <div>
-                <span className="text-lg font-bold tracking-tight bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              <div className="hidden sm:block">
+                <span className="text-lg font-bold tracking-tight whitespace-nowrap bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
                   Champions Lab
                 </span>
-                <span className="hidden sm:block text-[10px] text-muted-foreground -mt-1 tracking-widest uppercase">
+                <span className="hidden md:block text-[10px] text-muted-foreground -mt-1 tracking-widest uppercase">
                   Your competitive edge starts here
                 </span>
               </div>

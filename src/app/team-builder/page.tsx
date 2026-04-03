@@ -754,20 +754,46 @@ export default function TeamBuilderPage() {
     setShowPokemonPicker(true);
   };
 
-  // Coverage calculation
-  const teamTypes = filledSlots.flatMap((s) => s.pokemon!.types);
+  // Coverage calculation — resolve mega types per slot
+  const ATE_ABILITIES: Record<string, PokemonType> = {
+    Aerilate: "flying", Pixilate: "fairy", Refrigerate: "ice",
+    Galvanize: "electric", Dragonize: "dragon",
+  };
+  const resolveSlotTypes = (s: TeamSlot): PokemonType[] => {
+    if (s.isMega && s.pokemon!.forms) {
+      const megaForms = s.pokemon!.forms.filter(f => f.isMega);
+      const mf = megaForms[s.megaFormIndex ?? 0];
+      if (mf) return mf.types as PokemonType[];
+    }
+    return s.pokemon!.types;
+  };
+  const resolveSlotAbility = (s: TeamSlot): string => {
+    if (s.ability) return s.ability;
+    if (s.isMega && s.pokemon!.forms) {
+      const megaForms = s.pokemon!.forms.filter(f => f.isMega);
+      const mf = megaForms[s.megaFormIndex ?? 0];
+      if (mf) return mf.abilities[0]?.name ?? s.pokemon!.abilities[0]?.name ?? "";
+    }
+    return s.pokemon!.abilities[0]?.name ?? "";
+  };
+  const teamTypes = filledSlots.flatMap((s) => resolveSlotTypes(s));
 
   // Offensive coverage: check selected moves (slot.moves), not full movepool
+  // Accounts for -ate abilities converting Normal-type moves
   const offensiveCoverage: Record<string, number> = {};
   ALL_TYPES.forEach((defType) => {
     let count = 0;
     filledSlots.forEach((s) => {
+      const ability = resolveSlotAbility(s);
+      const ateType = ATE_ABILITIES[ability];
       // Check if any of this slot's selected moves are SE vs defType
       const hasHit = s.moves.some((moveName) => {
-        // Look up move type from the pokemon's move data first
         const moveData = s.pokemon!.moves.find((m) => m.name === moveName);
-        if (!moveData) return false;
-        const eff = TYPE_CHART[moveData.type as PokemonType]?.[defType] ?? 1;
+        if (!moveData || moveData.category === "status") return false;
+        // -ate abilities convert Normal moves to the ability's type
+        let moveType = moveData.type as PokemonType;
+        if (ateType && moveType === "normal") moveType = ateType;
+        const eff = TYPE_CHART[moveType]?.[defType] ?? 1;
         return eff >= 2;
       });
       if (hasHit) count++;
@@ -776,7 +802,7 @@ export default function TeamBuilderPage() {
   });
 
   // Defensive profile: count weaknesses, resistances, and immunities per type
-  // Now accounts for ability-based immunities and resistances
+  // Uses mega types and accounts for ability-based immunities and resistances
   const ABILITY_RESISTS: Record<string, string[]> = {
     "Thick Fat": ["fire", "ice"],
     "Heatproof": ["fire"],
@@ -793,13 +819,13 @@ export default function TeamBuilderPage() {
     let weakCount = 0;
     let resistCount = 0;
     filledSlots.forEach((s) => {
-      const types = s.pokemon!.types;
+      const types = resolveSlotTypes(s);
       let mult = 1;
       for (const t of types) {
         mult *= TYPE_CHART[atkType]?.[t] ?? 1;
       }
       // Apply ability-based type modifiers
-      const ability = s.ability || s.pokemon!.abilities[0]?.name || "";
+      const ability = resolveSlotAbility(s);
       const immuneType = getTypeImmunity(ability);
       if (immuneType === atkType) {
         mult = 0; // Full immunity from ability (Levitate, Water Absorb, etc.)
@@ -1005,7 +1031,7 @@ export default function TeamBuilderPage() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-6"
       >
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex flex-col gap-4">
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 min-w-0">
             <div className="shrink-0">
               <h1 className="text-3xl font-bold">
@@ -1032,7 +1058,7 @@ export default function TeamBuilderPage() {
             />
           </div>
 
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 sm:overflow-visible sm:flex-wrap">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 sm:overflow-visible sm:flex-wrap sm:justify-center">
             <button
               onClick={generateShareImage}
               disabled={filledSlots.length === 0}
