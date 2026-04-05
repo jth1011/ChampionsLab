@@ -13,6 +13,10 @@ const SHARED_ENTRIES: ChangelogEntry[] = [
   {
     date: "05/04/2026",
     items: [
+      "Added Tauros (#128) — Normal-type physical attacker with Intimidate, full movepool and competitive sets",
+      "Added Castform (#351) — Weather Pokémon with Forecast ability, weather-based sets for rain, sun, and hail",
+      "Mega Pokémon now have a Pre-Mega Ability selector (e.g. Intimidate before Mega Gyarados)",
+      "Share image now shows both pre-mega and mega abilities",
       "Stat Points now show Base Stats and Final Stats (Total) for each stat",
       "Stat bars are now draggable sliders with grab handles",
       "Nature-boosted stats highlighted in red, lowered in blue",

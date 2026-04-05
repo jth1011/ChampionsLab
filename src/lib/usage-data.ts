@@ -106,6 +106,14 @@ export const USAGE_DATA: Record<number, CommonSet[]> = {
     { name: "Bulky Mega", nature: "Adamant", ability: "Aerilate", item: "Pinsirite", moves: ["Return", "Close Combat", "Feint", "Protect"], sp: { hp: 20, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 12 } },
   ],
 
+  // Tauros (id: 128)
+  128: [
+    { name: "Intimidate Physical", nature: "Jolly", ability: "Intimidate", item: "Life Orb", moves: ["Body Slam", "Close Combat", "Rock Slide", "Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 } },
+    { name: "Sheer Force Attacker", nature: "Jolly", ability: "Sheer Force", item: "Life Orb", moves: ["Body Slam", "Iron Head", "Rock Slide", "Protect"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 } },
+    { name: "Choice Scarf", nature: "Jolly", ability: "Intimidate", item: "Choice Scarf", moves: ["Close Combat", "Rock Slide", "Wild Charge", "Earthquake"], sp: { hp: 0, attack: 32, defense: 2, spAtk: 0, spDef: 0, speed: 32 } },
+    { name: "Bulky Intimidate", nature: "Adamant", ability: "Intimidate", item: "Sitrus Berry", moves: ["Body Slam", "Close Combat", "Helping Hand", "Protect"], sp: { hp: 20, attack: 32, defense: 2, spAtk: 0, spDef: 12, speed: 0 } },
+  ],
+
   // Gyarados (id: 130)
   130: [
     { name: "Mega Intimidate", nature: "Adamant", ability: "Mold Breaker", item: "Gyaradosite", moves: ["Waterfall", "Crunch", "Ice Fang", "Protect"], sp: { hp: 4, attack: 32, defense: 0, spAtk: 0, spDef: 0, speed: 30 } },
@@ -256,6 +264,14 @@ export const USAGE_DATA: Record<number, CommonSet[]> = {
     { name: "Icy Wind Support", nature: "Calm", ability: "Competitive", item: "Sitrus Berry", moves: ["Scald", "Icy Wind", "Recover", "Protect"], sp: { hp: 32, attack: 0, defense: 2, spAtk: 0, spDef: 32, speed: 0 } },
     { name: "Coil Attacker", nature: "Bold", ability: "Marvel Scale", item: "Flame Orb", moves: ["Coil", "Waterfall", "Ice Beam", "Protect"], sp: { hp: 32, attack: 0, defense: 32, spAtk: 0, spDef: 2, speed: 0 } },
     { name: "Choice Specs", nature: "Modest", ability: "Competitive", item: "Choice Specs", moves: ["Hydro Pump", "Ice Beam", "Dragon Pulse", "Scald"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 } },
+  ],
+
+  // Castform (id: 351)
+  351: [
+    { name: "Rain Attacker", nature: "Modest", ability: "Forecast", item: "Mystic Water", moves: ["Weather Ball", "Rain Dance", "Thunder", "Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 } },
+    { name: "Sun Attacker", nature: "Modest", ability: "Forecast", item: "Charcoal", moves: ["Weather Ball", "Sunny Day", "Solar Beam", "Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 } },
+    { name: "Weather Support", nature: "Timid", ability: "Forecast", item: "Focus Sash", moves: ["Weather Ball", "Rain Dance", "Thunder Wave", "Protect"], sp: { hp: 0, attack: 0, defense: 2, spAtk: 32, spDef: 0, speed: 32 } },
+    { name: "Hail Sweeper", nature: "Modest", ability: "Forecast", item: "Never-Melt Ice", moves: ["Weather Ball", "Hail", "Thunderbolt", "Protect"], sp: { hp: 4, attack: 0, defense: 0, spAtk: 32, spDef: 0, speed: 30 } },
   ],
 
   // Absol (id: 359)
