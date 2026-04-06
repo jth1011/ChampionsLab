@@ -15,6 +15,7 @@ const SHARED_ENTRIES: ChangelogEntry[] = [
     items: [
       "Fixed Team Builder layout at medium screen sizes (1280-1730px) — right column now stacks below instead of squeezing stat sliders",
       "Fixed Mega Absol Z, Mega Garchomp Z, and Mega Lucario Z having identical stats to their regular mega forms — restored unique Z-mega stat distributions",
+      "Battle Bot replay now shows targets and effects for status moves (e.g. Thunder Wave, Will-O-Wisp)",
       "Added 6 more missing held items: Fairy Feather, Eject Pack, Eject Button, Room Service, Lagging Tail, Iron Ball",
       "Fixed mobile search dropdown closing when keyboard appears",
     ],

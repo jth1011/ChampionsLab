@@ -2397,6 +2397,9 @@ export function simulateBattleWithLog(
       const protectedBefore = new Map(logTargets.map(m => [m, m.isProtected]));
       const userHPBefore = action.mon.currentHP;
 
+      // Track status before move for status-move logging
+      const statusBefore = new Map(logTargets.map(m => [m, m.status]));
+
       executeMove(action.mon, action.moveName, target, allies.filter((a): a is BattlePokemon => a !== null && a !== action.mon), opponents.filter((a): a is BattlePokemon => a !== null), state, action.sideIndex);
 
       // Log transformation events
@@ -2422,7 +2425,25 @@ export function simulateBattleWithLog(
             turnEvents.push(`${action.mon.pokemon.name}'s ${action.moveName} failed!`);
           }
         } else {
-          turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName}!`);
+          // Check if any target gained a new status from this move
+          const statusNames: Record<string, string> = { paralysis: "paralyzed", burn: "burned", poison: "poisoned", sleep: "put to sleep", freeze: "frozen" };
+          let statusLogged = false;
+          for (const mon of logTargets) {
+            const prevStatus = statusBefore.get(mon);
+            if (!prevStatus && mon.status) {
+              turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} on ${mon.pokemon.name}! ${mon.pokemon.name} was ${statusNames[mon.status] ?? mon.status}!`);
+              statusLogged = true;
+            }
+          }
+          if (!statusLogged) {
+            // Status move without status change (Tailwind, Trick Room, boosts, etc.)
+            if (target && move.secondary?.status) {
+              // Targeted status move that missed or was immune
+              turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName} on ${target.pokemon.name} - no effect!`);
+            } else {
+              turnEvents.push(`${action.mon.pokemon.name} used ${action.moveName}!`);
+            }
+          }
         }
       } else {
         // Log damage to all affected targets (spread moves hit multiple)
