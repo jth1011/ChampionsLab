@@ -67340,6 +67340,7 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
   {
     "id": 10008,
     "name": "Heat Rotom",
+    "showdownName": "Rotom-Heat",
     "dexNumber": 479,
     "types": [
       "electric",
@@ -67978,6 +67979,7 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
   {
     "id": 10009,
     "name": "Wash Rotom",
+    "showdownName": "Rotom-Wash",
     "dexNumber": 479,
     "types": [
       "electric",
@@ -68616,6 +68618,7 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
   {
     "id": 10010,
     "name": "Frost Rotom",
+    "showdownName": "Rotom-Frost",
     "dexNumber": 479,
     "types": [
       "electric",
@@ -69254,6 +69257,7 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
   {
     "id": 10011,
     "name": "Fan Rotom",
+    "showdownName": "Rotom-Fan",
     "dexNumber": 479,
     "types": [
       "electric",
@@ -69892,6 +69896,7 @@ export const POKEMON_SEED: ChampionsPokemon[] = [
   {
     "id": 10012,
     "name": "Mow Rotom",
+    "showdownName": "Rotom-Mow",
     "dexNumber": 479,
     "types": [
       "electric",

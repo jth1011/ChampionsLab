@@ -52,6 +52,7 @@ export interface PokemonForm {
 export interface ChampionsPokemon {
   id: number;
   name: string;
+  showdownName?: string;
   dexNumber: number;
   types: PokemonType[];
   baseStats: BaseStats;
