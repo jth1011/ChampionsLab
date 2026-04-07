@@ -254,6 +254,27 @@ export default function AboutPage() {
           </div>
         </div>
 
+        {/* Follow on X */}
+        <div className="glass rounded-2xl p-6 border border-sky-200/60 dark:border-sky-400/20 bg-gradient-to-br from-sky-50/40 to-blue-50/40 dark:from-sky-500/10 dark:to-blue-500/5">
+          <div className="flex items-center gap-3 mb-4">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+            <h2 className="text-lg font-bold">Follow Us on X</h2>
+          </div>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+            Stay up to date with the latest Champions Lab updates, VGC news, and community highlights.
+          </p>
+          <a
+            href="https://x.com/ChampionsLabXYZ"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent("twitter_click", "about", "follow")}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition-all shadow-md hover:shadow-lg"
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+            @ChampionsLabXYZ
+          </a>
+        </div>
+
         {/* Contact Form */}
         <div className="glass rounded-2xl p-6 border border-amber-200/60 dark:border-amber-500/20 bg-gradient-to-br from-amber-50/40 to-orange-50/40 dark:from-amber-500/5 dark:to-orange-500/5">
           <div className="flex items-center gap-3 mb-5">

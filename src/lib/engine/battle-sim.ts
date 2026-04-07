@@ -389,6 +389,7 @@ function estimateThreatLevel(
       nature: defender.set.nature as NatureName, types: defender.types,
       ability: defender.ability, item: defender.item,
       defStages: defender.boosts.defense, spDefStages: defender.boosts.spDef,
+      currentHPPercent: (defender.currentHP / defender.maxHP) * 100,
     };
     const result = calculateDamage(atk, def, moveName, options);
     if (result.percentHP[0] > maxPercent) maxPercent = result.percentHP[0];
@@ -426,6 +427,7 @@ function allyCanKO(
       nature: target.set.nature as NatureName, types: target.types,
       ability: target.ability, item: target.item,
       defStages: target.boosts.defense, spDefStages: target.boosts.spDef,
+      currentHPPercent: (target.currentHP / target.maxHP) * 100,
     };
     const result = calculateDamage(atk, def, moveName, options);
     if (result.isOHKO) return true;
@@ -589,6 +591,7 @@ function evaluateMoveOption(
               nature: opp.set.nature as NatureName, types: opp.types,
               ability: opp.ability, item: opp.item,
               defStages: opp.boosts.defense, spDefStages: opp.boosts.spDef,
+              currentHPPercent: (opp.currentHP / opp.maxHP) * 100,
             };
             const res = calculateDamage(atk, def, m, { weather: field.weather as DamageCalcOptions["weather"], isDoubles: true });
             if (res.isOHKO || (res.damage[0] / opp.currentHP) >= 1.0) {
@@ -701,6 +704,7 @@ function evaluateMoveOption(
               nature: opp.set.nature as NatureName, types: opp.types,
               ability: opp.ability, item: opp.item,
               defStages: opp.boosts.defense, spDefStages: opp.boosts.spDef,
+              currentHPPercent: (opp.currentHP / opp.maxHP) * 100,
             };
             const res = calculateDamage(atk, def, allyMove, options);
             const percentVsCurrentHP = (res.damage[0] / opp.currentHP) * 100;
@@ -819,6 +823,7 @@ function evaluateMoveOption(
       item: target.item,
       defStages: target.boosts.defense,
       spDefStages: target.boosts.spDef,
+      currentHPPercent: (target.currentHP / target.maxHP) * 100,
     };
     
     const result = calculateDamage(attacker, defender, moveName, options);
@@ -854,6 +859,7 @@ function evaluateMoveOption(
           nature: otherTarget.set.nature as NatureName, types: otherTarget.types,
           ability: otherTarget.ability, item: otherTarget.item,
           defStages: otherTarget.boosts.defense, spDefStages: otherTarget.boosts.spDef,
+          currentHPPercent: (otherTarget.currentHP / otherTarget.maxHP) * 100,
         };
         const otherResult = calculateDamage(attacker, otherDef, moveName, options);
         score += otherResult.percentHP[0] * 0.35; // Add value from hitting second target
@@ -869,6 +875,7 @@ function evaluateMoveOption(
             nature: allyMon.set.nature as NatureName, types: allyMon.types,
             ability: allyMon.ability, item: allyMon.item,
             defStages: allyMon.boosts.defense, spDefStages: allyMon.boosts.spDef,
+            currentHPPercent: (allyMon.currentHP / allyMon.maxHP) * 100,
           };
           const allyDmg = calculateDamage(attacker, allyDef, moveName, options);
           const allyDmgPercent = allyDmg.percentHP[0];
@@ -1565,6 +1572,7 @@ function executeMove(
       item: t.item,
       defStages,
       spDefStages,
+      currentHPPercent: (t.currentHP / t.maxHP) * 100,
     };
     
     const result = calculateDamage(attacker, defender, moveName, options);

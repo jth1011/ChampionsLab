@@ -1625,28 +1625,65 @@ export default function BattleBotPage() {
                     {/* Col 2: Ability + Nature + Item */}
                     <div className="space-y-3">
                       <div>
-                        <p className="text-[10px] text-muted-foreground uppercase font-medium mb-1.5">Ability</p>
+                        <p className="text-[10px] text-muted-foreground uppercase font-medium mb-1.5">{isMega ? "Pre-Mega Ability" : "Ability"}</p>
                         <div className="space-y-1">
-                          {editPkm.abilities.map((ab) => (
-                            <button key={ab.name} onClick={() => updateSetField(editingSlotIndex, { ability: ab.name })} className={cn("w-full text-left px-2.5 py-1.5 rounded-lg text-[10px] border transition-all", editSet.ability === ab.name ? "bg-violet-100 dark:bg-violet-500/30 border-violet-300 dark:border-violet-400/50 font-semibold text-violet-800 dark:text-white" : "bg-gray-50 dark:bg-gray-200/5 border-gray-200 dark:border-gray-200/10 hover:bg-gray-100 dark:hover:bg-gray-200/10")}>
-                              <span>{ab.name}{ab.isHidden ? " (H)" : ""}{ab.isChampions ? " ✦" : ""}</span>
-                              <p className={cn("text-[8px] mt-0.5 line-clamp-1", editSet.ability === ab.name ? "text-violet-600 dark:text-violet-300" : "text-muted-foreground")}>{ab.description}</p>
-                            </button>
-                          ))}
-                          {megaForms.map((form, fi) => {
-                            const megaAb = form.abilities?.[0];
-                            if (!megaAb || editPkm.abilities.some(a => a.name === megaAb.name)) return null;
-                            const getMegaStone = () => {
-                              const s = usageSets.find(s2 => isMegaItem(s2.item) && s2.ability === megaAb.name);
-                              return s?.item ?? usageSets.find(s2 => isMegaItem(s2.item))?.item;
-                            };
-                            return (
-                              <button key={megaAb.name} onClick={() => updateSetField(editingSlotIndex, { ability: megaAb.name, item: getMegaStone() ?? editSet.item })} className={cn("w-full text-left px-2.5 py-1.5 rounded-lg text-[10px] border transition-all", editSet.ability === megaAb.name ? "bg-amber-100 dark:bg-amber-500/30 border-amber-300 dark:border-amber-400/50 font-semibold text-amber-800 dark:text-white" : "bg-gray-50 dark:bg-gray-200/5 border-gray-200 dark:border-gray-200/10 hover:bg-gray-100 dark:hover:bg-gray-200/10")}>
-                                <span>{megaAb.name} <span className="text-[8px] text-amber-600 dark:text-amber-400 font-bold">MEGA</span></span>
-                                <p className={cn("text-[8px] mt-0.5 line-clamp-1", editSet.ability === megaAb.name ? "text-amber-600 dark:text-amber-300" : "text-muted-foreground")}>{megaAb.description}</p>
-                              </button>
-                            );
-                          })}
+                          {isMega ? (
+                            <>
+                              {/* Pre-mega ability selector (base abilities) */}
+                              {editPkm.abilities.map((ab) => {
+                                const preMega = editSet.preMegaAbility || editPkm.abilities[0]?.name || "";
+                                const isActive = preMega === ab.name;
+                                return (
+                                  <button key={ab.name} onClick={() => updateSetField(editingSlotIndex, { preMegaAbility: ab.name })} className={cn("w-full text-left px-2.5 py-1.5 rounded-lg text-[10px] border transition-all", isActive ? "bg-emerald-100 dark:bg-emerald-500/30 border-emerald-300 dark:border-emerald-400/50 font-semibold text-emerald-800 dark:text-white" : "bg-gray-50 dark:bg-gray-200/5 border-gray-200 dark:border-gray-200/10 hover:bg-gray-100 dark:hover:bg-gray-200/10")}>
+                                    <div className="flex items-center justify-between">
+                                      <span>{ab.name}{ab.isHidden ? " (H)" : ""}{ab.isChampions ? " ✦" : ""}</span>
+                                      {isActive && <span className="text-[8px] text-emerald-500 dark:text-emerald-400 font-bold">ACTIVE</span>}
+                                    </div>
+                                    <p className={cn("text-[8px] mt-0.5 line-clamp-1", isActive ? "text-emerald-600 dark:text-emerald-300" : "text-muted-foreground")}>{ab.description}</p>
+                                  </button>
+                                );
+                              })}
+                              {/* Mega ability (locked display) */}
+                              {(() => {
+                                const megaAb = activeMegaForm?.abilities?.[0];
+                                if (!megaAb) return null;
+                                return (
+                                  <>
+                                    <p className="text-[10px] text-amber-600 dark:text-amber-400 font-bold uppercase mt-2 mb-1">Mega Ability</p>
+                                    <div className="w-full text-left px-2.5 py-1.5 rounded-lg text-[10px] border bg-amber-50 dark:bg-amber-500/20 border-amber-200 dark:border-amber-400/50 text-amber-800 dark:text-amber-100">
+                                      <div className="flex items-center justify-between">
+                                        <span>{megaAb.name}<span className="ml-1 text-[8px] text-amber-600 dark:text-amber-400 font-bold">MEGA</span></span>
+                                      </div>
+                                      <p className="text-[8px] text-muted-foreground mt-0.5 line-clamp-1">{megaAb.description}</p>
+                                    </div>
+                                  </>
+                                );
+                              })()}
+                            </>
+                          ) : (
+                            <>
+                              {editPkm.abilities.map((ab) => (
+                                <button key={ab.name} onClick={() => updateSetField(editingSlotIndex, { ability: ab.name })} className={cn("w-full text-left px-2.5 py-1.5 rounded-lg text-[10px] border transition-all", editSet.ability === ab.name ? "bg-violet-100 dark:bg-violet-500/30 border-violet-300 dark:border-violet-400/50 font-semibold text-violet-800 dark:text-white" : "bg-gray-50 dark:bg-gray-200/5 border-gray-200 dark:border-gray-200/10 hover:bg-gray-100 dark:hover:bg-gray-200/10")}>
+                                  <span>{ab.name}{ab.isHidden ? " (H)" : ""}{ab.isChampions ? " ✦" : ""}</span>
+                                  <p className={cn("text-[8px] mt-0.5 line-clamp-1", editSet.ability === ab.name ? "text-violet-600 dark:text-violet-300" : "text-muted-foreground")}>{ab.description}</p>
+                                </button>
+                              ))}
+                              {megaForms.map((form, fi) => {
+                                const megaAb = form.abilities?.[0];
+                                if (!megaAb || editPkm.abilities.some(a => a.name === megaAb.name)) return null;
+                                const getMegaStone = () => {
+                                  const s = usageSets.find(s2 => isMegaItem(s2.item) && s2.ability === megaAb.name);
+                                  return s?.item ?? usageSets.find(s2 => isMegaItem(s2.item))?.item;
+                                };
+                                return (
+                                  <button key={megaAb.name} onClick={() => updateSetField(editingSlotIndex, { ability: megaAb.name, item: getMegaStone() ?? editSet.item, preMegaAbility: editSet.ability })} className={cn("w-full text-left px-2.5 py-1.5 rounded-lg text-[10px] border transition-all", editSet.ability === megaAb.name ? "bg-amber-100 dark:bg-amber-500/30 border-amber-300 dark:border-amber-400/50 font-semibold text-amber-800 dark:text-white" : "bg-gray-50 dark:bg-gray-200/5 border-gray-200 dark:border-gray-200/10 hover:bg-gray-100 dark:hover:bg-gray-200/10")}>
+                                    <span>{megaAb.name} <span className="text-[8px] text-amber-600 dark:text-amber-400 font-bold">MEGA</span></span>
+                                    <p className={cn("text-[8px] mt-0.5 line-clamp-1", editSet.ability === megaAb.name ? "text-amber-600 dark:text-amber-300" : "text-muted-foreground")}>{megaAb.description}</p>
+                                  </button>
+                                );
+                              })}
+                            </>
+                          )}
                         </div>
                       </div>
                       <div>
@@ -1731,9 +1768,9 @@ export default function BattleBotPage() {
                           return (
                             <button key={fi} onClick={() => {
                               if (isActive) {
-                                updateSetField(editingSlotIndex, { ability: editPkm.abilities[0]?.name ?? "", item: "Life Orb" });
+                                updateSetField(editingSlotIndex, { ability: editSet.preMegaAbility || (editPkm.abilities[0]?.name ?? ""), item: "Life Orb", preMegaAbility: undefined });
                               } else if (megaAb) {
-                                updateSetField(editingSlotIndex, { ability: megaAb.name, item: getMegaStone() ?? editSet.item });
+                                updateSetField(editingSlotIndex, { ability: megaAb.name, item: getMegaStone() ?? editSet.item, preMegaAbility: editSet.ability });
                               }
                             }} className={cn("px-3 py-1.5 rounded-lg text-[11px] font-medium border transition-all flex items-center gap-1.5", isActive ? "bg-amber-100 dark:bg-amber-500/30 border-amber-300 dark:border-amber-400/50 text-amber-800 dark:text-white" : "bg-gray-50 dark:bg-gray-200/5 border-gray-200 dark:border-gray-200/10 hover:bg-amber-50 dark:hover:bg-amber-500/10 hover:border-amber-200 dark:hover:border-amber-500/20")}>
                               <Sparkles className="w-3.5 h-3.5" />{isActive ? "Mega Active" : form.name.replace(editPkm.name, "").replace("Mega ", "").trim() || "Enable Mega"}
@@ -1741,7 +1778,7 @@ export default function BattleBotPage() {
                           );
                         })}
                         {isMega && (
-                          <button onClick={() => updateSetField(editingSlotIndex, { ability: editPkm.abilities[0]?.name ?? "", item: "Life Orb" })} className="px-3 py-1.5 rounded-lg text-[10px] font-medium border border-gray-200 dark:border-gray-200/10 bg-gray-50 dark:bg-gray-200/5 hover:bg-red-50 dark:hover:bg-red-500/10 hover:border-red-200 dark:hover:border-red-500/20 transition-all text-gray-600 dark:text-gray-400">
+                          <button onClick={() => updateSetField(editingSlotIndex, { ability: editSet.preMegaAbility || (editPkm.abilities[0]?.name ?? ""), item: "Life Orb", preMegaAbility: undefined })} className="px-3 py-1.5 rounded-lg text-[10px] font-medium border border-gray-200 dark:border-gray-200/10 bg-gray-50 dark:bg-gray-200/5 hover:bg-red-50 dark:hover:bg-red-500/10 hover:border-red-200 dark:hover:border-red-500/20 transition-all text-gray-600 dark:text-gray-400">
                             Disable
                           </button>
                         )}

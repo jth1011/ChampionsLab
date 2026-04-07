@@ -5,6 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --breakpoint-desktop: 1140px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
@@ -145,11 +146,42 @@
 
 
 /* Mobile hamburger — pure HTML, works before React hydrates */
+.mobile-nav-btn {
+  position: fixed;
+  top: 0;
+  right: 0.75rem;
+  z-index: 60;
+  width: 3rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--foreground);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+/* Hamburger visible < 1140px */
+#mobile-nav-toggle { display: flex; }
+@media (min-width: 1140px) { #mobile-nav-toggle { display: none; } }
 .hamburger-close { display: none; }
 body.mobile-open .hamburger-close { display: block; }
 body.mobile-open .hamburger-open { display: none; }
 .mobile-nav-panel { display: none; }
 body.mobile-open .mobile-nav-panel { display: block; }
+@media (min-width: 1140px) { .mobile-nav-panel { display: none !important; } }
+
+/* Tablet nav — primary items only, 800–1139px */
+.tablet-nav { display: none; }
+@media (min-width: 800px) and (max-width: 1139px) {
+  .tablet-nav { display: flex; margin-right: 3rem; }
+}
+/* Hide primary items from hamburger menu at tablet width */
+@media (min-width: 800px) and (max-width: 1139px) {
+  .tablet-hide-item { display: none; }
+}
 
 /* Soft shadow effects for cards */
 .glow-red { box-shadow: 0 4px 16px rgba(239, 68, 68, 0.12), 0 1px 3px rgba(0,0,0,0.04); }

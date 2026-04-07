@@ -106,7 +106,7 @@ export default function RootLayout({
         {/* Pure HTML hamburger — works instantly, no React hydration needed */}
         <button
           id="mobile-nav-toggle"
-          className="md:hidden fixed top-4 right-4 z-[60] min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg cursor-pointer"
+          className="mobile-nav-btn"
           aria-label="Toggle menu"
           suppressHydrationWarning
         >

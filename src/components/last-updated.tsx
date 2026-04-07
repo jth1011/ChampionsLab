@@ -13,15 +13,26 @@ const SHARED_ENTRIES: ChangelogEntry[] = [
   {
     date: "07/04/2026",
     items: [
-      "New font system: Sora for headings, Inter for body text",
-      "New emerald/teal/cyan color palette across all pages (replaced violet)",
-      "PokéSchool expanded with full Champions Lab Features Guide: Pokedex, Team Builder, Team Tester, Battle Bot, Damage Calculator, and META Analysis walkthroughs",
-      "PokéSchool now has 9 chapters and 40+ lessons covering VGC fundamentals through advanced techniques",
+      "Pokémon Champions release countdown timer on the Pokédex page (April 8, 2026 — Noon JST)",
+      "Three-tier responsive navbar — tablet width (800–1139px) shows Pokédex, Team Builder & Battle Bot in the bar with hamburger for remaining items",
+      "Pre-mega ability selector in Battle Bot modal — editable pre-mega ability with locked mega ability display",
+      "Pre-mega ability display in Team Tester modal (both edit and display-only modes)",
+      "Team Tester load team modal now sorted by most recent and shows date/time",
+      "Tournament event data now refreshes daily instead of hourly for faster page loads",
+      "Fixed Super Fang to correctly deal 50% of target's current HP instead of max HP",
     ],
   },
   {
     date: "06/04/2026",
     items: [
+      "New VGC Tournament Calendar — auto-fetched from official Pokémon CMS (Regionals, Internationals, Worlds, Nationals)",
+      "Community tournaments from Limitless TCG integrated as a new tier with live registration counts",
+      "Navbar breakpoint raised to 1140px — mobile hamburger menu now covers tablet and mid-width screens",
+      "Instant-tap hamburger button styled as invisible inline icon (no glass pill, no delay)",
+      "New font system: Sora for headings, Inter for body text",
+      "New emerald/teal/cyan color palette across all pages (replaced violet)",
+      "PokéSchool expanded with full Champions Lab Features Guide: Pokedex, Team Builder, Team Tester, Battle Bot, Damage Calculator, and META Analysis walkthroughs",
+      "PokéSchool now has 9 chapters and 40+ lessons covering VGC fundamentals through advanced techniques",
       "Comprehensive dark mode fix across Team Tester — all backgrounds, borders, text, bar tracks, badges, and flowchart nodes now properly readable",
       "Dark mode fix for Damage Calculator — header gradients, dashed borders, stat bars, and KO badges",
       "Team Tester: clickable lead combos update the Strategy Flowchart dynamically",
@@ -138,6 +149,7 @@ const CHANGELOGS: Record<string, { description: string; entries: ChangelogEntry[
   "battle-engine": SHARED_CHANGELOG,
   "team-builder": SHARED_CHANGELOG,
   learn: SHARED_CHANGELOG,
+  events: SHARED_CHANGELOG,
 };
 
 export function LastUpdated({ page }: { page: keyof typeof CHANGELOGS }) {

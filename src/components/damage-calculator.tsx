@@ -190,6 +190,7 @@ export default function DamageCalculator() {
       item: defender.set.item,
       defStages: defender.stages.def,
       spDefStages: defender.stages.spDef,
+      currentHPPercent: defender.currentHP,
     };
 
     return attacker.set.moves.map(moveName => {

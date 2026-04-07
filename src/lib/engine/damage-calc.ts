@@ -34,6 +34,7 @@ export interface DamageCalcTarget {
   item: string;
   defStages?: number;
   spDefStages?: number;
+  currentHPPercent?: number; // 0-100
 }
 
 export interface DamageCalcOptions {
@@ -158,11 +159,13 @@ export function calculateDamage(
     if (moveCalc.name === "Grass Knot" || moveCalc.name === "Low Kick") {
       bp = 80;
     } else {
-      // Fixed damage moves like Super Fang, Counter, etc.
+      // Fixed damage moves like Super Fang — deals 50% of target's CURRENT HP
+      const currentHP = Math.floor(defStats.hp * ((defender.currentHPPercent ?? 100) / 100));
+      const fixedDmg = Math.max(1, Math.floor(currentHP / 2));
       return {
-        damage: [Math.floor(defStats.hp / 2), Math.floor(defStats.hp / 2)],
-        percentHP: [50, 50], numHits: 2,
-        isOHKO: false, is2HKO: true, effectiveness: 1, moveName,
+        damage: [fixedDmg, fixedDmg],
+        percentHP: [Math.round((fixedDmg / defStats.hp) * 100), Math.round((fixedDmg / defStats.hp) * 100)], numHits: 2,
+        isOHKO: false, is2HKO: fixedDmg * 2 >= currentHP, effectiveness: 1, moveName,
       };
     }
   }
